@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 rm -rf docs
 
 mkdir -p docs/api-documentation
