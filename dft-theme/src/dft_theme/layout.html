@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="{{ language | default(" en") }}" data-content_root="{{ pathto('', 1) }}">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title | e }}</title>
+  {% block extrahead %}
+  <link rel="shortcut icon" href="{{ pathto('_static/images/favicon.svg', 1) }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}">
+  <script src="{{ pathto('_static/js/custom.js', 1) }}" defer></script>
+  <link rel="stylesheet" href="{{ pathto('_static/tabs.css', 1) }}">
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+  <script src="{{ pathto('_static/tabs.js', 1) }}"></script>
+  {{ metatags }}
+  {% endblock %}
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: '{{ pathto("", 1) }}',
+      VERSION: '{{ release | e }}',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '{{ file_suffix | e }}',
+      HAS_SOURCE: {{ has_source | lower }},
+    SOURCELINK_SUFFIX: '{{ sourcelink_suffix | e }}',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="{{ pagename }}">
+
+  <header class="header">
+    {% if not is_landing_page %}
+      <p>D-TRO</p>
+      {% for link in links %}
+        <a href="{{link.href}}">{{link.name}}</a>
+      {% endfor %}
+      <div class="app-site-search__wrapper">
+        <form action="{{ pathto('search') }}">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="{{ pagename }}" role="main">
+    <div class="sidebar">
+      {% block sidebar %}
+      {% include "sidebar/globaltoc.html" %}
+      {% include "sidebar/localtoc.html" %}
+      {% endblock %}
+    </div>
+    <div id="main-content">
+      {% block content %}
+      {{ body }}
+      {% endblock %}
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a>Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a href="{{ pathto('shared/support') }}">Support</a>
+          <a href="{{ pathto('shared/accessibility') }}">Accessibility</a>
+          <a href="{{ pathto('shared/cookies') }}">Cookies</a>
+          <a href="{{ pathto('shared/privacy') }}">Privacy</a>
+          <a href="{{ pathto('shared/terms_and_conditions') }}">Terms & Conditions</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  {% block script %}
+  <script src="{{ pathto('_static/doctools.js', 1) }}"></script>
+  <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+  <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+  <script src="{{ pathto('searchindex.js', 1) }}"></script>
+  <script src="{{ pathto('_static/sphinx_highlight.js', 1) }}"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") return;
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  {% endblock %}
+
+</body>
+
+</html>

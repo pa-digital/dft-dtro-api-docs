@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <title>What is a ‘Full’ D-TRO Record?</title>
+  
+  <link rel="shortcut icon" href="_static/images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="_static/css/custom.css">
+  <script src="_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="_static/tabs.css">
+  <link rel="stylesheet" href="_static/pygments.css">
+  <script src="_static/tabs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: './',
+      VERSION: '3.4.0',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="what_is_a_full_dtro_record">
+
+  <header class="header">
+    
+      <p>D-TRO</p>
+      
+        <a href="https://d-tro.dft.gov.uk/api-documentation">API Documentation</a>
+      
+        <a href="https://d-tro.dft.gov.uk/data-model-user-guide">Data Model</a>
+      
+        <a href="https://d-tro.dft.gov.uk/user-portal-documentation">User Portal Documentation</a>
+      
+      <div class="app-site-search__wrapper">
+        <form action="search.html">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      
+    </div>
+  </header>
+
+  <main class="what_is_a_full_dtro_record" role="main">
+    <div class="sidebar">
+      
+      
+<div class="global-toc"><p class="caption" role="heading"><span class="caption-text">D-TRO Data Model Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="digital_traffic_regulation_orders.html">Digital Traffic Regulation Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tro_modelling_key_concepts.html">TRO-Modelling Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="a_tour_of_the_data_model.html">A Tour of the Data Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What is a ‘Full’ D-TRO Record?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the_data_model_uml_class_diagrams.html">The Data Model UML Class Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="document_control.html">Document Control</a></li>
+</ul>
+</div>
+      
+
+  <div class="local-toc">
+    <ul>
+<li><a class="reference internal" href="#">What is a ‘Full’ D-TRO Record?</a><ul>
+<li><a class="reference internal" href="#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+      
+    </div>
+    <div id="main-content">
+      
+      <section id="what-is-a-full-d-tro-record">
+<h1>What is a ‘Full’ D-TRO Record?<a class="headerlink" href="#what-is-a-full-d-tro-record" title="Link to this heading">¶</a></h1>
+<p>When a TRA submits a new D-TRO record care is required to ensure that the record contains all necessary information - this is the responsibility of the TRA. The D-TRO Service will undertake various forms of validation to ensure that requirements have been met and the D-TRO record can be accepted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The test of what constitutes a D-TRO record that contains all essential elements and therefore can be considered to be a ‘full’ record is subject to review and learning from prototyping. This section is therefore likely to change with new releases.</p>
+</div>
+<section id="validation-rules">
+<h2>Validation Rules<a class="headerlink" href="#validation-rules" title="Link to this heading">¶</a></h2>
+<p>Two primary forms of validation test are foreseen:</p>
+<ul class="simple">
+<li><p>Schema validation - this is a set of technical tests to ensure that that the data and the structure of the submitted D-TRO record conforms to the requirements of the Data Model and schema. These tests will check that mandatory elements of the Data Model exist in the D-TRO record; that additional elements not part of the Data Model are not provided; that supplied data conforms to prescribed data types (e.g. that a attribute typed as a datetime in the Data Model is actually a valid datetime); that enum types are valid, etc.</p></li>
+<li><dl class="simple">
+<dt>Semantic validation - this is a further set of technical tests cannot be enforced by schema validation. Examples include, but are not limited to:</dt><dd><ul>
+<li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">troName</span></code>, <code class="docutils literal notranslate"><span class="pre">traCreator</span></code> and <code class="docutils literal notranslate"><span class="pre">traAffected</span></code> attributes of the <code class="docutils literal notranslate"><span class="pre">source</span></code> object contains not only an integer value, as required by schema validation, but the value given matches a value in the TRA code list and corresponds to the sender’s TRA code (e.g., ‘116’ for Bristol City Council).</p></li>
+<li><p>Where start and end datetimes are provided, that the start datetime occurs before the end datetime</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>A set of validation tests have been created, which are summarised in the tables below. A detailed document of the validation rules is available in the GitHub repository.</p>
+<p><strong>Appropriateness</strong>-related rules help keep the data within the D-TRO service as relevant as possible and does not contain biases, which make them unfit for use by the Software Providers.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Appropriateness-related validation rules</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nature of business rules</p></td>
+<td><p>Some TRO data will apply to specific consumer types or across different consumers. Selection and use of the right set of data ensures that it is relevant for each user type and provided in the appropriate way.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entity-status relationships</p></td>
+<td><p>Provisions cannot be linked to TROs if the status of one is inappropriate.</p></td>
+</tr>
+<tr class="row-even"><td><p>Currency rules</p></td>
+<td><p>Appropriate currencies and timing considerations are used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Retention rules</p></td>
+<td><p>Record is retained for X period after trigger Y, e.g. keep inactive TROs for a maximum of 3 years from time of becoming inactive.</p></td>
+</tr>
+<tr class="row-even"><td><p>Data consistency</p></td>
+<td><p>TROs that are duplicated (for performance, redundancy, etc) should be consistent with the original values, and be subject to the same domain and data quality rules.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Completeness</strong> rules ensures that the Data Model provides comprehensive information for the digitalisation and analysis of TROs.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Completeness validation rules</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Entity completeness</p></td>
+<td><p>The full set of entities are present, i.e. all TRO records with provisions are present</p></td>
+</tr>
+<tr class="row-odd"><td><p>Relationship completeness</p></td>
+<td><p>Referential integrity is correct between TROs and provisions i.e. all relationships between entities can be resolved.</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute completeness</p></td>
+<td><p>All required attributes for TRO entities are present i.e. all necessary columns are populated</p></td>
+</tr>
+<tr class="row-odd"><td><p>Domain completeness</p></td>
+<td><p>All required attributes contain an allowable value, and intentionally set nulls can be differentiated from absent values</p></td>
+</tr>
+<tr class="row-even"><td><p>Identity / uniqueness rules</p></td>
+<td><p>Every TRO record must exist only once, be uniquely identifiable, relate to exactly one real-world entity with attributes not being overloaded – e.g. containing different regulation types in a single field</p></td>
+</tr>
+<tr class="row-odd"><td><p>Entity-relationship constraints</p></td>
+<td><p>The existence of one relationship mandates or prohibits the existence of another, e.g. an “Amend” or “Revoke” provision must be linked to an existing D-TRO record.</p></td>
+</tr>
+<tr class="row-even"><td><p>Attribute-relationship constraints</p></td>
+<td><p>The allowable values of one or more values mandates or prohibits the value (or existence) of another, e.g. A vehicle dimension populated for a size-based restriction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Event-relationship constraints</p></td>
+<td><p>Links that must exist for an instance to occur, e.g. activation / inactivation of a TTRO must have an existing TRO present.</p></td>
+</tr>
+<tr class="row-even"><td><p>Optionality constraints</p></td>
+<td><p>Attributes have defined list of options to populate with, e.g. the Speed Limit value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inheritance rules</p></td>
+<td><p>Existence of all necessary fields from combination of super-type and sub-type. Correct application of implied rules through sub-typing, e.g. activation notices for TTROs.</p></td>
+</tr>
+<tr class="row-even"><td><p>Granularity rule</p></td>
+<td><p>Historic data is kept for the same period at similar level of granularity.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Continuity rule</p></td>
+<td><p>No gaps or overlaps in historic or time series data for D-TROs, e.g. contradictory time ranges for overlapping TROs.</p></td>
+</tr>
+<tr class="row-even"><td><p>Event dependencies</p></td>
+<td><p>Relating separate events that are likely to be consistent in time, e.g. connection between consultation and the provision of an active TRO.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Accuracy</strong>-related rules ensure the degree of confidence that can be placed in the data from the D-TRO service. Data must be sufficiently accurate as standardised data to support the defined use cases and avoid material distortion in the central storage system.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Accuracy-related validation rules</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rule Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data accuracy</p></td>
+<td><p>An attribute must be representative of its real-world state as per the TRO.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Valid value constraints</p></td>
+<td><p>A list of values, a range of values, a constraint on values, a set of allowable characters as part of the D-TRO.</p></td>
+</tr>
+<tr class="row-even"><td><p>Format constraints</p></td>
+<td><p>For dateTime, Values, Geographical Coordinates and other specific formats for fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precision constraints</p></td>
+<td><p>The values in the field must be the same precision as the attribute requires in response to D-TRO requirements, business rules and intended meaning, e.g. vehicle dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Definition constraints</p></td>
+<td><p>The values match the intended meaning of the attribute, e.g. coordinate type reflects the value of coordinates entered.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Attribute constraints</p></td>
+<td><p>One attribute can be derived from one, two, three or more others, e.g. parking duration restrictions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Timestamp pattern rule</p></td>
+<td><p>Ensuring dates and times are within correct ranges.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference rule</p></td>
+<td><p>Ensure a reference system is implemented at each TRA level for tracking previous changes done to its D-TROs</p></td>
+</tr>
+<tr class="row-even"><td><p>Action rule</p></td>
+<td><p>Each D-TRO must have one action at the source and provision level provided by the TRA that issues the D-TRO.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+      
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a>Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a href="shared/support.html">Support</a>
+          <a href="shared/accessibility.html">Accessibility</a>
+          <a href="shared/cookies.html">Cookies</a>
+          <a href="shared/privacy.html">Privacy</a>
+          <a href="shared/terms_and_conditions.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  
+  <script src="_static/doctools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="searchindex.js"></script>
+  <script src="_static/sphinx_highlight.js"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") return;
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  
+
+</body>
+
+</html>

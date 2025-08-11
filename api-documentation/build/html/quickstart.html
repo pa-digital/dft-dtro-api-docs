@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Quickstart</title>
+  
+  <link rel="shortcut icon" href="_static/images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="_static/css/custom.css">
+  <script src="_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="_static/tabs.css">
+  <link rel="stylesheet" href="_static/pygments.css">
+  <script src="_static/tabs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: './',
+      VERSION: '1.4.2',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="quickstart">
+
+  <header class="header">
+    
+      <p>D-TRO</p>
+      
+        <a href="https://d-tro.dft.gov.uk/api-documentation">API Documentation</a>
+      
+        <a href="https://d-tro.dft.gov.uk/data-model-user-guide">Data Model</a>
+      
+        <a href="https://d-tro.dft.gov.uk/user-portal-documentation">User Portal Documentation</a>
+      
+      <div class="app-site-search__wrapper">
+        <form action="search.html">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      
+    </div>
+  </header>
+
+  <main class="quickstart" role="main">
+    <div class="sidebar">
+      
+      
+<div class="global-toc"><p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">API Documentation</a></li>
+</ul>
+</div>
+      
+
+  <div class="local-toc">
+    <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#a-note-on-environments">A Note on Environments</a></li>
+<li><a class="reference internal" href="#authenticating-your-application">Authenticating Your Application</a></li>
+<li><a class="reference internal" href="#publishing-to-the-d-tro-service">Publishing to the D-TRO Service</a></li>
+<li><a class="reference internal" href="#submitting-json-in-the-body">Submitting JSON in the body</a></li>
+<li><a class="reference internal" href="#submitting-a-json-file">Submitting a JSON file</a></li>
+<li><a class="reference internal" href="#submitting-a-gzip-compressed-file">Submitting a gzip-compressed file</a></li>
+<li><a class="reference internal" href="#consuming-data-within-the-d-tro-service">Consuming Data Within the D-TRO Service</a></li>
+<li><a class="reference internal" href="#retrieving-a-d-tro-by-id">Retrieving a D-TRO by ID</a></li>
+<li><a class="reference internal" href="#retrieving-all-d-tros">Retrieving all D-TROs</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+      
+    </div>
+    <div id="main-content">
+      
+      <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
+<p>This quickstart guide is designed to illustrate how to begin using the D-TRO API. It covers:</p>
+<ul class="simple">
+<li><p>Authenticating your application to receive an access token</p></li>
+<li><p>Making requests to publish D-TROs to the service</p></li>
+<li><p>Making requests to retrieve published D-TROs</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide assumes you have already created a publisher/consumer application, and know your API key and secret. You can create applications and retrieve application credentials in the D-TRO User Portal.</p>
+</div>
+<section id="a-note-on-environments">
+<h2>A Note on Environments<a class="headerlink" href="#a-note-on-environments" title="Link to this heading">¶</a></h2>
+<p>The D-TRO service exposes two environments; <strong>integration</strong> and <strong>production</strong>.</p>
+<ul class="simple">
+<li><p>The integration environment is designed to allow users of the service to test their application’s ability to publish to/consume from the service, without live data</p></li>
+<li><p>Once happy with the process for publishing/consuming with their application, live data can be published/consumed from the production environment</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The integration environment includes upcoming features for testing and adapting applications to future API or data model changes. It may differ from the production environment. DfT is considering adding a pre-production environment that mirrors production, allowing users to test with confidence. In this setup, integration becomes a sandbox for new features. DfT will provide updates if this new environment is introduced.</p>
+</div>
+<p>The integration and production environments are two isolated services, and as such have different URLs.</p>
+<ul class="simple">
+<li><p>Integration: <a class="reference external" href="https://dtro-integration.dft.gov.uk/v1">https://dtro-integration.dft.gov.uk/v1</a></p></li>
+<li><p>Production: <a class="reference external" href="https://dtro.dft.gov.uk/v1">https://dtro.dft.gov.uk/v1</a></p></li>
+</ul>
+<p>Because of this, separate applications are required for communicating with each environment.</p>
+</section>
+<section id="authenticating-your-application">
+<h2>Authenticating Your Application<a class="headerlink" href="#authenticating-your-application" title="Link to this heading">¶</a></h2>
+<p>The D-TRO service makes use of the <strong>OAuth 2.0 client credentials flow</strong> for authentication. In this flow, a <strong>client ID</strong> and <strong>client secret</strong> are exchanged with the service for an <strong>access token</strong>. This access token permits a user to interact with the service for a fixed period of time, until the token expires. Token expiry is configured to <strong>30 minutes</strong>. After this time a new token will need to be issued through the same flow.</p>
+<p>Exchanging credentials for an access token is achieved by making a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the OAuth 2.0 token generation endpoint, providing the client ID and secret as HTTP basic authentication credentials, and the client credentials grant type in the request body.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/oauth-generator
+<span class="w">    </span>-u<span class="w"> </span>&lt;client_id&gt;:&lt;client_secret&gt;
+<span class="w">    </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=client_credentials&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">dtro</span><span class="o">-</span><span class="n">integration</span><span class="o">.</span><span class="n">dft</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">oauth</span><span class="o">-</span><span class="n">generator</span><span class="p">,</span>
+    <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="o">&lt;</span><span class="n">client_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">client_secret</span><span class="o">&gt;</span><span class="p">),</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;grant_type&quot;</span><span class="p">:</span> <span class="s2">&quot;client_credentials&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;refresh_token_expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;api_product_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[int-publisher]&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;api_product_list_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;int-publisher&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;organization_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dft-dtro-test&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;developer.email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dtro@dft.gov.uk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;token_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BearerToken&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;issued_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1749815435563&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;client_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;client_id&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;access_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;access_token&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;application_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dsp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;expires_in&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1799&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;refresh_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;approved&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>The response payload contains <code class="docutils literal notranslate"><span class="pre">access_token</span></code>, which is the token you will use when making requests to the API to authenticate.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not share your access token with anybody. A valid access token allows your application to interface with the service. If somebody knows your access token they can use the D-TRO service on your behalf.</p>
+</div>
+</section>
+<section id="publishing-to-the-d-tro-service">
+<h2>Publishing to the D-TRO Service<a class="headerlink" href="#publishing-to-the-d-tro-service" title="Link to this heading">¶</a></h2>
+<p>There are three main ways to publish a D-TRO to the service. These are:</p>
+<ul class="simple">
+<li><p>Sending a JSON payload in the body of a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request</p></li>
+<li><p>Sending a JSON file in a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request</p></li>
+<li><p>Sending a gzip-compressed JSON file in a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only applications with the publisher scope can publish D-TROs to the service. If you try to publish a D-TRO using a consumer account, you will receive the following response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;fault&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;faultstring&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Required scope(s): [cso, dsp]&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;errorcode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;steps.oauth.v2.InsufficientScope&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="submitting-json-in-the-body">
+<h2>Submitting JSON in the body<a class="headerlink" href="#submitting-json-in-the-body" title="Link to this heading">¶</a></h2>
+<p>A D-TRO can be published to the service by making a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the <code class="docutils literal notranslate"><span class="pre">/dtros/createFromBody</span></code> endpoint, passing the access token as a header and the payload in the body.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-1-1-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-2" name="1-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JSON</span><span class="o">=</span><span class="k">$(</span>&lt;file.json<span class="k">)</span>
+
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/dtros/createFromBody
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$JSON</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s1">&#39;https://dtro-integration.dft.gov.uk/v1/dtros/createFromBody&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &lt;access_token&gt;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="p">},</span>
+    <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json&#39;</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>The response payload contains a single field, <code class="docutils literal notranslate"><span class="pre">id</span></code>, which is the ID of the created D-TRO record.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a 10MB request payload limit imposed by the API proxy. If the request body exceeds this limit, the submission will be rejected. Consider minifying your JSON payload, or uploading as a gzip-compressed file (see <a class="reference internal" href="#gzip-upload"><span class="std std-ref">Submitting a gzip-compressed file</span></a>).</p>
+</div>
+</section>
+<section id="submitting-a-json-file">
+<h2>Submitting a JSON file<a class="headerlink" href="#submitting-a-json-file" title="Link to this heading">¶</a></h2>
+<p>This endpoint is similar to the endpoint that handles publishing D-TROs using a JSON body, but instead allows a file to be uploaded. This is achieved by making a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the <code class="docutils literal notranslate"><span class="pre">/dtros/createFromFile</span></code> endpoint, passing the access token as a header and attaching a JSON file.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-2-2-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-2" name="2-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;file=@file.json&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s1">&#39;https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &lt;access_token&gt;&#39;</span><span class="p">},</span>
+    <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-2-2" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-2" name="2-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<p>The response payload again contains a single field, <code class="docutils literal notranslate"><span class="pre">id</span></code>, which is the ID of the created D-TRO record. The same file size limits are imposed here as when submitting JSON in the request body.</p>
+</section>
+<section id="submitting-a-gzip-compressed-file">
+<span id="gzip-upload"></span><h2>Submitting a gzip-compressed file<a class="headerlink" href="#submitting-a-gzip-compressed-file" title="Link to this heading">¶</a></h2>
+<p>gzip is an excellent compression algorithm for JSON data, as it excels at compressing large, text-based, repetitive data, exactly like JSON. There are various tools available for compressing JSON with gzip. The following command uses the gzip CLI utility, installed on many Unix-like systems, to compress <code class="docutils literal notranslate"><span class="pre">file.json</span></code> and output it to a file named <code class="docutils literal notranslate"><span class="pre">file.json.gz</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gzip<span class="w"> </span>-c<span class="w"> </span>file.json<span class="w"> </span>file.json.gz
+</pre></div>
+</div>
+<p>The process for submitting a gzip-compressed JSON file is identical to that of submitting a JSON file.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-3-3-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-2" name="3-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+<span class="w">    </span>-F<span class="w"> </span><span class="s2">&quot;file=@file.json.gz&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s1">&#39;https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &lt;access_token&gt;&#39;</span><span class="p">},</span>
+    <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-3-3-2" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-2" name="3-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00000000-0000-0000-0000-000000000000&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As gzip can compress very large raw files into very small gzip-compressed files, there is a hard limit on the server when decompressing gzip files. To prevent zip bomb attacks gzip files are processed in 8-byte chunks up to a maximum of 25MB. If the uncompressed file exceeds this 25MB limit, the API will return an error.</p>
+</div>
+</section>
+<section id="consuming-data-within-the-d-tro-service">
+<h2>Consuming Data Within the D-TRO Service<a class="headerlink" href="#consuming-data-within-the-d-tro-service" title="Link to this heading">¶</a></h2>
+<p>Both publisher and consumer applications have the necessary scopes to consume data from the D-TRO service. The API allows retrieval of individual D-TROs by their ID, searching for D-TROs that match some filter criteria, and retrieveing all D-TROS published to the service.</p>
+</section>
+<section id="retrieving-a-d-tro-by-id">
+<h2>Retrieving a D-TRO by ID<a class="headerlink" href="#retrieving-a-d-tro-by-id" title="Link to this heading">¶</a></h2>
+<p>A single D-TRO can be retrieved by making a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the <code class="docutils literal notranslate"><span class="pre">/dtros/&lt;id&gt;</span></code> endpoint, passing the D-TRO ID as a path parameter, and a valid access token as a header.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-4-4-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-2" name="4-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/dtros/146375a5-7cc6-4092-b515-0c5c105820ff
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://dtro-integration.dft.gov.uk/v1/dtros/146375a5-7cc6-4092-b515-0c5c105820ff&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &lt;access_token&gt;&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-4-4-2" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-2" name="4-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;146375a5-7cc6-4092-b515-0c5c105820ff&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;schemaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.3.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;section&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schedule 1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;troName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DfT Example - Oct. 2024 - partial extract of THE DERBYSHIRE COUNTY COUNCIL (MARKET STREET AND TOWN END ROAD, DRAYCOTT) (RESTRICTION AND LIMITED WAITING) TRAFFIC REGULATION ORDER 2024 (DfT mockup, v2) API_TEST_RUN_2025-05-12T09:57:09.1817531+00:00&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;provision&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A3448229-1DFA-48CD-A785-376ACB9F7C56&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-01T08:00:00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;validPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;recurringTimePeriodOfDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="nt">&quot;endTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18:00:00T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nt">&quot;startTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;08:00:00T00:00:00&quot;</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                            </span><span class="p">],</span>
+<span class="w">                            </span><span class="nt">&quot;recurringDayWeekMonthPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="nt">&quot;applicableDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;friday&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;monday&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;saturday&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;thursday&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;tuesday&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;wednesday&quot;</span>
+<span class="w">                                </span><span class="p">]</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kerbsideLimitedWaiting&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;West side, Market Street, Draycott&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;linearGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bidirectional&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;linestring&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;LINESTRING(444284 333253, 444284 333253)&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;representation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;lateralPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onKerb&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T08:00:00&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14000759</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schedule 1: No Waiting Monday to Saturday, 8am to 6pm&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B2787FE2-AD74-432A-BB32-76FDB065F3E8&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;traCreator&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">99999</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;traAffected&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">99999</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;currentTraOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">99999</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Retrieving a D-TRO by ID relies on knowing the ID of the D-TRO.</p>
+</div>
+</section>
+<section id="retrieving-all-d-tros">
+<h2>Retrieving all D-TROs<a class="headerlink" href="#retrieving-all-d-tros" title="Link to this heading">¶</a></h2>
+<p>The D-TRO service provides the capability to retrieve all published D-TROs. Due to the large volumes of data contained within D-TROs, retriveing all D-TRO records is not achieved via the API. Instead, the API is used to request a signed URL, which enables users to download a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file containing all D-TRO data.</p>
+<p>This URL can be requested by making a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the <code class="docutils literal notranslate"><span class="pre">/dtros/all</span></code> endpoint, passing a valid access token as a header.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">curl</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Python</button><button aria-controls="panel-5-5-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-2" name="5-2" role="tab" tabindex="-1">Response</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>https://dtro-integration.dft.gov.uk/v1/dtros/all
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;access_token&gt;&quot;</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s1">&#39;https://dtro-integration.dft.gov.uk/v1/dtros/all&#39;</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &lt;access_token&gt;&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-5-5-2" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-2" name="5-2" role="tabpanel" tabindex="0"><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;https://storage.googleapis.com/dtro-records/dtros_20250805_104621.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=sa-execution%40dft-dtro-dev-01.iam.gserviceaccount.com%2F20250805%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20250805T104710Z&amp;X-Goog-Expires=3600&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=ac6f85fe1df2f36ffdc969e96147e0bd2c542c4088fe3c5f228d233986d536286afdd0e6983950cade741eae12eaabb85cb362cd813059fa1d5be84c236576db9fe1b01acdb2810774374e379113ad9e47be200de89c9ec3df79e6283f1ecd029fd48fe8e18cf785aa6ad84dd88e299563207547efe49b820a701d0eec3bfc4d5b5726c68393dae7acb122eefee928b8bdf6caebd3c94c39db8c597a29474c5be81f04ea4b9a4a6eb901be5043772fa3cd29992c9759755faeb375d0034605f6b5a38bd88e103c8b19b8911f28d68c225f4b9d3e5f2369c7d226d7ed59d44576ca8777bdcaf181d5390b8e70d8b343535fbb1a955ddc1e167f6680676a088075&quot;</span>
+</pre></div>
+</div>
+</div></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The signed URL is valid for 60 minutes only, and once expired can no longer be used to retrieve the dataset.</p>
+</div>
+
+        <div class="button-nav-container">
+            
+                <a class="button-container secondary" href="index.html" style="text-decoration: none">
+                    <button>Back</button>
+                </a>
+            
+           
+                <a class="button-container primary" href="api_documentation.html" style="text-decoration: none">
+                    <button>API documentation</button>
+                    <svg class="govuk-button__start-icon govuk-!-display-none-print" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" focusable="false" aria-hidden="true">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+                    </svg>
+                </a>
+            
+        </div>
+        </section>
+</section>
+
+      
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a>Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a href="shared/support.html">Support</a>
+          <a href="shared/accessibility.html">Accessibility</a>
+          <a href="shared/cookies.html">Cookies</a>
+          <a href="shared/privacy.html">Privacy</a>
+          <a href="shared/terms_and_conditions.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  
+  <script src="_static/doctools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="searchindex.js"></script>
+  <script src="_static/sphinx_highlight.js"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") return;
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  
+
+</body>
+
+</html>

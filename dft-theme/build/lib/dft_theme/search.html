@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block content %}
+
+<div id="search-results"></div>
+
+{% raw %}
+<script>
+  function onSearchIndexReady() {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q") || "";
+    if (q) {
+      Search.query(q);
+  }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof Search !== undefined  && Search.output !== undefined) {
+      onSearchIndexReady();
+    }
+  });
+</script>
+{% endraw %} {% endblock %}

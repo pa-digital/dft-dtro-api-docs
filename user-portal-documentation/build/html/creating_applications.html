@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Creating Applications</title>
+  
+  <link rel="shortcut icon" href="_static/images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="_static/css/custom.css">
+  <script src="_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="_static/tabs.css">
+  <link rel="stylesheet" href="_static/pygments.css">
+  <script src="_static/tabs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: './',
+      VERSION: '0.1.0',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="creating_applications">
+
+  <header class="header">
+    
+      <p>D-TRO</p>
+      
+        <a href="https://d-tro.dft.gov.uk/api-documentation">API Documentation</a>
+      
+        <a href="https://d-tro.dft.gov.uk/data-model-user-guide">Data Model</a>
+      
+        <a href="https://d-tro.dft.gov.uk/user-portal-documentation">User Portal Documentation</a>
+      
+      <div class="app-site-search__wrapper">
+        <form action="search.html">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      
+    </div>
+  </header>
+
+  <main class="creating_applications" role="main">
+    <div class="sidebar">
+      
+      
+<div class="global-toc"><p class="caption" role="heading"><span class="caption-text">D-TRO User Portal Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="what_is_the_portal.html">What is the D-TRO User Portal?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creating_an_account.html">Creating an Account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging_into_the_portal.html">Logging into the Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requesting_production_access.html">Requesting Production Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewing_apps.html">Viewing Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_reports.html">Error Reports</a></li>
+</ul>
+</div>
+      
+
+  <div class="local-toc">
+    <ul>
+<li><a class="reference internal" href="#">Creating Applications</a><ul>
+<li><a class="reference internal" href="#creating-a-publisher-application-in-integration">Creating a publisher application in integration</a></li>
+<li><a class="reference internal" href="#creating-a-publisher-application-in-production">Creating a publisher application in production</a></li>
+<li><a class="reference internal" href="#creating-consumer-applications-in-integration">Creating consumer applications in integration</a></li>
+<li><a class="reference internal" href="#creating-consumer-applications-in-production">Creating consumer applications in production</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+      
+    </div>
+    <div id="main-content">
+      
+      <section id="creating-applications">
+<h1>Creating Applications<a class="headerlink" href="#creating-applications" title="Link to this heading">¶</a></h1>
+<section id="creating-a-publisher-application-in-integration">
+<h2>Creating a publisher application in integration<a class="headerlink" href="#creating-a-publisher-application-in-integration" title="Link to this heading">¶</a></h2>
+<div class="notification-container docutils container">
+<p>Note</p>
+<div class="notification-content docutils container">
+<p>This functionality is only available for publisher accounts. Consumer accounts are unable to create publisher applications.</p>
+</div>
+</div>
+<p>When creating a publisher application in integration, the only required information is application name.</p>
+<a class="reference internal image-reference" href="_images/create-publisher-application-integration.png"><img alt="Creating a publisher application in integration" class="align-center" src="_images/create-publisher-application-integration.png" style="width: 60%;" />
+</a>
+<p>If you application name violates the name requirements or constraints, you will receive a validation message communicating this. See the bototm of this page for information on what constitues a valid application name.</p>
+<p>Upon successful creation of your application, you will be redirected to the application details screen, which displayes your created application, including:</p>
+<ul class="simple">
+<li><p>Application ID</p></li>
+<li><p>TRA code (this is a test code generated for use in the integration environment, and does not correspond to a real Traffic Regulation Authority)</p></li>
+<li><p>API key</p></li>
+<li><p>API secret</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/publisher-integration-app.png"><img alt="Publisher integration app details" class="align-center" src="_images/publisher-integration-app.png" style="width: 60%;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once created, publisher applications enter a pending state. Your application will be reviewed by a Central Service Operator, and you will receive an email once approved. You may receive an email requesting more information if required to support the application review process.</p>
+</div>
+</section>
+<section id="creating-a-publisher-application-in-production">
+<h2>Creating a publisher application in production<a class="headerlink" href="#creating-a-publisher-application-in-production" title="Link to this heading">¶</a></h2>
+<p>Production publisher applications require the following information:</p>
+<ul class="simple">
+<li><p>Application name</p></li>
+<li><p>The Traffic Regulation Authority the D-TROs will will be submitted on behalf of</p></li>
+<li><p>Confirmation of whether you are a Digital Service Provider or self-publishing Traffic Regulation Authority</p></li>
+<li><p>Acceptance of the terms and conditions</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/create-publisher-application-production.png"><img alt="Creating a publisher application in production" class="align-center" src="_images/create-publisher-application-production.png" style="width: 60%;" />
+</a>
+<p>Upon successful application creation, you will be atomatically redirected to the application details screen.</p>
+</section>
+<section id="creating-consumer-applications-in-integration">
+<span id="creating-consumer-app-in-integration"></span><h2>Creating consumer applications in integration<a class="headerlink" href="#creating-consumer-applications-in-integration" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both publisher and consumer accounts can create consumer applications.</p>
+</div>
+<p>When creating a consumer account in the integration environment, an application name is again required.</p>
+<a class="reference internal image-reference" href="_images/create-consumer-app-name.png"><img alt="Creating a consumer application (name) in integration" class="align-center" src="_images/create-consumer-app-name.png" style="width: 60%;" />
+</a>
+<p>Additionally, Department for Transport also collect information on the proposed usage of consumer applications. This information is not shared, and is used solely for understanding the types of activities consumers are using the data for, and helping to guide future development of the service. These fields include, but are not limited to, the regions of the country and types of data you are interested in.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/create-consumer-app-details.png"><img alt="Creating a consumer application (application details) in integration" class="align-center" src="_images/create-consumer-app-details.png" style="width: 60%;" />
+</a>
+</div></blockquote>
+</section>
+<section id="creating-consumer-applications-in-production">
+<h2>Creating consumer applications in production<a class="headerlink" href="#creating-consumer-applications-in-production" title="Link to this heading">¶</a></h2>
+<p>The process for creating a consumner account in production is identical to that of creating a consumer account in integration. Please see section <a class="reference internal" href="#creating-consumer-app-in-integration"><span class="std std-ref">Creating consumer applications in integration</span></a> for more details.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consumer applications do not require apporoval from a Central Service Operator, and so can be used with the D-TRO service immediately after they are created.</p>
+</div>
+<div class="notification-container docutils container">
+<p>Application name requirements</p>
+<div class="notification-content docutils container">
+<p>For an application name to be valid, all of the following must be true:</p>
+<ul class="simple">
+<li><p>The name must be unique across all applications</p></li>
+<li><p>The name must start with an alphanumeric character</p></li>
+<li><p>The name can contain only alphanumeric characters, the symbols <code class="docutils literal notranslate"><span class="pre">_-.#$%</span></code>, and spaces</p></li>
+</ul>
+</div>
+</div>
+
+        <div class="button-nav-container">
+            
+                <a class="button-container secondary" href="navigation.html" style="text-decoration: none">
+                    <button>Back</button>
+                </a>
+            
+           
+                <a class="button-container primary" href="requesting_production_access.html" style="text-decoration: none">
+                    <button>Requesting production access</button>
+                    <svg class="govuk-button__start-icon govuk-!-display-none-print" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" focusable="false" aria-hidden="true">
+                        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+                    </svg>
+                </a>
+            
+        </div>
+        </section>
+</section>
+
+      
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a>Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a href="shared/support.html">Support</a>
+          <a href="shared/accessibility.html">Accessibility</a>
+          <a href="shared/cookies.html">Cookies</a>
+          <a href="shared/privacy.html">Privacy</a>
+          <a href="shared/terms_and_conditions.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  
+  <script src="_static/doctools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="searchindex.js"></script>
+  <script src="_static/sphinx_highlight.js"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") return;
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  
+
+</body>
+
+</html>
