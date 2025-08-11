@@ -12,7 +12,9 @@ This repository also contains the `dft-theme` Sphinx theme, and a landing page t
 
 ## Local Development
 
-Developing locally can be achieved with Docker. The `docker-compose.yml` file allows you to run the documentation. The Dockerfile will create containers with `sphinx-autobuild` installed, along with the `dft-theme` and other required packages. `api_documentation` will run on port 8001, `data_model_user_guide` on port 8002 and `user_portal_documentation` on port 8003.
+Developing locally can be achieved with Docker. The `docker-compose.yml` file allows you to run the documentation. The Dockerfile will create containers with `sphinx-autobuild` installed, along with the `dft-theme` and other required packages. `api_documentation` will expose port 8001, `data_model_user_guide` will expose port 8002 and `user_portal_documentation` will expose port 8003.
+
+The containers are set to do nothing when run; this is by design, and allows ytou to exec into them and run whatever you need, e.g. `sphinx-autobuild` for live editing of the documentation, `make html` to build the documentation, etc.
 
 If any changes are made to the underlying `dft-theme`, you will need to rebuild the Docker containers for these changes to take effect.
 
