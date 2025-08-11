@@ -17,7 +17,7 @@ docker exec -it $(docker ps --filter="name=landing" -q) /bin/bash -c "make html"
 cp -r api-documentation/build/html/* docs/api-documentation
 cp -r data-model-user-guide/build/html/* docs/data-model-user-guide
 cp -r user-portal-documentation/build/html/* docs/user-portal-documentation
-cp -r portal-access/build/html/* docs/portal-access
+cp -r portal-access/build/html/* docs
 cp index.html docs
 cp CNAME docs
 cp .nojekyll docs
