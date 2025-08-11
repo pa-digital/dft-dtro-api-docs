@@ -437,11 +437,11 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
         <div class="footer-links">
           <a>Feedback</a>
           <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
-          <a href="shared/support.html">Support</a>
-          <a href="shared/accessibility.html">Accessibility</a>
-          <a href="shared/cookies.html">Cookies</a>
-          <a href="shared/privacy.html">Privacy</a>
-          <a href="shared/terms_and_conditions.html">Terms & Conditions</a>
+          <a id="support-link">Support</a>
+          <a id="accessibility-link">Accessibility</a>
+          <a id="cookies-link">Cookies</a>
+          <a id="privacy-link">Privacy</a>
+          <a id="t-and-c-link">Terms & Conditions</a>
         </div>
         <div class="footer-meta-group">
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -508,6 +508,18 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
         caption.appendChild(link);
       }
     });
+
+    const linkMap = {
+      "support-link": "/support",
+      "accessibility-link": "/accessibility",
+      "cookies-link": "/cookies",
+      "privacy-link": "/privacy",
+      "t-and-c-link": "/terms_and_conditions"
+    }
+
+    for (const [key, value] of Object.entries(linkMap)) {
+      document.getElementById(key).href = `${window.location.origin}/${value}`;
+    }
   </script>
 
   
