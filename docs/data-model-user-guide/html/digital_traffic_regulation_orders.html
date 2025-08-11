@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Digital Traffic Regulation Orders</title>
+  
+  <link rel="shortcut icon" href="_static/images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="_static/css/custom.css">
+  <script src="_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="_static/tabs.css">
+  <link rel="stylesheet" href="_static/pygments.css">
+  <script src="_static/tabs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: './',
+      VERSION: '3.4.0',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="digital_traffic_regulation_orders">
+
+  <header class="header">
+    
+      <p>D-TRO</p>
+      
+        <a href="https://d-tro.dft.gov.uk/api-documentation">API Documentation</a>
+      
+        <a href="https://d-tro.dft.gov.uk/data-model-user-guide">Data Model</a>
+      
+        <a href="https://d-tro.dft.gov.uk/user-portal-documentation">User Portal Documentation</a>
+      
+      <div class="app-site-search__wrapper">
+        <form action="search.html">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      
+    </div>
+  </header>
+
+  <main class="digital_traffic_regulation_orders" role="main">
+    <div class="sidebar">
+      
+      
+<div class="global-toc"><p class="caption" role="heading"><span class="caption-text">D-TRO Data Model Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Digital Traffic Regulation Orders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tro_modelling_key_concepts.html">TRO-Modelling Key Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="a_tour_of_the_data_model.html">A Tour of the Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="what_is_a_full_dtro_record.html">What is a ‘Full’ D-TRO Record?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the_data_model_uml_class_diagrams.html">The Data Model UML Class Diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_log.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="document_control.html">Document Control</a></li>
+</ul>
+</div>
+      
+
+  <div class="local-toc">
+    <ul>
+<li><a class="reference internal" href="#">Digital Traffic Regulation Orders</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#about-this-document">About This Document</a></li>
+<li><a class="reference internal" href="#tros-in-context">TROs in Context</a></li>
+<li><a class="reference internal" href="#high-level-outline-of-the-d-tro-service">High-Level Outline of the D-TRO Service</a></li>
+<li><a class="reference internal" href="#other-documents-and-artefacts">Other Documents and Artefacts</a></li>
+<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+<li><a class="reference internal" href="#non-proprietary-terms">Non-Proprietary Terms</a></li>
+<li><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
+<li><a class="reference internal" href="#licensing">Licensing</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+      
+    </div>
+    <div id="main-content">
+      
+      <section id="digital-traffic-regulation-orders">
+<h1>Digital Traffic Regulation Orders<a class="headerlink" href="#digital-traffic-regulation-orders" title="Link to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>The Department for Transport (DfT) is modernising the regulatory framework for Traffic Regulation Orders (TROs) (Traffic Management Orders in London) made under the Road Traffic Regulation Act 1984.</p>
+<p>The new regulatory framework will, subject to necessary legislation coming into force, mandate that traffic authorities in England publish TROs as open data in a standardised and digital format that anyone can access, use and share. The standardised digital format will be based on the Digital TRO (D-TRO) Data Model that is described in this document – called the Data Model throughout the remainder of this document. The Data Model is intended to be a free resource for all. The Data Model is candidate in nature and may be subject to change without notification.</p>
+<p>Taking into account the needs arising from the UK Industrial Strategy and recognising the requirements that will emerge from the deployment of Connected and Automated Vehicles (CAVs) the Data Model provides an initial framework for how the data and information relating to TROs can be formed in the future. Availability of this Data Model, will support the move towards TROs being easily accessible to the public whether using apps or driving connected vehicles.</p>
+<p>The Automated Vehicles Act 2024 <a class="reference internal" href="#ref-ava"><span class="std std-ref">[1]</span></a> (section 93) provides the capability for the Secretary of State, through regulation, to require Traffic Regulation Authorities <a class="reference internal" href="#ref-tras"><span class="std std-ref">[2]</span></a> (TRAs) to provide information on a defined set of Traffic Regulation Measures <a class="reference internal" href="#ref-tr-measure"><span class="std std-ref">[3]</span></a>, in a specified manner and form, to be provided in accordance with a specified model, standard or set of specifications. These will be the D-TRO Data Specifications including the D-TRO Data Model and are expected to be specified under secondary legislation.</p>
+<p>The content of the Data Model has been developed by Harrod Booth Consulting Ltd with grateful support from numerous organisations.</p>
+<p>The report presents the Data Model, Release 3.4.1, with a series of larger updates including:</p>
+<ul>
+<li><p>Addition of a <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> attribute for all regulations (previously limited to Permits only)</p></li>
+<li><dl class="simple">
+<dt>Extending the ‘Extension Enumeration’ works across all of the following enumerated list:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">permitType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">payloadType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vehicleUsageType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emissionsClassificationEuroType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fuelType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vehicleEquipmentType</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vehicleType</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Bug fixes to the processing of Consultation records</p></li>
+<li><p>Additional enumerations - in response to stakeholder comments we continue to adjust various enumerated lists in the data specification:</p>
+<blockquote>
+<div><ul>
+<li><p>Additional vehicle types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">poweredVehicleUsedByDisabledPeople</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emergencyAndIncidentSupportVehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diplomaticVehicle</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Additional fuel types:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">electric</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Additional regulation types:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kerbsideRedRouteBusStopClearway</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">miscCycleHireParking</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">miscCycleParking</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="about-this-document">
+<h2>About This Document<a class="headerlink" href="#about-this-document" title="Link to this heading">¶</a></h2>
+<p>This document outlines the data modelling concepts defined to help support the definition and exchange of information relating traffic regulations, particularly within the scope of TROs as specified under UK legislation (notably the Automated Vehicles Act 2024, section 93).</p>
+<p>As explained in the introductory sections of this document the Data Model contained and described here is by its nature developmental and evolutionary. Users, developers and stakeholders are encouraged to review and use this Model and provide feedback and any identified issues to the DfT.</p>
+<p>Any user feedback can be provided:</p>
+<ul class="simple">
+<li><p>By direct comment on the D-TRO public GitHub repository: <a class="reference external" href="https://github.com/department-for-transport-public/D-TRO">https://github.com/department-for-transport-public/D-TRO</a></p></li>
+<li><p>By contacting the Department for Transport:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Email address: <a class="reference external" href="mailto:dtro-cso&#37;&#52;&#48;dft&#46;gov&#46;uk">dtro-cso<span>&#64;</span>dft<span>&#46;</span>gov<span>&#46;</span>uk</a></p>
+</div>
+<p>The existing informational content of the existing legacy TROs in the UK is diverse, rich, and in some cases somewhat incompatible with a more limited, regularised approach defined in this specification for digitising traffic regulations.</p>
+<p>This Data Model has been the subject of ongoing development, validation and piloting. It is not expected to be error-free or covering the full spectrum of TROs - but it is expected to support the digital encoding of a significant majority of TROs.</p>
+<p>This document is primarily intended to be read by technologists who are familiar with data modelling concepts, especially use of UML, as the contained diagrams are expressed in this notation format.</p>
+<p>As this specification evolves it is expected that additional context material will be made available to support ease of access to key concepts and principles for non-technical readers.</p>
+</section>
+<section id="tros-in-context">
+<h2>TROs in Context<a class="headerlink" href="#tros-in-context" title="Link to this heading">¶</a></h2>
+<p>TROs are UK legislative instruments used by traffic regulation authorities to implement changes on the road network. They are used for such diverse purposes as:</p>
+<ul class="simple">
+<li><p>managing the use of the road with measures such as parking restrictions and speed limits,</p></li>
+<li><p>allowing temporary closures for street parties and roadworks, and</p></li>
+<li><p>experimental changes.</p></li>
+</ul>
+<p>Innovations in transport and increasingly data-supported mobility are emerging. Foundational data, such as access to digital Traffic Regulation Measures, supports improved use of our transport infrastructure, forming an important element of this digital journey, to enhanced mobility services.</p>
+<p>The <strong>Local Transport Data Discovery Report</strong> <a class="reference internal" href="#ref-local-transport-data-discovery-report"><span class="std std-ref">[4]</span></a>, published by DfT in 2018, explored the transport data held by Local Authorities. Its key findings relating to TROs were that:</p>
+<ul class="simple">
+<li><p>TRO data is difficult and time consuming to access, clean and process,</p></li>
+<li><p>TRO data is not in a standardised, machine-readable format,</p></li>
+<li><p>TROs lack of a centralised point of reference,</p></li>
+<li><p>Private sector organisations are being forced to collect TRO data manually, and</p></li>
+<li><p>The current process for amending and implementing a TRO is labour intensive, time consuming, and costly.</p></li>
+</ul>
+<p>The report recommended that the DfT sponsor data projects which encourage and foster better local authority transport services, including streamlining and digitising TROs.</p>
+<p>As a result, several projects have followed, and in combination the development of this Data Model. These projects were as follows:</p>
+<p><strong>Discovery project</strong> (2019) into TROs processes and how this data is made available and used across the country [undertaken by the British Parking Association, Ordnance Survey and Geoplace]. Three significant outputs resulted:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geoplace.co.uk/documents/10181/110496/TRO_Discovery_Summary_Report_GeoPlace_August_2019/99c06daa-6444-4328-9970-f2cb02288674">User Research</a></p></li>
+<li><p><a class="reference external" href="https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Best_Practice_Guide_2019.pdf">User Guide</a></p></li>
+<li><p><a class="reference external" href="https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Data_Model_User_Guidance.pdf">Draft Data Model</a></p></li>
+</ul>
+<p>DfT-commissioned <strong>Policy Alpha</strong> (2019-20) [undertaken by PA Consulting] to identify improvements to the legislative process in England. Strongly recommended development of the TRO data model as a matter of priority.</p>
+<p>Through 2019-20 DfT worked with several local authorities to undertake a <strong>first validation of the TRO Data Model</strong> with 8 Local Authorities and market-leading solution providers.</p>
+<p>DfT commissioned the <strong>TRO Data Model Alpha</strong> [undertaken by Valtech] (2020-21) giving recommendations on expected market deployment of the TRO data model, and how TRO data from LAs would be made available.</p>
+<p>In 2021-22 there was further <strong>data model validation</strong> and enhancement using real-world Data Model Validation of TROs from four local authorities.</p>
+<p>In 2022 DfT undertook a <strong>Policy Consultation</strong> concerning the assessment of changes in TRO legislation.</p>
+<p>For more information concerning TROs see the British Parking Association’s (BPA) Best Practice Guide for TROs:</p>
+<p><a class="reference external" href="https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Best_Practice_Guide_2019.pdf">https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Best_Practice_Guide_2019.pdf</a></p>
+<p>In 2023, Informed Solutions conducted a <strong>Service Alpha</strong> developing the 3.1.1 version of the Data Model and conducting pre-production Alpha testing with a small set of TRAs involved.</p>
+<p>The <strong>D-TRO Beta project</strong> is currently underway, conducted by PA Consulting, with main updates on the Data Model proposed being the implementation of records management, live reporting of TTROs and enabling more effective location referencing.</p>
+<p>The <strong>Automated Vehicles Act 2024</strong> (section 93) received Royal Assent in May 2024. It provides the capability for the Secretary of State through regulation to require TRAs to provide information on a defined set of TROs, in a specified manner and form, to be provided in accordance with a specified model, standard or set of specifications.</p>
+</section>
+<section id="high-level-outline-of-the-d-tro-service">
+<h2>High-Level Outline of the D-TRO Service<a class="headerlink" href="#high-level-outline-of-the-d-tro-service" title="Link to this heading">¶</a></h2>
+<p>The Digital Traffic Regulation Order (D-TRO) service</p>
+<p><strong>IS FOR</strong> Traffic Regulation Authorities, road network data consumers and Central Government</p>
+<p><strong>WHO WANT</strong> to:</p>
+<ol class="arabic simple">
+<li><p>improve existing services (e.g., satnav routing)</p></li>
+<li><p>provide new services</p></li>
+<li><p>reduce enforcement and processing costs to traffic regulation authorities</p></li>
+<li><p>reduce congestion, and</p></li>
+<li><p>provision of the digital infrastructure for connected and automated vehicles.</p></li>
+</ol>
+<p><strong>THIS SERVICE WILL BE</strong> an API-first digital platform to store and share digital TRO information, enabling the above stated benefits and modernise enforcement on the road network. It is not foreseen as a service to support the creation and initial publication of TROs.</p>
+</section>
+<section id="other-documents-and-artefacts">
+<h2>Other Documents and Artefacts<a class="headerlink" href="#other-documents-and-artefacts" title="Link to this heading">¶</a></h2>
+<p>This User Guidance is just part of the documents and artefacts that are available in connection to the D-TRO Service, see <a class="reference internal" href="#fig1"><span class="std std-numref">Figure 1</span></a>:</p>
+<figure class="align-center" id="id1">
+<span id="fig1"></span><img alt="Documents and artefacts supporting the D-TRO Service" src="_images/fig1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Documents and artefacts supporting the D-TRO Service</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>All the latest versions of documents and other artefacts of this release are listed in GitHub at <a class="reference external" href="https://github.com/department-for-transport-public/D-TRO">https://github.com/department-for-transport-public/D-TRO</a>.</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">¶</a></h2>
+<p>This document, and the Data Model it describes, draw upon the outputs of earlier projects and has been prepared with the kind support of notably the DfT, Bedford Borough Council, City of York Council, Essex County Council, Transport for the West Midlands, Buchanan Computing, Valtech, Informed Solutions, PA Consulting plus other organisations. The report has been authored by Harrod Booth Consulting Ltd and PA Consulting, under contract to the DfT.</p>
+</section>
+<section id="non-proprietary-terms">
+<h2>Non-Proprietary Terms<a class="headerlink" href="#non-proprietary-terms" title="Link to this heading">¶</a></h2>
+<p>There are numerous companies currently servicing the TRO market and it is anticipated that this will increase as TROs become more important in the future of transportation.</p>
+<p>The Department for Transport do not endorse any particular companies and non-proprietary terms are used throughout this Guidance.</p>
+</section>
+<section id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
+<p>The Data Model is developmental and experimental in nature. It cannot be considered to be complete or error-free. It should not be viewed as stable and may be subject to alteration without notice.</p>
+</section>
+<section id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Link to this heading">¶</a></h2>
+<p>The material contained within this document is subject to copyright by the DfT and is published under the Open Government Licence v3.0. Further details of the licence can be found at <a class="reference external" href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/</a>.</p>
+<p>The DfT are sharing this document and the Data Model it contains to support iteration and development by the DfT.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">¶</a></h2>
+<p id="ref-ava">[1] <a class="reference external" href="https://www.legislation.gov.uk/ukpga/2024/10/contents/enacted">Automated Vehicles Act 2024, Section 93</a></p>
+<p id="ref-tras">[2] Clause 93(3) of the Automated Vehicle Act specifies — “Traffic Regulation Authority” means a person who has the power to make a traffic regulation measure.</p>
+<p id="ref-tr-measure">[3] Clause 93(3) of the Automated Vehicle Act specifies - “Traffic Regulation Measure” means an order or notice under any of the following provisions of the Road Traffic Regulation Act 1984 — sections 1, 6, 9, 14, 16A or 84.</p>
+<p id="ref-local-transport-data-discovery-report">[4] <a class="reference external" href="https://www.gov.uk/government/publications/local-transport-data-discovery-findings-and-recommendations">https://www.gov.uk/government/publications/local-transport-data-discovery-findings-and-recommendations</a></p>
+</section>
+</section>
+
+      
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a>Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a href="shared/support.html">Support</a>
+          <a href="shared/accessibility.html">Accessibility</a>
+          <a href="shared/cookies.html">Cookies</a>
+          <a href="shared/privacy.html">Privacy</a>
+          <a href="shared/terms_and_conditions.html">Terms & Conditions</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  
+  <script src="_static/doctools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="searchindex.js"></script>
+  <script src="_static/sphinx_highlight.js"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") return;
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  
+
+</body>
+
+</html>

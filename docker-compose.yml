@@ -1,0 +1,35 @@
+services:
+  landing:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./portal-access:/docs
+    command: tail -f /dev/null
+  api-documentation:
+    build:
+      context: .
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./api-documentation:/docs
+    command: tail -f /dev/null
+
+  data-model-user-guide:
+    build:
+      context: .
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./data-model-user-guide:/docs
+    command: tail -f /dev/null
+
+  user-portal-documentation:
+    build:
+      context: .
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./user-portal-documentation:/docs
+    command: tail -f /dev/null
