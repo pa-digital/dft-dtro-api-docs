@@ -6,9 +6,9 @@ This section presents UML class diagrams for the full content of the Data Model.
 High-Level Full D-TRO Model
 ***************************
 
-.. _high-level-dtro-uml:
+.. _high-level-dtro-objects:
 
-.. figure:: /_static/images/high-level-dtro-uml.png
+.. figure:: /_static/images/high-level-dtro-objects.png
    :alt: UML class diagram - high-level full D-TRO model
    :width: 100%
    :align: center
@@ -32,7 +32,7 @@ High-Level Full D-TRO Model
 
 .. _vehicle-characteristics-uml:
 
-.. figure:: /_static/images/vehicle-characteristics-uml.png
+.. figure:: /_static/images/vehicleCharacteristics-sub-model.bmp
    :alt: UML class diagram - vehicleCharacteristics sub-model
    :width: 100%
    :align: center

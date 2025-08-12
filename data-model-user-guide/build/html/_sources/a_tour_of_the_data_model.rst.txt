@@ -184,7 +184,7 @@ The ``experimentalCessation`` object can only be applied to ``experimentalRevoca
 
 .. _fig9:
 
-.. figure:: /_static/images/fig9.png
+.. figure:: /_static/images/extension_of_the_provision_object.png
    :alt: UML model representation of the extension of the provision object
    :width: 80%
    :align: center
@@ -197,7 +197,7 @@ This model supports both permanent and time-bound experimental regulations, ensu
 
 .. _fig10:
 
-.. figure:: /_static/images/fig10.png
+.. figure:: /_static/images/experimentalVariation.png
    :alt: UML model representation of the experimentalVariation object
    :width: 80%
    :align: center
@@ -574,11 +574,11 @@ A TRO may contain multiple distinct regulations (measures) which relate to poten
    | (e.g. parking.loadin restrictions)    | (e.g. banned turns)                              |
    +---------------------------------------+--------------------------------------------------+
 
-:numref:`fig21` provdes the UML class representation of the location related objects.
+:numref:`location-related-objects` provides the UML class representation of the location related objects.
 
-.. _fig21:
+.. _location-related-objects:
 
-.. figure:: /_static/images/fig21.png
+.. figure:: /_static/images/location-related-objects.png
    :alt: UML model representation of location related objects
    :width: 80%
    :align: center
@@ -829,20 +829,6 @@ The ``uniqueStreetReferenceNumber`` object has three attributes:
 
 Multiple URSNs can be defined per geometry, as some streets have multiple USRNs (e.g. Blackstock Road near Finsbury Park in London, which sits on the border of Islington and Hackney).
 
-:numref:`fig33` provides the UML representation of ``elementaryStreetUnit`` object
-
-.. _fig33:
-
-.. figure:: /_static/images/esu.png
-   :alt: UML model representation of the elementaryStreetUnit object
-   :width: 80%
-   :align: center
-
-   UML model representation of the ``elementaryStreetUnit`` object
-
-The optional ``elementaryStreetUnit`` object has one mandatory attribute:
-
-* The ``esu`` attribute represents the Elementary Street Unit (ESU) derived from the NSG, relating to the origin and destination locations shall be specified, where they exist in the NSG.
 
 Times Relating to Regulations
 *****************************
@@ -1445,7 +1431,7 @@ The information that is modelled in ``vehicleCharacteristics`` objects identifie
 
 .. _vehicleCharacteristics-related:
 
-.. figure:: /_static/images/vehicleCharacteristics-related.png
+.. figure:: /_static/images/vehicle_characteristics_related_objects.bmp
    :alt: UML model representation of vehicleCharacteristics-related objects
    :width: 80%
    :align: center
@@ -1524,6 +1510,22 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 * The ``yearOfFirstRegistration`` attribute specifies optionally one registration year. Year is specified as an integer in the format ``YYYY`` (e.g. 2008).
 
+:numref:`electricChargingCharacteristic` provides the UML class representation of ``electricChargingCharacteristic`` object.
+
+.. _electricChargingCharacteristic:
+
+.. figure:: /_static/images/electricChargingCharacteristic.png
+   :alt: UML model representation of the electricChargingCharacteristic object
+   :width: 80%
+   :align: center
+
+The ``electricChargingCharacteristic`` object has two optional attributes:
+
+* The ``charging`` attribute specifies that the connected vehicle is currently being charged.
+
+* The ``vehicleConnectedToCharger`` attribute specifies that the vehicle is connected to the infrastructure electrical charging system.
+
+
 :numref:`emissions` provides the UML class representation of the emissions object. 
 
 .. _emissions:
@@ -1549,6 +1551,70 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
    Euro V and Euro VI are used for emissions of lorries only.
 
 * The ``emissionClassificationOther`` attribute specifies optionally multiple free-text description of a classification type for vehicle emissions, distinct from the Euro classifications.
+
+
+:numref:`valueRange` provides the UML class representation of the value range object.
+
+.. _valueRange:
+
+.. figure:: /_static/images/valueRange.png
+   :alt: UML model representation of the value range object
+   :width: 80%
+   :align: center
+
+   UML model representation of the value range object
+
+The `valueRange` object is defining a measurable quantity and related units and has two mandatory attributes:
+
+* The ``class`` attribute specifies the type of measured value under consideration and links to different forms of value range as shown in the schema below.
+
+:numref:`class` UML model representation of ``valueRangeClassEnum`` object
+
+.. _valueRangeClassEnum:
+
+.. figure:: /_static/images/valueRangeClassEnum-enum.png
+   :alt: UML model representation of the value range class enum object
+   :width: 80%
+   :align: center
+
+* The ``unit`` attribute specifies the unit used for the measure and links to the different forms of unit of measure as shown in the schema below.
+
+:numref:`unit` UML model representation of ``unitOfMeasureEnum`` object
+
+.. _unitOfMeasureEnum:
+
+.. figure:: /_static/images/unitOfMeasureEnum-enum.png
+   :alt: UML model representation of the unit of measure enum object
+   :width: 80%
+   :align: center
+
+
+:numref:`valueRangeBoundary` provides the UML class representation of the value range boundary object.
+
+.. _valueRangeBoundary:
+
+.. figure:: /_static/images/valueRangeBoundary.png
+   :alt: UML model representation of the value range boundary object
+   :width: 80%
+   :align: center
+
+   UML model representation of the value range boundary object
+
+The `valueRangeBoundary` object is defining a range boundary value and operator related to that boundary and has two mandatory attributes:
+
+* The ``comparisonOperator`` attreibute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
+
+:numref:`comparisonOperatorType` provides the UML class representation of the comparison operator type object.
+
+.. _comparisonOperatorType:
+
+.. figure:: /_static/images/comparisonOperatorType-enum.png
+   :alt: UML model representation of the comparison operator type object
+   :width: 80%
+   :align: center
+
+* The ``value`` quantify measure forming a measure boundary.
+
 
 About Tariff Rates
 ******************

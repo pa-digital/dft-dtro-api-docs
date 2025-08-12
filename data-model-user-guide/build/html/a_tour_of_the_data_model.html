@@ -223,7 +223,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">experimentalCessation</span></code> object can only be applied to <code class="docutils literal notranslate"><span class="pre">experimentalRevocation.orderReportingPoint</span></code> type, where an experimental order is revoked.</p>
 <p><a class="reference internal" href="#fig9"><span class="std std-numref">Figure 9</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">experimentalVariation</span></code> and <code class="docutils literal notranslate"><span class="pre">experimentalCessation</span></code> objects.</p>
 <figure class="align-center" id="id8">
-<span id="fig9"></span><a class="reference internal image-reference" href="_images/fig9.png"><img alt="UML model representation of the extension of the provision object" src="_images/fig9.png" style="width: 80%;" />
+<span id="fig9"></span><a class="reference internal image-reference" href="_static/images/extension_of_the_provision_object.png"><img alt="UML model representation of the extension of the provision object" src="_static/images/extension_of_the_provision_object.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 9 </span><span class="caption-text">UML model representation of the extension of the provision object</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
@@ -232,7 +232,7 @@
 <p>This model supports both permanent and time-bound experimental regulations, ensuring flexibility in managing regulatory states and their lifecycle within a traffic order.</p>
 <p><a class="reference internal" href="#fig10"><span class="std std-numref">Figure 10</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">experimentalVariation</span></code> object.</p>
 <figure class="align-center" id="id9">
-<span id="fig10"></span><a class="reference internal image-reference" href="_images/fig10.png"><img alt="UML model representation of the experimentalVariation object" src="_images/fig10.png" style="width: 80%;" />
+<span id="fig10"></span><a class="reference internal image-reference" href="_static/images/experimentalVariation.png"><img alt="UML model representation of the experimentalVariation object" src="_static/images/experimentalVariation.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 10 </span><span class="caption-text">UML model representation of the experimentalVariation object</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
@@ -626,9 +626,9 @@
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig21"><span class="std std-numref">Figure 21</span></a> provdes the UML class representation of the location related objects.</p>
+<p><a class="reference internal" href="#location-related-objects"><span class="std std-numref">Figure 21</span></a> provides the UML class representation of the location related objects.</p>
 <figure class="align-center" id="id21">
-<span id="fig21"></span><a class="reference internal image-reference" href="_images/fig21.png"><img alt="UML model representation of location related objects" src="_images/fig21.png" style="width: 80%;" />
+<span id="location-related-objects"></span><a class="reference internal image-reference" href="_images/location-related-objects.png"><img alt="UML model representation of location related objects" src="_images/location-related-objects.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 21 </span><span class="caption-text">UML model representation of location related objects</span><a class="headerlink" href="#id21" title="Link to this image">¶</a></p>
@@ -826,28 +826,16 @@
 <li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">usrn</span></code> attribute is the designated Unified Street Reference Number derived from the NSG.</p></li>
 </ul>
 <p>Multiple URSNs can be defined per geometry, as some streets have multiple USRNs (e.g. Blackstock Road near Finsbury Park in London, which sits on the border of Islington and Hackney).</p>
-<p><a class="reference internal" href="#fig33"><span class="std std-numref">Figure 33</span></a> provides the UML representation of <code class="docutils literal notranslate"><span class="pre">elementaryStreetUnit</span></code> object</p>
-<figure class="align-center" id="id34">
-<span id="fig33"></span><a class="reference internal image-reference" href="_images/esu.png"><img alt="UML model representation of the elementaryStreetUnit object" src="_images/esu.png" style="width: 80%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 33 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">elementaryStreetUnit</span></code> object</span><a class="headerlink" href="#id34" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>The optional <code class="docutils literal notranslate"><span class="pre">elementaryStreetUnit</span></code> object has one mandatory attribute:</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">esu</span></code> attribute represents the Elementary Street Unit (ESU) derived from the NSG, relating to the origin and destination locations shall be specified, where they exist in the NSG.</p></li>
-</ul>
 </section>
 <section id="times-relating-to-regulations">
 <h2>Times Relating to Regulations<a class="headerlink" href="#times-relating-to-regulations" title="Link to this heading">¶</a></h2>
 <p>Date and time information relating to regulations is defined using a tried and tested sub-model which appears in several European technical standards and is widely deployed.</p>
-<p>The full <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model is shown in <a class="reference internal" href="#fig34"><span class="std std-numref">Figure 34</span></a>.</p>
-<figure class="align-center" id="id35">
+<p>The full <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model is shown in <a class="reference internal" href="#fig34"><span class="std std-numref">Figure 33</span></a>.</p>
+<figure class="align-center" id="id34">
 <span id="fig34"></span><a class="reference internal image-reference" href="_images/time-validity-relationships.png"><img alt="UML model representation of Validity (Time-based) related objects" src="_images/time-validity-relationships.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 34 </span><span class="caption-text">UML model representation of Validity (Time-based) related objects</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 33 </span><span class="caption-text">UML model representation of Validity (Time-based) related objects</span><a class="headerlink" href="#id34" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Use of each object and its attributes is given below. For all dates and times, the following should be noted:</p>
@@ -855,23 +843,23 @@
 <li><p>All times are expressed in local time (i.e. without reference to UTC time-zone offset). The combination of the regulation.timezone attribute and local times enables data consumers to calculate the times of applicability in absolute times. The rationale for specifying times of applicability in local times aligns with common practice for TROs and reduces the complexity of the data to be delivered.</p></li>
 <li><p>Dates and times - generally all date and time records shall be expressed using the ISO 8601-1:2019 extended format (e.g., <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDTHH:MI:SS</span></code>) - note: no <code class="docutils literal notranslate"><span class="pre">Z</span></code> timezone offset. Some specific exceptions to this rule do exist - <code class="docutils literal notranslate"><span class="pre">eventTime</span></code> and <code class="docutils literal notranslate"><span class="pre">publicationTime</span></code>, which are both metadata attributes (beyond the scope of this document) are specified using the ISO 8601-1:2019 extended format for UTC datetimes, indicated by the suffix <code class="docutils literal notranslate"><span class="pre">Z</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDTHH:MI:SSZ</span></code>).</p></li>
 </ul>
-<p><a class="reference internal" href="#fig35"><span class="std std-numref">Figure 35</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object.</p>
-<figure class="align-center" id="id36">
+<p><a class="reference internal" href="#fig35"><span class="std std-numref">Figure 34</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object.</p>
+<figure class="align-center" id="id35">
 <span id="fig35"></span><a class="reference internal image-reference" href="_images/time-validity.png"><img alt="UML model representation of the timeValidity object" src="_images/time-validity.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 35 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 34 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. The <code class="docutils literal notranslate"><span class="pre">start</span></code> date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.</p>
 <p>For permanent TROs the end attribute may be omitted.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> model allows intermittent or variable patterns of time applicability for TRO regulations to be specified.</p>
-<p><a class="reference internal" href="#fig-max-stay-no-return"><span class="std std-numref">Figure 36</span></a> provides the UML class representaion of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object.</p>
-<figure class="align-center" id="id37">
+<p><a class="reference internal" href="#fig-max-stay-no-return"><span class="std std-numref">Figure 35</span></a> provides the UML class representaion of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object.</p>
+<figure class="align-center" id="id36">
 <span id="fig-max-stay-no-return"></span><a class="reference internal image-reference" href="_images/max-stay-no-return.png"><img alt="UML model representation of the maxStayNoReturn object" src="_images/max-stay-no-return.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 36 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object</span><a class="headerlink" href="#id37" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 35 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object specifies conditions concerning the maximum duration for occupancy and the minimum time to be able to return to the same occupancy zone.</p>
@@ -879,7 +867,7 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">maximumOccupancy</span></code> attribute refers to the maximum occupancy duration permitted</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">minimumPeriodForReturn</span></code> attribute referes to the minimum time duration between previous occupancy and the next occupancy within a defined zone</p></li>
 </ul>
-<p><a class="reference internal" href="#fig36"><span class="std std-numref">Figure 37</span></a> shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).</p>
+<p><a class="reference internal" href="#fig36"><span class="std std-numref">Figure 36</span></a> shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is a matter of data quality and integrity on behalf of the data supplier to ensure the dates and times and periods of applicability are complete, consistent and coherent – there is nothing in the Data Model, per se, that stops contradictory or conflicting information being specified. Data suppliers should take appropriate steps to ensure the quality of the data supplied.</p>
@@ -889,11 +877,11 @@
 <p class="admonition-title">Note</p>
 <p>Where an invalid (exception) period overlaps (intersects) a valid period the validity shall be regarded as invalid.</p>
 </div>
-<figure class="align-center" id="id38">
+<figure class="align-center" id="id37">
 <span id="fig36"></span><a class="reference internal image-reference" href="_images/period.png"><img alt="UML model representation of the period object" src="_images/period.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 37 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">period</span></code> object</span><a class="headerlink" href="#id38" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 36 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">period</span></code> object</span><a class="headerlink" href="#id37" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Each instance of <code class="docutils literal notranslate"><span class="pre">period</span></code> may have a given <code class="docutils literal notranslate"><span class="pre">periodName</span></code> and also may have specified date times indicating the <code class="docutils literal notranslate"><span class="pre">startOfPeriod</span></code> and <code class="docutils literal notranslate"><span class="pre">endOfPeriod</span></code>. If the <code class="docutils literal notranslate"><span class="pre">startOfPeriod</span></code> or the <code class="docutils literal notranslate"><span class="pre">endOfPeriod</span></code> are unspecified the date times of the related <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object instance may bound applicability.</p>
@@ -904,12 +892,12 @@
 </div>
 <p>The optional attribute <code class="docutils literal notranslate"><span class="pre">recurringPeriod</span></code>, if populated, indicates that the <code class="docutils literal notranslate"><span class="pre">startOfPeriod</span></code> and <code class="docutils literal notranslate"><span class="pre">endOfPeriod</span></code> attributes are considered to define the first instance of a recurring period. The attribute <code class="docutils literal notranslate"><span class="pre">recurringPeriod</span></code> defines the duration between the start of instances of recurring periods. The <code class="docutils literal notranslate"><span class="pre">recurrents</span></code> attribute is optional and can define a number of repetitions if required - this is not typically the case of permanent regulations.</p>
 <p>To support use cases where the start and ends of recurring periods are defined by a changeable date (such as Good Friday, or Easter), the use of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code> object and its children allow changeable dates to be defined, and these will overide the <code class="docutils literal notranslate"><span class="pre">startOfPeriod</span></code> and <code class="docutils literal notranslate"><span class="pre">endOfPeriod</span></code> attributes.</p>
-<p><a class="reference internal" href="#fig37"><span class="std std-numref">Figure 38</span></a> provides the UML class representation of the timePeriodOfDay object.</p>
-<figure class="align-center" id="id39">
+<p><a class="reference internal" href="#fig37"><span class="std std-numref">Figure 37</span></a> provides the UML class representation of the timePeriodOfDay object.</p>
+<figure class="align-center" id="id38">
 <span id="fig37"></span><a class="reference internal image-reference" href="_images/time-period-of-day.png"><img alt="UML model representation of the timePeriodOfDay object" src="_images/time-period-of-day.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 38 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">timePeriodOfDay</span></code> object</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 37 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">timePeriodOfDay</span></code> object</span><a class="headerlink" href="#id38" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">timePeriodOfDay</span></code> object has two mandatory attributes, which indicate the time of day of the start and end of the period with local times being used when defining validity.</p>
@@ -917,11 +905,11 @@
 <p>This addresses the local challenge of daylight saving time changes, but should be taken into account when factoring into time-zone based systems.</p>
 <p>The value of <code class="docutils literal notranslate"><span class="pre">startTimeOfPeriod</span></code> must fall before the value of <code class="docutils literal notranslate"><span class="pre">endTimeOfPeriod</span></code> within a one-day period.</p>
 <p><a class="reference internal" href="#fig28"><span class="std std-numref">Figure 28</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code> Object. This object and its associated specialisation (<code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code>, <code class="docutils literal notranslate"><span class="pre">weekOfMonth</span></code>, and <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code>) enable identification of patterns of days, weeks and months.</p>
-<figure class="align-center" id="id40">
+<figure class="align-center" id="id39">
 <span id="fig38"></span><a class="reference internal image-reference" href="_images/day-week-month.png"><img alt="UML model representation of the dayWeekMonth Object" src="_images/day-week-month.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 39 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code> Object</span><a class="headerlink" href="#id40" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 38 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code> Object</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code> object has two optional attributes:</p>
@@ -932,48 +920,48 @@
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">applicableMonth</span></code> attribute indicates months of the year to be included. The attribute may be used between zero and 12 times, with each attribute instance being a unique month of the year. Permitted values are ‘january’, ‘february’, etc.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig39"><span class="std std-numref">Figure 40</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code> Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.</p>
-<figure class="align-center" id="id41">
+<p><a class="reference internal" href="#fig39"><span class="std std-numref">Figure 39</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code> Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.</p>
+<figure class="align-center" id="id40">
 <span id="fig39"></span><a class="reference internal image-reference" href="_images/calendar-week-in-month.png"><img alt="UML model representation of the calendarWeekInMonth object" src="_images/calendar-week-in-month.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 40 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code> object</span><a class="headerlink" href="#id41" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 39 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code> object</span><a class="headerlink" href="#id40" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">calendarWeekInMonth</span></code> object has one mandatory attribute:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">weekInMonth</span></code> attribute indicates the Calendar week of the month to be included. The attribute shall be used between one and 6 times, with each attribute instance being a unique Calendar week in month identifier. Permitted values are ‘firstWeekofMonth’, ‘secondWeekOfMonth’ … to ‘sixthWeekOfMonth’.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig40"><span class="std std-numref">Figure 41</span></a> provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.</p>
-<figure class="align-center" id="id42">
+<p><a class="reference internal" href="#fig40"><span class="std std-numref">Figure 40</span></a> provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.</p>
+<figure class="align-center" id="id41">
 <span id="fig40"></span><a class="reference internal image-reference" href="_images/week-of-month.png"><img alt="UML model representation of the weekOfMonth object" src="_images/week-of-month.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 41 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">weekOfMonth</span></code> object</span><a class="headerlink" href="#id42" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 40 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">weekOfMonth</span></code> object</span><a class="headerlink" href="#id41" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">weekInMonth</span></code> object has one mandatory attribute:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">applicableWeek</span></code> attribute indicates the week of the month to be included. The attribute shall be used between one and 5 times, with each attribute instance being a unique week in month identifier. Permitted values are ‘firstWeek’, ‘secondWeek’ … to ‘fifthWeek’.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig41"><span class="std std-numref">Figure 42</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object. The <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one <code class="docutils literal notranslate"><span class="pre">applicableDay</span></code> instance shall be specified in the related object <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code>.</p>
-<figure class="align-center" id="id43">
+<p><a class="reference internal" href="#fig41"><span class="std std-numref">Figure 41</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object. The <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one <code class="docutils literal notranslate"><span class="pre">applicableDay</span></code> instance shall be specified in the related object <code class="docutils literal notranslate"><span class="pre">dayWeekMonth</span></code>.</p>
+<figure class="align-center" id="id42">
 <span id="fig41"></span><a class="reference internal image-reference" href="_images/instance-of-day-within-month.png"><img alt="UML model representation of the instanceOfDayWithinMonth object" src="_images/instance-of-day-within-month.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 42 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object</span><a class="headerlink" href="#id43" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 41 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object</span><a class="headerlink" href="#id42" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">instanceOfDayWithinMonth</span></code> object has one mandatory attribute:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">applicableInstanceOfDayWithinMonth</span></code> attribute indicates the identified day instance within the month to be included. The attribute shall be used between one and 5 times, with each attribute instance of an identified day in a month. Permitted values are ‘firstInstance’, ‘secondInstance’ … to ‘fifthInstance’. This can be used to define patterns such as the second and fourth Tuesday and Friday in the month.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig42"><span class="std std-numref">Figure 43</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object. The <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object indicates the characteristics of an identified (special) day.</p>
-<figure class="align-center" id="id44">
+<p><a class="reference internal" href="#fig42"><span class="std std-numref">Figure 42</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object. The <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object indicates the characteristics of an identified (special) day.</p>
+<figure class="align-center" id="id43">
 <span id="fig42"></span><a class="reference internal image-reference" href="_images/special-day.png"><img alt="UML model representation of the specialDay object" src="_images/special-day.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 43 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object</span><a class="headerlink" href="#id44" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 42 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object</span><a class="headerlink" href="#id43" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object has three attributes:</p>
@@ -982,39 +970,39 @@
 <li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">specialDayType</span></code> attribute which indicates the type of the special day. Permitted values are defined in the <code class="docutils literal notranslate"><span class="pre">specialDayType</span></code> enumeration list. Values include: ‘easter’, ‘marketDay’, ‘matchDay’, ‘publicHoliday’ etc.</p></li>
 <li><p>The optional <code class="docutils literal notranslate"><span class="pre">publicEvent</span></code> attribute which indicates what type of public event is associated with this <code class="docutils literal notranslate"><span class="pre">specialDay</span></code>. Permitted values are defined in the extensive <code class="docutils literal notranslate"><span class="pre">publicEventType</span></code> enumeration list. Values include: ‘agriculturalShow’, ‘airShow, ‘artEvent’, etc.</p></li>
 </ul>
-<p><a class="reference internal" href="#fig43"><span class="std std-numref">Figure 44</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">publicHoliday</span></code> object. The object publicHoliday with its mandatory attribute <code class="docutils literal notranslate"><span class="pre">publicHolidayName</span></code> enables the public holiday to be named.</p>
-<figure class="align-center" id="id45">
+<p><a class="reference internal" href="#fig43"><span class="std std-numref">Figure 43</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">publicHoliday</span></code> object. The object publicHoliday with its mandatory attribute <code class="docutils literal notranslate"><span class="pre">publicHolidayName</span></code> enables the public holiday to be named.</p>
+<figure class="align-center" id="id44">
 <span id="fig43"></span><a class="reference internal image-reference" href="_images/public-holiday.png"><img alt="UML model representation of the publicHoliday object" src="_images/public-holiday.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 44 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">publicHoliday</span></code> object</span><a class="headerlink" href="#id45" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 43 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">publicHoliday</span></code> object</span><a class="headerlink" href="#id44" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="#fig44"><span class="std std-numref">Figure 45</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code> object.</p>
-<figure class="align-center" id="id46">
+<p><a class="reference internal" href="#fig44"><span class="std std-numref">Figure 44</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code> object.</p>
+<figure class="align-center" id="id45">
 <span id="fig44"></span><a class="reference internal image-reference" href="_images/changeable-time-period.png"><img alt="UML model representation of the changeableTimePeriod object" src="_images/changeable-time-period.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 45 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code> object</span><a class="headerlink" href="#id46" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 44 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code> object</span><a class="headerlink" href="#id45" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="#fig45"><span class="std std-numref">Figure 46</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object. There is a mirror image object called <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code>. Both objects work in a similar manner. A ‘fuzzy time’ period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term ‘Fuzzy Period’, but rather <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code>.</p>
+<p><a class="reference internal" href="#fig45"><span class="std std-numref">Figure 45</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object. There is a mirror image object called <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code>. Both objects work in a similar manner. A ‘fuzzy time’ period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term ‘Fuzzy Period’, but rather <code class="docutils literal notranslate"><span class="pre">changeableTimePeriod</span></code>.</p>
 <p>Use of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object and/or the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object enable a period to be defined using a variable date time start or end or both.</p>
-<figure class="align-center" id="id47">
+<figure class="align-center" id="id46">
 <span id="fig45"></span><a class="reference internal image-reference" href="_images/changeable-time-period-start.png"><img alt="UML model representation of the changeableTimePeriodStart object" src="_images/changeable-time-period-start.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 46 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object</span><a class="headerlink" href="#id47" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 45 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object</span><a class="headerlink" href="#id46" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id48">
+<figure class="align-center" id="id47">
 <span id="fig46"></span><a class="reference internal image-reference" href="_images/changeable-time-period-end.png"><img alt="UML model representation of the changeableTimePeriodEnd object" src="_images/changeable-time-period-end.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 47 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object</span><a class="headerlink" href="#id48" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 46 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object</span><a class="headerlink" href="#id47" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>The <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object (and the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object), shown in <a class="reference internal" href="#fig46"><span class="std std-numref">Figure 47</span></a> and <a class="reference internal" href="#fig47"><span class="std std-numref">Figure 48</span></a> respectively, each has one attribute:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object (and the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object), shown in <a class="reference internal" href="#fig46"><span class="std std-numref">Figure 46</span></a> and <a class="reference internal" href="#fig47"><span class="std std-numref">Figure 47</span></a> respectively, each has one attribute:</p>
 <ul class="simple">
 <li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">startType</span></code> attribute (<code class="docutils literal notranslate"><span class="pre">endType</span></code> for the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object), which indicates the type of characteristic time measure being used. Values include: <code class="docutils literal notranslate"><span class="pre">dawn</span></code>, <code class="docutils literal notranslate"><span class="pre">dusk</span></code>, <code class="docutils literal notranslate"><span class="pre">holiday</span></code>, and <code class="docutils literal notranslate"><span class="pre">external</span></code>.</p></li>
 </ul>
@@ -1024,12 +1012,12 @@
 <li><p>Use of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object or objects gives specific date time value which is associated with a start or stop. Use of several objects can build up a schedule or calender of start entries and/or stop entries.</p></li>
 <li><p>By use of the linkage between a <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code> object and/or <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code> object with the <code class="docutils literal notranslate"><span class="pre">specialDay</span></code> object - i.e. indicating that the start and/or end is a special day (e.g. Easter).</p></li>
 </ul>
-<p><a class="reference internal" href="#fig47"><span class="std std-numref">Figure 48</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> object.</p>
-<figure class="align-center" id="id49">
+<p><a class="reference internal" href="#fig47"><span class="std std-numref">Figure 47</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> object.</p>
+<figure class="align-center" id="id48">
 <span id="fig47"></span><a class="reference internal image-reference" href="_images/changeable-time-period-source.png"><img alt="UML model representation of the changeableTimePeriodSource object" src="_images/changeable-time-period-source.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 48 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> object</span><a class="headerlink" href="#id49" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 47 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> object</span><a class="headerlink" href="#id48" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> object has two mandatory attributes:</p>
@@ -1038,12 +1026,12 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">sourceLocator</span></code> attribute is a URI hyperlink providing the accessible location for retrieval of the external data source.</p></li>
 </ul>
 <p>Each instance of <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodSource</span></code> will have a definition to explain the nature of the source of data that provides the accurate timings. E.g. for a changeable time period of school term times, it could be a Government website which shares these dates. The <code class="docutils literal notranslate"><span class="pre">sourceLocator</span></code> will then provide the specific data elements from the hyperlink of the website through the URI.</p>
-<p><a class="reference internal" href="#fig48"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object.</p>
-<figure class="align-center" id="id50">
+<p><a class="reference internal" href="#fig48"><span class="std std-numref">Figure 48</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object.</p>
+<figure class="align-center" id="id49">
 <span id="fig48"></span><a class="reference internal image-reference" href="_images/changeable-time-period-entry.png"><img alt="UML model representation of the changeableTimePeriodEntry object" src="_images/changeable-time-period-entry.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 49 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object</span><a class="headerlink" href="#id50" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 48 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object</span><a class="headerlink" href="#id49" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code> object has one mandatory attribute:</p>
@@ -1055,12 +1043,12 @@
 <section id="about-conditions-and-exclusions">
 <h2>About Conditions and Exclusions<a class="headerlink" href="#about-conditions-and-exclusions" title="Link to this heading">¶</a></h2>
 <p>Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.</p>
-<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. <a class="reference internal" href="#conditionrelationships"><span class="std std-numref">Figure 50</span></a> provides the UML class representation of the condition related objects.</p>
-<figure class="align-center" id="id51">
+<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. <a class="reference internal" href="#conditionrelationships"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the condition related objects.</p>
+<figure class="align-center" id="id50">
 <span id="conditionrelationships"></span><a class="reference internal image-reference" href="_images/conditionRelationships.png"><img alt="UML model representation of condition related objects" src="_images/conditionRelationships.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 50 </span><span class="caption-text">UML model representation of condition related objects</span><a class="headerlink" href="#id51" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 49 </span><span class="caption-text">UML model representation of condition related objects</span><a class="headerlink" href="#id50" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>In any instance where more than one condition is to be included in the definition of a provision, the concept of a <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> shall be used.</p>
@@ -1083,17 +1071,17 @@
 </div>
 <p>A condition stating <code class="docutils literal notranslate"><span class="pre">vehicleType</span></code> = <code class="docutils literal notranslate"><span class="pre">emergencyVehicle</span></code> and <code class="docutils literal notranslate"><span class="pre">negate</span></code> = <code class="docutils literal notranslate"><span class="pre">true</span></code> would mean all vehicles except those of type <code class="docutils literal notranslate"><span class="pre">emergencyVehicle</span></code>.</p>
 <p>An unset negate value means the same as false, i.e., no negation applied.</p>
-<p>An illustrative example, in <a class="reference internal" href="#condition-sets-and-conditions"><span class="std std-numref">Figure 51</span></a>, shows the use of conditionSet and condition objects, with sample code.</p>
-<figure class="align-center" id="id52">
+<p>An illustrative example, in <a class="reference internal" href="#condition-sets-and-conditions"><span class="std std-numref">Figure 50</span></a>, shows the use of conditionSet and condition objects, with sample code.</p>
+<figure class="align-center" id="id51">
 <span id="condition-sets-and-conditions"></span><a class="reference internal image-reference" href="_images/condition-sets-and-conditions.png"><img alt="Illustrative example of use of conditionSets and conditions" src="_images/condition-sets-and-conditions.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 51 </span><span class="caption-text">Illustrative example of use of <code class="docutils literal notranslate"><span class="pre">conditionSets</span></code> and <code class="docutils literal notranslate"><span class="pre">conditions</span></code></span><a class="headerlink" href="#id52" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 50 </span><span class="caption-text">Illustrative example of use of <code class="docutils literal notranslate"><span class="pre">conditionSets</span></code> and <code class="docutils literal notranslate"><span class="pre">conditions</span></code></span><a class="headerlink" href="#id51" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="#conditionset-json"><span class="std std-numref">Listing 1</span></a> shows an extract of the JSON coding of the same conditions as shown in <a class="reference internal" href="#condition-sets-and-conditions"><span class="std std-numref">Figure 51</span></a>.</p>
-<div class="literal-block-wrapper docutils container" id="id53">
-<span id="conditionset-json"></span><div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Example JSON condition set</span><a class="headerlink" href="#id53" title="Link to this code">¶</a></div>
+<p><a class="reference internal" href="#conditionset-json"><span class="std std-numref">Listing 1</span></a> shows an extract of the JSON coding of the same conditions as shown in <a class="reference internal" href="#condition-sets-and-conditions"><span class="std std-numref">Figure 50</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="id52">
+<span id="conditionset-json"></span><div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Example JSON condition set</span><a class="headerlink" href="#id52" title="Link to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -1149,47 +1137,47 @@
 </pre></div>
 </div>
 </div>
-<figure class="align-center" id="id54">
+<figure class="align-center" id="id53">
 <span id="condition"></span><a class="reference internal image-reference" href="_images/condition.png"><img alt="UML model representation of the condition object" src="_images/condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 52 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">condition</span></code> object</span><a class="headerlink" href="#id54" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 51 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">condition</span></code> object</span><a class="headerlink" href="#id53" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">condition</span></code> object has only the <code class="docutils literal notranslate"><span class="pre">negate</span></code> attribute, as explained above.</p>
-<p><a class="reference internal" href="#condition-set"><span class="std std-numref">Figure 53</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> object.</p>
-<figure class="align-center" id="id55">
+<p><a class="reference internal" href="#condition-set"><span class="std std-numref">Figure 52</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> object.</p>
+<figure class="align-center" id="id54">
 <span id="condition-set"></span><a class="reference internal image-reference" href="_images/condition-set.png"><img alt="UML model representation of the conditionSet object" src="_images/condition-set.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 53 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> object</span><a class="headerlink" href="#id55" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 52 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> object</span><a class="headerlink" href="#id54" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">conditionSet</span></code> object has only the <code class="docutils literal notranslate"><span class="pre">operator</span></code> attribute, as explained above. The <code class="docutils literal notranslate"><span class="pre">operator</span></code> attribute supports the permissible values <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">xor</span></code>.</p>
-<p><a class="reference internal" href="#road-condition"><span class="std std-numref">Figure 54</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object.</p>
-<figure class="align-center" id="id56">
+<p><a class="reference internal" href="#road-condition"><span class="std std-numref">Figure 53</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object.</p>
+<figure class="align-center" id="id55">
 <span id="road-condition"></span><a class="reference internal image-reference" href="_images/road-condition.png"><img alt="UML model representation of the roadCondition object" src="_images/road-condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 54 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object</span><a class="headerlink" href="#id56" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 53 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object</span><a class="headerlink" href="#id55" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object contains only the mandatory <code class="docutils literal notranslate"><span class="pre">roadType</span></code> attribute. Permissible values include, but are not limited to: <code class="docutils literal notranslate"><span class="pre">motorway</span></code>, <code class="docutils literal notranslate"><span class="pre">trunkRoad</span></code>, and <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
-<p><a class="reference internal" href="#occupant-condition"><span class="std std-numref">Figure 55</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object.</p>
-<figure class="align-center" id="id57">
+<p><a class="reference internal" href="#occupant-condition"><span class="std std-numref">Figure 54</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object.</p>
+<figure class="align-center" id="id56">
 <span id="occupant-condition"></span><a class="reference internal image-reference" href="_images/occupant-condition.png"><img alt="UML model representation of the occupantCondition object" src="_images/occupant-condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 55 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object</span><a class="headerlink" href="#id57" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 54 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object</span><a class="headerlink" href="#id56" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object contains only the <code class="docutils literal notranslate"><span class="pre">disabledWithPermit</span></code> attribute which is defined as a <code class="docutils literal notranslate"><span class="pre">boolean</span></code> data type.</p>
-<p><a class="reference internal" href="#number-of-occupants"><span class="std std-numref">Figure 56</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">numberOfOccupants</span></code> object.</p>
-<figure class="align-center" id="id58">
+<p><a class="reference internal" href="#number-of-occupants"><span class="std std-numref">Figure 55</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">numberOfOccupants</span></code> object.</p>
+<figure class="align-center" id="id57">
 <span id="number-of-occupants"></span><a class="reference internal image-reference" href="_images/number-of-occupants.png"><img alt="UML model representation of the numberOfOccupants object" src="_images/number-of-occupants.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 56 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">numberOfOccupants</span></code> object</span><a class="headerlink" href="#id58" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 55 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">numberOfOccupants</span></code> object</span><a class="headerlink" href="#id57" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">numberOfOccupants</span></code> object has two mandatory attributes:</p>
@@ -1215,24 +1203,24 @@
 </pre></div>
 </div>
 </div>
-<p><a class="reference internal" href="#driver-condition"><span class="std std-numref">Figure 57</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">driverCondition</span></code> object.</p>
-<figure class="align-center" id="id59">
+<p><a class="reference internal" href="#driver-condition"><span class="std std-numref">Figure 56</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">driverCondition</span></code> object.</p>
+<figure class="align-center" id="id58">
 <span id="driver-condition"></span><a class="reference internal image-reference" href="_images/driver-condition.png"><img alt="UML model representation of the driverCondition object" src="_images/driver-condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 57 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">driverCondition</span></code> object</span><a class="headerlink" href="#id59" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 56 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">driverCondition</span></code> object</span><a class="headerlink" href="#id58" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">driverCondition</span></code> object has one attribute:</p>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">driverCharacteristicsType</span></code> attribute indicates a specific type of driver characteristic. Permissible values include, but are not limited to, <code class="docutils literal notranslate"><span class="pre">disabledWithPermit</span></code>, <code class="docutils literal notranslate"><span class="pre">learnerDriver</span></code> and <code class="docutils literal notranslate"><span class="pre">localResident</span></code></p></li>
 </ul>
-<p><a class="reference internal" href="#access-condition"><span class="std std-numref">Figure 58</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">accessCondition</span></code> object.</p>
-<figure class="align-center" id="id60">
+<p><a class="reference internal" href="#access-condition"><span class="std std-numref">Figure 57</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">accessCondition</span></code> object.</p>
+<figure class="align-center" id="id59">
 <span id="access-condition"></span><a class="reference internal image-reference" href="_images/access-condition.png"><img alt="UML model representation of the accessCondition object" src="_images/access-condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 58 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">accessCondition</span></code> object</span><a class="headerlink" href="#id60" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 57 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">accessCondition</span></code> object</span><a class="headerlink" href="#id59" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">accessCondition</span></code> object has two attributes:</p>
@@ -1240,12 +1228,12 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">accessConditionType</span></code> attribute indicates an access restriction type. Permissible values include, but are not limited to, <code class="docutils literal notranslate"><span class="pre">accessOnly</span></code>, <code class="docutils literal notranslate"><span class="pre">loadingAndUnloading</span></code> and <code class="docutils literal notranslate"><span class="pre">throughTraffic</span></code></p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">otherAccessRestriction</span></code> attribute indicates a condition controlling access</p></li>
 </ul>
-<p><a class="reference internal" href="#permit-condition"><span class="std std-numref">Figure 59</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object.</p>
-<figure class="align-center" id="id61">
+<p><a class="reference internal" href="#permit-condition"><span class="std std-numref">Figure 58</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object.</p>
+<figure class="align-center" id="id60">
 <span id="permit-condition"></span><a class="reference internal image-reference" href="_images/permit-condition.png"><img alt="UML model representation of the permitCondition object" src="_images/permit-condition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 59 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object</span><a class="headerlink" href="#id61" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 58 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object</span><a class="headerlink" href="#id60" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The permitCondition object has the following attributes:</p>
@@ -1260,21 +1248,21 @@
 <li><p>The optional <code class="docutils literal notranslate"><span class="pre">maximumAccessDuration</span></code> attribute expresses the maximum duration that is permitted in relationship to use of this permit. Specified in minutes</p></li>
 <li><p>The optional <code class="docutils literal notranslate"><span class="pre">minimumTimeToNextEntry</span></code> attribute expresses the minimum duration between last use of permit and next permitted use of permit. This is often referred to as the no return timeSpecified in minutes</p></li>
 </ul>
-<p><a class="reference internal" href="#authority"><span class="std std-numref">Figure 60</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">authority</span></code> object which is linked to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code>.</p>
-<figure class="align-center" id="id62">
+<p><a class="reference internal" href="#authority"><span class="std std-numref">Figure 59</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">authority</span></code> object which is linked to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code>.</p>
+<figure class="align-center" id="id61">
 <span id="authority"></span><a class="reference internal image-reference" href="_images/authority.png"><img alt="UML model representation of the authority object" src="_images/authority.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 60 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">authority</span></code> object</span><a class="headerlink" href="#id62" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 59 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">authority</span></code> object</span><a class="headerlink" href="#id61" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">authority</span></code> object has only one attribute - The <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute indicates the governing authority that has applied the relevant permit condition.</p>
-<p><a class="reference internal" href="#permitsubjecttofee"><span class="std std-numref">Figure 61</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object which is linked to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code>.</p>
-<figure class="align-center" id="id63">
+<p><a class="reference internal" href="#permitsubjecttofee"><span class="std std-numref">Figure 60</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object which is linked to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code>.</p>
+<figure class="align-center" id="id62">
 <span id="permitsubjecttofee"></span><a class="reference internal image-reference" href="_images/permitSubjectToFee.png"><img alt="UML model representation of the permitSubjectToFee object" src="_images/permitSubjectToFee.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 61 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object</span><a class="headerlink" href="#id63" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 60 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object</span><a class="headerlink" href="#id62" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object has four optional attributes:</p>
@@ -1291,12 +1279,12 @@
 <p>Also, is this following text meant to be here?</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">condition</span></code> object is linked to the ‘standard’ <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model (the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object at the top of this sub-model). This enables time-related conditions to be specified.</p>
-<p><a class="reference internal" href="#nonvehicularroadusercondition"><span class="std std-numref">Figure 62</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">nonVehicularRoadUserCondition</span></code> object.</p>
-<figure class="align-center" id="id64">
+<p><a class="reference internal" href="#nonvehicularroadusercondition"><span class="std std-numref">Figure 61</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">nonVehicularRoadUserCondition</span></code> object.</p>
+<figure class="align-center" id="id63">
 <span id="nonvehicularroadusercondition"></span><a class="reference internal image-reference" href="_images/nonVehicularRoadUserCondition.png"><img alt="UML model representation of the nonVehicularRoadUserCondition object" src="_images/nonVehicularRoadUserCondition.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 62 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">nonVehicularRoadUserCondition</span></code> object</span><a class="headerlink" href="#id64" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 61 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">nonVehicularRoadUserCondition</span></code> object</span><a class="headerlink" href="#id63" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">nonVehicularRoadUserCondition</span></code> object has the following attribute:</p>
@@ -1308,22 +1296,22 @@
 <h2>Specifying Vehicle Conditions<a class="headerlink" href="#specifying-vehicle-conditions" title="Link to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>-related objects, specified in this section, comprise a sub-model for defining the characteristics of vehicles.</p>
 <p>The information that is modelled in <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> objects identifies a set of vehicle characteristics, many of whose values can be specified using the maximum dimension characteristic.</p>
-<p><a class="reference internal" href="#vehiclecharacteristics-related"><span class="std std-numref">Figure 63</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>-related objects.</p>
-<figure class="align-center" id="id65">
-<span id="vehiclecharacteristics-related"></span><a class="reference internal image-reference" href="_images/vehicleCharacteristics-related.png"><img alt="UML model representation of vehicleCharacteristics-related objects" src="_images/vehicleCharacteristics-related.png" style="width: 80%;" />
+<p><a class="reference internal" href="#vehiclecharacteristics-related"><span class="std std-numref">Figure 62</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>-related objects.</p>
+<figure class="align-center" id="id64">
+<span id="vehiclecharacteristics-related"></span><a class="reference internal image-reference" href="_static/images/vehicle_characteristics_related_objects.bmp"><img alt="UML model representation of vehicleCharacteristics-related objects" src="_static/images/vehicle_characteristics_related_objects.bmp" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 63 </span><span class="caption-text">UML model representation of <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>-related objects</span><a class="headerlink" href="#id65" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 62 </span><span class="caption-text">UML model representation of <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>-related objects</span><a class="headerlink" href="#id64" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The objects <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code>, <code class="docutils literal notranslate"><span class="pre">maximumHeightCharacteristic</span></code>, <code class="docutils literal notranslate"><span class="pre">maximumLengthCharacteristic</span></code>, <code class="docutils literal notranslate"><span class="pre">maximumWidthCharacteristics</span></code>, <code class="docutils literal notranslate"><span class="pre">heaviestAxleWeightCharacteristic</span></code> and <code class="docutils literal notranslate"><span class="pre">numberOfAxlesCharacteristic</span></code> all follow the same basic pattern, which is described below.</p>
-<p>We will use the <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code> object to illustrate this pattern. This enables limits for maximum gross weight to be defined. If gross weight limits are defined in theory there could be two limits - an upper bound (maximum weight) and a lower bound (minimum weight), as shown in <a class="reference internal" href="#boundaryconditions"><span class="std std-numref">Figure 64</span></a>.</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code> object to illustrate this pattern. This enables limits for maximum gross weight to be defined. If gross weight limits are defined in theory there could be two limits - an upper bound (maximum weight) and a lower bound (minimum weight), as shown in <a class="reference internal" href="#boundaryconditions"><span class="std std-numref">Figure 63</span></a>.</p>
 <p>In practice, upper bounds are specified in TROs, so the maximum characteristic is used.</p>
-<figure class="align-center" id="id66">
+<figure class="align-center" id="id65">
 <span id="boundaryconditions"></span><a class="reference internal image-reference" href="_images/boundaryConditions.png"><img alt="Example of boundary conditions (upper and lower bounds)" src="_images/boundaryConditions.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 64 </span><span class="caption-text">Example of boundary conditions (upper and lower bounds)</span><a class="headerlink" href="#id66" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 63 </span><span class="caption-text">Example of boundary conditions (upper and lower bounds)</span><a class="headerlink" href="#id65" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition error">
@@ -1332,12 +1320,12 @@
 <p>The published version mentions [-1..2] whereas the PDF version says [0..2].</p>
 <p>The grammar needs checking, also.</p>
 </div>
-<p><a class="reference internal" href="#maximumgrossweightcharacteristic"><span class="std std-numref">Figure 65</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">numberOfAxlesCharacteristic</span></code> object, to support the potential for both upper and lower bounds to be specified up to two instances, depicted by the [-1..2] in the UML representation, of <code class="docutils literal notranslate"><span class="pre">numberOfAxlesCharacteristic</span></code> can be linked to each instance of <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>.</p>
-<figure class="align-center" id="id67">
+<p><a class="reference internal" href="#maximumgrossweightcharacteristic"><span class="std std-numref">Figure 64</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">numberOfAxlesCharacteristic</span></code> object, to support the potential for both upper and lower bounds to be specified up to two instances, depicted by the [-1..2] in the UML representation, of <code class="docutils literal notranslate"><span class="pre">numberOfAxlesCharacteristic</span></code> can be linked to each instance of <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code>.</p>
+<figure class="align-center" id="id66">
 <span id="maximumgrossweightcharacteristic"></span><a class="reference internal image-reference" href="_images/maximumGrossWeightCharacteristic.png"><img alt="UML model representation of the maximumGrossWeightCharacteristic object" src="_images/maximumGrossWeightCharacteristic.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 65 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code> object</span><a class="headerlink" href="#id67" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 64 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code> object</span><a class="headerlink" href="#id66" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">maximumGrossWeightCharacteristic</span></code> object has three attributes:</p>
@@ -1388,12 +1376,12 @@
 </tbody>
 </table>
 <p>Attributes similar to <code class="docutils literal notranslate"><span class="pre">typeOfWeight</span></code> are not replicated in the other objects listed.</p>
-<p><a class="reference internal" href="#vehiclecharacteristics"><span class="std std-numref">Figure 66</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> object.</p>
-<figure class="align-center" id="id68">
-<span id="vehiclecharacteristics"></span><a class="reference internal image-reference" href="_images/vehicleCharacteristics.png"><img alt="UML model representation of the vehicleCharacteristics object" src="_images/vehicleCharacteristics.png" style="width: 80%;" />
+<p><a class="reference internal" href="#vehiclecharacteristics"><span class="std std-numref">Figure 65</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> object.</p>
+<figure class="align-center" id="id67">
+<span id="vehiclecharacteristics"></span><a class="reference internal image-reference" href="_static/images/vehicleCharacteristics.png"><img alt="UML model representation of the vehicleCharacteristics object" src="_static/images/vehicleCharacteristics.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 66 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> object</span><a class="headerlink" href="#id68" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 65 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> object</span><a class="headerlink" href="#id67" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">vehicleCharacteristics</span></code> object has six optional attributes:</p>
@@ -1405,12 +1393,22 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">vehicleUsage</span></code> attribute specifies optionally one usage type (i.e. for what purpose is the vehicle being used). Permissible vehicle usage types include, for example, <code class="docutils literal notranslate"><span class="pre">accessToOffStreetPremises</span></code>, <code class="docutils literal notranslate"><span class="pre">localBuses</span></code>, <code class="docutils literal notranslate"><span class="pre">privateHireVehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">guidedBus</span></code>, etc.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">yearOfFirstRegistration</span></code> attribute specifies optionally one registration year. Year is specified as an integer in the format <code class="docutils literal notranslate"><span class="pre">YYYY</span></code> (e.g. 2008).</p></li>
 </ul>
-<p><a class="reference internal" href="#emissions"><span class="std std-numref">Figure 67</span></a> provides the UML class representation of the emissions object.</p>
-<figure class="align-center" id="id69">
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">electricChargingCharacteristic</span></code> provides the UML class representation of <code class="docutils literal notranslate"><span class="pre">electricChargingCharacteristic</span></code> object.</p>
+<figure class="align-center" id="electricchargingcharacteristic">
+<a class="reference internal image-reference" href="_static/images/electricChargingCharacteristic.png"><img alt="UML model representation of the electricChargingCharacteristic object" src="_static/images/electricChargingCharacteristic.png" style="width: 80%;" />
+</a>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">electricChargingCharacteristic</span></code> object has two optional attributes:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">charging</span></code> attribute specifies that the connected vehicle is currently being charged.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">vehicleConnectedToCharger</span></code> attribute specifies that the vehicle is connected to the infrastructure electrical charging system.</p></li>
+</ul>
+<p><a class="reference internal" href="#emissions"><span class="std std-numref">Figure 66</span></a> provides the UML class representation of the emissions object.</p>
+<figure class="align-center" id="id68">
 <span id="emissions"></span><a class="reference internal image-reference" href="_images/emissions.png"><img alt="UML model representation of the emissions object" src="_images/emissions.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 67 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">emissions</span></code> object</span><a class="headerlink" href="#id69" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 66 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">emissions</span></code> object</span><a class="headerlink" href="#id68" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">emissions</span></code> object has two optional attributes:</p>
@@ -1429,15 +1427,60 @@
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">emissionClassificationOther</span></code> attribute specifies optionally multiple free-text description of a classification type for vehicle emissions, distinct from the Euro classifications.</p></li>
 </ul>
+<p><a class="reference internal" href="#valuerange"><span class="std std-numref">Figure 67</span></a> provides the UML class representation of the value range object.</p>
+<figure class="align-center" id="id69">
+<span id="valuerange"></span><a class="reference internal image-reference" href="_static/images/valueRange.png"><img alt="UML model representation of the value range object" src="_static/images/valueRange.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 67 </span><span class="caption-text">UML model representation of the value range object</span><a class="headerlink" href="#id69" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The <cite>valueRange</cite> object is defining a measurable quantity and related units and has two mandatory attributes:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute specifies the type of measured value under consideration and links to different forms of value range as shown in the schema below.</p></li>
+</ul>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">class</span></code> UML model representation of <code class="docutils literal notranslate"><span class="pre">valueRangeClassEnum</span></code> object</p>
+<figure class="align-center" id="valuerangeclassenum">
+<a class="reference internal image-reference" href="_images/valueRangeClassEnum-enum.png"><img alt="UML model representation of the value range class enum object" src="_images/valueRangeClassEnum-enum.png" style="width: 80%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">unit</span></code> attribute specifies the unit used for the measure and links to the different forms of unit of measure as shown in the schema below.</p></li>
+</ul>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">unit</span></code> UML model representation of <code class="docutils literal notranslate"><span class="pre">unitOfMeasureEnum</span></code> object</p>
+<figure class="align-center" id="unitofmeasureenum">
+<a class="reference internal image-reference" href="_images/unitOfMeasureEnum-enum.png"><img alt="UML model representation of the unit of measure enum object" src="_images/unitOfMeasureEnum-enum.png" style="width: 80%;" />
+</a>
+</figure>
+<p><a class="reference internal" href="#valuerangeboundary"><span class="std std-numref">Figure 68</span></a> provides the UML class representation of the value range boundary object.</p>
+<figure class="align-center" id="id70">
+<span id="valuerangeboundary"></span><a class="reference internal image-reference" href="_static/images/valueRangeBoundary.png"><img alt="UML model representation of the value range boundary object" src="_static/images/valueRangeBoundary.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 68 </span><span class="caption-text">UML model representation of the value range boundary object</span><a class="headerlink" href="#id70" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The <cite>valueRangeBoundary</cite> object is defining a range boundary value and operator related to that boundary and has two mandatory attributes:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">comparisonOperator</span></code> attreibute specifies comparison values and links to the different forms of comparisons as shown in the schema below.</p></li>
+</ul>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">comparisonOperatorType</span></code> provides the UML class representation of the comparison operator type object.</p>
+<figure class="align-center" id="comparisonoperatortype">
+<a class="reference internal image-reference" href="_images/comparisonOperatorType-enum.png"><img alt="UML model representation of the comparison operator type object" src="_images/comparisonOperatorType-enum.png" style="width: 80%;" />
+</a>
+</figure>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> quantify measure forming a measure boundary.</p></li>
+</ul>
 </section>
 <section id="about-tariff-rates">
 <h2>About Tariff Rates<a class="headerlink" href="#about-tariff-rates" title="Link to this heading">¶</a></h2>
-<p><a class="reference internal" href="#rate-related-objects"><span class="std std-numref">Figure 68</span></a> provides the UML class representation of the rate-related objects.</p>
-<figure class="align-center" id="id70">
+<p><a class="reference internal" href="#rate-related-objects"><span class="std std-numref">Figure 69</span></a> provides the UML class representation of the rate-related objects.</p>
+<figure class="align-center" id="id71">
 <span id="rate-related-objects"></span><a class="reference internal image-reference" href="_images/rate-related-objects.png"><img alt="UML model representation of the rate-related objects" src="_images/rate-related-objects.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 68 </span><span class="caption-text">UML model representation of the rate-related objects</span><a class="headerlink" href="#id70" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 69 </span><span class="caption-text">UML model representation of the rate-related objects</span><a class="headerlink" href="#id71" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Information concerning tariff rates may be associated with a defined <code class="docutils literal notranslate"><span class="pre">condition</span></code>.</p>
@@ -1446,12 +1489,12 @@
 <p class="admonition-title">Note</p>
 <p>The 2023 DfT D-TRO Alpha project prototyping begun examining whether this rates sub-model has sufficient functionality to meet the needs of describing rates and tariff in D-TROs. Further work during the Beta Project testing is needed.</p>
 </div>
-<p><a class="reference internal" href="#ratetable"><span class="std std-numref">Figure 69</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object. Each instance of the condition object may optionally be linked to one instance of the <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object. A <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> is described as specific set of rate charges relating to one or more locations and one set of condition criteria.</p>
-<figure class="align-center" id="id71">
+<p><a class="reference internal" href="#ratetable"><span class="std std-numref">Figure 70</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object. Each instance of the condition object may optionally be linked to one instance of the <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object. A <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> is described as specific set of rate charges relating to one or more locations and one set of condition criteria.</p>
+<figure class="align-center" id="id72">
 <span id="ratetable"></span><a class="reference internal image-reference" href="_images/rateTable.png"><img alt="UML model representation of the rateTable object" src="_images/rateTable.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 69 </span><span class="caption-text">UML model representation of the rateTable object</span><a class="headerlink" href="#id71" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 70 </span><span class="caption-text">UML model representation of the rateTable object</span><a class="headerlink" href="#id72" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object has two optional attributes:</p>
@@ -1460,12 +1503,12 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">additionalInformation</span></code> attribute provides a web address (URI) locator for supplementary additional information concerning use of the rate table</p></li>
 </ul>
 <p>Each <code class="docutils literal notranslate"><span class="pre">rateTable</span></code> object contains one or more <code class="docutils literal notranslate"><span class="pre">rateLineCollection</span></code> objects. A <code class="docutils literal notranslate"><span class="pre">rateLineCollection</span></code> is defined as group of rate line elements that logically group together within one rate table, e.g., such as the rate lines for the different tiers of a time-based tier rate table.</p>
-<p><a class="reference internal" href="#ratelinecollection"><span class="std std-numref">Figure 70</span></a> provides the UML class representation of the rateLineCollection object.</p>
-<figure class="align-center" id="id72">
+<p><a class="reference internal" href="#ratelinecollection"><span class="std std-numref">Figure 71</span></a> provides the UML class representation of the rateLineCollection object.</p>
+<figure class="align-center" id="id73">
 <span id="ratelinecollection"></span><a class="reference internal image-reference" href="_images/rateLineCollection.png"><img alt="UML model representation of the rateLineCollection object" src="_images/rateLineCollection.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 70 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">rateLineCollection</span></code> object</span><a class="headerlink" href="#id72" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 71 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">rateLineCollection</span></code> object</span><a class="headerlink" href="#id73" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">rateLineCollection</span></code> object has the following attributes:</p>
@@ -1480,12 +1523,12 @@
 <li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">sequence</span></code> attribute which is specified as an incrementing integer which is an indicator giving the place in sequence of this rate line collection within the <code class="docutils literal notranslate"><span class="pre">rateTable</span></code></p></li>
 <li><p>The mandatory <code class="docutils literal notranslate"><span class="pre">startValidUsagePeriod</span></code> attribute which defines the start time for the validity of this rateLineCollection</p></li>
 </ul>
-<p>Each rateLineCollection object contains one or more <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> objects. <a class="reference internal" href="#rateline"><span class="std std-numref">Figure 71</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> object. A <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> is defined as a specific rate element of a rate line collection within a specific rate table.</p>
-<figure class="align-center" id="id73">
+<p>Each rateLineCollection object contains one or more <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> objects. <a class="reference internal" href="#rateline"><span class="std std-numref">Figure 72</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> object. A <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> is defined as a specific rate element of a rate line collection within a specific rate table.</p>
+<figure class="align-center" id="id74">
 <span id="rateline"></span><a class="reference internal image-reference" href="_images/rateLine.png"><img alt="UML model representation of the rateLine object" src="_images/rateLine.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 71 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> object</span><a class="headerlink" href="#id73" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 72 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> object</span><a class="headerlink" href="#id74" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">rateLine</span></code> object has the following attributes:</p>
@@ -1509,12 +1552,12 @@
 <p class="admonition-title">Note</p>
 <p>The expectation, subject to secondary legislation following consultation, is that information on consultations would be made at the time of the notice of proposals (i.e. commencement of consultation). There is no expected requirement for the provision of information concerning consultations at other points in the lifecycle, at this time.</p>
 </div>
-<p><a class="reference internal" href="#consultation-related"><span class="std std-numref">Figure 72</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">consultation</span></code> related objects.</p>
-<figure class="align-center" id="id74">
+<p><a class="reference internal" href="#consultation-related"><span class="std std-numref">Figure 73</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">consultation</span></code> related objects.</p>
+<figure class="align-center" id="id75">
 <span id="consultation-related"></span><a class="reference internal image-reference" href="_images/consultation-related.png"><img alt="UML model representation of the consultation related objects" src="_images/consultation-related.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 72 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">consultation</span></code> related object</span><a class="headerlink" href="#id74" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 73 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">consultation</span></code> related object</span><a class="headerlink" href="#id75" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">consultation</span></code> object has numerous attributes:</p>
@@ -1549,12 +1592,12 @@
 <p>In instances where the ‘other’ enumeration is used further information shall be required. In each case the user (the Local Authority) would be required to provide a unique enumeration short name (distinct from short names that appear in the Data Model), plus a robust definition.</p>
 <p>The use of ‘other’ on its own shall not be permitted.</p>
 <p>Rather than adding this extension mechanism to each relevant enumerated list in the Data Model, a generic extension mechanism has been added to the model.</p>
-<p><a class="reference internal" href="#extensionenumeration"><span class="std std-numref">Figure 73</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> object.</p>
-<figure class="align-center" id="id75">
+<p><a class="reference internal" href="#extensionenumeration"><span class="std std-numref">Figure 74</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> object.</p>
+<figure class="align-center" id="id76">
 <span id="extensionenumeration"></span><a class="reference internal image-reference" href="_images/extensionEnumeration.png"><img alt="UML model representation of the extensionEnumeration object and related enumeration" src="_images/extensionEnumeration.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 73 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> object and related enumeration</span><a class="headerlink" href="#id75" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 74 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code> object and related enumeration</span><a class="headerlink" href="#id76" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The extensionEnumeration object has numerous attributes:</p>
@@ -1563,8 +1606,8 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">enumeratedList</span></code> attribute reflects the list which is being extended</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">definition</span></code> attribute is a free-text string giving complete definition for the enumeration</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id76">
-<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">JSON-encoding demonstrating the use of <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code></span><a class="headerlink" href="#id76" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id77">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">JSON-encoding demonstrating the use of <code class="docutils literal notranslate"><span class="pre">extensionEnumeration</span></code></span><a class="headerlink" href="#id77" title="Link to this code">¶</a></div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

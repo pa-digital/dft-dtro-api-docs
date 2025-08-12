@@ -35,8 +35,39 @@ html_sidebars = {
     ]
 }
 
+import os
+import re
+
+
+def get_title_from_rst(filepath):
+    with open(filepath, encoding="utf-8") as f:
+        lines = f.readlines()
+
+    for i in range(1, len(lines)):
+        if re.match(r"^[=-`^\"\-+]{3,}\s*$", lines[i]) and lines[i - 1].strip():
+            return lines[i - 1].strip()
+
+    return None
+
+
+def build_page_title_map(src_dir):
+    title_map = {}
+    for root, _, files in os.walk(src_dir):
+        for file in files:
+            if file.endswith(".rst"):
+                rst_path = os.path.join(root, file)
+                rel_path = os.path.relpath(rst_path, src_dir)
+                html_name = os.path.splitext(rel_path)[0]
+                title = get_title_from_rst(rst_path)
+                if title:
+                    title_map[html_name.replace(os.sep, "/")] = title
+
+    return title_map
+
+
 html_context = {
     "subproject": subproject,
+    "breadcrumb_titles": build_page_title_map(os.path.abspath(".")),
 }
 
 numfig = True

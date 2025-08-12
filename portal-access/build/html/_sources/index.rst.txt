@@ -20,7 +20,7 @@ This involves a two-step onboarding process. Firstly, create an account in the i
 1. `Create an integration account <https://dtro-ui-integration.dft.gov.uk>`_
 2. `Create a production account <https://https://dtro-ui.dft.gov.uk>`_
 
-Techincal Documentation and Guidance
+Technical Documentation and Guidance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * `API Documentation <https://d-tro.dft.gov.uk/api-documentation>`_
