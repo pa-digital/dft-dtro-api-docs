@@ -1116,11 +1116,13 @@ About Conditions and Exclusions
 
 Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.
 
-The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. :numref:`conditionRelationships` provides the UML class representation of the condition related objects.
+The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.
 
-.. _conditionRelationships:
+:numref:`condition-related-objects` provides the UML class representation of the condition related objects.
 
-.. figure:: /_static/images/conditionRelationships.png
+.. _condition-related-objects:
+
+.. figure:: /_static/images/condition-related-objects.png
    :alt: UML model representation of condition related objects
    :width: 80%
    :align: center
@@ -1261,6 +1263,19 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
    UML model representation of the ``roadCondition`` object
 
 The ``roadCondition`` object contains only the mandatory ``roadType`` attribute. Permissible values include, but are not limited to: ``motorway``, ``trunkRoad``, and ``other``.
+
+The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
+ 
+:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
+
+.. _otherCondition:
+
+.. figure:: /_static/images/other-condition-object.png
+   :alt: UML model representation of the otherCondition object
+   :width: 80%
+   :align: center
+
+The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
 
 :numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
 
