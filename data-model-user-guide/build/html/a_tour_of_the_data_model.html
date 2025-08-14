@@ -1043,9 +1043,10 @@
 <section id="about-conditions-and-exclusions">
 <h2>About Conditions and Exclusions<a class="headerlink" href="#about-conditions-and-exclusions" title="Link to this heading">¶</a></h2>
 <p>Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.</p>
-<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. <a class="reference internal" href="#conditionrelationships"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the condition related objects.</p>
+<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.</p>
+<p><a class="reference internal" href="#condition-related-objects"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the condition related objects.</p>
 <figure class="align-center" id="id50">
-<span id="conditionrelationships"></span><a class="reference internal image-reference" href="_images/conditionRelationships.png"><img alt="UML model representation of condition related objects" src="_images/conditionRelationships.png" style="width: 80%;" />
+<span id="condition-related-objects"></span><a class="reference internal image-reference" href="_images/condition-related-objects.png"><img alt="UML model representation of condition related objects" src="_images/condition-related-objects.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 49 </span><span class="caption-text">UML model representation of condition related objects</span><a class="headerlink" href="#id50" title="Link to this image">¶</a></p>
@@ -1163,6 +1164,13 @@
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object contains only the mandatory <code class="docutils literal notranslate"><span class="pre">roadType</span></code> attribute. Permissible values include, but are not limited to: <code class="docutils literal notranslate"><span class="pre">motorway</span></code>, <code class="docutils literal notranslate"><span class="pre">trunkRoad</span></code>, and <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">otherCondition</span></code> object indicating an exceptional other condition, not covered by other conditions</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">otherCondition</span></code> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">otherCondition</span></code> object.</p>
+<figure class="align-center" id="othercondition">
+<a class="reference internal image-reference" href="_images/other-condition-object.png"><img alt="UML model representation of the otherCondition object" src="_images/other-condition-object.png" style="width: 80%;" />
+</a>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">otherConditionDescription</span></code> attribute is optional and contains free text description of the other condition.</p>
 <p><a class="reference internal" href="#occupant-condition"><span class="std std-numref">Figure 54</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object.</p>
 <figure class="align-center" id="id56">
 <span id="occupant-condition"></span><a class="reference internal image-reference" href="_images/occupant-condition.png"><img alt="UML model representation of the occupantCondition object" src="_images/occupant-condition.png" style="width: 80%;" />
