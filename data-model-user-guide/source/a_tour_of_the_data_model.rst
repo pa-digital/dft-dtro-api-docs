@@ -424,6 +424,7 @@ The ``speedLimitProfileBased`` object has one mandatory attribute.
     * ``nationalSpeedLimitDualCarriageway``
     * ``nationalSpeedLimitSingleCarriageway``
     * ``nationalSpeedLimitMotorway``
+    * ``nationalSpeedLimit``
 
 The Data Model is experimental in nature and there is a real-world road network usage and therefore TROs (e.g., consider the relatively recent introduction of e-Scooters). The Data Model supports a couple of different approaches to support extension to new situations and regulations.
 
