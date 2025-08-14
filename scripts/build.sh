@@ -20,3 +20,4 @@ cp -a portal-access/build/html/* docs
 cp -a docs/api-documentation/shared/*.html docs
 cp CNAME docs
 cp .nojekyll docs
+cp robots.txt docs
