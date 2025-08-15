@@ -19,7 +19,7 @@ We also provide a Postman collection to download for easily setting up Postman a
 
 .. button::
     :text: Download Postman collection
-    :url: _static/dtro-integration.postman_collection.json
+    :url: _static/dtro.postman_collection.json
     :download:
 
 .. button-nav::

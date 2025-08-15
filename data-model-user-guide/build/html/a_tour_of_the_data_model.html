@@ -722,11 +722,23 @@
 </td>
 <td><p>point: “SRID=27700;POINT(529157 178805)”</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">linstring</span></code> or <code class="docutils literal notranslate"><span class="pre">directedLineString</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">multiPoint</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">multiPoint</span></code> represents a collection of points treated as a single geometric object. Each point in a MultiPoint has no dimension, just like a regular point, but the MultiPoint itself is used to represent multiple discrete locations in space.</p></td>
+<td><img alt="../_static/images/multiPoint.png" src="../_static/images/multiPoint.png" />
+</td>
+<td><p>multiPoint: “SRID=27700;MULTIPOINT((320336 126142),(320315 126172))”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">linestring</span></code> or <code class="docutils literal notranslate"><span class="pre">directedLineString</span></code></p></td>
 <td><p>The <code class="docutils literal notranslate"><span class="pre">lineString</span></code> represents a segment of Horseferry Road, which runs in front of the DfT office</p></td>
 <td><img alt="../_static/images/linestring.png" src="../_static/images/linestring.png" />
 </td>
 <td><p>linestring: “SRID=27700;LINESTRING(529050 178750, 529157 178805, 529250 178860)”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">multiLineString</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">multiLineString</span></code> represents a multipart geometry consisting of multiple LineString elements. Each LineString is a sequence of points connected by straight lines. The MultiLineString groups these individual LineStrings into a single geometric object.</p></td>
+<td><img alt="../_static/images/multiLineString.png" src="../_static/images/multiLineString.png" />
+</td>
+<td><p>multiLineString: “SRID=27700;MULTILINESTRING((323589 125149, 323340 125227),(323340 125227, 321986 125569),(321986 125569, 320737 126347, 320715 124191))”</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">polygon</span></code></p></td>
 <td><p>The <code class="docutils literal notranslate"><span class="pre">polygon</span></code> represents an area around the DfT office, enclosing the building</p></td>
@@ -735,10 +747,22 @@
 <td><p>polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750))”</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>A polygon can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">polygon</span></code> can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references</p></td>
 <td><img alt="../_static/images/polygon2.png" src="../_static/images/polygon2.png" />
 </td>
 <td><p>polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750), (529150 178780, 529200 178780, 529200 178830, 529150 178830, 529150 178780))”</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">multiPolygon</span></code></p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">multiPolygon</span></code> is a multipart geometry that consists of multiple Polygon elements. Each polygon is defined by a set of linear rings, where the first ring represents the outer boundary and any subsequent rings represent holes within that polygon.</p></td>
+<td><img alt="../_static/images/multiPolygon.png" src="../_static/images/multiPolygon.png" />
+</td>
+<td><p>multiPolygon: “SRID=27700;MULTIPOLYGON(((323570 124636, 323482 124835, 323660 124890, 323720 124740,323570 124636)),((323494 124611, 323499 124612, 323450 124734, 323443 124728, 323494 124611)))”</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">multiPolygon</span></code> is a collection of polygons that can represent complex shapes with multiple outer boundaries and holes.</p></td>
+<td><img alt="../_static/images/multiPolygon_with_hole.png" src="../_static/images/multiPolygon_with_hole.png" />
+</td>
+<td><p>multiPolygon: “SRID=27700;MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)), ((20 35, 10 30, 10 10, 30 5, 45 20, 20 35), (30 20, 20 15, 20 25, 30 20)))“</p></td>
 </tr>
 </tbody>
 </table>
@@ -1044,9 +1068,10 @@
 <section id="about-conditions-and-exclusions">
 <h2>About Conditions and Exclusions<a class="headerlink" href="#about-conditions-and-exclusions" title="Link to this heading">¶</a></h2>
 <p>Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.</p>
-<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. <a class="reference internal" href="#conditionrelationships"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the condition related objects.</p>
+<p>The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.</p>
+<p><a class="reference internal" href="#condition-related-objects"><span class="std std-numref">Figure 49</span></a> provides the UML class representation of the condition related objects.</p>
 <figure class="align-center" id="id50">
-<span id="conditionrelationships"></span><a class="reference internal image-reference" href="_images/conditionRelationships.png"><img alt="UML model representation of condition related objects" src="_images/conditionRelationships.png" style="width: 80%;" />
+<span id="condition-related-objects"></span><a class="reference internal image-reference" href="_images/condition-related-objects.png"><img alt="UML model representation of condition related objects" src="_images/condition-related-objects.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 49 </span><span class="caption-text">UML model representation of condition related objects</span><a class="headerlink" href="#id50" title="Link to this image">¶</a></p>
@@ -1164,6 +1189,13 @@
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">roadCondition</span></code> object contains only the mandatory <code class="docutils literal notranslate"><span class="pre">roadType</span></code> attribute. Permissible values include, but are not limited to: <code class="docutils literal notranslate"><span class="pre">motorway</span></code>, <code class="docutils literal notranslate"><span class="pre">trunkRoad</span></code>, and <code class="docutils literal notranslate"><span class="pre">other</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">otherCondition</span></code> object indicating an exceptional other condition, not covered by other conditions</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">otherCondition</span></code> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">otherCondition</span></code> object.</p>
+<figure class="align-center" id="othercondition">
+<a class="reference internal image-reference" href="_images/other-condition-object.png"><img alt="UML model representation of the otherCondition object" src="_images/other-condition-object.png" style="width: 80%;" />
+</a>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">otherConditionDescription</span></code> attribute is optional and contains free text description of the other condition.</p>
 <p><a class="reference internal" href="#occupant-condition"><span class="std std-numref">Figure 54</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">occupantCondition</span></code> object.</p>
 <figure class="align-center" id="id56">
 <span id="occupant-condition"></span><a class="reference internal image-reference" href="_images/occupant-condition.png"><img alt="UML model representation of the occupantCondition object" src="_images/occupant-condition.png" style="width: 80%;" />

@@ -706,18 +706,34 @@ The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.
      - The ``point`` represents a specific location, which in this example is the entrance to the DfT office (Great Minster House)
      - .. image:: ../_static/images/point.png
      -  point: “SRID=27700;POINT(529157 178805)”
-   * - ``linstring`` or ``directedLineString``
+   * - ``multiPoint``
+     - The ``multiPoint`` represents a collection of points treated as a single geometric object. Each point in a MultiPoint has no dimension, just like a regular point, but the MultiPoint itself is used to represent multiple discrete locations in space.
+     - .. image:: ../_static/images/multiPoint.png
+     - multiPoint: “SRID=27700;MULTIPOINT((320336 126142),(320315 126172))”
+   * - ``linestring`` or ``directedLineString``
      - The ``lineString`` represents a segment of Horseferry Road, which runs in front of the DfT office
      - .. image:: ../_static/images/linestring.png
      - linestring: “SRID=27700;LINESTRING(529050 178750, 529157 178805, 529250 178860)”
+   * - ``multiLineString``
+     - The ``multiLineString`` represents a multipart geometry consisting of multiple LineString elements. Each LineString is a sequence of points connected by straight lines. The MultiLineString groups these individual LineStrings into a single geometric object.
+     - .. image:: ../_static/images/multiLineString.png
+     - multiLineString: “SRID=27700;MULTILINESTRING((323589 125149, 323340 125227),(323340 125227, 321986 125569),(321986 125569, 320737 126347, 320715 124191))”
    * - ``polygon``
      - The ``polygon`` represents an area around the DfT office, enclosing the building
      - .. image:: ../_static/images/polygon1.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750))”
    * - 
-     - A polygon can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references
+     - A ``polygon`` can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references
      - .. image:: ../_static/images/polygon2.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750), (529150 178780, 529200 178780, 529200 178830, 529150 178830, 529150 178780))”
+   * - ``multiPolygon``
+     - The ``multiPolygon`` is a multipart geometry that consists of multiple Polygon elements. Each polygon is defined by a set of linear rings, where the first ring represents the outer boundary and any subsequent rings represent holes within that polygon.
+     - .. image:: ../_static/images/multiPolygon.png
+     - multiPolygon: “SRID=27700;MULTIPOLYGON(((323570 124636, 323482 124835, 323660 124890, 323720 124740,323570 124636)),((323494 124611, 323499 124612, 323450 124734, 323443 124728, 323494 124611)))”
+   * - 
+     - A ``multiPolygon`` is a collection of polygons that can represent complex shapes with multiple outer boundaries and holes.
+     - .. image:: ../_static/images/multiPolygon_with_hole.png
+     - multiPolygon: “SRID=27700;MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)), ((20 35, 10 30, 10 10, 30 5, 45 20, 20 35), (30 20, 20 15, 20 25, 30 20)))“
 
 :numref:`fig26` provides the UML class representation of the ``linearGeometry`` object.
 
@@ -1117,11 +1133,13 @@ About Conditions and Exclusions
 
 Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.
 
-The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. :numref:`conditionRelationships` provides the UML class representation of the condition related objects.
+The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.
 
-.. _conditionRelationships:
+:numref:`condition-related-objects` provides the UML class representation of the condition related objects.
 
-.. figure:: /_static/images/conditionRelationships.png
+.. _condition-related-objects:
+
+.. figure:: /_static/images/condition-related-objects.png
    :alt: UML model representation of condition related objects
    :width: 80%
    :align: center
@@ -1262,6 +1280,19 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
    UML model representation of the ``roadCondition`` object
 
 The ``roadCondition`` object contains only the mandatory ``roadType`` attribute. Permissible values include, but are not limited to: ``motorway``, ``trunkRoad``, and ``other``.
+
+The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
+ 
+:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
+
+.. _otherCondition:
+
+.. figure:: /_static/images/other-condition-object.png
+   :alt: UML model representation of the otherCondition object
+   :width: 80%
+   :align: center
+
+The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
 
 :numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
 
