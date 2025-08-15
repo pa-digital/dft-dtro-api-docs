@@ -522,15 +522,43 @@ At a later point in time, the TRA makes a new (Consolidation) TRO with reference
 
 * provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-For the new provision #1, as this has the same reference as provision #1 from the earlier TRO, and an action type of ``partialAmendment``, this instance of the provision is considered to fully replace the earlier instance. The old version of provision #1 with reference: TRAxxxx-Pro-01 will be marked in the D-TRO service database as not current and replaced by a newer version.
+This amendment is submitted via the Update API endpoint, and uses the same service-generated unique
+reference (GUID) for the TRO.
 
-For provision #7, as this has the same reference as provision #2 from the earlier TRO, and an action type of ``fullRevoke``, this instance of the provision is considered to fully replace the earlier instance. The old version of provision #2 with reference: TRAxxxx-Pro-12 will be marked in the D-TRO Service database as not current.
+As this update has the same service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO service as not current and replaced by the newer version.
 
-When using ``actionType``s for amendment (``fullAmendment`` or ``partialAmendment``) the old provision (or source) is considered to be fully replaced by the new provision. The same applies to amendment of sources. The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
+.. note::
+   The 'Create D-TRO' API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.
 
-Use of ``fullyRevoke`` does not replace the older record by a newer one, but rather triggers the older record to be marked in the D-TRO Service database as not current.
+More complex updates require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO service, using the “Create D-TRO” API endpoint.
 
-The use of the ``actionType`` ``new`` is interpreted by the D-TRO service as the newer records being unrelated to older records. Both will be considered to be current in the D-TRO Service database.
+At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+
+* provision #1, with reference: TRAxxxx-Pro-01 and actionType = ``partialAmendment``, and
+* provision #7, with reference: TRAxxxx-Pro-12 and actionType = ``fullRevoke``
+
+This later D-TRO has a different service-generated unique reference (GUID) to the earlier submitted DTRO. Even though these provisions have the same references as those already known in the D-TRO service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common service-generated unique reference (GUID) at the provision level, the D-TRO Service will not link the records together.
+
+Records are only linked within the D-TRO service by sharing a common service-generated unique reference (GUID) at the D-TRO level.
+
+To correctly update these records it is necessary to also submit an updated version of the earlier submitted
+D-TRO, with the same Service-generated unique reference (GUID), and appropriate actionType metadata.
+
+.. _fig21:
+
+.. figure:: /_static/images/fig21.png
+   :alt: Records Management example for source & provision (more complex)
+   :width: 80%
+   :align: center
+
+   Records Management example for source & provision (more complex)
+
+.. note::
+   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO service. The earlier version will be marked in the D-TRO service as not current. The Consolidation record, with reference TRAxxxxSo-09, will be marked as current in the D-TRO service.
+
+   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) – the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
+
+The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
 
 Specifying Locations for TROs
 *****************************
