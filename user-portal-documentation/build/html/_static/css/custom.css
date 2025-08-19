@@ -30,36 +30,36 @@ body {
   flex-direction: column;
 }
 
-.govuk-header {
-  display: none;
-}
-
 header {
   min-height: 50px;
-  color: #ffffff;
+  padding-left: var(--edge-padding);
+  padding-right: var(--edge-padding);
+  display: flex;
+  align-items: center;
   background-color: #1d70b8;
+}
+
+header a {
+  color: #ffffff;
+}
+
+.header {
   display: flex;
   gap: 24px;
   align-items: center;
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
+  background-color: #f4f8fb;
 }
 
-header > svg {
+.header > svg {
   padding: 10px 0;
   border-bottom: 3px solid transparent;
 }
 
-header > svg:hover {
+.header > svg:hover {
   border-bottom: 3px solid #ffffff;
   cursor: pointer;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  background-color: #f4f8fb;
-  border-top: 32px solid #1d70b8;
 }
 
 .header > p {
