@@ -184,7 +184,7 @@ The ``experimentalCessation`` object can only be applied to ``experimentalRevoca
 
 .. _fig9:
 
-.. figure:: /_static/images/fig9.png
+.. figure:: /_static/images/extension_of_the_provision_object.png
    :alt: UML model representation of the extension of the provision object
    :width: 80%
    :align: center
@@ -197,7 +197,7 @@ This model supports both permanent and time-bound experimental regulations, ensu
 
 .. _fig10:
 
-.. figure:: /_static/images/fig10.png
+.. figure:: /_static/images/experimentalVariation.png
    :alt: UML model representation of the experimentalVariation object
    :width: 80%
    :align: center
@@ -424,6 +424,7 @@ The ``speedLimitProfileBased`` object has one mandatory attribute.
     * ``nationalSpeedLimitDualCarriageway``
     * ``nationalSpeedLimitSingleCarriageway``
     * ``nationalSpeedLimitMotorway``
+    * ``nationalSpeedLimit``
 
 The Data Model is experimental in nature and there is a real-world road network usage and therefore TROs (e.g., consider the relatively recent introduction of e-Scooters). The Data Model supports a couple of different approaches to support extension to new situations and regulations.
 
@@ -521,15 +522,43 @@ At a later point in time, the TRA makes a new (Consolidation) TRO with reference
 
 * provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-For the new provision #1, as this has the same reference as provision #1 from the earlier TRO, and an action type of ``partialAmendment``, this instance of the provision is considered to fully replace the earlier instance. The old version of provision #1 with reference: TRAxxxx-Pro-01 will be marked in the D-TRO service database as not current and replaced by a newer version.
+This amendment is submitted via the Update API endpoint, and uses the same service-generated unique
+reference (GUID) for the TRO.
 
-For provision #7, as this has the same reference as provision #2 from the earlier TRO, and an action type of ``fullRevoke``, this instance of the provision is considered to fully replace the earlier instance. The old version of provision #2 with reference: TRAxxxx-Pro-12 will be marked in the D-TRO Service database as not current.
+As this update has the same service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO service as not current and replaced by the newer version.
 
-When using ``actionType``s for amendment (``fullAmendment`` or ``partialAmendment``) the old provision (or source) is considered to be fully replaced by the new provision. The same applies to amendment of sources. The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
+.. note::
+   The 'Create D-TRO' API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.
 
-Use of ``fullyRevoke`` does not replace the older record by a newer one, but rather triggers the older record to be marked in the D-TRO Service database as not current.
+More complex updates require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO service, using the “Create D-TRO” API endpoint.
 
-The use of the ``actionType`` ``new`` is interpreted by the D-TRO service as the newer records being unrelated to older records. Both will be considered to be current in the D-TRO Service database.
+At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+
+* provision #1, with reference: TRAxxxx-Pro-01 and actionType = ``partialAmendment``, and
+* provision #7, with reference: TRAxxxx-Pro-12 and actionType = ``fullRevoke``
+
+This later D-TRO has a different service-generated unique reference (GUID) to the earlier submitted DTRO. Even though these provisions have the same references as those already known in the D-TRO service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common service-generated unique reference (GUID) at the provision level, the D-TRO Service will not link the records together.
+
+Records are only linked within the D-TRO service by sharing a common service-generated unique reference (GUID) at the D-TRO level.
+
+To correctly update these records it is necessary to also submit an updated version of the earlier submitted
+D-TRO, with the same Service-generated unique reference (GUID), and appropriate actionType metadata.
+
+.. _fig21:
+
+.. figure:: /_static/images/fig21.png
+   :alt: Records Management example for source & provision (more complex)
+   :width: 80%
+   :align: center
+
+   Records Management example for source & provision (more complex)
+
+.. note::
+   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO service. The earlier version will be marked in the D-TRO service as not current. The Consolidation record, with reference TRAxxxxSo-09, will be marked as current in the D-TRO service.
+
+   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) – the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
+
+The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
 
 Specifying Locations for TROs
 *****************************
@@ -574,11 +603,11 @@ A TRO may contain multiple distinct regulations (measures) which relate to poten
    | (e.g. parking.loadin restrictions)    | (e.g. banned turns)                              |
    +---------------------------------------+--------------------------------------------------+
 
-:numref:`fig21` provdes the UML class representation of the location related objects.
+:numref:`location-related-objects` provides the UML class representation of the location related objects.
 
-.. _fig21:
+.. _location-related-objects:
 
-.. figure:: /_static/images/fig21.png
+.. figure:: /_static/images/location-related-objects.png
    :alt: UML model representation of location related objects
    :width: 80%
    :align: center
@@ -705,18 +734,34 @@ The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.
      - The ``point`` represents a specific location, which in this example is the entrance to the DfT office (Great Minster House)
      - .. image:: ../_static/images/point.png
      -  point: “SRID=27700;POINT(529157 178805)”
-   * - ``linstring`` or ``directedLineString``
+   * - ``multiPoint``
+     - The ``multiPoint`` represents a collection of points treated as a single geometric object. Each point in a MultiPoint has no dimension, just like a regular point, but the MultiPoint itself is used to represent multiple discrete locations in space.
+     - .. image:: ../_static/images/multiPoint.png
+     - multiPoint: “SRID=27700;MULTIPOINT((320336 126142),(320315 126172))”
+   * - ``linestring`` or ``directedLineString``
      - The ``lineString`` represents a segment of Horseferry Road, which runs in front of the DfT office
      - .. image:: ../_static/images/linestring.png
      - linestring: “SRID=27700;LINESTRING(529050 178750, 529157 178805, 529250 178860)”
+   * - ``multiLineString``
+     - The ``multiLineString`` represents a multipart geometry consisting of multiple LineString elements. Each LineString is a sequence of points connected by straight lines. The MultiLineString groups these individual LineStrings into a single geometric object.
+     - .. image:: ../_static/images/multiLineString.png
+     - multiLineString: “SRID=27700;MULTILINESTRING((323589 125149, 323340 125227),(323340 125227, 321986 125569),(321986 125569, 320737 126347, 320715 124191))”
    * - ``polygon``
      - The ``polygon`` represents an area around the DfT office, enclosing the building
      - .. image:: ../_static/images/polygon1.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750))”
    * - 
-     - A polygon can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references
+     - A ``polygon`` can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references
      - .. image:: ../_static/images/polygon2.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750), (529150 178780, 529200 178780, 529200 178830, 529150 178830, 529150 178780))”
+   * - ``multiPolygon``
+     - The ``multiPolygon`` is a multipart geometry that consists of multiple Polygon elements. Each polygon is defined by a set of linear rings, where the first ring represents the outer boundary and any subsequent rings represent holes within that polygon.
+     - .. image:: ../_static/images/multiPolygon.png
+     - multiPolygon: “SRID=27700;MULTIPOLYGON(((323570 124636, 323482 124835, 323660 124890, 323720 124740,323570 124636)),((323494 124611, 323499 124612, 323450 124734, 323443 124728, 323494 124611)))”
+   * - 
+     - A ``multiPolygon`` is a collection of polygons that can represent complex shapes with multiple outer boundaries and holes.
+     - .. image:: ../_static/images/multiPolygon_with_hole.png
+     - multiPolygon: “SRID=27700;MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)), ((20 35, 10 30, 10 10, 30 5, 45 20, 20 35), (30 20, 20 15, 20 25, 30 20)))“
 
 :numref:`fig26` provides the UML class representation of the ``linearGeometry`` object.
 
@@ -829,20 +874,6 @@ The ``uniqueStreetReferenceNumber`` object has three attributes:
 
 Multiple URSNs can be defined per geometry, as some streets have multiple USRNs (e.g. Blackstock Road near Finsbury Park in London, which sits on the border of Islington and Hackney).
 
-:numref:`fig33` provides the UML representation of ``elementaryStreetUnit`` object
-
-.. _fig33:
-
-.. figure:: /_static/images/esu.png
-   :alt: UML model representation of the elementaryStreetUnit object
-   :width: 80%
-   :align: center
-
-   UML model representation of the ``elementaryStreetUnit`` object
-
-The optional ``elementaryStreetUnit`` object has one mandatory attribute:
-
-* The ``esu`` attribute represents the Elementary Street Unit (ESU) derived from the NSG, relating to the origin and destination locations shall be specified, where they exist in the NSG.
 
 Times Relating to Regulations
 *****************************
@@ -1130,11 +1161,13 @@ About Conditions and Exclusions
 
 Being able to specify conditions that apply to regulations is a key element of D-TRO modelling. Such conditions enable regulation properties to detail, for example, width restrictions; access restrictions by vehicle type; conditions applied under different weather conditions, etc.
 
-The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc. :numref:`conditionRelationships` provides the UML class representation of the condition related objects.
+The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.
 
-.. _conditionRelationships:
+:numref:`condition-related-objects` provides the UML class representation of the condition related objects.
 
-.. figure:: /_static/images/conditionRelationships.png
+.. _condition-related-objects:
+
+.. figure:: /_static/images/condition-related-objects.png
    :alt: UML model representation of condition related objects
    :width: 80%
    :align: center
@@ -1275,6 +1308,19 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
    UML model representation of the ``roadCondition`` object
 
 The ``roadCondition`` object contains only the mandatory ``roadType`` attribute. Permissible values include, but are not limited to: ``motorway``, ``trunkRoad``, and ``other``.
+
+The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
+ 
+:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
+
+.. _otherCondition:
+
+.. figure:: /_static/images/other-condition-object.png
+   :alt: UML model representation of the otherCondition object
+   :width: 80%
+   :align: center
+
+The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
 
 :numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
 
@@ -1445,7 +1491,7 @@ The information that is modelled in ``vehicleCharacteristics`` objects identifie
 
 .. _vehicleCharacteristics-related:
 
-.. figure:: /_static/images/vehicleCharacteristics-related.png
+.. figure:: /_static/images/vehicle_characteristics_related_objects.bmp
    :alt: UML model representation of vehicleCharacteristics-related objects
    :width: 80%
    :align: center
@@ -1524,6 +1570,22 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 * The ``yearOfFirstRegistration`` attribute specifies optionally one registration year. Year is specified as an integer in the format ``YYYY`` (e.g. 2008).
 
+:numref:`electricChargingCharacteristic` provides the UML class representation of ``electricChargingCharacteristic`` object.
+
+.. _electricChargingCharacteristic:
+
+.. figure:: /_static/images/electricChargingCharacteristic.png
+   :alt: UML model representation of the electricChargingCharacteristic object
+   :width: 80%
+   :align: center
+
+The ``electricChargingCharacteristic`` object has two optional attributes:
+
+* The ``charging`` attribute specifies that the connected vehicle is currently being charged.
+
+* The ``vehicleConnectedToCharger`` attribute specifies that the vehicle is connected to the infrastructure electrical charging system.
+
+
 :numref:`emissions` provides the UML class representation of the emissions object. 
 
 .. _emissions:
@@ -1549,6 +1611,70 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
    Euro V and Euro VI are used for emissions of lorries only.
 
 * The ``emissionClassificationOther`` attribute specifies optionally multiple free-text description of a classification type for vehicle emissions, distinct from the Euro classifications.
+
+
+:numref:`valueRange` provides the UML class representation of the value range object.
+
+.. _valueRange:
+
+.. figure:: /_static/images/valueRange.png
+   :alt: UML model representation of the value range object
+   :width: 80%
+   :align: center
+
+   UML model representation of the value range object
+
+The `valueRange` object is defining a measurable quantity and related units and has two mandatory attributes:
+
+* The ``class`` attribute specifies the type of measured value under consideration and links to different forms of value range as shown in the schema below.
+
+:numref:`class` UML model representation of ``valueRangeClassEnum`` object
+
+.. _valueRangeClassEnum:
+
+.. figure:: /_static/images/valueRangeClassEnum-enum.png
+   :alt: UML model representation of the value range class enum object
+   :width: 80%
+   :align: center
+
+* The ``unit`` attribute specifies the unit used for the measure and links to the different forms of unit of measure as shown in the schema below.
+
+:numref:`unit` UML model representation of ``unitOfMeasureEnum`` object
+
+.. _unitOfMeasureEnum:
+
+.. figure:: /_static/images/unitOfMeasureEnum-enum.png
+   :alt: UML model representation of the unit of measure enum object
+   :width: 80%
+   :align: center
+
+
+:numref:`valueRangeBoundary` provides the UML class representation of the value range boundary object.
+
+.. _valueRangeBoundary:
+
+.. figure:: /_static/images/valueRangeBoundary.png
+   :alt: UML model representation of the value range boundary object
+   :width: 80%
+   :align: center
+
+   UML model representation of the value range boundary object
+
+The `valueRangeBoundary` object is defining a range boundary value and operator related to that boundary and has two mandatory attributes:
+
+* The ``comparisonOperator`` attreibute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
+
+:numref:`comparisonOperatorType` provides the UML class representation of the comparison operator type object.
+
+.. _comparisonOperatorType:
+
+.. figure:: /_static/images/comparisonOperatorType-enum.png
+   :alt: UML model representation of the comparison operator type object
+   :width: 80%
+   :align: center
+
+* The ``value`` quantify measure forming a measure boundary.
+
 
 About Tariff Rates
 ******************
