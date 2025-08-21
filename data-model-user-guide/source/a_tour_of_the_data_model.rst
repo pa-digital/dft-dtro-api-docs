@@ -884,7 +884,7 @@ The full ``timeValidity`` sub-model is shown in :numref:`fig34`.
 
 .. _fig34:
 
-.. figure:: /_static/images/time-validity-relationships.png
+.. figure:: /_static/images/timeValidity-related-objects.png
    :alt: UML model representation of Validity (Time-based) related objects
    :width: 80%
    :align: center
@@ -901,14 +901,18 @@ Use of each object and its attributes is given below. For all dates and times, t
 
 .. _fig35:
 
-.. figure:: /_static/images/time-validity.png
+.. figure:: /_static/images/timeValidity-object.png
    :alt: UML model representation of the timeValidity object
    :width: 80%
    :align: center
 
    UML model representation of the ``timeValidity`` object
 
-The ``timeValidity`` object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. The ``start`` date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.
+The ``timeValidity`` object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. 
+
+The ``start`` date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.
+
+The ``isPlaceholderTro`` attribute specifies if the record is a placeholder one. When set to true, start should be set at the midnight of 1st of January 1970.
 
 For permanent TROs the end attribute may be omitted.
 
