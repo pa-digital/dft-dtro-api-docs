@@ -905,7 +905,7 @@ D-TRO, with the same Service-generated unique reference (GUID), and appropriate 
 <p>Date and time information relating to regulations is defined using a tried and tested sub-model which appears in several European technical standards and is widely deployed.</p>
 <p>The full <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model is shown in <a class="reference internal" href="#fig34"><span class="std std-numref">Figure 34</span></a>.</p>
 <figure class="align-center" id="id35">
-<span id="fig34"></span><a class="reference internal image-reference" href="_images/time-validity-relationships.png"><img alt="UML model representation of Validity (Time-based) related objects" src="_images/time-validity-relationships.png" style="width: 80%;" />
+<span id="fig34"></span><a class="reference internal image-reference" href="_images/timeValidity-related-objects.png"><img alt="UML model representation of Validity (Time-based) related objects" src="_images/timeValidity-related-objects.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 34 </span><span class="caption-text">UML model representation of Validity (Time-based) related objects</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
@@ -918,13 +918,15 @@ D-TRO, with the same Service-generated unique reference (GUID), and appropriate 
 </ul>
 <p><a class="reference internal" href="#fig35"><span class="std std-numref">Figure 35</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object.</p>
 <figure class="align-center" id="id36">
-<span id="fig35"></span><a class="reference internal image-reference" href="_images/time-validity.png"><img alt="UML model representation of the timeValidity object" src="_images/time-validity.png" style="width: 80%;" />
+<span id="fig35"></span><a class="reference internal image-reference" href="_images/timeValidity-object.png"><img alt="UML model representation of the timeValidity object" src="_images/timeValidity-object.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 35 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. The <code class="docutils literal notranslate"><span class="pre">start</span></code> date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">isPlaceholderTro</span></code> attribute specifies if the record is a placeholder one. When set to true, start should be set at the midnight of 1st of January 1970.</p>
 <p>For permanent TROs the end attribute may be omitted.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> model allows intermittent or variable patterns of time applicability for TRO regulations to be specified.</p>
 <p><a class="reference internal" href="#fig-max-stay-no-return"><span class="std std-numref">Figure 36</span></a> provides the UML class representaion of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object.</p>
