@@ -1491,7 +1491,7 @@ The information that is modelled in ``vehicleCharacteristics`` objects identifie
 
 .. _vehicleCharacteristics-related:
 
-.. figure:: /_static/images/vehicle_characteristics_related_objects.bmp
+.. figure:: /_static/images/vehicle-characteristics-related-objects.bmp
    :alt: UML model representation of vehicleCharacteristics-related objects
    :width: 80%
    :align: center
@@ -1574,7 +1574,7 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 .. _electricChargingCharacteristic:
 
-.. figure:: /_static/images/electricChargingCharacteristic.png
+.. figure:: /_static/images/electricChargingCharacteristic-object.png
    :alt: UML model representation of the electricChargingCharacteristic object
    :width: 80%
    :align: center
@@ -1617,7 +1617,7 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
 
 .. _valueRange:
 
-.. figure:: /_static/images/valueRange.png
+.. figure:: /_static/images/valueRange-object.png
    :alt: UML model representation of the value range object
    :width: 80%
    :align: center

@@ -120,7 +120,7 @@ Enumeration Classes
 
 .. _vehicle-characteristics-enumerations-uml:
 
-.. figure:: /_static/images/vehicle-characteristics-enumerations-uml.png
+.. figure:: /_static/images/vehicleCharacteristics-enumerations.bmp
    :alt: UML class diagram - Enumeration Classes in the vehicleCharacteristics sub-model
    :width: 100%
    :align: center
