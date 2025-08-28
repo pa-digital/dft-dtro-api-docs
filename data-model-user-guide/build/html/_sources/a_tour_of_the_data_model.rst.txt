@@ -425,6 +425,9 @@ The ``speedLimitProfileBased`` object has one mandatory attribute.
     * ``nationalSpeedLimitSingleCarriageway``
     * ``nationalSpeedLimitMotorway``
     * ``nationalSpeedLimit``
+  
+.. note::
+   Note: ``nationalSpeedLimit`` applies to all road classes and therefore the data consumer will need to identify the correct class of road for identified locations.
 
 The Data Model is experimental in nature and there is a real-world road network usage and therefore TROs (e.g., consider the relatively recent introduction of e-Scooters). The Data Model supports a couple of different approaches to support extension to new situations and regulations.
 
@@ -721,7 +724,7 @@ Note: the data type of the attribute ``point`` is defined as a string. This stri
 
 The specific form of standardised data encoding to be used to structure TRO location data in a way that is consistent robust and commonly interpreted. Use of both GeoJSON or WKT (Well Known Text) conventions have been considered. However, the latest edition (2016) of GeoJSON (`RFC 7946 <https://datatracker.ietf.org/doc/html/rfc7946>`_) only permits the use of WGS84 coordinates, and therefore cannot be used given the coordinate referencing system decision above.
 
-The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.polygon`` and ``directedLinear.directedLineString`` shall follow the WKT geometry standard - ISO/IEC 13249-3:2016, showing examples of WKT coding, using OSGB coordinate references (SRID = 27700), around the DfT office in Victoria. Only the ``point``, ``linestring`` and ``polygon`` WKT constructs are permitted.
+The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.polygon`` and ``directedLinear.directedLineString`` shall follow the WKT geometry standard - ISO/IEC 13249-3:2016, showing examples of WKT coding, using OSGB coordinate references (SRID = 27700), around the DfT office in Victoria. Only the ``POINT``, ``LINESTRING`` and ``POLYGON`` WKT constructs, and their multi- equivalents (``MULTIPOINT``, ``MULTILINESTRING`` and ``MULTIPOLYGON``) are permitted.
 
 .. list-table:: Geometry Types with Examples
    :header-rows: 1
@@ -1313,30 +1316,6 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
 
 The ``roadCondition`` object contains only the mandatory ``roadType`` attribute. Permissible values include, but are not limited to: ``motorway``, ``trunkRoad``, and ``other``.
 
-The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
- 
-:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
-
-.. _otherCondition:
-
-.. figure:: /_static/images/other-condition-object.png
-   :alt: UML model representation of the otherCondition object
-   :width: 80%
-   :align: center
-
-The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
-
-:numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
-
-.. _occupant-condition:
-
-.. figure:: /_static/images/occupant-condition.png
-   :alt: UML model representation of the occupantCondition object
-   :width: 80%
-   :align: center
-
-   UML model representation of the ``occupantCondition`` object
-
 The ``occupantCondition`` object contains only the ``disabledWithPermit`` attribute which is defined as a ``boolean`` data type.
 
 :numref:`number-of-occupants` provides the UML class representation of the ``numberOfOccupants`` object.
@@ -1459,16 +1438,6 @@ The ``permitSubjectToFee`` object has four optional attributes:
 
 * The ``paymentInformation`` attribute provides a web address (URL) for further information on the permit and related payment.
 
-.. error::
-
-   MISSING TWO ATTRIBUTES HERE
-
-.. error::
-
-   Also, is this following text meant to be here?
-
-The ``condition`` object is linked to the 'standard' ``timeValidity`` sub-model (the ``timeValidity`` object at the top of this sub-model). This enables time-related conditions to be specified.
-
 :numref:`nonVehicularRoadUserCondition` provides the UML class representation of the ``nonVehicularRoadUserCondition`` object.
 
 .. _nonVehicularRoadUserCondition:
@@ -1484,6 +1453,32 @@ The ``nonVehicularRoadUserCondition`` object has the following attribute:
 
 * The ``nonVehicularRoadUser`` attribute indicates restriction or permissions relating to non-vehicular road users. Permissible values include, but are not limited to, ``pedestrians``, ``herdedAnimals``, etc.
 
+The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
+ 
+:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
+
+.. _otherCondition:
+
+.. figure:: /_static/images/other-condition-object.png
+   :alt: UML model representation of the otherCondition object
+   :width: 80%
+   :align: center
+
+   UML model representation of the ``otherCondition`` object
+
+The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
+
+:numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
+
+.. _occupant-condition:
+
+.. figure:: /_static/images/occupant-condition.png
+   :alt: UML model representation of the occupantCondition object
+   :width: 80%
+   :align: center
+
+   UML model representation of the ``occupantCondition`` object
+
 Specifying Vehicle Conditions
 *****************************
 
@@ -1495,7 +1490,7 @@ The information that is modelled in ``vehicleCharacteristics`` objects identifie
 
 .. _vehicleCharacteristics-related:
 
-.. figure:: /_static/images/vehicle_characteristics_related_objects.bmp
+.. figure:: /_static/images/vehicle-characteristics-related-objects.bmp
    :alt: UML model representation of vehicleCharacteristics-related objects
    :width: 80%
    :align: center
@@ -1578,10 +1573,12 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 .. _electricChargingCharacteristic:
 
-.. figure:: /_static/images/electricChargingCharacteristic.png
-   :alt: UML model representation of the electricChargingCharacteristic object
+.. figure:: /_static/images/electricChargingCharacteristic-object.png
+   :alt: UML model representation of the ``electricChargingCharacteristic`` object
    :width: 80%
    :align: center
+
+   UML model representation of the electricChargingCharacteristic object
 
 The ``electricChargingCharacteristic`` object has two optional attributes:
 
@@ -1617,22 +1614,22 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
 * The ``emissionClassificationOther`` attribute specifies optionally multiple free-text description of a classification type for vehicle emissions, distinct from the Euro classifications.
 
 
-:numref:`valueRange` provides the UML class representation of the value range object.
+:numref:`valueRange` provides the UML class representation of the ``valueRange`` object.
 
 .. _valueRange:
 
-.. figure:: /_static/images/valueRange.png
-   :alt: UML model representation of the value range object
+.. figure:: /_static/images/valueRange-object.png
+   :alt: UML model representation of the valueRange object
    :width: 80%
    :align: center
 
-   UML model representation of the value range object
+   UML model representation of the ``valueRange`` object
 
-The `valueRange` object is defining a measurable quantity and related units and has two mandatory attributes:
+The ``valueRange`` object is defining a measurable quantity and related units and has two mandatory attributes:
 
 * The ``class`` attribute specifies the type of measured value under consideration and links to different forms of value range as shown in the schema below.
 
-:numref:`class` UML model representation of ``valueRangeClassEnum`` object
+:numref:`valueRangeClassEnum` UML model representation of ``valueRangeClassEnum`` object
 
 .. _valueRangeClassEnum:
 
@@ -1641,9 +1638,11 @@ The `valueRange` object is defining a measurable quantity and related units and 
    :width: 80%
    :align: center
 
+   UML model representation of the ``valueRangeClassEnum`` object
+
 * The ``unit`` attribute specifies the unit used for the measure and links to the different forms of unit of measure as shown in the schema below.
 
-:numref:`unit` UML model representation of ``unitOfMeasureEnum`` object
+:numref:`unitOfMeasureEnum` UML model representation of ``unitOfMeasureEnum`` object
 
 .. _unitOfMeasureEnum:
 
@@ -1652,21 +1651,23 @@ The `valueRange` object is defining a measurable quantity and related units and 
    :width: 80%
    :align: center
 
+   UML model representation of the ``unitOfMeasureEnum`` object
 
-:numref:`valueRangeBoundary` provides the UML class representation of the value range boundary object.
+
+:numref:`valueRangeBoundary` provides the UML class representation of the ``valueRangeBoundary`` object.
 
 .. _valueRangeBoundary:
 
-.. figure:: /_static/images/valueRangeBoundary.png
-   :alt: UML model representation of the value range boundary object
+.. figure:: /_static/images/valueRangeBoundary-object.png
+   :alt: UML model representation of the valueRangeBoundary object
    :width: 80%
    :align: center
 
-   UML model representation of the value range boundary object
+   UML model representation of the ``valueRangeBoundary`` object
 
 The `valueRangeBoundary` object is defining a range boundary value and operator related to that boundary and has two mandatory attributes:
 
-* The ``comparisonOperator`` attreibute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
+* The ``comparisonOperator`` attribute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
 
 :numref:`comparisonOperatorType` provides the UML class representation of the comparison operator type object.
 
