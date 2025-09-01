@@ -718,9 +718,10 @@ Each is described in turn.
 
 The use of the ``pointGeometry`` class is preferred for point/gate locations.
 
-The ``pointGeometry`` object has a single mandatory attribute, ``representation`` which indicates the nature of the point location for a point representation of a regulated place. Acceptable values are: ``centreLinePoint``, ``trafficSignLocation``, and ``other``.
+The ``pointGeometry`` object has two mandatory attributes. These are:
 
-Note: the data type of the attribute ``point`` is defined as a string. This string shall conform to the format required by the WKT standard.
+* ``representation``, which indicates the nature of the point location for a point representation of a regulated place. Acceptable values are: ``centreLinePoint``, ``trafficSignLocation``, and ``other``
+* ``point``, a string conforming to the format required by the WKT standard. Only the use of WKT ``POINT`` and ``MULTIPOINT`` are permitted. Where ``MULTIPOINT`` is used the same ``representation`` shall apply to all supplied points.
 
 The specific form of standardised data encoding to be used to structure TRO location data in a way that is consistent robust and commonly interpreted. Use of both GeoJSON or WKT (Well Known Text) conventions have been considered. However, the latest edition (2016) of GeoJSON (`RFC 7946 <https://datatracker.ietf.org/doc/html/rfc7946>`_) only permits the use of WGS84 coordinates, and therefore cannot be used given the coordinate referencing system decision above.
 
@@ -787,7 +788,7 @@ This is distinct from trying to define turning motions between two identifiable 
 
 * The mandatory ``lateralPosition`` attribute indicates the lateral position across a road of the linear representation of a regulated place. Acceptable values are ``centreline``, ``onKerb``, ``near`` and ``far``. The values ``near`` and ``far`` are not currently defined in any detail.
 
-* The mandatory ``linestring`` attribute is a free text field holding the WKT coded representation of vertices forming a linestring. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The mandatory ``linestring`` attribute is a free text field holding the WKT coded representation of vertices forming a linestring. By default, two coordinate values per vertex are used, however an optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. Only the use of WKT ``LINESTRING`` and ``MULTILINESTRING`` are permitted. Where ``MULTILINESTRING`` is used the same ``representation``, ``direction`` and ``lateralPosition`` shall apply to all supplied linestrings. Where these other attributes vary, other instances of the ``linearGeometry`` objects are required.
 
 :numref:`fig27` provides the UML class representation of the ``polygon`` object.
 
@@ -802,7 +803,7 @@ This is distinct from trying to define turning motions between two identifiable 
 
 The polygon object has one mandatory attribute:
 
-* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``polygo`` attribute, only the use of WKT ``POLYGON`` and ``MULTIPOLYGON`` are permitted.
 
 :numref:`fig28` provides the UML class representation of the ``directedLinear`` object.
 
@@ -817,7 +818,7 @@ The polygon object has one mandatory attribute:
 
 The ``directedLinear`` object has one mandatory attribute:
 
-* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a polyline. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a polyline. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``directedLineString`` attribute, only the use of WKT ``LINESTRING`` is permitted.
 
 :numref:`fig29` provides the UML representation of ``diversionType`` object.
 
