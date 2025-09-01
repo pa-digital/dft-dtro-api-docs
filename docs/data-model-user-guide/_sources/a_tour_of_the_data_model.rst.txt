@@ -184,7 +184,7 @@ The ``experimentalCessation`` object can only be applied to ``experimentalRevoca
 
 .. _fig9:
 
-.. figure:: /_static/images/extension_of_the_provision_object.png
+.. figure:: /_static/images/extension-of-the-provision-objects.png
    :alt: UML model representation of the extension of the provision object
    :width: 80%
    :align: center
@@ -197,7 +197,7 @@ This model supports both permanent and time-bound experimental regulations, ensu
 
 .. _fig10:
 
-.. figure:: /_static/images/experimentalVariation.png
+.. figure:: /_static/images/experimentalVariation-object.png
    :alt: UML model representation of the experimentalVariation object
    :width: 80%
    :align: center
