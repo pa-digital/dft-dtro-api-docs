@@ -7,7 +7,7 @@ This section provides a tour of the main features of the Data Model. The Data Mo
 
 .. button::
    :text: View the data model
-   :url: https://department-for-transport-public.github.io/D-TRO/Data_Model%20v3.4.0.9/index.htm
+   :url: https://d-tro.dft.gov.uk/data-model-user-guide/Data%20Model%20HTML%20Guide/index.htm
 
 :numref:`fig3` shows a summarised simplified view of the main structures of the Data Model. These structures often contain more detailed sub-models, which are detailed later in this section.
 
