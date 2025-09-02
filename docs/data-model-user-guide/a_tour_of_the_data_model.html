@@ -593,34 +593,33 @@
 <p><span class="caption-number">Figure 20 </span><span class="caption-text">Records Management example for source &amp; provision</span><a class="headerlink" href="#id19" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the “Create D-TRO” process).</p>
-<p>It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = ‘new’). It has two child provisions:</p>
+<p>The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the ‘Create D-TRO’ API endpoint).</p>
+<p>It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = <code class="docutils literal notranslate"><span class="pre">new</span></code>). It has two child provisions:</p>
 <ul class="simple">
 <li><p>provision #1 with reference: TRAxxxx-Pro-01 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">new</span></code>, and</p></li>
-<li><p>provision #2 with reference: TRAxxxx-Pro-12 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
+<li><p>provision #2 with reference: TRAxxxx-Pro-12 and <cite>actionType</cite> = <code class="docutils literal notranslate"><span class="pre">new</span></code></p></li>
 </ul>
-<p>At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">amendment</span></code>. We highlight two of the provisions in the example:</p>
+<p>At a later point in time, the TRA makes an Amendment to the TRO with reference TRAxxxx-SO-01, and actionType = <code class="docutils literal notranslate"><span class="pre">amendment</span></code>. We highlight two of the provisions in the example:</p>
 <ul class="simple">
 <li><p>provision #1, with reference: TRAxxxx-Pro-01 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code>, and</p></li>
-<li><p>provision #7, with reference: TRAxxxx-Pro-12 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code></p></li>
+<li><p>provision #2, with reference: TRAxxxx-Pro-12 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code></p></li>
 </ul>
-<p>This amendment is submitted via the Update API endpoint, and uses the same service-generated unique
-reference (GUID) for the TRO.</p>
-<p>As this update has the same service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO service as not current and replaced by the newer version.</p>
+<p>This amendment is submitted via the Update API endpoint, and uses the same Service-generated unique reference (GUID) for the TRO.</p>
+<p>As this Update has the same Service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO Service database as not current and replaced by the newer version.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The ‘Create D-TRO’ API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.</p>
 </div>
-<p>More complex updates require specific handling. Take the example illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">_fig21</span></code>. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO service, using the “Create D-TRO” API endpoint.</p>
-<p>At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">amendment</span></code>. We highlight two of the provisions in the example:</p>
+<p>More complex update require specific handling. Take the example illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">_fig21</span></code>. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the ‘Create D-TRO’ API endpoint.</p>
+<p>At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and actionType = <code class="docutils literal notranslate"><span class="pre">amendment</span></code>. We highlight two of the provisions in the example:</p>
 <ul class="simple">
-<li><p>provision #1, with reference: TRAxxxx-Pro-01 and actionType = <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code>, and</p></li>
-<li><p>provision #7, with reference: TRAxxxx-Pro-12 and actionType = <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code></p></li>
+<li><p>provision #1, with reference: TRAxxxx-Pro-01 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code>, and</p></li>
+<li><p>provision #7, with reference: TRAxxxx-Pro-12 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code></p></li>
 </ul>
-<p>This later D-TRO has a different service-generated unique reference (GUID) to the earlier submitted DTRO. Even though these provisions have the same references as those already known in the D-TRO service and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> metadata showing <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code> and <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code>, due to the lack of a common service-generated unique reference (GUID) at the provision level, the D-TRO Service will not link the records together.</p>
-<p>Records are only linked within the D-TRO service by sharing a common service-generated unique reference (GUID) at the D-TRO level.</p>
-<p>To correctly update these records it is necessary to also submit an updated version of the earlier submitted
-D-TRO, with the same Service-generated unique reference (GUID), and appropriate actionType metadata.</p>
+<p>This later D-TRO has a different Service-generated unique reference (GUID) to the earlier submitted D-TRO.</p>
+<p>Even though these provisions have the same references as those already known in the D-TRO Service and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> metadata showing <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code> and <code class="docutils literal notranslate"><span class="pre">fullRevoke</span></code>, due to the lack of a common Service-generated unique reference (GUID) at the provision level, the D-TRO Service database will not link the records together.</p>
+<p>Records are only linked within the D-TRO Service database by sharing a common Service-generated unique reference (GUID) at the D-TRO level.</p>
+<p>To correctly update these records it is necessary to also submit an updated version of the earlier submitted D-TRO, with the same Service-generated unique reference (GUID), and appropriate <code class="docutils literal notranslate"><span class="pre">actionType</span></code> metadata.</p>
 <figure class="align-center" id="id20">
 <span id="fig21"></span><a class="reference internal image-reference" href="_images/fig21.png"><img alt="Records Management example for source &amp; provision (more complex)" src="_images/fig21.png" style="width: 80%;" />
 </a>
@@ -630,8 +629,8 @@ D-TRO, with the same Service-generated unique reference (GUID), and appropriate 
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO service. The earlier version will be marked in the D-TRO service as not current. The Consolidation record, with reference TRAxxxxSo-09, will be marked as current in the D-TRO service.</p>
-<p>This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) – the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.</p>
+<p>Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO Service database. The earlier version will be marked in the D-TRO Service database as not current. The Consolidation record, with reference TRAxxxx-So-09, will be marked as current in the D-TRO Service database.</p>
+<p>This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) - the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.</p>
 </div>
 <p>The distinction between <code class="docutils literal notranslate"><span class="pre">fullAmendment</span></code> and <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code> does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to <code class="docutils literal notranslate"><span class="pre">partialRevoke</span></code>.</p>
 </section>

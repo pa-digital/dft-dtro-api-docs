@@ -511,41 +511,40 @@ The ``source`` and ``provision`` objects have been described above in :ref:`sect
 
    Records Management example for source & provision
 
-The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the “Create D-TRO” process).
+The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the 'Create D-TRO' API endpoint).
 
-It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = 'new'). It has two child provisions:
+It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = ``new``). It has two child provisions:
 
-* provision #1 with reference: TRAxxxx-Pro-01 and ``actionType`` = ``new``, and
+* provision #1 with reference: TRAxxxx-Pro-01 and ``actionType`` = ``new``, and 
 
-* provision #2 with reference: TRAxxxx-Pro-12 and ``actionType`` = ``new``
+* provision #2 with reference: TRAxxxx-Pro-12 and `actionType` = ``new``
 
-At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+At a later point in time, the TRA makes an Amendment to the TRO with reference TRAxxxx-SO-01, and actionType = ``amendment``. We highlight two of the provisions in the example: 
 
 * provision #1, with reference: TRAxxxx-Pro-01 and ``actionType`` = ``partialAmendment``, and
+* provision #2, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-* provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
+This amendment is submitted via the Update API endpoint, and uses the same Service-generated unique reference (GUID) for the TRO.
 
-This amendment is submitted via the Update API endpoint, and uses the same service-generated unique
-reference (GUID) for the TRO.
+As this Update has the same Service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO Service database as not current and replaced by the newer version. 
 
-As this update has the same service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO service as not current and replaced by the newer version.
-
-.. note::
+.. note::   
    The 'Create D-TRO' API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.
 
-More complex updates require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO service, using the “Create D-TRO” API endpoint.
+More complex update require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the 'Create D-TRO' API endpoint. 
 
-At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and actionType = ``amendment``. We highlight two of the provisions in the example:
 
-* provision #1, with reference: TRAxxxx-Pro-01 and actionType = ``partialAmendment``, and
-* provision #7, with reference: TRAxxxx-Pro-12 and actionType = ``fullRevoke``
+* provision #1, with reference: TRAxxxx-Pro-01 and ``actionType`` = ``partialAmendment``, and
+* provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-This later D-TRO has a different service-generated unique reference (GUID) to the earlier submitted DTRO. Even though these provisions have the same references as those already known in the D-TRO service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common service-generated unique reference (GUID) at the provision level, the D-TRO Service will not link the records together.
+This later D-TRO has a different Service-generated unique reference (GUID) to the earlier submitted D-TRO.
 
-Records are only linked within the D-TRO service by sharing a common service-generated unique reference (GUID) at the D-TRO level.
+Even though these provisions have the same references as those already known in the D-TRO Service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common Service-generated unique reference (GUID) at the provision level, the D-TRO Service database will not link the records together.
 
-To correctly update these records it is necessary to also submit an updated version of the earlier submitted
-D-TRO, with the same Service-generated unique reference (GUID), and appropriate actionType metadata.
+Records are only linked within the D-TRO Service database by sharing a common Service-generated unique reference (GUID) at the D-TRO level.
+
+To correctly update these records it is necessary to also submit an updated version of the earlier submitted D-TRO, with the same Service-generated unique reference (GUID), and appropriate ``actionType`` metadata. 
 
 .. _fig21:
 
@@ -557,11 +556,11 @@ D-TRO, with the same Service-generated unique reference (GUID), and appropriate 
    Records Management example for source & provision (more complex)
 
 .. note::
-   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO service. The earlier version will be marked in the D-TRO service as not current. The Consolidation record, with reference TRAxxxxSo-09, will be marked as current in the D-TRO service.
+   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO Service database. The earlier version will be marked in the D-TRO Service database as not current. The Consolidation record, with reference TRAxxxx-So-09, will be marked as current in the D-TRO Service database.
 
-   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) – the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
+   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) - the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
 
-The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
+The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``. 
 
 Specifying Locations for TROs
 *****************************
