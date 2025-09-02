@@ -1,17 +1,18 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 
+
 class NotificationDirective(Directive):
     has_content = True
     required_arguments = 0
     optional_arguments = 0
     option_spec = {
-        'heading': directives.unchanged_required,
+        "heading": directives.unchanged_required,
     }
 
-    def run(self):    
+    def run(self):
         self.assert_has_content()
-        heading = self.options.get('heading')
+        heading = self.options.get("heading")
 
         container = nodes.container(classes=["notification-container"])
 
@@ -23,6 +24,6 @@ class NotificationDirective(Directive):
 
         return [container]
 
+
 def setup(app):
     app.add_directive("notification", NotificationDirective)
-

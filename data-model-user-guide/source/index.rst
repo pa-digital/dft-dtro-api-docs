@@ -6,6 +6,9 @@
 D-TRO Data Model Documentation
 ==============================
 
+.. tag::
+   :text: v3.5.0
+
 Welcome to the D-TRO Data Model Interactive User Guide. You can use the links below and search controls to navigate through the guide.
 
 This document is also connected to the Data Model UML diagram, which you can open from the :ref:`a-tour-of-the-data-model` section.

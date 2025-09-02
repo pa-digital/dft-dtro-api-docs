@@ -714,3 +714,10 @@ figure img {
 main[class^="shared"] > .sidebar {
   display: none;
 }
+
+.tag {
+  color: #0c2d4a;
+  background-color: #bbd4ea;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
