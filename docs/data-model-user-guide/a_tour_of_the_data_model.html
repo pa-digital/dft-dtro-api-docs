@@ -101,6 +101,7 @@
 <li><a class="reference internal" href="#managing-records-for-tros-and-corresponding-provisions">Managing Records for TROs and Corresponding Provisions</a></li>
 <li><a class="reference internal" href="#specifying-locations-for-tros">Specifying Locations for TROs</a></li>
 <li><a class="reference internal" href="#times-relating-to-regulations">Times Relating to Regulations</a></li>
+<li><a class="reference internal" href="#summarizing-the-use-of-time-concepts-in-d-tro">Summarizing the use of time concepts in D-TRO</a></li>
 <li><a class="reference internal" href="#about-conditions-and-exclusions">About Conditions and Exclusions</a></li>
 <li><a class="reference internal" href="#specifying-vehicle-conditions">Specifying Vehicle Conditions</a></li>
 <li><a class="reference internal" href="#about-tariff-rates">About Tariff Rates</a></li>
@@ -569,15 +570,8 @@
 <p>A key enhancement to the Data Model for Beta is the Records Management concept to help link together TROs and provisions, supporting different forms of orders, order provisions and notices that come into the D-TRO Central Service, particularly in the case of amendments, revocations, variations by notice and consolidations.</p>
 </div>
 <p>As part of records management, the D-TRO Service will maintain a ‘live TRO’ list, which may be modified by the receipt of a new inbound Order or Notice received by the D-TRO Service.</p>
-<ul class="simple">
-<li><p>An <code class="docutils literal notranslate"><span class="pre">amendment</span></code> order can change or remove anything in an existing order - or orders - and add new provisions and revoke other orders.</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">revocation</span></code> is a type of amendment order, that does not have any new provisions. An order that only contains revocations will still be advertised and consulted upon. The receipt of a record that is identified solely as a revocation into the central service, does not automatically mean that any referenced previous orders will be removed from the “live TRO” list. An order that is solely a revocation may only revoke parts of an old order and leave other parts intact - this may be a partial revocation of a Provision within a previous TRO.</p></li>
-<li><p>Parking tariffs are varied by use of a <strong>variation by notice</strong>. As the initial tariffs may have been specified in the original full order, this can have the effect of being an amendment to it.</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">consolidation</span></code> is an administrative process and nothing ‘of substance’ should be added or removed. Generally, a consolidation would combine a base order and its subsequent amendments into a new base order. If something is missed from the revocation list of a consolidation, then the remaining pre-existing Provisions (partial or whole) might be orphaned but still be in force. These always have multiple revocations by definition.</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">consolidation</span></code> can be used to change some details of a previously made TRO, so long as this does not affect the substance of the Order. Things can be tidied up if required (noting there is small defined list of minor changes that are allowed) but nothing should be changed that would ordinarily require consultation. The opportunity to make changes is very limited. However, as a side note, this can be complicated by the fact that some people refer to the combination of old orders with substantial changes as a consolidation, which it is not.</p></li>
-</ul>
 <p>We require that all (versions of) Orders and Notices received shall contain ‘minimum contextual content’ (i.e. the who, what, when and how much, if relevant, of any Provision). This requirement is defined by the minimum mandatory data elements within the Data Model. Effectively new versions will replace older versions within the Live TRO list - old versions will remain visible for a while.</p>
-<p>Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D=TRO Service for a defined retention period, before being archived.</p>
+<p>Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D-TRO Service for a defined retention period, before being archived.</p>
 <figure class="align-center" id="id18">
 <span id="fig19"></span><a class="reference internal image-reference" href="_images/fig19.png"><img alt="Objects View for Records Management related objects" src="_images/fig19.png" style="width: 80%;" />
 </a>
@@ -610,7 +604,7 @@
 <p class="admonition-title">Note</p>
 <p>The ‘Create D-TRO’ API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.</p>
 </div>
-<p>More complex update require specific handling. Take the example illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">_fig21</span></code>. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the ‘Create D-TRO’ API endpoint.</p>
+<p>More complex update require specific handling. Take the example illustrated in <a class="reference internal" href="#fig21"><span class="std std-numref">Figure 21</span></a>. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the ‘Create D-TRO’ API endpoint.</p>
 <p>At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and actionType = <code class="docutils literal notranslate"><span class="pre">amendment</span></code>. We highlight two of the provisions in the example:</p>
 <ul class="simple">
 <li><p>provision #1, with reference: TRAxxxx-Pro-01 and <code class="docutils literal notranslate"><span class="pre">actionType</span></code> = <code class="docutils literal notranslate"><span class="pre">partialAmendment</span></code>, and</p></li>
@@ -848,7 +842,7 @@
 </figure>
 <p>The polygon object has one mandatory attribute:</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">polygon</span></code> attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory ‘polygon’ attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the <code class="docutils literal notranslate"><span class="pre">polygo</span></code> attribute, only the use of WKT <code class="docutils literal notranslate"><span class="pre">POLYGON</span></code> and <code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code> are permitted.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">polygon</span></code> attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory ‘polygon’ attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the <code class="docutils literal notranslate"><span class="pre">polygon</span></code> attribute, only the use of WKT <code class="docutils literal notranslate"><span class="pre">POLYGON</span></code> and <code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code> are permitted.</p></li>
 </ul>
 <p><a class="reference internal" href="#fig28"><span class="std std-numref">Figure 29</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">directedLinear</span></code> object.</p>
 <figure class="align-center" id="id30">
@@ -890,7 +884,7 @@
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">lastUpdateDate</span></code> attribute is a date to specify when this cross reference was established, as USRNs and ESUs do occasionally change.</p></li>
 </ul>
-<p><strong>If no relevant USRN is available, the ``externalReference``, ``uniqueStreetReferenceNumber`` and ``elementaryStreetUnit`` objects shall not be supplied.</strong></p>
+<p><strong>If no relevant USRN is available, the ``externalReference`` and ``uniqueStreetReferenceNumber`` objects shall not be supplied.</strong></p>
 <p><a class="reference internal" href="#fig32"><span class="std std-numref">Figure 33</span></a> provides the UML representation of <code class="docutils literal notranslate"><span class="pre">uniqueStreetReferenceNumber</span></code> object. Each <code class="docutils literal notranslate"><span class="pre">regulatedPlace</span></code> shall be cross-referenced to one or more Unique Street Reference Numbers (USRN) as specified in the National Street Gazetteer (NSG), by use of the <code class="docutils literal notranslate"><span class="pre">usrn</span></code> attribute, where the road has a USRN.</p>
 <figure class="align-center" id="id34">
 <span id="fig32"></span><a class="reference internal image-reference" href="_images/usrn.png"><img alt="UML model representation of the uniqueStreetReferenceNumber object" src="_images/usrn.png" style="width: 80%;" />
@@ -932,7 +926,8 @@
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">isPlaceholderTro</span></code> attribute specifies if the record is a placeholder one. When set to true, start should be set at the midnight of 1st of January 1970.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">isPlaceholderTro</span></code> attribute specifies if the record is a placeholder one - placeholder TROs are typically defined to support routine maintenance activities - the TRO when made does not contain specific details of when maintenance activities will occur within the overall duration scope of the TRO. When set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, start should be set at the midnight of 1st of January 1970.</p>
+<p>When specific activation dates and time starts and stops are foreseen, the times and dates given in the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model represent when the TRO and its provisions are foreseen to be activated. These updates can be provided by submission of a D-TRO record, with an <code class="docutils literal notranslate"><span class="pre">orderReportingPointType</span></code> = <code class="docutils literal notranslate"><span class="pre">informationUpdate</span></code>, after the submission of a D-TRO record, with a Made status.</p>
 <p>For permanent TROs the end attribute may be omitted.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> model allows intermittent or variable patterns of time applicability for TRO regulations to be specified.</p>
 <p><a class="reference internal" href="#fig-max-stay-no-return"><span class="std std-numref">Figure 36</span></a> provides the UML class representaion of the <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> object.</p>
@@ -1120,6 +1115,28 @@
 <li><p>The <code class="docutils literal notranslate"><span class="pre">entry</span></code> attribute provides one date/time entry defining a specific date and time.</p></li>
 </ul>
 <p>An example of <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEntry</span></code>, when linked to a <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodStart</span></code>, could represent a list of school terms start dates, e.g. entry 1 - 2024-09-05T08:00, entry 2 - 2024-11-04T08:00, entry 3 - 2025-01-07T08:00, with equivalent entries linked to the <code class="docutils literal notranslate"><span class="pre">changeableTimePeriodEnd</span></code>.</p>
+</section>
+<section id="summarizing-the-use-of-time-concepts-in-d-tro">
+<h2>Summarizing the use of time concepts in D-TRO<a class="headerlink" href="#summarizing-the-use-of-time-concepts-in-d-tro" title="Link to this heading">¶</a></h2>
+<p><em>Made Date</em> - At the TRO level, in the <code class="docutils literal notranslate"><span class="pre">source</span></code> object, the Made Date for the TRO is defined in the <code class="docutils literal notranslate"><span class="pre">madeDate</span></code> attribute.</p>
+<p><em>Coming into force date</em> - The coming into force date shall be defined at the TRO level in the <code class="docutils literal notranslate"><span class="pre">source</span></code> object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the <code class="docutils literal notranslate"><span class="pre">comingIntoForceDate</span></code> attribute in the <code class="docutils literal notranslate"><span class="pre">provision</span></code> object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.</p>
+<p><em>Activation times</em> - Dates and times within the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> model represent the dates and times that the related regulation and provision are activated (operationally active time). The <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model supports a wide range of different time patterns for the applicability and activation of each provision.
+In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> model shall mirror the coming into force date.</p>
+<p>For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model represent when the TRO and its provisions are foreseen to be activated.</p>
+<p><em>Varied or ceased Experimental TROs</em> - the draft Secondary Legislation requires:</p>
+<p>where the operation of the order, or any provision of the order, is modified or suspended in accordance with section 10(2) of that Act,
+the planned duration of the modification or suspension shall be recorded in the experimentalVariation object;
+OR
+where any prohibition, regulation or restriction effected by the order, or by any provision of the order, ceases to have effect earlier than the date provided under regulation 4(21)(f) or 4(2)(c).
+the actual date on which the order or provision ceased to have effect shall be recorded in the experimentalCessation object;</p>
+<p><em>Recording of actual start and end dates and times</em> - the draft Secondary Legislation requires:
+This regulation applies to an order made, or a notice issued, under section 14 (temporary prohibition or restriction on roads) of the 1984 Act( ) where the traffic regulation authority is making that order or issuing that notice for the purpose of undertaking works itself.</p>
+<p>A traffic regulation authority must provide:</p>
+<ol class="arabic simple">
+<li><p>the actual start time of each provision in the order or notice;</p></li>
+<li><p>the actual stop time of each provision in the order or notice;</p></li>
+</ol>
+<p>Each relevant start and stop shall be recorded in the <code class="docutils literal notranslate"><span class="pre">actualStartOrStop</span></code> object.</p>
 </section>
 <section id="about-conditions-and-exclusions">
 <h2>About Conditions and Exclusions<a class="headerlink" href="#about-conditions-and-exclusions" title="Link to this heading">¶</a></h2>

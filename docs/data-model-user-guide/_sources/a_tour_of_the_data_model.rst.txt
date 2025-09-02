@@ -476,19 +476,9 @@ Managing Records for TROs and Corresponding Provisions
 
 As part of records management, the D-TRO Service will maintain a 'live TRO' list, which may be modified by the receipt of a new inbound Order or Notice received by the D-TRO Service.
 
-* An ``amendment`` order can change or remove anything in an existing order - or orders - and add new provisions and revoke other orders.
-
-* A ``revocation`` is a type of amendment order, that does not have any new provisions. An order that only contains revocations will still be advertised and consulted upon. The receipt of a record that is identified solely as a revocation into the central service, does not automatically mean that any referenced previous orders will be removed from the “live TRO” list. An order that is solely a revocation may only revoke parts of an old order and leave other parts intact - this may be a partial revocation of a Provision within a previous TRO.
-
-* Parking tariffs are varied by use of a **variation by notice**. As the initial tariffs may have been specified in the original full order, this can have the effect of being an amendment to it.
-
-* A ``consolidation`` is an administrative process and nothing 'of substance' should be added or removed. Generally, a consolidation would combine a base order and its subsequent amendments into a new base order. If something is missed from the revocation list of a consolidation, then the remaining pre-existing Provisions (partial or whole) might be orphaned but still be in force. These always have multiple revocations by definition.
-
-* A ``consolidation`` can be used to change some details of a previously made TRO, so long as this does not affect the substance of the Order. Things can be tidied up if required (noting there is small defined list of minor changes that are allowed) but nothing should be changed that would ordinarily require consultation. The opportunity to make changes is very limited. However, as a side note, this can be complicated by the fact that some people refer to the combination of old orders with substantial changes as a consolidation, which it is not.
-
 We require that all (versions of) Orders and Notices received shall contain 'minimum contextual content' (i.e. the who, what, when and how much, if relevant, of any Provision). This requirement is defined by the minimum mandatory data elements within the Data Model. Effectively new versions will replace older versions within the Live TRO list - old versions will remain visible for a while.
 
-Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D=TRO Service for a defined retention period, before being archived.
+Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D-TRO Service for a defined retention period, before being archived.
 
 .. _fig19:
 
@@ -531,7 +521,7 @@ As this Update has the same Service-generated unique reference (GUID) as the ear
 .. note::   
    The 'Create D-TRO' API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.
 
-More complex update require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the 'Create D-TRO' API endpoint. 
+More complex update require specific handling. Take the example illustrated in :numref:`fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the 'Create D-TRO' API endpoint. 
 
 At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and actionType = ``amendment``. We highlight two of the provisions in the example:
 
@@ -802,7 +792,7 @@ This is distinct from trying to define turning motions between two identifiable 
 
 The polygon object has one mandatory attribute:
 
-* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``polygo`` attribute, only the use of WKT ``POLYGON`` and ``MULTIPOLYGON`` are permitted.
+* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``polygon`` attribute, only the use of WKT ``POLYGON`` and ``MULTIPOLYGON`` are permitted.
 
 :numref:`fig28` provides the UML class representation of the ``directedLinear`` object.
 
@@ -856,7 +846,7 @@ The ``externalReference`` object has one mandatory attribute:
 
 * The ``lastUpdateDate`` attribute is a date to specify when this cross reference was established, as USRNs and ESUs do occasionally change.
 
-**If no relevant USRN is available, the ``externalReference``, ``uniqueStreetReferenceNumber`` and ``elementaryStreetUnit`` objects shall not be supplied.**
+**If no relevant USRN is available, the ``externalReference`` and ``uniqueStreetReferenceNumber`` objects shall not be supplied.**
 
 :numref:`fig32` provides the UML representation of ``uniqueStreetReferenceNumber`` object. Each ``regulatedPlace`` shall be cross-referenced to one or more Unique Street Reference Numbers (USRN) as specified in the National Street Gazetteer (NSG), by use of the ``usrn`` attribute, where the road has a USRN.
 
@@ -915,7 +905,9 @@ The ``timeValidity`` object defines overall dates and times relating to the appl
 
 The ``start`` date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.
 
-The ``isPlaceholderTro`` attribute specifies if the record is a placeholder one. When set to true, start should be set at the midnight of 1st of January 1970.
+The ``isPlaceholderTro`` attribute specifies if the record is a placeholder one - placeholder TROs are typically defined to support routine maintenance activities - the TRO when made does not contain specific details of when maintenance activities will occur within the overall duration scope of the TRO. When set to ``true``, start should be set at the midnight of 1st of January 1970.
+
+When specific activation dates and time starts and stops are foreseen, the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated. These updates can be provided by submission of a D-TRO record, with an ``orderReportingPointType`` = ``informationUpdate``, after the submission of a D-TRO record, with a Made status.
 
 For permanent TROs the end attribute may be omitted.
 
@@ -1162,6 +1154,36 @@ The ``changeableTimePeriodEntry`` object has one mandatory attribute:
 * The ``entry`` attribute provides one date/time entry defining a specific date and time.
 
 An example of ``changeableTimePeriodEntry``, when linked to a ``changeableTimePeriodStart``, could represent a list of school terms start dates, e.g. entry 1 - 2024-09-05T08:00, entry 2 - 2024-11-04T08:00, entry 3 - 2025-01-07T08:00, with equivalent entries linked to the ``changeableTimePeriodEnd``.
+
+Summarizing the use of time concepts in D-TRO
+*********************************************
+
+*Made Date* - At the TRO level, in the ``source`` object, the Made Date for the TRO is defined in the ``madeDate`` attribute.
+
+*Coming into force date* - The coming into force date shall be defined at the TRO level in the ``source`` object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the ``comingIntoForceDate`` attribute in the ``provision`` object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.
+
+*Activation times* - Dates and times within the ``timeValidity`` model represent the dates and times that the related regulation and provision are activated (operationally active time). The ``timeValidity`` sub-model supports a wide range of different time patterns for the applicability and activation of each provision.
+In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the ``timeValidity`` model shall mirror the coming into force date.
+
+For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
+
+*Varied or ceased Experimental TROs* - the draft Secondary Legislation requires:
+
+where the operation of the order, or any provision of the order, is modified or suspended in accordance with section 10(2) of that Act,
+the planned duration of the modification or suspension shall be recorded in the experimentalVariation object;
+OR
+where any prohibition, regulation or restriction effected by the order, or by any provision of the order, ceases to have effect earlier than the date provided under regulation 4(21)(f) or 4(2)(c).
+the actual date on which the order or provision ceased to have effect shall be recorded in the experimentalCessation object;
+
+*Recording of actual start and end dates and times* - the draft Secondary Legislation requires:
+This regulation applies to an order made, or a notice issued, under section 14 (temporary prohibition or restriction on roads) of the 1984 Act( ) where the traffic regulation authority is making that order or issuing that notice for the purpose of undertaking works itself.
+
+A traffic regulation authority must provide:
+
+1. the actual start time of each provision in the order or notice;
+2. the actual stop time of each provision in the order or notice;
+
+Each relevant start and stop shall be recorded in the ``actualStartOrStop`` object.
 
 About Conditions and Exclusions
 *******************************
