@@ -224,7 +224,7 @@
 <p>By way of illustration, consider one TRO that contains two provisions. The first provision is, say, a kerbside parking place regulation, regulated to be applicable 24 hours, 7 days per week, relevant to locations A, B and C. The second provision is, say, a kerbside loading place regulation, regulated to be useable between 06:00 am and 08:00 on weekdays, limited to commercial vehicles, relevant to locations D and F.</p>
 <p><a class="reference internal" href="#fig8"><span class="std std-numref">Figure 8</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">provision</span></code> object.</p>
 <figure class="align-center" id="id7">
-<span id="fig8"></span><a class="reference internal image-reference" href="_images/fig8.png"><img alt="UML model representation of the provision object" src="_images/fig8.png" style="width: 80%;" />
+<span id="fig8"></span><a class="reference internal image-reference" href="_images/fig8.png"><img alt="UML model representation of the provision object" src="_images/fig8.png" style="width: 45%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 8 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">provision</span></code> object</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
@@ -287,10 +287,10 @@
 <p>This object supports the structured representation of temporary modifications within a D-TRO and allows for clear communication of their intended scope and timeline.</p>
 <p><a class="reference internal" href="#fig12"><span class="std std-numref">Figure 12</span></a> provides the UML class representation of the <code class="docutils literal notranslate"><span class="pre">experimentaCessation</span></code> object.</p>
 <figure class="align-center" id="id11">
-<span id="fig12"></span><a class="reference internal image-reference" href="_images/fig12.png"><img alt="UML model representation of the experimentalCessation object" src="_images/fig12.png" style="width: 80%;" />
+<span id="fig12"></span><a class="reference internal image-reference" href="_images/fig12.png"><img alt="UML model representation of the experimentalCessation object" src="_images/fig12.png" style="width: 45%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">UML model representation of the experimentalCessation object</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">experimentalCessation</span></code> object</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">experimentalCessation</span></code> object used to define the characteristics of a cessation applied to an experimental Traffic Regulation Order. This object enables the structured recording of the end of an experimental regulatory provision, including both the cessation date and its rationale.</p>
@@ -590,7 +590,7 @@
 <p>We require that all (versions of) Orders and Notices received shall contain ‘minimum contextual content’ (i.e. the who, what, when and how much, if relevant, of any Provision). This requirement is defined by the minimum mandatory data elements within the Data Model. Effectively new versions will replace older versions within the Live TRO list - old versions will remain visible for a while.</p>
 <p>Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D-TRO Service for a defined retention period, before being archived.</p>
 <figure class="align-center" id="id19">
-<span id="fig20"></span><a class="reference internal image-reference" href="_images/fig20.png"><img alt="Objects View for Records Management related objects" src="_images/fig20.png" style="width: 80%;" />
+<span id="fig20"></span><a class="reference internal image-reference" href="_images/fig20.png"><img alt="Objects View for Records Management related objects" src="_images/fig20.png" style="width: 45%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 20 </span><span class="caption-text">Objects View for Records Management related objects</span><a class="headerlink" href="#id19" title="Link to this image">¶</a></p>
@@ -904,7 +904,7 @@
 <p><strong>If no relevant USRN is available, the ``externalReference`` and ``uniqueStreetReferenceNumber`` objects shall not be supplied.</strong></p>
 <p><a class="reference internal" href="#fig33"><span class="std std-numref">Figure 34</span></a> provides the UML representation of <code class="docutils literal notranslate"><span class="pre">uniqueStreetReferenceNumber</span></code> object. Each <code class="docutils literal notranslate"><span class="pre">regulatedPlace</span></code> shall be cross-referenced to one or more Unique Street Reference Numbers (USRN) as specified in the National Street Gazetteer (NSG), by use of the <code class="docutils literal notranslate"><span class="pre">usrn</span></code> attribute, where the road has a USRN.</p>
 <figure class="align-center" id="id35">
-<span id="fig33"></span><a class="reference internal image-reference" href="_images/usrn.png"><img alt="UML model representation of the uniqueStreetReferenceNumber object" src="_images/usrn.png" style="width: 80%;" />
+<span id="fig33"></span><a class="reference internal image-reference" href="_images/usrn.png"><img alt="UML model representation of the uniqueStreetReferenceNumber object" src="_images/usrn.png" style="width: 45%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 34 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">uniqueStreetReferenceNumber</span></code> object</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
@@ -971,7 +971,7 @@
 <p>Where an invalid (exception) period overlaps (intersects) a valid period the validity shall be regarded as invalid.</p>
 </div>
 <figure class="align-center" id="id39">
-<span id="fig37"></span><a class="reference internal image-reference" href="_images/period.png"><img alt="UML model representation of the period object" src="_images/period.png" style="width: 80%;" />
+<span id="fig37"></span><a class="reference internal image-reference" href="_images/period.png"><img alt="UML model representation of the period object" src="_images/period.png" style="width: 45%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 38 </span><span class="caption-text">UML model representation of the <code class="docutils literal notranslate"><span class="pre">period</span></code> object</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>

@@ -152,7 +152,7 @@ By way of illustration, consider one TRO that contains two provisions. The first
 
 .. figure:: /_static/images/fig8.png
    :alt: UML model representation of the provision object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``provision`` object
@@ -247,10 +247,10 @@ This object supports the structured representation of temporary modifications wi
 
 .. figure:: /_static/images/fig12.png
    :alt: UML model representation of the experimentalCessation object
-   :width: 80%
+   :width: 45%
    :align: center
 
-   UML model representation of the experimentalCessation object
+   UML model representation of the ``experimentalCessation`` object
 
 The ``experimentalCessation`` object used to define the characteristics of a cessation applied to an experimental Traffic Regulation Order. This object enables the structured recording of the end of an experimental regulatory provision, including both the cessation date and its rationale.
 
@@ -512,7 +512,7 @@ Whilst the D-TRO Service currently will hold records for all D-TRO records it ha
 
 .. figure:: /_static/images/fig20.png
    :alt: Objects View for Records Management related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    Objects View for Records Management related objects
@@ -882,7 +882,7 @@ The ``externalReference`` object has one mandatory attribute:
 
 .. figure:: /_static/images/usrn.png
    :alt: UML model representation of the uniqueStreetReferenceNumber object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``uniqueStreetReferenceNumber`` object
@@ -971,7 +971,7 @@ The overall ``timeValidity`` period defined by the ``start`` and ``end`` propert
 
 .. figure:: /_static/images/period.png
    :alt: UML model representation of the period object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``period`` object
