@@ -14,31 +14,19 @@ The Automated Vehicles Act 2024 :ref:`[1] <ref-ava>` (section 93) provides the c
 
 The content of the Data Model has been developed by Harrod Booth Consulting Ltd with grateful support from numerous organisations.
 
-The report presents the Data Model, Release 3.4.1, with a series of larger updates including:
+The documentation presents the Data Model, Release ``3.5.0``, with a series of larger updates including:
 
-* Addition of a ``maxStayNoReturn`` attribute for all regulations (previously limited to Permits only)
-* Extending the 'Extension Enumeration' works across all of the following enumerated list:
-    * ``permitType``
-    * ``payloadType``
-    * ``vehicleUsageType``
-    * ``emissionsClassificationEuroType``
-    * ``fuelType``
-    * ``vehicleEquipmentType``
-    * ``vehicleType``
-* Bug fixes to the processing of Consultation records
-* Additional enumerations - in response to stakeholder comments we continue to adjust various enumerated lists in the data specification:
-  
-    * Additional vehicle types:
-      
-        * ``poweredVehicleUsedByDisabledPeople``
-        * ``emergencyAndIncidentSupportVehicle``
-        * ``diplomaticVehicle``
-    * Additional fuel types:
-        * ``electric``
-    * Additional regulation types:
-        * ``kerbsideRedRouteBusStopClearway``
-        * ``miscCycleHireParking``
-        * ``miscCycleParking``
+* Support to provide an information update to enable the submission of planned activation start and stop dates and times after the submission of a Made Order D-TRO submission. For periodic maintenance style TROs (which do not specify specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
+* Modelling to support Emissions-related regulations (ability to define CO2 limits, engine capacity, battery capacity, etc).
+* Modelling to support Electric Charging Conditions (e.g. when vehicle is connected to a charger; when charging).
+* Addition of an “Other Condition” option with in Condition Sub-model to support definition of conditions and exemptions that are not covered by the range of conditions in the existing Data Specification.
+* Extensions of supported WKT coding of spatial coordinates beyond Point, LineString and Polygon to also support MultiPoint, MultiLineString, MultiPolygon.
+* Add ``dialARide`` to the vehicle usage type list.
+* Change of the datatype of ``expectedDuration`` from ``integer`` to ``duration``.
+* Removal of support for the provision of Elementary Street Units (ESUs) from Data Specification.
+* Addition of a National Speed Limit profile for speed limit regulations – that applies to all road types.
+
+For more details see the Change Log section.
 
 About This Document
 *******************
