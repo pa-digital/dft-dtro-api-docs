@@ -227,7 +227,7 @@ This model supports both permanent and time-bound experimental regulations, ensu
 
 .. figure:: /_static/images/experimentalVariation-object.png
    :alt: UML model representation of the experimentalVariation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the experimentalVariation object
@@ -296,7 +296,7 @@ Regulations fall into one of four categories:
 
 .. figure:: /_static/images/fig14.png
    :alt: UML model representation of the regulation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``regulation`` object
@@ -418,7 +418,7 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
 
 .. figure:: /_static/images/fig16.png
    :alt: UML model representation of the speedLimitValueBased object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``speedLimitValueBased`` object
@@ -441,7 +441,7 @@ The data type is ``SpeedLimitValueType`` (enumeration). This attribute is mandat
 
 .. figure:: /_static/images/fig17.png
    :alt: UML model representation of the speedLimitProfileBased object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``speedLimitProfileBased`` object
@@ -467,7 +467,7 @@ If a new form of regulation is required, beyond those already specified in the D
 
 .. figure:: /_static/images/fig18.png
    :alt: UML model representation of the offListRegulation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``offListRegulation`` object
@@ -491,7 +491,7 @@ The ``temporaryOverriddenProvision`` attribute provides the reference to the ove
 
 .. figure:: /_static/images/fig19.png
    :alt: UML model representation of the temporaryProvision object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``temporaryProvision`` object
@@ -655,7 +655,7 @@ The sub-model below the regulatedPlace object can also be used to define, option
 
 .. figure:: /_static/images/fig23.png
    :alt: UML model representation of the regulatedPlace object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``regulatedPlace`` object
@@ -682,7 +682,7 @@ Note: Attributes ``concession``, ``assignment``, ``tramcar``, ``busRoute`` and `
 
 .. figure:: /_static/images/fig24.png
    :alt: regulatedPlaceTypes
-   :width: 80%
+   :width: 45%
    :align: center
 
    ``regulatedPlaceTypes``
@@ -695,7 +695,7 @@ Each ``regulatedPlace`` is linked to at least one, and potentially more than one
 
 .. figure:: /_static/images/fig25.png
    :alt: UML model representation of the geometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``geometry`` object
@@ -728,7 +728,7 @@ Each is described in turn.
 
 .. figure:: /_static/images/fig26.png
    :alt: UML model representation of the pointGeometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``pointGeometry`` object
@@ -790,7 +790,7 @@ The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.
 
 .. figure:: /_static/images/fig27.png
    :alt: UML model representation of the linearGeometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``linearGeometry`` object
@@ -813,7 +813,7 @@ This is distinct from trying to define turning motions between two identifiable 
 
 .. figure:: /_static/images/fig28.png
    :alt: UML model representation of the polygon object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``polygon`` object
@@ -828,7 +828,7 @@ The polygon object has one mandatory attribute:
 
 .. figure:: /_static/images/fig29.png
    :alt: UML model representation of the directedLinear object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``directedLinear`` object
@@ -843,7 +843,7 @@ The ``directedLinear`` object has one mandatory attribute:
 
 .. figure:: /_static/images/diversion-type.png
    :alt: UML model representation of the diversionType object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``diversionType`` object
@@ -854,7 +854,7 @@ The ``diversionType`` object links to different forms of diversion route as show
 
 .. figure:: /_static/images/diversion-route-type.png
    :alt: UML model representation of the diversionRouteType object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``diversionRouteType`` object
@@ -865,7 +865,7 @@ The ``diversionType`` object links to different forms of diversion route as show
 
 .. figure:: /_static/images/external-reference.png
    :alt: UML model representation of the externalReference object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``externalReference`` object
@@ -924,7 +924,7 @@ Use of each object and its attributes is given below. For all dates and times, t
 
 .. figure:: /_static/images/timeValidity-object.png
    :alt: UML model representation of the timeValidity object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``timeValidity`` object
@@ -947,7 +947,7 @@ The ``timeValidity`` model allows intermittent or variable patterns of time appl
 
 .. figure:: /_static/images/max-stay-no-return.png
    :alt: UML model representation of the maxStayNoReturn object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``maxStayNoReturn`` object
@@ -995,7 +995,7 @@ To support use cases where the start and ends of recurring periods are defined b
 
 .. figure:: /_static/images/time-period-of-day.png
    :alt: UML model representation of the timePeriodOfDay object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``timePeriodOfDay`` object
@@ -1014,7 +1014,7 @@ The value of ``startTimeOfPeriod`` must fall before the value of ``endTimeOfPeri
 
 .. figure:: /_static/images/day-week-month.png
    :alt: UML model representation of the dayWeekMonth Object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``dayWeekMonth`` Object
@@ -1033,7 +1033,7 @@ In the example above applicableDay would be specified 5 times, with the values '
 
 .. figure:: /_static/images/calendar-week-in-month.png
    :alt: UML model representation of the calendarWeekInMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``calendarWeekInMonth`` object
@@ -1048,7 +1048,7 @@ The ``calendarWeekInMonth`` object has one mandatory attribute:
 
 .. figure:: /_static/images/week-of-month.png
    :alt: UML model representation of the weekOfMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``weekOfMonth`` object
@@ -1063,7 +1063,7 @@ The ``weekInMonth`` object has one mandatory attribute:
 
 .. figure:: /_static/images/instance-of-day-within-month.png
    :alt: UML model representation of the instanceOfDayWithinMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``instanceOfDayWithinMonth`` object
@@ -1078,7 +1078,7 @@ The ``instanceOfDayWithinMonth`` object has one mandatory attribute:
 
 .. figure:: /_static/images/special-day.png
    :alt: UML model representation of the specialDay object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``specialDay`` object
@@ -1097,7 +1097,7 @@ The ``specialDay`` object has three attributes:
 
 .. figure:: /_static/images/public-holiday.png
    :alt: UML model representation of the publicHoliday object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``publicHoliday`` object
@@ -1108,7 +1108,7 @@ The ``specialDay`` object has three attributes:
 
 .. figure:: /_static/images/changeable-time-period.png
    :alt: UML model representation of the changeableTimePeriod object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriod`` object
@@ -1121,7 +1121,7 @@ Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePerio
 
 .. figure:: /_static/images/changeable-time-period-start.png
    :alt: UML model representation of the changeableTimePeriodStart object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodStart`` object
@@ -1130,12 +1130,12 @@ Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePerio
 
 .. figure:: /_static/images/changeable-time-period-end.png
    :alt: UML model representation of the changeableTimePeriodEnd object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodEnd`` object
 
-The ``changeableTimePeriodStart`` object (and the ``changeableTimePeriodEnd`` object), shown in :numref:`fig47` and :numref:`fig48` respectively, each has one attribute:
+The ``changeableTimePeriodStart`` object (and the ``changeableTimePeriodEnd`` object), shown in :numref:`fig46` and :numref:`fig47` respectively, each has one attribute:
 
 * The mandatory ``startType`` attribute (``endType`` for the ``changeableTimePeriodEnd`` object), which indicates the type of characteristic time measure being used. Values include: ``dawn``, ``dusk``, ``holiday``, and ``external``.
 
@@ -1153,7 +1153,7 @@ The ``changeableTimePeriodStart`` and ``changeableTimePeriodEnd`` objects define
 
 .. figure:: /_static/images/changeable-time-period-source.png
    :alt: UML model representation of the changeableTimePeriodSource object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodSource`` object
@@ -1172,7 +1172,7 @@ Each instance of ``changeableTimePeriodSource`` will have a definition to explai
 
 .. figure:: /_static/images/changeable-time-period-entry.png
    :alt: UML model representation of the changeableTimePeriodEntry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodEntry`` object
@@ -1333,7 +1333,7 @@ An illustrative example, in :numref:`condition-sets-and-conditions`, shows the u
 
 .. figure:: /_static/images/condition.png
    :alt: UML model representation of the condition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``condition`` object
@@ -1346,7 +1346,7 @@ The ``condition`` object has only the ``negate`` attribute, as explained above.
 
 .. figure:: /_static/images/condition-set.png
    :alt: UML model representation of the conditionSet object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``conditionSet`` object
@@ -1359,7 +1359,7 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
 
 .. figure:: /_static/images/road-condition.png
    :alt: UML model representation of the roadCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``roadCondition`` object
@@ -1374,7 +1374,7 @@ The ``occupantCondition`` object contains only the ``disabledWithPermit`` attrib
 
 .. figure:: /_static/images/number-of-occupants.png
    :alt: UML model representation of the numberOfOccupants object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``numberOfOccupants`` object
@@ -1410,7 +1410,7 @@ The ``numberOfOccupants`` object has two mandatory attributes:
 
 .. figure:: /_static/images/driver-condition.png
    :alt: UML model representation of the driverCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``driverCondition`` object
@@ -1425,7 +1425,7 @@ The ``driverCondition`` object has one attribute:
 
 .. figure:: /_static/images/access-condition.png
    :alt: UML model representation of the accessCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``accessCondition`` object
@@ -1441,7 +1441,7 @@ The ``accessCondition`` object has two attributes:
 
 .. figure:: /_static/images/permit-condition.png
    :alt: UML model representation of the permitCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``permitCondition`` object
@@ -1464,7 +1464,7 @@ The permitCondition object has the following attributes:
 
 .. figure:: /_static/images/authority.png
    :alt: UML model representation of the authority object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``authority`` object
@@ -1477,7 +1477,7 @@ The ``authority`` object has only one attribute - The ``name`` attribute indicat
 
 .. figure:: /_static/images/permitSubjectToFee.png
    :alt: UML model representation of the permitSubjectToFee object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``permitSubjectToFee`` object
@@ -1494,7 +1494,7 @@ The ``permitSubjectToFee`` object has four optional attributes:
 
 .. figure:: /_static/images/nonVehicularRoadUserCondition.png
    :alt: UML model representation of the nonVehicularRoadUserCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``nonVehicularRoadUserCondition`` object
@@ -1511,7 +1511,7 @@ The ``otherCondition`` object indicating an exceptional other condition, not cov
 
 .. figure:: /_static/images/other-condition-object.png
    :alt: UML model representation of the otherCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``otherCondition`` object
@@ -1524,7 +1524,7 @@ The ``otherConditionDescription`` attribute is optional and contains free text d
 
 .. figure:: /_static/images/occupant-condition.png
    :alt: UML model representation of the occupantCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``occupantCondition`` object
@@ -1575,7 +1575,7 @@ In practice, upper bounds are specified in TROs, so the maximum characteristic i
 
 .. figure:: /_static/images/maximumGrossWeightCharacteristic.png
    :alt: UML model representation of the maximumGrossWeightCharacteristic object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``maximumGrossWeightCharacteristic`` object
@@ -1600,7 +1600,7 @@ Attributes similar to ``typeOfWeight`` are not replicated in the other objects l
 
 .. figure:: /_static/images/vehicleCharacteristics.png
    :alt: UML model representation of the vehicleCharacteristics object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``vehicleCharacteristics`` object
@@ -1625,7 +1625,7 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 .. figure:: /_static/images/electricChargingCharacteristic-object.png
    :alt: UML model representation of the ``electricChargingCharacteristic`` object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the electricChargingCharacteristic object
@@ -1643,7 +1643,7 @@ The ``electricChargingCharacteristic`` object has two optional attributes:
 
 .. figure:: /_static/images/emissions.png
    :alt: UML model representation of the emissions object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``emissions`` object
@@ -1670,7 +1670,7 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
 
 .. figure:: /_static/images/valueRange-object.png
    :alt: UML model representation of the valueRange object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``valueRange`` object
@@ -1685,7 +1685,7 @@ The ``valueRange`` object is defining a measurable quantity and related units an
 
 .. figure:: /_static/images/valueRangeClassEnum-enum.png
    :alt: UML model representation of the value range class enum object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``valueRangeClassEnum`` object
@@ -1698,7 +1698,7 @@ The ``valueRange`` object is defining a measurable quantity and related units an
 
 .. figure:: /_static/images/unitOfMeasureEnum-enum.png
    :alt: UML model representation of the unit of measure enum object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``unitOfMeasureEnum`` object
@@ -1710,7 +1710,7 @@ The ``valueRange`` object is defining a measurable quantity and related units an
 
 .. figure:: /_static/images/valueRangeBoundary-object.png
    :alt: UML model representation of the valueRangeBoundary object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``valueRangeBoundary`` object
@@ -1725,7 +1725,7 @@ The `valueRangeBoundary` object is defining a range boundary value and operator 
 
 .. figure:: /_static/images/comparisonOperatorType-enum.png
    :alt: UML model representation of the comparison operator type object
-   :width: 80%
+   :width: 45%
    :align: center
 
 * The ``value`` quantify measure forming a measure boundary.
@@ -1740,7 +1740,7 @@ About Tariff Rates
 
 .. figure:: /_static/images/rate-related-objects.png
    :alt: UML model representation of the rate-related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the rate-related objects
@@ -1759,7 +1759,7 @@ The rates sub-model shown here is experimental. It is derived from a richer mode
 
 .. figure:: /_static/images/rateTable.png
    :alt: UML model representation of the rateTable object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the rateTable object
@@ -1778,7 +1778,7 @@ Each ``rateTable`` object contains one or more ``rateLineCollection`` objects. A
 
 .. figure:: /_static/images/rateLineCollection.png
    :alt: UML model representation of the rateLineCollection object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``rateLineCollection`` object
@@ -1809,7 +1809,7 @@ Each rateLineCollection object contains one or more ``rateLine`` objects. :numre
 
 .. figure:: /_static/images/rateLine.png
    :alt: UML model representation of the rateLine object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``rateLine`` object
@@ -1842,7 +1842,7 @@ This section of the Data Model is designed to permit basic information relating 
 
 .. figure:: /_static/images/consultation-related.png
    :alt: UML model representation of the consultation related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``consultation`` related object
