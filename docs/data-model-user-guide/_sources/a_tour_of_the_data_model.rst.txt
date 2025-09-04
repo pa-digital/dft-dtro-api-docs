@@ -104,11 +104,11 @@ Note the SWA-like codes follow the SWA codes published for Street Works, see Geo
 .. _fig6:
 
 .. figure:: /_static/images/fig6.png
-   :alt: Enumeration values for actionType
+   :alt: Enumeration values for sourceActionType
    :width: 80%
    :align: center
 
-   Enumeration values for actionType
+   Enumeration values for sourceActionType
 
 The ``actionType`` attribute specifies the type of action being taken with respect to a specific version of a D-TRO. It is used to indicate how the current version relates to any earlier version(s) of the same Traffic Regulation Order. The data type is a string constrained to a defined set of controlled vocabulary values. This attribute is mandatory and must be provided exactly once.
 
