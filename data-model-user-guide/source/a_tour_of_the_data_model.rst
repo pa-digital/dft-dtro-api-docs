@@ -105,7 +105,7 @@ Note the SWA-like codes follow the SWA codes published for Street Works, see Geo
 
 .. figure:: /_static/images/fig6.png
    :alt: Enumeration values for sourceActionType
-   :width: 80%
+   :width: 45%
    :align: center
 
    Enumeration values for sourceActionType
@@ -175,7 +175,7 @@ The ``provision`` object defines several mandatory attributes.
 
 .. figure:: /_static/images/fig9.png
    :alt: Enumeration values for provisionActionType
-   :width: 60%
+   :width: 45%
    :align: center
 
    Enumeration values for ``provisionActionType``

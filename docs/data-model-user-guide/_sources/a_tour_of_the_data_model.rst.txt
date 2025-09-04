@@ -67,7 +67,7 @@ In each D-TRO record, it is possible to define one or many source objects, with 
 
 .. figure:: /_static/images/fig5.png
    :alt: UML model representation of the source object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``source`` object
@@ -170,6 +170,37 @@ The ``provision`` object defines several mandatory attributes.
 * The ``provisionDescription`` attribute provides a free text description of the referenced provision. The data type is a string (free text). This attribute is mandatory and must be provided exactly once.
 
 * The ``reference`` attribute is a unique identifier for each instance of a provision by the originating TRA. The precise format of the reference is not prescribed and is left to the discretion of the data supplier. It is, however, mandatory and shall be unique for the originating TRA. The data type is a string (free text). This attribute is required and must be provided exactly once.
+
+.. _fig9:
+
+.. figure:: /_static/images/fig9.png
+   :alt: Enumeration values for provisionActionType
+   :width: 60%
+   :align: center
+
+   Enumeration values for ``provisionActionType``
+
+The ``actionType`` attribute specifies the type of action being taken with respect to a specific version of a provision in a D-TRO. It is used to indicate how the current version relates to any earlier version(s) of the same provision in the Traffic Regulation Order. The data type is a string constrained to a defined set of controlled vocabulary values. This attribute is mandatory and must be provided exactly once.
+
+Permitted values include:
+
+* ``new`` - Indicates that the supplied D-TRO version is entirely new and not an amendment of any earlier version.
+
+* ``fullAmendment`` - Indicates that the supplied version fully replaces and amends an earlier version of the D-TRO.
+
+* ``partialAmendment`` - Indicates that the supplied version partially amends an earlier version of the D-TRO.
+
+* ``fullRevoke`` - Indicates that the D-TRO is fully revoked in its entirety.
+
+* ``partialRevoke`` - Indicates that the D-TRO is partially revoked, affecting only certain elements of the earlier version.
+
+* ``noChange`` - Indicates that the supplied version does not introduce any changes from the previous D-TRO version.
+
+* ``errorFix`` - Indicates that the current version corrects one or more errors present in an earlier version.
+
+* ``amendment`` - A general indicator that the current version introduces amendments to a prior version, where the specific nature of amendment (full or partial) is not further detailed.
+
+* ``informationUpdate`` – Indicates an update to planned start and end date/times, for a Made record – no other information changes should be made.
 
 The ``provision`` class may also be extended by either an ``experimentalVariation`` object or an ``experimentalCessation`` object.
 
@@ -1839,13 +1870,13 @@ Proposed Statutory Guidance and best practice documentation will strongly encour
 
 Therefore, the ability to support additional enumerations would be prudent for several of the enumerated lists existing in the Data Model. These include:
 
-*	``permitType`` (implemented in 3.4.0)
-*	``payloadType`` (to be implemented)
-*	``vehicleUsageType`` (implemented in 3.4.0)
-*	``emissionsClassificationEuroType`` (implemented in 3.4.0)
-*	``fuelType`` (to be implemented)
-*	``vehicleEquipmentType`` (to be implemented)
-*	``vehicleType`` (to be implemented)
+*	``permitType``
+*	``payloadType``
+*	``vehicleUsageType``
+*	``emissionsClassificationEuroType``
+*	``fuelType``
+*	``vehicleEquipmentType``
+*	``vehicleType``
 
 To maintain the simplicity in the Data Model, it is easiest to add an "other" enumeration value to each of the enumerated lists stated. For ``regulationType``, there is the off-list regulation mechanism referred to earlier in the guide that will handle additional enumerations.
 

@@ -47,6 +47,23 @@ Steps for running the documentation locally using Docker:
 
 ¹ Make sure the port number matches the container id.
 
+## Making changes to the data model user guide
+
+1. Make changes to `.rst` and images files in folder `data-model-user-guide\source`.
+2. If you have to insert another figure, be aware that references to labels such as the following will auto-increment (so you don't need to increment any numbers in the labels themselves - the labels just need to be unique):
+```
+:numref:`fig8`
+.. _fig8:
+```
+3. Once you've finished making changes, run the following:
+```
+./scripts/build.sh
+```
+See more on this script below.
+
+4. View the changes locally at e.g. `http://127.0.0.1:8002/`.
+5. Commit and push your changes - they will automatically be published to https://d-tro.dft.gov.uk/ via the job at https://github.com/pa-digital/dft-dtro-api-docs/actions
+
 ## Documentation Building
 
 The helper script `scripts/build.sh` is provided to automate the build process. Note that the Docker containers need to be running for this script to work. This script does the following:
