@@ -7,7 +7,7 @@ This section provides a tour of the main features of the Data Model. The Data Mo
 
 .. button::
    :text: View the data model
-   :url: https://department-for-transport-public.github.io/D-TRO/Data_Model%20v3.4.0.9/index.htm
+   :url: https://d-tro.dft.gov.uk/data-model-user-guide/Data%20Model%20HTML%20Guide/index.htm
 
 :numref:`fig3` shows a summarised simplified view of the main structures of the Data Model. These structures often contain more detailed sub-models, which are detailed later in this section.
 
@@ -67,7 +67,7 @@ In each D-TRO record, it is possible to define one or many source objects, with 
 
 .. figure:: /_static/images/fig5.png
    :alt: UML model representation of the source object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``source`` object
@@ -104,24 +104,21 @@ Note the SWA-like codes follow the SWA codes published for Street Works, see Geo
 .. _fig6:
 
 .. figure:: /_static/images/fig6.png
-   :alt: Enumeration values for actionType
-   :width: 80%
+   :alt: Enumeration values for sourceActionType
+   :width: 45%
    :align: center
 
-   Enumeration values for actionType
+   Enumeration values for sourceActionType
 
 The ``actionType`` attribute specifies the type of action being taken with respect to a specific version of a D-TRO. It is used to indicate how the current version relates to any earlier version(s) of the same Traffic Regulation Order. The data type is a string constrained to a defined set of controlled vocabulary values. This attribute is mandatory and must be provided exactly once.
 
 Permitted values include:
 
 * ``new`` - Indicates that the supplied D-TRO version is entirely new and not an amendment of any earlier version.
-* ``fullAmendment`` - Indicates that the supplied version fully replaces and amends an earlier version of the D-TRO.
-* ``partialAmendment`` - Indicates that the supplied version partially amends an earlier version of the D-TRO.
-* ``fullRevoke`` - Indicates that the D-TRO is fully revoked in its entirety.
-* ``partialRevoke`` - Indicates that the D-TRO is partially revoked, affecting only certain elements of the earlier version.
 * ``noChange`` - Indicates that the supplied version does not introduce any changes from the previous D-TRO version.
 * ``errorFix`` - Indicates that the current version corrects one or more errors present in an earlier version.
 * ``amendment`` - A general indicator that the current version introduces amendments to a prior version, where the specific nature of amendment (full or partial) is not further detailed.
+* ``informationUpdate`` - Indicates an update to planned start and end date/times, for a Made record – no other information changes should be made.
 
 This classification allows systems and users to track the evolution of legal traffic regulations and their current applicability in a structured and machine-readable way.
 
@@ -155,7 +152,7 @@ By way of illustration, consider one TRO that contains two provisions. The first
 
 .. figure:: /_static/images/fig8.png
    :alt: UML model representation of the provision object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``provision`` object
@@ -174,17 +171,48 @@ The ``provision`` object defines several mandatory attributes.
 
 * The ``reference`` attribute is a unique identifier for each instance of a provision by the originating TRA. The precise format of the reference is not prescribed and is left to the discretion of the data supplier. It is, however, mandatory and shall be unique for the originating TRA. The data type is a string (free text). This attribute is required and must be provided exactly once.
 
+.. _fig9:
+
+.. figure:: /_static/images/fig9.png
+   :alt: Enumeration values for provisionActionType
+   :width: 45%
+   :align: center
+
+   Enumeration values for ``provisionActionType``
+
+The ``actionType`` attribute specifies the type of action being taken with respect to a specific version of a provision in a D-TRO. It is used to indicate how the current version relates to any earlier version(s) of the same provision in the Traffic Regulation Order. The data type is a string constrained to a defined set of controlled vocabulary values. This attribute is mandatory and must be provided exactly once.
+
+Permitted values include:
+
+* ``new`` - Indicates that the supplied D-TRO version is entirely new and not an amendment of any earlier version.
+
+* ``fullAmendment`` - Indicates that the supplied version fully replaces and amends an earlier version of the D-TRO.
+
+* ``partialAmendment`` - Indicates that the supplied version partially amends an earlier version of the D-TRO.
+
+* ``fullRevoke`` - Indicates that the D-TRO is fully revoked in its entirety.
+
+* ``partialRevoke`` - Indicates that the D-TRO is partially revoked, affecting only certain elements of the earlier version.
+
+* ``noChange`` - Indicates that the supplied version does not introduce any changes from the previous D-TRO version.
+
+* ``errorFix`` - Indicates that the current version corrects one or more errors present in an earlier version.
+
+* ``amendment`` - A general indicator that the current version introduces amendments to a prior version, where the specific nature of amendment (full or partial) is not further detailed.
+
+* ``informationUpdate`` – Indicates an update to planned start and end date/times, for a Made record – no other information changes should be made.
+
 The ``provision`` class may also be extended by either an ``experimentalVariation`` object or an ``experimentalCessation`` object.
 
 The ``experimentalVariation`` object can only be applied to ``experimentalAmendment`` orderReportingPoint type, where an experimental order is subject to amendment.
 
 The ``experimentalCessation`` object can only be applied to ``experimentalRevocation.orderReportingPoint`` type, where an experimental order is revoked.
 
-:numref:`fig9` provides the UML class representation of the ``experimentalVariation`` and ``experimentalCessation`` objects.
+:numref:`fig10` provides the UML class representation of the ``experimentalVariation`` and ``experimentalCessation`` objects.
 
-.. _fig9:
+.. _fig10:
 
-.. figure:: /_static/images/extension_of_the_provision_object.png
+.. figure:: /_static/images/extension-of-the-provision-objects.png
    :alt: UML model representation of the extension of the provision object
    :width: 80%
    :align: center
@@ -193,13 +221,13 @@ The ``experimentalCessation`` object can only be applied to ``experimentalRevoca
 
 This model supports both permanent and time-bound experimental regulations, ensuring flexibility in managing regulatory states and their lifecycle within a traffic order.
 
-:numref:`fig10` provides the UML class representation of the ``experimentalVariation`` object.
+:numref:`fig11` provides the UML class representation of the ``experimentalVariation`` object.
 
-.. _fig10:
+.. _fig11:
 
-.. figure:: /_static/images/experimentalVariation.png
+.. figure:: /_static/images/experimentalVariation-object.png
    :alt: UML model representation of the experimentalVariation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the experimentalVariation object
@@ -213,16 +241,16 @@ The ``experimentalVariation`` defines two mandatory attributes.
 
 This object supports the structured representation of temporary modifications within a D-TRO and allows for clear communication of their intended scope and timeline.
 
-:numref:`fig11` provides the UML class representation of the ``experimentaCessation`` object.
+:numref:`fig12` provides the UML class representation of the ``experimentaCessation`` object.
 
-.. _fig11:
+.. _fig12:
 
-.. figure:: /_static/images/fig11.png
+.. figure:: /_static/images/fig12.png
    :alt: UML model representation of the experimentalCessation object
-   :width: 80%
+   :width: 45%
    :align: center
 
-   UML model representation of the experimentalCessation object
+   UML model representation of the ``experimentalCessation`` object
 
 The ``experimentalCessation`` object used to define the characteristics of a cessation applied to an experimental Traffic Regulation Order. This object enables the structured recording of the end of an experimental regulatory provision, including both the cessation date and its rationale.
 
@@ -237,11 +265,11 @@ The ``experimentalCessation`` object allows for clear documentation of the concl
 Defining Regulations
 ********************
 
-:numref:`fig12` shows some of the objects concerned with the definition of a regulation in the Model.
+:numref:`fig13` shows some of the objects concerned with the definition of a regulation in the Model.
 
-.. _fig12:
+.. _fig13:
 
-.. figure:: /_static/images/fig12.png
+.. figure:: /_static/images/fig13.png
    :alt: Object view for regulation
    :width: 80%
    :align: center
@@ -262,13 +290,13 @@ Regulations fall into one of four categories:
 
 * ``offListRegulation`` - which characterises an extension mechanism for a TRA to declare a form of regulation that is not otherwise covered by the regulations specified in the first two categories.
 
-:numref:`fig13` provides the UML class representation of the ``regulation`` object.
+:numref:`fig14` provides the UML class representation of the ``regulation`` object.
 
-.. _fig13:
+.. _fig14:
 
-.. figure:: /_static/images/fig13.png
+.. figure:: /_static/images/fig14.png
    :alt: UML model representation of the regulation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``regulation`` object
@@ -279,11 +307,11 @@ The ``regulation`` object defines two mandatory attributes.
 
 * The ``timeZone`` attribute enables the time zone applicable to the regulation to be defined. This is important in supporting the management of the definition of clearly specified times that work appropriately in local time zones. The time zone is specified IANA time zone (see http://www.iana.org/time-zones). For regulations in the UK will be 'Europe/London'.
 
-:numref:`fig14` provides the UML class representation of the ``generalRegulation`` object.
+:numref:`fig15` provides the UML class representation of the ``generalRegulation`` object.
 
-.. _fig14:
+.. _fig15:
 
-.. figure:: /_static/images/fig14.png
+.. figure:: /_static/images/fig15.png
    :alt: UML model representation of the generalRegulation object
    :width: 80%
    :align: center
@@ -384,13 +412,13 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
 
     DfT welcomes inputs and additional requirements from Traffic Regulation Authorities. Please refer to GitHub issue #6 for further information: https://github.com/department-for-transport-public/D-TRO/issues/6.
 
-:numref:`fig15` provides the UML class representation of the ``speedLimitValueBased`` object.
+:numref:`fig16` provides the UML class representation of the ``speedLimitValueBased`` object.
 
-.. _fig15:
+.. _fig16:
 
-.. figure:: /_static/images/fig15.png
+.. figure:: /_static/images/fig16.png
    :alt: UML model representation of the speedLimitValueBased object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``speedLimitValueBased`` object
@@ -407,13 +435,13 @@ The ``speedLimitValueBased`` object defines a speed limit value using structured
 
 The data type is ``SpeedLimitValueType`` (enumeration). This attribute is mandatory and must be provided exactly once.
 
-:numref:`fig16` provides the UML class representation of the ``speedLimitProfileBased`` object.
+:numref:`fig17` provides the UML class representation of the ``speedLimitProfileBased`` object.
 
-.. _fig16:
+.. _fig17:
 
-.. figure:: /_static/images/fig16.png
+.. figure:: /_static/images/fig17.png
    :alt: UML model representation of the speedLimitProfileBased object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``speedLimitProfileBased`` object
@@ -425,18 +453,21 @@ The ``speedLimitProfileBased`` object has one mandatory attribute.
     * ``nationalSpeedLimitSingleCarriageway``
     * ``nationalSpeedLimitMotorway``
     * ``nationalSpeedLimit``
+  
+.. note::
+   Note: ``nationalSpeedLimit`` applies to all road classes and therefore the data consumer will need to identify the correct class of road for identified locations.
 
 The Data Model is experimental in nature and there is a real-world road network usage and therefore TROs (e.g., consider the relatively recent introduction of e-Scooters). The Data Model supports a couple of different approaches to support extension to new situations and regulations.
 
 If a new form of regulation is required, beyond those already specified in the Data Model, the ``offListRegulation`` object can be used.
 
-:numref:`fig17` provides the UML class representation of the ``offListRegulation`` object.
+:numref:`fig18` provides the UML class representation of the ``offListRegulation`` object.
 
-.. _fig17:
+.. _fig18:
 
-.. figure:: /_static/images/fig17.png
+.. figure:: /_static/images/fig18.png
    :alt: UML model representation of the offListRegulation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``offListRegulation`` object
@@ -451,16 +482,16 @@ The ``offListRegulation`` object has three attributes:
 
 In instances where a temporary regulation temporarily replaces a pre-existing regulation the ``temporaryProvision`` object may be used to indicate references to pre-existing regulation(s).
 
-:numref:`fig18` provides the UML class representation of the ``temporaryProvision`` object that provide a link between the current focus D-TRO provision and its regulation to the existing provision, which is known to the D-TRO Service, that is being temporarily overridden.
+:numref:`fig19` provides the UML class representation of the ``temporaryProvision`` object that provide a link between the current focus D-TRO provision and its regulation to the existing provision, which is known to the D-TRO Service, that is being temporarily overridden.
 
 The ``temporaryOverriddenProvision`` attribute provides the reference to the overridden existing provision. The data type is a string (free text). This attribute is mandatory and must be provided exactly once.
 
 
-.. _fig18:
+.. _fig19:
 
-.. figure:: /_static/images/fig18.png
+.. figure:: /_static/images/fig19.png
    :alt: UML model representation of the temporaryProvision object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``temporaryProvision`` object
@@ -473,80 +504,69 @@ Managing Records for TROs and Corresponding Provisions
 
 As part of records management, the D-TRO Service will maintain a 'live TRO' list, which may be modified by the receipt of a new inbound Order or Notice received by the D-TRO Service.
 
-* An ``amendment`` order can change or remove anything in an existing order - or orders - and add new provisions and revoke other orders.
-
-* A ``revocation`` is a type of amendment order, that does not have any new provisions. An order that only contains revocations will still be advertised and consulted upon. The receipt of a record that is identified solely as a revocation into the central service, does not automatically mean that any referenced previous orders will be removed from the “live TRO” list. An order that is solely a revocation may only revoke parts of an old order and leave other parts intact - this may be a partial revocation of a Provision within a previous TRO.
-
-* Parking tariffs are varied by use of a **variation by notice**. As the initial tariffs may have been specified in the original full order, this can have the effect of being an amendment to it.
-
-* A ``consolidation`` is an administrative process and nothing 'of substance' should be added or removed. Generally, a consolidation would combine a base order and its subsequent amendments into a new base order. If something is missed from the revocation list of a consolidation, then the remaining pre-existing Provisions (partial or whole) might be orphaned but still be in force. These always have multiple revocations by definition.
-
-* A ``consolidation`` can be used to change some details of a previously made TRO, so long as this does not affect the substance of the Order. Things can be tidied up if required (noting there is small defined list of minor changes that are allowed) but nothing should be changed that would ordinarily require consultation. The opportunity to make changes is very limited. However, as a side note, this can be complicated by the fact that some people refer to the combination of old orders with substantial changes as a consolidation, which it is not.
-
 We require that all (versions of) Orders and Notices received shall contain 'minimum contextual content' (i.e. the who, what, when and how much, if relevant, of any Provision). This requirement is defined by the minimum mandatory data elements within the Data Model. Effectively new versions will replace older versions within the Live TRO list - old versions will remain visible for a while.
 
-Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D=TRO Service for a defined retention period, before being archived.
+Whilst the D-TRO Service currently will hold records for all D-TRO records it has received, D-TRO records management mean that new versions of TROs (and their provisions) - through amendments and revocations - will supersede earlier versions. Each version is considered to be a complete representation of the TRO and its provisions. Older records that have been amended or revoked will be visible in the D-TRO Service for a defined retention period, before being archived.
 
-.. _fig19:
+.. _fig20:
 
-.. figure:: /_static/images/fig19.png
+.. figure:: /_static/images/fig20.png
    :alt: Objects View for Records Management related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    Objects View for Records Management related objects
 
 
-The ``source`` and ``provision`` objects have been described above in :ref:`section3.1`, with an illustrative example shown in :numref:`fig20`.
+The ``source`` and ``provision`` objects have been described above in :ref:`section3.1`, with an illustrative example shown in :numref:`fig21`.
 
-.. _fig20:
+.. _fig21:
 
-.. figure:: /_static/images/fig20.png
+.. figure:: /_static/images/fig21.png
    :alt: Records Management example for source & provision
    :width: 80%
    :align: center
 
    Records Management example for source & provision
 
-The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the “Create D-TRO” process).
+The example shown above illustrates the D-TRO records management in progress. The left-hand side shows a new TRO, being submitted as a D-TRO into the D-TRO Service (via the 'Create D-TRO' API endpoint).
 
-It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = 'new'). It has two child provisions:
+It contains multiple sources and provisions. For the purpose of this illustration, we focus on source #1 (with reference TRAxxxx-So-01, and actionType = ``new``). It has two child provisions:
 
-* provision #1 with reference: TRAxxxx-Pro-01 and ``actionType`` = ``new``, and
+* provision #1 with reference: TRAxxxx-Pro-01 and ``actionType`` = ``new``, and 
 
-* provision #2 with reference: TRAxxxx-Pro-12 and ``actionType`` = ``new``
+* provision #2 with reference: TRAxxxx-Pro-12 and `actionType` = ``new``
 
-At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+At a later point in time, the TRA makes an Amendment to the TRO with reference TRAxxxx-SO-01, and actionType = ``amendment``. We highlight two of the provisions in the example: 
 
 * provision #1, with reference: TRAxxxx-Pro-01 and ``actionType`` = ``partialAmendment``, and
+* provision #2, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-* provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
+This amendment is submitted via the Update API endpoint, and uses the same Service-generated unique reference (GUID) for the TRO.
 
-This amendment is submitted via the Update API endpoint, and uses the same service-generated unique
-reference (GUID) for the TRO.
+As this Update has the same Service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO Service database as not current and replaced by the newer version. 
 
-As this update has the same service-generated unique reference (GUID) as the earlier submitted D-TRO, the newer D-TRO record is considered to fully replace the earlier version. The earlier version will be marked in the D-TRO service as not current and replaced by the newer version.
-
-.. note::
+.. note::   
    The 'Create D-TRO' API endpoint shall only be used for new D-TRO records. Validation constraints will reject any attempt to use this endpoint for updates to a record.
 
-More complex updates require specific handling. Take the example illustrated in :numref:`_fig21`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO service, using the “Create D-TRO” API endpoint.
+More complex update require specific handling. Take the example illustrated in :numref:`fig22`. An initial D-TRO, with reference TRAxxxx-So-01 is submitted to the D-TRO Service, using the 'Create D-TRO' API endpoint. 
 
-At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and ``actionType`` = ``amendment``. We highlight two of the provisions in the example:
+At a later point in time, the TRA makes a new (Consolidation) TRO with reference TRAxxxx-SO-09, and actionType = ``amendment``. We highlight two of the provisions in the example:
 
-* provision #1, with reference: TRAxxxx-Pro-01 and actionType = ``partialAmendment``, and
-* provision #7, with reference: TRAxxxx-Pro-12 and actionType = ``fullRevoke``
+* provision #1, with reference: TRAxxxx-Pro-01 and ``actionType`` = ``partialAmendment``, and
+* provision #7, with reference: TRAxxxx-Pro-12 and ``actionType`` = ``fullRevoke``
 
-This later D-TRO has a different service-generated unique reference (GUID) to the earlier submitted DTRO. Even though these provisions have the same references as those already known in the D-TRO service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common service-generated unique reference (GUID) at the provision level, the D-TRO Service will not link the records together.
+This later D-TRO has a different Service-generated unique reference (GUID) to the earlier submitted D-TRO.
 
-Records are only linked within the D-TRO service by sharing a common service-generated unique reference (GUID) at the D-TRO level.
+Even though these provisions have the same references as those already known in the D-TRO Service and ``actionType`` metadata showing ``partialAmendment`` and ``fullRevoke``, due to the lack of a common Service-generated unique reference (GUID) at the provision level, the D-TRO Service database will not link the records together.
 
-To correctly update these records it is necessary to also submit an updated version of the earlier submitted
-D-TRO, with the same Service-generated unique reference (GUID), and appropriate actionType metadata.
+Records are only linked within the D-TRO Service database by sharing a common Service-generated unique reference (GUID) at the D-TRO level.
 
-.. _fig21:
+To correctly update these records it is necessary to also submit an updated version of the earlier submitted D-TRO, with the same Service-generated unique reference (GUID), and appropriate ``actionType`` metadata. 
 
-.. figure:: /_static/images/fig21.png
+.. _fig22:
+
+.. figure:: /_static/images/fig22.png
    :alt: Records Management example for source & provision (more complex)
    :width: 80%
    :align: center
@@ -554,11 +574,11 @@ D-TRO, with the same Service-generated unique reference (GUID), and appropriate 
    Records Management example for source & provision (more complex)
 
 .. note::
-   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO service. The earlier version will be marked in the D-TRO service as not current. The Consolidation record, with reference TRAxxxxSo-09, will be marked as current in the D-TRO service.
+   Under this circumstance, the presence of a new version of the D-TRO with reference TRAxxxx-So-01 will be marked as current in the D-TRO Service database. The earlier version will be marked in the D-TRO Service database as not current. The Consolidation record, with reference TRAxxxx-So-09, will be marked as current in the D-TRO Service database.
 
-   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) – the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
+   This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) - the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
 
-The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``.
+The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``. 
 
 Specifying Locations for TROs
 *****************************
@@ -620,7 +640,7 @@ A ``regulatedPlace`` represents a real-world identifiable location which is wher
 
 Each ``regulatedPlace`` shall have one or, potentially more than one, specified ``geometry``.
 
-If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometry`` instance represents an alternative version (alternative representation) of the same location. They are not intended to define different real-world locations. Each instance of geometry for a ``regulatedPlace`` shall have a unique ``version`` attribute value (see :numref:`fig24` below). This enables a TRA to represent a ``regulatedPlace`` using, say, a polygon-based ``geometry`` in one version, and a polyline-based ``geometry`` in a second version.
+If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometry`` instance represents an alternative version (alternative representation) of the same location. They are not intended to define different real-world locations. Each instance of geometry for a ``regulatedPlace`` shall have a unique ``version`` attribute value (see :numref:`fig25` below). This enables a TRA to represent a ``regulatedPlace`` using, say, a polygon-based ``geometry`` in one version, and a polyline-based ``geometry`` in a second version.
 
 .. note::
     A word on coding of diversion routes; coding diversion routes uses the same sub-model structure below the ``regulatedPlace`` as is used for coding the location of the effect of a regulation. For diversion routes, meaningfully, this can be done by use of a ``linearGeometry`` object, and associated ``externalReference(s)`` (USRNs). A ``directedLinear`` object could also be used. The ``polygon`` and ``pointLocation`` objects should not be used.
@@ -629,13 +649,13 @@ If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometr
 
 The sub-model below the regulatedPlace object can also be used to define, optionally, diversion routes.
 
-:numref:`fig22` provides the UML class representation of the ``regulatedPlace`` object.
+:numref:`fig23` provides the UML class representation of the ``regulatedPlace`` object.
 
-.. _fig22:
+.. _fig23:
 
-.. figure:: /_static/images/fig22.png
+.. figure:: /_static/images/fig23.png
    :alt: UML model representation of the regulatedPlace object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``regulatedPlace`` object
@@ -658,24 +678,24 @@ In addition:
 
 Note: Attributes ``concession``, ``assignment``, ``tramcar``, ``busRoute`` and ``bywayType`` are mandatory for Made Orders (see :ref:`user-and-policy-driven-needs`).
 
-.. _fig23:
+.. _fig24:
 
-.. figure:: /_static/images/fig23.png
+.. figure:: /_static/images/fig24.png
    :alt: regulatedPlaceTypes
-   :width: 80%
+   :width: 45%
    :align: center
 
    ``regulatedPlaceTypes``
 
 Each ``regulatedPlace`` is linked to at least one, and potentially more than one, ``geometry`` object.
 
-:numref:`fig24` provides the UML class representation of the ``geometry`` object.
+:numref:`fig25` provides the UML class representation of the ``geometry`` object.
 
-.. _fig24:
+.. _fig25:
 
-.. figure:: /_static/images/fig24.png
+.. figure:: /_static/images/fig25.png
    :alt: UML model representation of the geometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``geometry`` object
@@ -702,26 +722,27 @@ The four specialisations are:
 
 Each is described in turn.
 
-:numref:`fig25` provides the UML class representation of the ``pointGeometry`` object.
+:numref:`fig26` provides the UML class representation of the ``pointGeometry`` object.
 
-.. _fig25:
+.. _fig26:
 
-.. figure:: /_static/images/fig25.png
+.. figure:: /_static/images/fig26.png
    :alt: UML model representation of the pointGeometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``pointGeometry`` object
 
 The use of the ``pointGeometry`` class is preferred for point/gate locations.
 
-The ``pointGeometry`` object has a single mandatory attribute, ``representation`` which indicates the nature of the point location for a point representation of a regulated place. Acceptable values are: ``centreLinePoint``, ``trafficSignLocation``, and ``other``.
+The ``pointGeometry`` object has two mandatory attributes. These are:
 
-Note: the data type of the attribute ``point`` is defined as a string. This string shall conform to the format required by the WKT standard.
+* ``representation``, which indicates the nature of the point location for a point representation of a regulated place. Acceptable values are: ``centreLinePoint``, ``trafficSignLocation``, and ``other``
+* ``point``, a string conforming to the format required by the WKT standard. Only the use of WKT ``POINT`` and ``MULTIPOINT`` are permitted. Where ``MULTIPOINT`` is used the same ``representation`` shall apply to all supplied points.
 
 The specific form of standardised data encoding to be used to structure TRO location data in a way that is consistent robust and commonly interpreted. Use of both GeoJSON or WKT (Well Known Text) conventions have been considered. However, the latest edition (2016) of GeoJSON (`RFC 7946 <https://datatracker.ietf.org/doc/html/rfc7946>`_) only permits the use of WGS84 coordinates, and therefore cannot be used given the coordinate referencing system decision above.
 
-The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.polygon`` and ``directedLinear.directedLineString`` shall follow the WKT geometry standard - ISO/IEC 13249-3:2016, showing examples of WKT coding, using OSGB coordinate references (SRID = 27700), around the DfT office in Victoria. Only the ``point``, ``linestring`` and ``polygon`` WKT constructs are permitted.
+The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.polygon`` and ``directedLinear.directedLineString`` shall follow the WKT geometry standard - ISO/IEC 13249-3:2016, showing examples of WKT coding, using OSGB coordinate references (SRID = 27700), around the DfT office in Victoria. Only the ``POINT``, ``LINESTRING`` and ``POLYGON`` WKT constructs, and their multi- equivalents (``MULTIPOINT``, ``MULTILINESTRING`` and ``MULTIPOLYGON``) are permitted.
 
 .. list-table:: Geometry Types with Examples
    :header-rows: 1
@@ -732,44 +753,44 @@ The coding of ``pointGeometry.point``, ``linearGeometry.linestring``, ``polygon.
      - Codified Example
    * - ``point``
      - The ``point`` represents a specific location, which in this example is the entrance to the DfT office (Great Minster House)
-     - .. image:: ../_static/images/point.png
+     - .. image:: /_static/images/point.png
      -  point: “SRID=27700;POINT(529157 178805)”
    * - ``multiPoint``
      - The ``multiPoint`` represents a collection of points treated as a single geometric object. Each point in a MultiPoint has no dimension, just like a regular point, but the MultiPoint itself is used to represent multiple discrete locations in space.
-     - .. image:: ../_static/images/multiPoint.png
+     - .. image:: /_static/images/multiPoint.png
      - multiPoint: “SRID=27700;MULTIPOINT((320336 126142),(320315 126172))”
    * - ``linestring`` or ``directedLineString``
      - The ``lineString`` represents a segment of Horseferry Road, which runs in front of the DfT office
-     - .. image:: ../_static/images/linestring.png
+     - .. image:: /_static/images/linestring.png
      - linestring: “SRID=27700;LINESTRING(529050 178750, 529157 178805, 529250 178860)”
    * - ``multiLineString``
      - The ``multiLineString`` represents a multipart geometry consisting of multiple LineString elements. Each LineString is a sequence of points connected by straight lines. The MultiLineString groups these individual LineStrings into a single geometric object.
-     - .. image:: ../_static/images/multiLineString.png
+     - .. image:: /_static/images/multiLineString.png
      - multiLineString: “SRID=27700;MULTILINESTRING((323589 125149, 323340 125227),(323340 125227, 321986 125569),(321986 125569, 320737 126347, 320715 124191))”
    * - ``polygon``
      - The ``polygon`` represents an area around the DfT office, enclosing the building
-     - .. image:: ../_static/images/polygon1.png
+     - .. image:: /_static/images/polygon1.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750))”
    * - 
      - A ``polygon`` can also include optional interior rings or holes to represent areas with interior and exterior boundaries, represented by additional sets of coordinate references
-     - .. image:: ../_static/images/polygon2.png
+     - .. image:: /_static/images/polygon2.png
      - polygon: “SRID=27700;POLYGON((529100 178750, 529200 178750, 529200 178860, 529100 178860, 529100 178750), (529150 178780, 529200 178780, 529200 178830, 529150 178830, 529150 178780))”
    * - ``multiPolygon``
      - The ``multiPolygon`` is a multipart geometry that consists of multiple Polygon elements. Each polygon is defined by a set of linear rings, where the first ring represents the outer boundary and any subsequent rings represent holes within that polygon.
-     - .. image:: ../_static/images/multiPolygon.png
+     - .. image:: /_static/images/multiPolygon.png
      - multiPolygon: “SRID=27700;MULTIPOLYGON(((323570 124636, 323482 124835, 323660 124890, 323720 124740,323570 124636)),((323494 124611, 323499 124612, 323450 124734, 323443 124728, 323494 124611)))”
    * - 
      - A ``multiPolygon`` is a collection of polygons that can represent complex shapes with multiple outer boundaries and holes.
-     - .. image:: ../_static/images/multiPolygon_with_hole.png
+     - .. image:: /_static/images/multiPolygon_with_hole.png
      - multiPolygon: “SRID=27700;MULTIPOLYGON (((40 40, 20 45, 45 30, 40 40)), ((20 35, 10 30, 10 10, 30 5, 45 20, 20 35), (30 20, 20 15, 20 25, 30 20)))“
 
-:numref:`fig26` provides the UML class representation of the ``linearGeometry`` object.
+:numref:`fig27` provides the UML class representation of the ``linearGeometry`` object.
 
-.. _fig26:
+.. _fig27:
 
-.. figure:: /_static/images/fig26.png
+.. figure:: /_static/images/fig27.png
    :alt: UML model representation of the linearGeometry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``linearGeometry`` object
@@ -784,67 +805,67 @@ This is distinct from trying to define turning motions between two identifiable 
 
 * The mandatory ``lateralPosition`` attribute indicates the lateral position across a road of the linear representation of a regulated place. Acceptable values are ``centreline``, ``onKerb``, ``near`` and ``far``. The values ``near`` and ``far`` are not currently defined in any detail.
 
-* The mandatory ``linestring`` attribute is a free text field holding the WKT coded representation of vertices forming a linestring. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The mandatory ``linestring`` attribute is a free text field holding the WKT coded representation of vertices forming a linestring. By default, two coordinate values per vertex are used, however an optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. Only the use of WKT ``LINESTRING`` and ``MULTILINESTRING`` are permitted. Where ``MULTILINESTRING`` is used the same ``representation``, ``direction`` and ``lateralPosition`` shall apply to all supplied linestrings. Where these other attributes vary, other instances of the ``linearGeometry`` objects are required.
 
-:numref:`fig27` provides the UML class representation of the ``polygon`` object.
+:numref:`fig28` provides the UML class representation of the ``polygon`` object.
 
-.. _fig27:
+.. _fig28:
 
-.. figure:: /_static/images/fig27.png
+.. figure:: /_static/images/fig28.png
    :alt: UML model representation of the polygon object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``polygon`` object
 
 The polygon object has one mandatory attribute:
 
-* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The ``polygon`` attribute defines a coordinate-polygon that represents the extent of the road subject to the TRO regulation. The mandatory 'polygon' attribute is a free text field holding the WKT-coded representation of vertices forming a polygon. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``polygon`` attribute, only the use of WKT ``POLYGON`` and ``MULTIPOLYGON`` are permitted.
 
-:numref:`fig28` provides the UML class representation of the ``directedLinear`` object.
+:numref:`fig29` provides the UML class representation of the ``directedLinear`` object.
 
-.. _fig28:
+.. _fig29:
 
-.. figure:: /_static/images/fig28.png
+.. figure:: /_static/images/fig29.png
    :alt: UML model representation of the directedLinear object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``directedLinear`` object
 
 The ``directedLinear`` object has one mandatory attribute:
 
-* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a polyline. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined.
+* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a polyline. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``directedLineString`` attribute, only the use of WKT ``LINESTRING`` is permitted.
 
-:numref:`fig29` provides the UML representation of ``diversionType`` object.
+:numref:`fig30` provides the UML representation of ``diversionType`` object.
 
-.. _fig29:
+.. _fig30:
 
 .. figure:: /_static/images/diversion-type.png
    :alt: UML model representation of the diversionType object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``diversionType`` object
 
 The ``diversionType`` object links to different forms of diversion route as shown in the schema below.
 
-.. _fig30:
+.. _fig31:
 
 .. figure:: /_static/images/diversion-route-type.png
    :alt: UML model representation of the diversionRouteType object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``diversionRouteType`` object
 
-:numref:`fig31` provides the UML representation of ``externalReference`` object.
+:numref:`fig32` provides the UML representation of ``externalReference`` object.
 
-.. _fig31:
+.. _fig32:
 
 .. figure:: /_static/images/external-reference.png
    :alt: UML model representation of the externalReference object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``externalReference`` object
@@ -853,15 +874,15 @@ The ``externalReference`` object has one mandatory attribute:
 
 * The ``lastUpdateDate`` attribute is a date to specify when this cross reference was established, as USRNs and ESUs do occasionally change.
 
-**If no relevant USRN is available, the ``externalReference``, ``uniqueStreetReferenceNumber`` and ``elementaryStreetUnit`` objects shall not be supplied.**
+**If no relevant USRN is available, the ``externalReference`` and ``uniqueStreetReferenceNumber`` objects shall not be supplied.**
 
-:numref:`fig32` provides the UML representation of ``uniqueStreetReferenceNumber`` object. Each ``regulatedPlace`` shall be cross-referenced to one or more Unique Street Reference Numbers (USRN) as specified in the National Street Gazetteer (NSG), by use of the ``usrn`` attribute, where the road has a USRN.
+:numref:`fig33` provides the UML representation of ``uniqueStreetReferenceNumber`` object. Each ``regulatedPlace`` shall be cross-referenced to one or more Unique Street Reference Numbers (USRN) as specified in the National Street Gazetteer (NSG), by use of the ``usrn`` attribute, where the road has a USRN.
 
-.. _fig32:
+.. _fig33:
 
 .. figure:: /_static/images/usrn.png
    :alt: UML model representation of the uniqueStreetReferenceNumber object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``uniqueStreetReferenceNumber`` object
@@ -880,11 +901,11 @@ Times Relating to Regulations
 
 Date and time information relating to regulations is defined using a tried and tested sub-model which appears in several European technical standards and is widely deployed.
 
-The full ``timeValidity`` sub-model is shown in :numref:`fig34`.
+The full ``timeValidity`` sub-model is shown in :numref:`fig35`.
 
-.. _fig34:
+.. _fig35:
 
-.. figure:: /_static/images/time-validity-relationships.png
+.. figure:: /_static/images/timeValidity-related-objects.png
    :alt: UML model representation of Validity (Time-based) related objects
    :width: 80%
    :align: center
@@ -897,18 +918,24 @@ Use of each object and its attributes is given below. For all dates and times, t
 
 * Dates and times - generally all date and time records shall be expressed using the ISO 8601-1:2019 extended format (e.g., ``YYYY-MM-DDTHH:MI:SS``) - note: no ``Z`` timezone offset. Some specific exceptions to this rule do exist - ``eventTime`` and ``publicationTime``, which are both metadata attributes (beyond the scope of this document) are specified using the ISO 8601-1:2019 extended format for UTC datetimes, indicated by the suffix ``Z`` (e.g., ``YYYY-MM-DDTHH:MI:SSZ``).
 
-:numref:`fig35` provides the UML class representation of the ``timeValidity`` object.
+:numref:`fig36` provides the UML class representation of the ``timeValidity`` object.
 
-.. _fig35:
+.. _fig36:
 
-.. figure:: /_static/images/time-validity.png
+.. figure:: /_static/images/timeValidity-object.png
    :alt: UML model representation of the timeValidity object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``timeValidity`` object
 
-The ``timeValidity`` object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. The ``start`` date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.
+The ``timeValidity`` object defines overall dates and times relating to the applicability of a regulation. It shall be used to specify the bounding start and end times of the validity period, within which there may be any number of valid and invalid (exception) periods. 
+
+The ``start`` date time attribute is mandatory - in the case where the D-TRO record characterises a historic, live regulation and the actual date and time of applicability is unknown the start attribute should be set to the current time.
+
+The ``isPlaceholderTro`` attribute specifies if the record is a placeholder one - placeholder TROs are typically defined to support routine maintenance activities - the TRO when made does not contain specific details of when maintenance activities will occur within the overall duration scope of the TRO. When set to ``true``, start should be set at the midnight of 1st of January 1970.
+
+When specific activation dates and time starts and stops are foreseen, the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated. These updates can be provided by submission of a D-TRO record, with an ``orderReportingPointType`` = ``informationUpdate``, after the submission of a D-TRO record, with a Made status.
 
 For permanent TROs the end attribute may be omitted.
 
@@ -920,7 +947,7 @@ The ``timeValidity`` model allows intermittent or variable patterns of time appl
 
 .. figure:: /_static/images/max-stay-no-return.png
    :alt: UML model representation of the maxStayNoReturn object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``maxStayNoReturn`` object
@@ -930,7 +957,7 @@ The ``maxStayNoReturn`` object specifies conditions concerning the maximum durat
 * The ``maximumOccupancy`` attribute refers to the maximum occupancy duration permitted
 * The ``minimumPeriodForReturn`` attribute referes to the minimum time duration between previous occupancy and the next occupancy within a defined zone
 
-:numref:`fig36` shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).
+:numref:`fig37` shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).
 
 .. note::
     It is a matter of data quality and integrity on behalf of the data supplier to ensure the dates and times and periods of applicability are complete, consistent and coherent – there is nothing in the Data Model, per se, that stops contradictory or conflicting information being specified. Data suppliers should take appropriate steps to ensure the quality of the data supplied.
@@ -940,11 +967,11 @@ The overall ``timeValidity`` period defined by the ``start`` and ``end`` propert
 .. note::
     Where an invalid (exception) period overlaps (intersects) a valid period the validity shall be regarded as invalid.
 
-.. _fig36:
+.. _fig37:
 
 .. figure:: /_static/images/period.png
    :alt: UML model representation of the period object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``period`` object
@@ -962,13 +989,13 @@ The optional attribute ``recurringPeriod``, if populated, indicates that the ``s
 
 To support use cases where the start and ends of recurring periods are defined by a changeable date (such as Good Friday, or Easter), the use of the ``changeableTimePeriod`` object and its children allow changeable dates to be defined, and these will overide the ``startOfPeriod`` and ``endOfPeriod`` attributes.
 
-:numref:`fig37` provides the UML class representation of the timePeriodOfDay object.
+:numref:`fig38` provides the UML class representation of the timePeriodOfDay object.
 
-.. _fig37:
+.. _fig38:
 
 .. figure:: /_static/images/time-period-of-day.png
    :alt: UML model representation of the timePeriodOfDay object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``timePeriodOfDay`` object
@@ -981,13 +1008,13 @@ This addresses the local challenge of daylight saving time changes, but should b
 
 The value of ``startTimeOfPeriod`` must fall before the value of ``endTimeOfPeriod`` within a one-day period.
 
-:numref:`fig28` provides the UML class representation of the ``dayWeekMonth`` Object. This object and its associated specialisation (``calendarWeekInMonth``, ``weekOfMonth``, and ``instanceOfDayWithinMonth``) enable identification of patterns of days, weeks and months.
+:numref:`fig39` provides the UML class representation of the ``dayWeekMonth`` Object. This object and its associated specialisation (``calendarWeekInMonth``, ``weekOfMonth``, and ``instanceOfDayWithinMonth``) enable identification of patterns of days, weeks and months.
 
-.. _fig38:
+.. _fig39:
 
 .. figure:: /_static/images/day-week-month.png
    :alt: UML model representation of the dayWeekMonth Object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``dayWeekMonth`` Object
@@ -1000,13 +1027,13 @@ In the example above applicableDay would be specified 5 times, with the values '
 
 * The ``applicableMonth`` attribute indicates months of the year to be included. The attribute may be used between zero and 12 times, with each attribute instance being a unique month of the year. Permitted values are 'january', 'february', etc.
 
-:numref:`fig39` provides the UML class representation of the ``calendarWeekInMonth`` Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.
+:numref:`fig40` provides the UML class representation of the ``calendarWeekInMonth`` Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.
 
-.. _fig39:
+.. _fig40:
 
 .. figure:: /_static/images/calendar-week-in-month.png
    :alt: UML model representation of the calendarWeekInMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``calendarWeekInMonth`` object
@@ -1015,13 +1042,13 @@ The ``calendarWeekInMonth`` object has one mandatory attribute:
 
 * The ``weekInMonth`` attribute indicates the Calendar week of the month to be included. The attribute shall be used between one and 6 times, with each attribute instance being a unique Calendar week in month identifier. Permitted values are 'firstWeekofMonth', 'secondWeekOfMonth' … to 'sixthWeekOfMonth'.
 
-:numref:`fig40` provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.
+:numref:`fig41` provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.
 
-.. _fig40:
+.. _fig41:
 
 .. figure:: /_static/images/week-of-month.png
    :alt: UML model representation of the weekOfMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``weekOfMonth`` object
@@ -1030,13 +1057,13 @@ The ``weekInMonth`` object has one mandatory attribute:
 
 * The ``applicableWeek`` attribute indicates the week of the month to be included. The attribute shall be used between one and 5 times, with each attribute instance being a unique week in month identifier. Permitted values are 'firstWeek', 'secondWeek' … to 'fifthWeek'.
 
-:numref:`fig41` provides the UML class representation of the ``instanceOfDayWithinMonth`` object. The ``instanceOfDayWithinMonth`` object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one ``applicableDay`` instance shall be specified in the related object ``dayWeekMonth``.
+:numref:`fig42` provides the UML class representation of the ``instanceOfDayWithinMonth`` object. The ``instanceOfDayWithinMonth`` object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one ``applicableDay`` instance shall be specified in the related object ``dayWeekMonth``.
 
-.. _fig41:
+.. _fig42:
 
 .. figure:: /_static/images/instance-of-day-within-month.png
    :alt: UML model representation of the instanceOfDayWithinMonth object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``instanceOfDayWithinMonth`` object
@@ -1045,13 +1072,13 @@ The ``instanceOfDayWithinMonth`` object has one mandatory attribute:
 
 * The ``applicableInstanceOfDayWithinMonth`` attribute indicates the identified day instance within the month to be included. The attribute shall be used between one and 5 times, with each attribute instance of an identified day in a month. Permitted values are 'firstInstance', 'secondInstance' … to 'fifthInstance'. This can be used to define patterns such as the second and fourth Tuesday and Friday in the month.
 
-:numref:`fig42` provides the UML class representation of the ``specialDay`` object. The ``specialDay`` object indicates the characteristics of an identified (special) day.
+:numref:`fig43` provides the UML class representation of the ``specialDay`` object. The ``specialDay`` object indicates the characteristics of an identified (special) day.
 
-.. _fig42:
+.. _fig43:
 
 .. figure:: /_static/images/special-day.png
    :alt: UML model representation of the specialDay object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``specialDay`` object
@@ -1064,46 +1091,46 @@ The ``specialDay`` object has three attributes:
 
 * The optional ``publicEvent`` attribute which indicates what type of public event is associated with this ``specialDay``. Permitted values are defined in the extensive ``publicEventType`` enumeration list. Values include: 'agriculturalShow', 'airShow, 'artEvent', etc.
 
-:numref:`fig43` provides the UML class representation of the ``publicHoliday`` object. The object publicHoliday with its mandatory attribute ``publicHolidayName`` enables the public holiday to be named.
+:numref:`fig44` provides the UML class representation of the ``publicHoliday`` object. The object publicHoliday with its mandatory attribute ``publicHolidayName`` enables the public holiday to be named.
 
-.. _fig43:
+.. _fig44:
 
 .. figure:: /_static/images/public-holiday.png
    :alt: UML model representation of the publicHoliday object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``publicHoliday`` object
 
-:numref:`fig44` provides the UML class representation of the ``changeableTimePeriod`` object.
+:numref:`fig45` provides the UML class representation of the ``changeableTimePeriod`` object.
 
-.. _fig44:
+.. _fig45:
 
 .. figure:: /_static/images/changeable-time-period.png
    :alt: UML model representation of the changeableTimePeriod object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriod`` object
 
-:numref:`fig45` provides the UML class representation of the ``changeableTimePeriodStart`` object. There is a mirror image object called ``changeableTimePeriodEnd``. Both objects work in a similar manner. A 'fuzzy time' period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term 'Fuzzy Period', but rather ``changeableTimePeriod``.
+:numref:`fig46` provides the UML class representation of the ``changeableTimePeriodStart`` object. There is a mirror image object called ``changeableTimePeriodEnd``. Both objects work in a similar manner. A 'fuzzy time' period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term 'Fuzzy Period', but rather ``changeableTimePeriod``.
 
 Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePeriodEnd`` object enable a period to be defined using a variable date time start or end or both.
 
-.. _fig45:
+.. _fig46:
 
 .. figure:: /_static/images/changeable-time-period-start.png
    :alt: UML model representation of the changeableTimePeriodStart object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodStart`` object
 
-.. _fig46:
+.. _fig47:
 
 .. figure:: /_static/images/changeable-time-period-end.png
    :alt: UML model representation of the changeableTimePeriodEnd object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodEnd`` object
@@ -1120,13 +1147,13 @@ The ``changeableTimePeriodStart`` and ``changeableTimePeriodEnd`` objects define
 
 * By use of the linkage between a ``changeableTimePeriodStart`` object and/or ``changeableTimePeriodEnd`` object with the ``specialDay`` object - i.e. indicating that the start and/or end is a special day (e.g. Easter).
 
-:numref:`fig47` provides the UML class representation of the ``changeableTimePeriodSource`` object.
+:numref:`fig48` provides the UML class representation of the ``changeableTimePeriodSource`` object.
 
-.. _fig47:
+.. _fig48:
 
 .. figure:: /_static/images/changeable-time-period-source.png
    :alt: UML model representation of the changeableTimePeriodSource object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodSource`` object
@@ -1139,13 +1166,13 @@ The ``changeableTimePeriodSource`` object has two mandatory attributes:
 
 Each instance of ``changeableTimePeriodSource`` will have a definition to explain the nature of the source of data that provides the accurate timings. E.g. for a changeable time period of school term times, it could be a Government website which shares these dates. The ``sourceLocator`` will then provide the specific data elements from the hyperlink of the website through the URI.
 
-:numref:`fig48` provides the UML class representation of the ``changeableTimePeriodEntry`` object.
+:numref:`fig49` provides the UML class representation of the ``changeableTimePeriodEntry`` object.
 
-.. _fig48:
+.. _fig49:
 
 .. figure:: /_static/images/changeable-time-period-entry.png
    :alt: UML model representation of the changeableTimePeriodEntry object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``changeableTimePeriodEntry`` object
@@ -1155,6 +1182,36 @@ The ``changeableTimePeriodEntry`` object has one mandatory attribute:
 * The ``entry`` attribute provides one date/time entry defining a specific date and time.
 
 An example of ``changeableTimePeriodEntry``, when linked to a ``changeableTimePeriodStart``, could represent a list of school terms start dates, e.g. entry 1 - 2024-09-05T08:00, entry 2 - 2024-11-04T08:00, entry 3 - 2025-01-07T08:00, with equivalent entries linked to the ``changeableTimePeriodEnd``.
+
+Summarizing the use of time concepts in D-TRO
+*********************************************
+
+*Made Date* - At the TRO level, in the ``source`` object, the Made Date for the TRO is defined in the ``madeDate`` attribute.
+
+*Coming into force date* - The coming into force date shall be defined at the TRO level in the ``source`` object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the ``comingIntoForceDate`` attribute in the ``provision`` object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.
+
+*Activation times* - Dates and times within the ``timeValidity`` model represent the dates and times that the related regulation and provision are activated (operationally active time). The ``timeValidity`` sub-model supports a wide range of different time patterns for the applicability and activation of each provision.
+In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the ``timeValidity`` model shall mirror the coming into force date.
+
+For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
+
+*Varied or ceased Experimental TROs* - the draft Secondary Legislation requires:
+
+where the operation of the order, or any provision of the order, is modified or suspended in accordance with section 10(2) of that Act,
+the planned duration of the modification or suspension shall be recorded in the experimentalVariation object;
+OR
+where any prohibition, regulation or restriction effected by the order, or by any provision of the order, ceases to have effect earlier than the date provided under regulation 4(21)(f) or 4(2)(c).
+the actual date on which the order or provision ceased to have effect shall be recorded in the experimentalCessation object;
+
+*Recording of actual start and end dates and times* - the draft Secondary Legislation requires:
+This regulation applies to an order made, or a notice issued, under section 14 (temporary prohibition or restriction on roads) of the 1984 Act( ) where the traffic regulation authority is making that order or issuing that notice for the purpose of undertaking works itself.
+
+A traffic regulation authority must provide:
+
+1. the actual start time of each provision in the order or notice;
+2. the actual stop time of each provision in the order or notice;
+
+Each relevant start and stop shall be recorded in the ``actualStartOrStop`` object.
 
 About Conditions and Exclusions
 *******************************
@@ -1276,7 +1333,7 @@ An illustrative example, in :numref:`condition-sets-and-conditions`, shows the u
 
 .. figure:: /_static/images/condition.png
    :alt: UML model representation of the condition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``condition`` object
@@ -1289,7 +1346,7 @@ The ``condition`` object has only the ``negate`` attribute, as explained above.
 
 .. figure:: /_static/images/condition-set.png
    :alt: UML model representation of the conditionSet object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``conditionSet`` object
@@ -1302,36 +1359,12 @@ The ``conditionSet`` object has only the ``operator`` attribute, as explained ab
 
 .. figure:: /_static/images/road-condition.png
    :alt: UML model representation of the roadCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``roadCondition`` object
 
 The ``roadCondition`` object contains only the mandatory ``roadType`` attribute. Permissible values include, but are not limited to: ``motorway``, ``trunkRoad``, and ``other``.
-
-The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
- 
-:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
-
-.. _otherCondition:
-
-.. figure:: /_static/images/other-condition-object.png
-   :alt: UML model representation of the otherCondition object
-   :width: 80%
-   :align: center
-
-The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
-
-:numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
-
-.. _occupant-condition:
-
-.. figure:: /_static/images/occupant-condition.png
-   :alt: UML model representation of the occupantCondition object
-   :width: 80%
-   :align: center
-
-   UML model representation of the ``occupantCondition`` object
 
 The ``occupantCondition`` object contains only the ``disabledWithPermit`` attribute which is defined as a ``boolean`` data type.
 
@@ -1341,7 +1374,7 @@ The ``occupantCondition`` object contains only the ``disabledWithPermit`` attrib
 
 .. figure:: /_static/images/number-of-occupants.png
    :alt: UML model representation of the numberOfOccupants object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``numberOfOccupants`` object
@@ -1377,7 +1410,7 @@ The ``numberOfOccupants`` object has two mandatory attributes:
 
 .. figure:: /_static/images/driver-condition.png
    :alt: UML model representation of the driverCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``driverCondition`` object
@@ -1392,7 +1425,7 @@ The ``driverCondition`` object has one attribute:
 
 .. figure:: /_static/images/access-condition.png
    :alt: UML model representation of the accessCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``accessCondition`` object
@@ -1408,7 +1441,7 @@ The ``accessCondition`` object has two attributes:
 
 .. figure:: /_static/images/permit-condition.png
    :alt: UML model representation of the permitCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``permitCondition`` object
@@ -1431,7 +1464,7 @@ The permitCondition object has the following attributes:
 
 .. figure:: /_static/images/authority.png
    :alt: UML model representation of the authority object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``authority`` object
@@ -1444,7 +1477,7 @@ The ``authority`` object has only one attribute - The ``name`` attribute indicat
 
 .. figure:: /_static/images/permitSubjectToFee.png
    :alt: UML model representation of the permitSubjectToFee object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``permitSubjectToFee`` object
@@ -1455,23 +1488,13 @@ The ``permitSubjectToFee`` object has four optional attributes:
 
 * The ``paymentInformation`` attribute provides a web address (URL) for further information on the permit and related payment.
 
-.. error::
-
-   MISSING TWO ATTRIBUTES HERE
-
-.. error::
-
-   Also, is this following text meant to be here?
-
-The ``condition`` object is linked to the 'standard' ``timeValidity`` sub-model (the ``timeValidity`` object at the top of this sub-model). This enables time-related conditions to be specified.
-
 :numref:`nonVehicularRoadUserCondition` provides the UML class representation of the ``nonVehicularRoadUserCondition`` object.
 
 .. _nonVehicularRoadUserCondition:
 
 .. figure:: /_static/images/nonVehicularRoadUserCondition.png
    :alt: UML model representation of the nonVehicularRoadUserCondition object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``nonVehicularRoadUserCondition`` object
@@ -1479,6 +1502,32 @@ The ``condition`` object is linked to the 'standard' ``timeValidity`` sub-model 
 The ``nonVehicularRoadUserCondition`` object has the following attribute:
 
 * The ``nonVehicularRoadUser`` attribute indicates restriction or permissions relating to non-vehicular road users. Permissible values include, but are not limited to, ``pedestrians``, ``herdedAnimals``, etc.
+
+The ``otherCondition`` object indicating an exceptional other condition, not covered by other conditions
+ 
+:numref:`otherCondition` provides the UML class representation of the ``otherCondition`` object.
+
+.. _otherCondition:
+
+.. figure:: /_static/images/other-condition-object.png
+   :alt: UML model representation of the otherCondition object
+   :width: 45%
+   :align: center
+
+   UML model representation of the ``otherCondition`` object
+
+The ``otherConditionDescription`` attribute is optional and contains free text description of the other condition.
+
+:numref:`occupant-condition` provides the UML class representation of the ``occupantCondition`` object.
+
+.. _occupant-condition:
+
+.. figure:: /_static/images/occupant-condition.png
+   :alt: UML model representation of the occupantCondition object
+   :width: 45%
+   :align: center
+
+   UML model representation of the ``occupantCondition`` object
 
 Specifying Vehicle Conditions
 *****************************
@@ -1491,7 +1540,7 @@ The information that is modelled in ``vehicleCharacteristics`` objects identifie
 
 .. _vehicleCharacteristics-related:
 
-.. figure:: /_static/images/vehicle_characteristics_related_objects.bmp
+.. figure:: /_static/images/vehicle-characteristics-related-objects.bmp
    :alt: UML model representation of vehicleCharacteristics-related objects
    :width: 80%
    :align: center
@@ -1526,7 +1575,7 @@ In practice, upper bounds are specified in TROs, so the maximum characteristic i
 
 .. figure:: /_static/images/maximumGrossWeightCharacteristic.png
    :alt: UML model representation of the maximumGrossWeightCharacteristic object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``maximumGrossWeightCharacteristic`` object
@@ -1551,7 +1600,7 @@ Attributes similar to ``typeOfWeight`` are not replicated in the other objects l
 
 .. figure:: /_static/images/vehicleCharacteristics.png
    :alt: UML model representation of the vehicleCharacteristics object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``vehicleCharacteristics`` object
@@ -1574,10 +1623,12 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 
 .. _electricChargingCharacteristic:
 
-.. figure:: /_static/images/electricChargingCharacteristic.png
-   :alt: UML model representation of the electricChargingCharacteristic object
-   :width: 80%
+.. figure:: /_static/images/electricChargingCharacteristic-object.png
+   :alt: UML model representation of the ``electricChargingCharacteristic`` object
+   :width: 45%
    :align: center
+
+   UML model representation of the electricChargingCharacteristic object
 
 The ``electricChargingCharacteristic`` object has two optional attributes:
 
@@ -1592,7 +1643,7 @@ The ``electricChargingCharacteristic`` object has two optional attributes:
 
 .. figure:: /_static/images/emissions.png
    :alt: UML model representation of the emissions object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``emissions`` object
@@ -1613,56 +1664,60 @@ To specify ``emissionClassificationEuro`` properly, it is necessary to define in
 * The ``emissionClassificationOther`` attribute specifies optionally multiple free-text description of a classification type for vehicle emissions, distinct from the Euro classifications.
 
 
-:numref:`valueRange` provides the UML class representation of the value range object.
+:numref:`valueRange` provides the UML class representation of the ``valueRange`` object.
 
 .. _valueRange:
 
-.. figure:: /_static/images/valueRange.png
-   :alt: UML model representation of the value range object
-   :width: 80%
+.. figure:: /_static/images/valueRange-object.png
+   :alt: UML model representation of the valueRange object
+   :width: 45%
    :align: center
 
-   UML model representation of the value range object
+   UML model representation of the ``valueRange`` object
 
-The `valueRange` object is defining a measurable quantity and related units and has two mandatory attributes:
+The ``valueRange`` object is defining a measurable quantity and related units and has two mandatory attributes:
 
 * The ``class`` attribute specifies the type of measured value under consideration and links to different forms of value range as shown in the schema below.
 
-:numref:`class` UML model representation of ``valueRangeClassEnum`` object
+:numref:`valueRangeClassEnum` UML model representation of ``valueRangeClassEnum`` object
 
 .. _valueRangeClassEnum:
 
 .. figure:: /_static/images/valueRangeClassEnum-enum.png
    :alt: UML model representation of the value range class enum object
-   :width: 80%
+   :width: 45%
    :align: center
+
+   UML model representation of the ``valueRangeClassEnum`` object
 
 * The ``unit`` attribute specifies the unit used for the measure and links to the different forms of unit of measure as shown in the schema below.
 
-:numref:`unit` UML model representation of ``unitOfMeasureEnum`` object
+:numref:`unitOfMeasureEnum` UML model representation of ``unitOfMeasureEnum`` object
 
 .. _unitOfMeasureEnum:
 
 .. figure:: /_static/images/unitOfMeasureEnum-enum.png
    :alt: UML model representation of the unit of measure enum object
-   :width: 80%
+   :width: 45%
    :align: center
 
+   UML model representation of the ``unitOfMeasureEnum`` object
 
-:numref:`valueRangeBoundary` provides the UML class representation of the value range boundary object.
+
+:numref:`valueRangeBoundary` provides the UML class representation of the ``valueRangeBoundary`` object.
 
 .. _valueRangeBoundary:
 
-.. figure:: /_static/images/valueRangeBoundary.png
-   :alt: UML model representation of the value range boundary object
-   :width: 80%
+.. figure:: /_static/images/valueRangeBoundary-object.png
+   :alt: UML model representation of the valueRangeBoundary object
+   :width: 45%
    :align: center
 
-   UML model representation of the value range boundary object
+   UML model representation of the ``valueRangeBoundary`` object
 
 The `valueRangeBoundary` object is defining a range boundary value and operator related to that boundary and has two mandatory attributes:
 
-* The ``comparisonOperator`` attreibute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
+* The ``comparisonOperator`` attribute specifies comparison values and links to the different forms of comparisons as shown in the schema below.
 
 :numref:`comparisonOperatorType` provides the UML class representation of the comparison operator type object.
 
@@ -1670,7 +1725,7 @@ The `valueRangeBoundary` object is defining a range boundary value and operator 
 
 .. figure:: /_static/images/comparisonOperatorType-enum.png
    :alt: UML model representation of the comparison operator type object
-   :width: 80%
+   :width: 45%
    :align: center
 
 * The ``value`` quantify measure forming a measure boundary.
@@ -1685,7 +1740,7 @@ About Tariff Rates
 
 .. figure:: /_static/images/rate-related-objects.png
    :alt: UML model representation of the rate-related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the rate-related objects
@@ -1704,7 +1759,7 @@ The rates sub-model shown here is experimental. It is derived from a richer mode
 
 .. figure:: /_static/images/rateTable.png
    :alt: UML model representation of the rateTable object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the rateTable object
@@ -1723,7 +1778,7 @@ Each ``rateTable`` object contains one or more ``rateLineCollection`` objects. A
 
 .. figure:: /_static/images/rateLineCollection.png
    :alt: UML model representation of the rateLineCollection object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``rateLineCollection`` object
@@ -1754,7 +1809,7 @@ Each rateLineCollection object contains one or more ``rateLine`` objects. :numre
 
 .. figure:: /_static/images/rateLine.png
    :alt: UML model representation of the rateLine object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``rateLine`` object
@@ -1787,7 +1842,7 @@ This section of the Data Model is designed to permit basic information relating 
 
 .. figure:: /_static/images/consultation-related.png
    :alt: UML model representation of the consultation related objects
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``consultation`` related object
@@ -1815,13 +1870,13 @@ Proposed Statutory Guidance and best practice documentation will strongly encour
 
 Therefore, the ability to support additional enumerations would be prudent for several of the enumerated lists existing in the Data Model. These include:
 
-*	``permitType`` (implemented in 3.4.0)
-*	``payloadType`` (to be implemented)
-*	``vehicleUsageType`` (implemented in 3.4.0)
-*	``emissionsClassificationEuroType`` (implemented in 3.4.0)
-*	``fuelType`` (to be implemented)
-*	``vehicleEquipmentType`` (to be implemented)
-*	``vehicleType`` (to be implemented)
+*	``permitType``
+*	``payloadType``
+*	``vehicleUsageType``
+*	``emissionsClassificationEuroType``
+*	``fuelType``
+*	``vehicleEquipmentType``
+*	``vehicleType``
 
 To maintain the simplicity in the Data Model, it is easiest to add an "other" enumeration value to each of the enumerated lists stated. For ``regulationType``, there is the off-list regulation mechanism referred to earlier in the guide that will handle additional enumerations.
 

@@ -96,7 +96,7 @@ Enumeration Classes
 
 .. _enumerations-enums:
 
-.. figure:: /_static/images/enumerations-enum.bmp
+.. figure:: /_static/images/enumerations-enum.png
    :alt: UML class diagram - Enumeration Class in the high-level regulation sub-model
    :width: 100%
    :align: center

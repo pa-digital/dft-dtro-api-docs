@@ -88,5 +88,19 @@ Change Log
     *  ``kerbsideRedRouteBusStopClearway``
     *  ``miscCycleHireParking``
     *  ``miscCycleParking``
+
+.. note::
+    A summary of the changes have been made between release ``3.4.1`` and ``3.5.0``:
+
+1.  Support to provide an information update to enable the submission of planned activation start and stop dates and times, after the submission of a Made Order D-TRO. For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period, without specifying specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the timeValidity sub-model represent when the TRO and its provisions are foreseen to be activated.
+2.	Modelling to support Emissions-related regulations (ability to define CO2 limits, engine capacity, battery capacity, etc).
+3.	Modelling to support Electric Charging Conditions (e.g. when vehicle is connected to a charger; when charging).
+4.	Addition of an “Other Condition” option with in Condition Sub-model to support definition of conditions and exemptions that are not covered by the range of conditions in the existing Data Specification.
+5.	Extensions of supported WKT coding of spatial coordinates beyond Point, LineString and Polygon to also support MultiPoint, MultiLineString, MultiPolygon.
+6.	Add ``dialARide`` to the vehicle usage type list.
+7.	Change of the datatype of ``expectedDuration`` from ``integer`` to ``duration``.
+8.	Removal of support for the provision of Elementary Street Units (ESUs) from Data Specification.
+9.	Addition of a National Speed Limit profile for speed limit regulations – that applies to all road types.
+
  
 A full list of changes is published on the D-TRO GitHub repository at https://github.com/department-for-transport-public/D-TRO.

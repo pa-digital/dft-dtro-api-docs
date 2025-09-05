@@ -720,6 +720,9 @@ components:
           $ref: "#/components/schemas/SchemaVersion"
         data:
           $ref: "#/components/schemas/DTROData"
+        traName:
+          type: string
+          example: "Some TRA"
     ApplicationInactiveListDto:
       type: object
       properties:

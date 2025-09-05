@@ -714,3 +714,16 @@ figure img {
 main[class^="shared"] > .sidebar {
   display: none;
 }
+
+.govuk-tag {
+  color: #0c2d4a;
+  background-color: #bbd4ea;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  width: min-content;
+  font-size: 1.185rem;
+}
+
+.govuk-tag > p {
+  margin: 0;
+}
