@@ -313,7 +313,7 @@ The ``regulation`` object defines two mandatory attributes.
 
 .. figure:: /_static/images/fig15.png
    :alt: UML model representation of the generalRegulation object
-   :width: 80%
+   :width: 45%
    :align: center
 
    UML model representation of the ``generalRegulation`` object
