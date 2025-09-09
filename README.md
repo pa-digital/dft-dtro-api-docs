@@ -41,7 +41,7 @@ Steps for running the documentation locally using Docker:
 
 **6. Run command `docker exec -it [CONTAINER ID]¹ bash`**
 
-**7. Inside container run command `sphinx-autobuild -E -a source/ build/html/ --port [PORT NO]¹ --host 0.0.0.0`**
+**7. Inside container run command `make livehtml`**
 
 **8. Open e.g. `http://127.0.0.1:8002/`**
 
