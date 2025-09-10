@@ -139,4 +139,4 @@ d. Update the title as required and click the green `Create pull request` button
 
 e. Share a link to the pull request with others so they can review it.
 
-f. Once the pull request has been approved, squash and merge it. After 30 seconds or so, you will see your changes published at https://d-tro.dft.gov.uk.
+f. Once the pull request has been approved by one or more reviewers, squash and merge it. After 30 seconds or so, you will see your changes published at https://d-tro.dft.gov.uk.
