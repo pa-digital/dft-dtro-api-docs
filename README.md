@@ -125,7 +125,7 @@ d. Replace, or add to, images in `data-model-user-guide/source/_static/images`.
 e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you've made.
 
 
-**4. Pushing your changes for external review (once you're happy with the changes you've made):**
+**4. Push your changes for external review (once you're happy with the changes you've made):**
 
 a. In a new terminal window e.g. in VS Code, in the root of the project, run `./scripts/build.sh` (soon you won't have to do this).
 
