@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
 
 project = "Digital Traffic Regulation Orders"
 subproject = "Data Model Documentation"
@@ -75,3 +76,9 @@ numfig_format = {
     "figure": "Figure %s",
     "code-block": "Listing %s",
 }
+
+pr_number = os.environ.get("PR_NUMBER")
+if pr_number:
+    html_baseurl = f"docs/pr-{pr_number}"
+else:
+    html_baseurl = "https://d-tro.dft.gov.uk"

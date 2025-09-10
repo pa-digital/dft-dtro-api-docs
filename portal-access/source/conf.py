@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
 
 project = "Digital Traffic Regulation Orders"
 copyright = "2025, Department for Transport"
@@ -25,6 +26,10 @@ exclude_patterns = []
 html_theme = "dft"
 html_static_path = ["_static"]
 
-html_context = {
-    "is_landing_page": True
-}
+html_context = {"is_landing_page": True}
+
+pr_number = os.environ.get("PR_NUMBER")
+if pr_number:
+    html_baseurl = f"docs/pr-{pr_number}"
+else:
+    html_baseurl = "https://d-tro.dft.gov.uk"
