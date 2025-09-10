@@ -75,3 +75,36 @@ The helper script `scripts/build.sh` is provided to automate the build process. 
 ## Documentation Serving
 
 The documentation is served through GitHub Pages, which serves the content of the `docs` folder. Currently this is served form the `main` branch, meaning source and build files exist together. At a future point the build files will be on a separate branch, and GitHub pages will serve the content of this branch, allowing the source and build files to be separated. Github Actions will then build the files from the `main` branch, and commit them to this other branch.
+
+## Steps for content editors making changes to the data model user guide
+
+1. Initial set-up:
+a. Install Docker Desktop, making sure to download the appropriate installer from https://www.docker.com/products/docker-desktop/
+b. Install a Git client, e.g. Git Bash or a Git UI client.
+c. Clone this repo.
+
+2. Before making new changes to the data model user guide:
+a. Make sure you haven't got any outstanding changes (if you're using a terminal e.g. in VS Code, you can run `git status` in the root of the project; to remove outstanding changes (in existing files), you can run `git stash`).
+b. Switch to the `main` branch (if you're using the command line, you can run `git checkout main` in the root of the project).
+c. Pull the latest on the `main` branch (if you're using the command line, you can run `git pull` in the root of the project).
+d. Create a feature branch off the `main` branch (if you're using the command line, you can run e.g. `git checkout -b update-data-model-user-guide-for-360` in the root of the project, where `update-data-model-user-guide-for-360` is the name of your feature branch).
+e. Open Docker Desktop.
+f. In a terminal e.g. in VS Code, run the following commands one after the other in the root of the project:
+```
+docker compose build
+docker compose up
+```
+g. In Docker Desktop click `Containers` on the left-hand side, expand `dft-dtro-api-docs` on the right-hand side and copy the value of `Container ID` next to `data-model-user-guide-1` (in the case below it's `44e28bd016df...`):
+![Docker Desktop container ID](readme-images/docker-desktop-container-id.png)
+
+h. In a new terminal window e.g. in VS Code, run the following command, replacing `<container ID>` with the value copied in the previous step:
+```
+docker exec -it <container ID> bash
+```
+i. In the container command prompt run `sphinx-autobuild -E -a source/ build/html/ --port 8002 --host 0.0.0.0`:
+![Container prompt](readme-images/container-prompt.png)
+
+j. Navigate to `http://127.0.0.1:8002` to view the user guide locally.
+
+3. Make changes to the data model user guide:
+a. 
