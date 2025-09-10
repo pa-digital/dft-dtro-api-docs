@@ -90,7 +90,7 @@ docker compose up
 g. In Docker Desktop click `Containers` on the left-hand side, expand `dft-dtro-api-docs` on the right-hand side and copy the value of `Container ID` next to `data-model-user-guide-1` (in the case below it's `44e28bd016df...`):
 ![Docker Desktop container ID](readme-images/docker-desktop-container-id.png)
 
-h. In a new terminal window e.g. in VS Code, run the following command, replacing `<container ID>` with the value copied in the previous step:
+h. In a new terminal window e.g. in VS Code, in the root of the project, run the following command, replacing `<container ID>` with the value copied in the previous step:
 ```
 docker exec -it <container ID> bash
 ```
@@ -127,9 +127,9 @@ e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you'
 
 **4. Pushing your changes for external review (once you're happy with the changes you've made):**
 
-a. In a new terminal window e.g. in VS Code, run `./scripts/build.sh` (soon you won't have to do this).
+a. In a new terminal window e.g. in VS Code, in the root of the project, run `./scripts/build.sh` (soon you won't have to do this).
 
-b. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
+b. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, in the root of the project, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
 
 c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs and click the green `Compare & pull request` button next to your branch name:
 ![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
