@@ -19,6 +19,10 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
+      - name: Start Docker containers
+        run: |
+          docker compose up -d
+
       - name: Run Docker build script
         run: |
           chmod +x ./scripts/build.sh
