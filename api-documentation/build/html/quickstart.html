@@ -498,8 +498,8 @@ curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </spa
   
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const currentUrl = window.location.pathname.split('/').pop();
-      if (currentUrl === "") return;
+      let currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") currentUrl = "index.html";
       const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
 
       let currentTocItem = null;
