@@ -23,9 +23,9 @@ This involves a two-step onboarding process. Firstly, create an account in the i
 Technical Documentation and Guidance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* `API Documentation <https://d-tro.dft.gov.uk/api-documentation>`_
-* `Data Model User Guide <https://d-tro.dft.gov.uk/data-model-user-guide>`_
-* `User Portal Guide <https://d-tro.dft.gov.uk/user-portal-documentation>`_
+* :doc:`API Documentation <api-documentation/index>`
+* :doc:`Data Model User Guide <data-model-user-guide/index>`
+* :doc:`User Portal Guide <user-portal-documentation/index>`
 
 Support
 ^^^^^^^
