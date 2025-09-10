@@ -38,7 +38,7 @@ jobs:
       - name: Checkout staging repo
         uses: actions/checkout@v4
         with:
-          repository: git@github.com/pa-digital/dft-dtro-api-docs-staging.git
+          repository: pa-digital/dft-dtro-api-docs-staging
           path: staging-repo
           token: ${{ secrets.STAGING_REPO_TOKEN }}
 
@@ -67,7 +67,7 @@ jobs:
       - name: Checkout staging repo
         uses: actions/checkout@v4
         with:
-          repository: git@github.com/pa-digital/dft-dtro-api-docs-staging.git
+          repository: pa-digital/dft-dtro-api-docs-staging
           path: "staging-repo"
           token: ${{ secrets.STAGING_REPO_TOKEN }}
 
