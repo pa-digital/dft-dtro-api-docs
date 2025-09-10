@@ -107,7 +107,7 @@ a. In VS Code explorer, expand `data-model-user-guide`, right-click on `source` 
 
 NOTE: Only update `.rst` files and images within `data-model-user-guide/source` - other documentation files in other folders are automatically generated from this source folder.
 
-b. Search for text near where you want to make changes to the text:
+b. Search for text near where you want to make text changes:
 ![Search for text](readme-images/search-for-text.png)
 
 NOTE: You can't always copy text from the browser and expect to find that text via `Find in Folder`. This is because formatting is applied. So, for example, you'll need to search on "provides the UML class representation of the &#96;&#96;source&#96;&#96;" rather than "provides the UML class representation of the source".
@@ -138,4 +138,5 @@ d. Update the title as required and click the green `Create pull request` button
 ![Create pull request](readme-images/create-pull-request.png)
 
 e. Share a link to the pull request with others so they can review it.
+
 f. Once the pull request has been approved, squash and merge it. After 30 seconds or so, you will see your changes published at https://d-tro.dft.gov.uk.
