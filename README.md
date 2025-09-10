@@ -61,7 +61,7 @@ The documentation is served through GitHub Pages, which serves the content of th
 
 ## Steps for content editors making changes to the data model user guide
 
-1. Initial set-up:
+**1. Initial set-up:**
 
 a. Install Docker Desktop, making sure to download the appropriate installer from https://www.docker.com/products/docker-desktop
 
@@ -70,7 +70,7 @@ b. Install a Git client, e.g. Git Bash or a Git UI client.
 c. Clone this repo.
 
 
-2. Before making new changes to the data model user guide:
+**2. Before making new changes to the data model user guide:**
 
 a. Make sure you haven't got any outstanding changes (if you're using a terminal e.g. in VS Code, you can run `git status` in the root of the project; to remove outstanding changes (in existing files), you can run `git stash`).
 
@@ -100,7 +100,7 @@ i. In the container command prompt run `make livehtml`:
 j. Navigate to http://127.0.0.1:8002 to view the user guide locally.
 
 
-3. Make changes to the data model user guide:
+**3. Make changes to the data model user guide:**
 
 a. In VS Code explorer, expand `data-model-user-guide`, right-click on `source` and select `Find in Folder...`:
 ![Find in folder](readme-images/find-in-folder.png)
@@ -125,7 +125,7 @@ d. Replace, or add to, images in `data-model-user-guide/source/_static/images`.
 e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you've made.
 
 
-4. Pushing your changes for external review (once you're happy with the changes you've made):
+**4. Pushing your changes for external review (once you're happy with the changes you've made):**
 
 a. In a new terminal window e.g. in VS Code, run `./scripts/build.sh` (soon you won't have to do this).
 
