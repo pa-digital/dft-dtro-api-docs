@@ -63,7 +63,7 @@ The documentation is served through GitHub Pages, which serves the content of th
 
 **1. Initial set-up:**
 
-a. Install Docker Desktop, making sure to download the appropriate installer from https://www.docker.com/products/docker-desktop
+a. Download and install the appropriate Docker Desktop from https://www.docker.com/products/docker-desktop.
 
 b. Install a Git client, e.g. Git Bash or a Git UI client.
 
@@ -135,8 +135,12 @@ c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs a
 ![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
 
 d. Update the title as required and click the green `Create pull request` button:
-![Create pull request](readme-images/create-pull-request.png)
+![Create pull request](readme-images/create-pull-request-button.png)
 
 e. Share a link to the pull request with others so they can review it.
 
-f. Once the pull request has been approved by one or more reviewers, squash and merge it. After 30 seconds or so, you will see your changes published at https://d-tro.dft.gov.uk.
+f. Once the pull request has been approved by one or more reviewers, squash and merge it:
+
+![Squash and merge](readme-images/squash-and-merge-button.png)
+
+g. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
