@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    if: github.event.action != "closed"
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
 
     steps:
@@ -50,7 +50,7 @@ jobs:
           git push
 
   cleanup:
-    if: github.event.action == "closed"
+    if: github.event.action == 'closed'
     runs-on: ubuntu-latest
 
     steps:
