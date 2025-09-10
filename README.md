@@ -47,23 +47,6 @@ Steps for running the documentation locally using Docker:
 
 ¹ Make sure the port number matches the container id.
 
-## Making changes to the data model user guide
-
-1. Make changes to `.rst` and images files in folder `data-model-user-guide\source`.
-2. If you have to insert another figure, be aware that references to labels such as the following will auto-increment (so you don't need to increment any numbers in the labels themselves - the labels just need to be unique):
-```
-:numref:`fig8`
-.. _fig8:
-```
-3. Once you've finished making changes, run the following:
-```
-./scripts/build.sh
-```
-See more on this script below.
-
-4. View the changes locally at e.g. `http://127.0.0.1:8002/`.
-5. Commit and push your changes - they will automatically be published to https://d-tro.dft.gov.uk/ via the job at https://github.com/pa-digital/dft-dtro-api-docs/actions
-
 ## Documentation Building
 
 The helper script `scripts/build.sh` is provided to automate the build process. Note that the Docker containers need to be running for this script to work. This script does the following:
@@ -101,10 +84,41 @@ h. In a new terminal window e.g. in VS Code, run the following command, replacin
 ```
 docker exec -it <container ID> bash
 ```
-i. In the container command prompt run `sphinx-autobuild -E -a source/ build/html/ --port 8002 --host 0.0.0.0`:
+i. In the container command prompt run `make livehtml`:
 ![Container prompt](readme-images/container-prompt.png)
 
 j. Navigate to `http://127.0.0.1:8002` to view the user guide locally.
 
 3. Make changes to the data model user guide:
-a. 
+a. In VS Code explorer, expand `data-model-user-guide`, right-click on `source` and select `Find in Folder...`:
+![Find in folder](readme-images/find-in-folder.png)
+
+NOTE: Only update `.rst` files and images within `data-model-user-guide/source` - other documentation files in other folders are automatically generated from this source folder.
+
+b. Search for text near where you want to make changes to the text:
+![Search for text](readme-images/search-for-text.png)
+
+NOTE: You can't always copy text from the browser and expect to find that text via `Find in Folder`. This is because formatting is applied. So, for example, you'll need to search on "provides the UML class representation of the &#96;&#96;source&#96;&#96;" rather than "provides the UML class representation of the source".
+
+c. If applicable, copy existing text with the desired formatting and use in your new text.
+
+NOTE: If you have to insert another figure, be aware that references to labels such as the following will auto-increment (so you don't need to increment any numbers in the labels themselves - the label references just need to be unique):
+```
+:numref:`fig8`
+.. _fig8:
+```
+
+d. Replace, or add to, images in `data-model-user-guide/source/_static/images`.
+e. Refresh your browser open at `http://127.0.0.1:8002` to review the changes you've made.
+
+4. Pushing your changes for external review (once you're happy with the changes you've made):
+a. In a new terminal window e.g. in VS Code, run `./scripts/build.sh` (soon you won't have to do this).
+b. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
+c. In your browser navigate to `https://github.com/pa-digital/dft-dtro-api-docs` and click the green `Compare & pull request` button next to your branch name:
+![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
+
+d. Update the title as required and click the green `Create pull request` button:
+![Create pull request](readme-images/create-pull-request.png)
+
+e. Share a link to the pull request with others so they can review it.
+f. Once the pull request has been approved, squash and merge it. After 30 seconds or so, you will see your changes published at `https://d-tro.dft.gov.uk`.
