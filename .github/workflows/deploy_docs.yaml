@@ -45,7 +45,7 @@ jobs:
           TARGET_DIR="staging-repo/docs/pr-${PR_NUMBER}"
           rm -rf "${TARGET_DIR}"
           mkdir -p "${TARGET_DIR}"
-          rsync -av --delete docs/"$TARGET_DIR/"
+          rsync -av --delete docs/ "$TARGET_DIR/"
 
       - name: Commit and push changes
         run: |
