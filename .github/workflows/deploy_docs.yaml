@@ -4,6 +4,12 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to build docs for"
+        required: true
+
 jobs:
   build-and-deploy:
     if: github.event.action != 'closed'
