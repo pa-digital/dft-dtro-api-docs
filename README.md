@@ -43,7 +43,7 @@ Steps for running the documentation locally using Docker:
 
 **7. Inside container run command `make livehtml`**
 
-**8. Open e.g. `http://127.0.0.1:8002/`**
+**8. Open e.g. http://127.0.0.1:8002**
 
 ¹ Make sure the port number matches the container id.
 
@@ -62,16 +62,26 @@ The documentation is served through GitHub Pages, which serves the content of th
 ## Steps for content editors making changes to the data model user guide
 
 1. Initial set-up:
-a. Install Docker Desktop, making sure to download the appropriate installer from https://www.docker.com/products/docker-desktop/
+
+a. Install Docker Desktop, making sure to download the appropriate installer from https://www.docker.com/products/docker-desktop
+
 b. Install a Git client, e.g. Git Bash or a Git UI client.
+
 c. Clone this repo.
 
+
 2. Before making new changes to the data model user guide:
+
 a. Make sure you haven't got any outstanding changes (if you're using a terminal e.g. in VS Code, you can run `git status` in the root of the project; to remove outstanding changes (in existing files), you can run `git stash`).
+
 b. Switch to the `main` branch (if you're using the command line, you can run `git checkout main` in the root of the project).
+
 c. Pull the latest on the `main` branch (if you're using the command line, you can run `git pull` in the root of the project).
+
 d. Create a feature branch off the `main` branch (if you're using the command line, you can run e.g. `git checkout -b update-data-model-user-guide-for-360` in the root of the project, where `update-data-model-user-guide-for-360` is the name of your feature branch).
+
 e. Open Docker Desktop.
+
 f. In a terminal e.g. in VS Code, run the following commands one after the other in the root of the project:
 ```
 docker compose build
@@ -87,9 +97,11 @@ docker exec -it <container ID> bash
 i. In the container command prompt run `make livehtml`:
 ![Container prompt](readme-images/container-prompt.png)
 
-j. Navigate to `http://127.0.0.1:8002` to view the user guide locally.
+j. Navigate to http://127.0.0.1:8002 to view the user guide locally.
+
 
 3. Make changes to the data model user guide:
+
 a. In VS Code explorer, expand `data-model-user-guide`, right-click on `source` and select `Find in Folder...`:
 ![Find in folder](readme-images/find-in-folder.png)
 
@@ -109,16 +121,21 @@ NOTE: If you have to insert another figure, be aware that references to labels s
 ```
 
 d. Replace, or add to, images in `data-model-user-guide/source/_static/images`.
-e. Refresh your browser open at `http://127.0.0.1:8002` to review the changes you've made.
+
+e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you've made.
+
 
 4. Pushing your changes for external review (once you're happy with the changes you've made):
+
 a. In a new terminal window e.g. in VS Code, run `./scripts/build.sh` (soon you won't have to do this).
+
 b. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
-c. In your browser navigate to `https://github.com/pa-digital/dft-dtro-api-docs` and click the green `Compare & pull request` button next to your branch name:
+
+c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs and click the green `Compare & pull request` button next to your branch name:
 ![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
 
 d. Update the title as required and click the green `Create pull request` button:
 ![Create pull request](readme-images/create-pull-request.png)
 
 e. Share a link to the pull request with others so they can review it.
-f. Once the pull request has been approved, squash and merge it. After 30 seconds or so, you will see your changes published at `https://d-tro.dft.gov.uk`.
+f. Once the pull request has been approved, squash and merge it. After 30 seconds or so, you will see your changes published at https://d-tro.dft.gov.uk.
