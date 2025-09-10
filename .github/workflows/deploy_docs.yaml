@@ -37,7 +37,7 @@ jobs:
 
       - name: Clone staging repo
         run: |
-          git clone git@github:pa-digital/dft-dtro-api-docs-staging.git staging-repo
+          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
 
       - name: Copy docs into staging repo
         run: |
@@ -63,7 +63,7 @@ jobs:
     steps:
       - name: Clone staging repo
         run: |
-          git clone git@github:pa-digital/dft-dtro-api-docs-staging.git staging-repo
+          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
 
       - name: Remove PR docs folder
         run: |
