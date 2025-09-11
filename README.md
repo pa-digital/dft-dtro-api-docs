@@ -144,7 +144,7 @@ e. Take a note of the number at the end of the URL. In the case above it's `7`.
 
 f. After 30 seconds or so, navigate to the staging environment at https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/, replacing `7` with the number you noted above. You'll be able to see your changes ready for external review.
 
-g. Share a link to the pull request (e.g. https://github.com/pa-digital/dft-dtro-api-docs/pull/7) and the staging environment (e.g. https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/) with the relevant reviewers.
+g. Share a link to the pull request (e.g. `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`) and the staging environment (e.g. `https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/`) with the relevant reviewers.
 
 h. Once the pull request and the documentation on the staging environment have been approved by one or more reviewers, squash and merge the pull request:
 
