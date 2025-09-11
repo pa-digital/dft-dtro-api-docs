@@ -1,8 +1,8 @@
 [
-  { "name": "API Documentation", "href": "https://d-tro.dft.gov.uk/api-documentation" },
-  { "name": "Data Model", "href": "https://d-tro.dft.gov.uk/data-model-user-guide" },
+  { "name": "API Documentation", "href": "../api-documentation" },
+  { "name": "Data Model", "href": "../data-model-user-guide" },
   {
     "name": "User Portal Documentation",
-    "href": "https://d-tro.dft.gov.uk/user-portal-documentation"
+    "href": "../user-portal-documentation"
   }
 ]

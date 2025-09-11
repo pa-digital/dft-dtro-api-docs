@@ -16,24 +16,4 @@ Essential cookies keep your information secure while you use this site. We do no
 .. csv-table::
    :header: "Name", "Purpose", "Expires"
 
-   "jwt", "Used to keep you signed in", "24 hours"
-   "cookie_policy", "Saves your cookie consent settings", "1 year"
-
-Analytics cookies (optional)
-****************************
-
-With your permission, we use Google Analytics to collect data about how you use this site. This information helps us to improve our service.
-
-Google is not allowed to use or share our analytics data with anyone.
-
-Google Analytics stores anonymised information about:
-
-* how you got to this site
-* the pages you visit on this site and how long you spend on them
-* any errors you see while using this site
-  
-.. csv-table::
-   :header: "Name", "Purpose", "Expires"
-
-   "_ga", "	Checks if you've visited this site before. This helps us count how many people visit our site.", "1 year"
-   "_ga_*", "	Checks if you've visited this site before. This helps us count how many people visit our site.", "1 year"
+   "jwtToken", "Used to keep you signed in", "30 minutes (renews if expiry time is less than 5 minutes)"

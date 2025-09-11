@@ -59,11 +59,11 @@
     
       <p>D-TRO</p>
       
-        <a href="https://d-tro.dft.gov.uk/api-documentation">API Documentation</a>
+        <a href="../api-documentation">API Documentation</a>
       
-        <a href="https://d-tro.dft.gov.uk/data-model-user-guide">Data Model</a>
+        <a href="../data-model-user-guide">Data Model</a>
       
-        <a href="https://d-tro.dft.gov.uk/user-portal-documentation">User Portal Documentation</a>
+        <a href="../user-portal-documentation">User Portal Documentation</a>
       
       <div class="app-site-search__wrapper">
         <form action="../search.html">
@@ -93,7 +93,6 @@
     <ul>
 <li><a class="reference internal" href="#">Cookies</a><ul>
 <li><a class="reference internal" href="#essential-cookies">Essential cookies</a></li>
-<li><a class="reference internal" href="#analytics-cookies-optional">Analytics cookies (optional)</a></li>
 </ul>
 </li>
 </ul>
@@ -120,48 +119,9 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>jwt</p></td>
+<tr class="row-even"><td><p>jwtToken</p></td>
 <td><p>Used to keep you signed in</p></td>
-<td><p>24 hours</p></td>
-</tr>
-<tr class="row-odd"><td><p>cookie_policy</p></td>
-<td><p>Saves your cookie consent settings</p></td>
-<td><p>1 year</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="analytics-cookies-optional">
-<h2>Analytics cookies (optional)<a class="headerlink" href="#analytics-cookies-optional" title="Link to this heading">¶</a></h2>
-<p>With your permission, we use Google Analytics to collect data about how you use this site. This information helps us to improve our service.</p>
-<p>Google is not allowed to use or share our analytics data with anyone.</p>
-<p>Google Analytics stores anonymised information about:</p>
-<ul class="simple">
-<li><p>how you got to this site</p></li>
-<li><p>the pages you visit on this site and how long you spend on them</p></li>
-<li><p>any errors you see while using this site</p></li>
-</ul>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Purpose</p></th>
-<th class="head"><p>Expires</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>_ga</p></td>
-<td><blockquote>
-<div><p>Checks if you’ve visited this site before. This helps us count how many people visit our site.</p>
-</div></blockquote>
-</td>
-<td><p>1 year</p></td>
-</tr>
-<tr class="row-odd"><td><p>_ga_*</p></td>
-<td><blockquote>
-<div><p>Checks if you’ve visited this site before. This helps us count how many people visit our site.</p>
-</div></blockquote>
-</td>
-<td><p>1 year</p></td>
+<td><p>30 minutes (renews if expiry time is less than 5 minutes)</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,11 +140,11 @@
         <div class="footer-links">
           <a>Feedback</a>
           <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
-          <a id="support-link">Support</a>
-          <a id="accessibility-link">Accessibility</a>
-          <a id="cookies-link">Cookies</a>
-          <a id="privacy-link">Privacy</a>
-          <a id="t-and-c-link">Terms & Conditions</a>
+          <a id="support-link" href="/support">Support</a>
+          <a id="accessibility-link" href="/accessibility">Accessibility</a>
+          <a id="cookies-link" href="/cookies">Cookies</a>
+          <a id="privacy-link" href="privacy">Privacy</a>
+          <a id="t-and-c-link" href="/terms_and_conditions">Terms & Conditions</a>
         </div>
         <div class="footer-meta-group">
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -217,8 +177,8 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const currentUrl = window.location.pathname.split('/').pop();
-      if (currentUrl === "") return;
+      let currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") currentUrl = "index.html";
       const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
 
       let currentTocItem = null;
@@ -251,18 +211,6 @@
         caption.appendChild(link);
       }
     });
-
-    const linkMap = {
-      "support-link": "/support",
-      "accessibility-link": "/accessibility",
-      "cookies-link": "/cookies",
-      "privacy-link": "/privacy",
-      "t-and-c-link": "/terms_and_conditions"
-    }
-
-    for (const [key, value] of Object.entries(linkMap)) {
-      document.getElementById(key).href = `${window.location.origin}/${value}`;
-    }
   </script>
 
   

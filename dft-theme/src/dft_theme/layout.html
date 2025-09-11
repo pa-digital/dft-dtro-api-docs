@@ -5,12 +5,12 @@
   <meta charset="utf-8" />
   <title>{{ title | e }}</title>
   {% block extrahead %}
-  <link rel="shortcut icon" href="{{ pathto('_static/images/favicon.svg', 1) }}" type="image/x-icon">
-  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 1) }}">
-  <script src="{{ pathto('_static/js/custom.js', 1) }}" defer></script>
-  <link rel="stylesheet" href="{{ pathto('_static/tabs.css', 1) }}">
-  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-  <script src="{{ pathto('_static/tabs.js', 1) }}"></script>
+  <link rel="shortcut icon" href="{{ pathto('_static/images/favicon.svg', 0) }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 0) }}">
+  <script src="{{ pathto('_static/js/custom.js', 0) }}" defer></script>
+  <link rel="stylesheet" href="{{ pathto('_static/tabs.css', 0) }}">
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 0) }}">
+  <script src="{{ pathto('_static/tabs.js', 0) }}"></script>
   {{ metatags }}
   {% endblock %}
 
@@ -93,11 +93,11 @@
         <div class="footer-links">
           <a>Feedback</a>
           <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
-          <a id="support-link">Support</a>
-          <a id="accessibility-link">Accessibility</a>
-          <a id="cookies-link">Cookies</a>
-          <a id="privacy-link">Privacy</a>
-          <a id="t-and-c-link">Terms & Conditions</a>
+          <a id="support-link" href="support">Support</a>
+          <a id="accessibility-link" href="accessibility">Accessibility</a>
+          <a id="cookies-link" href="cookies">Cookies</a>
+          <a id="privacy-link" href="privacy">Privacy</a>
+          <a id="t-and-c-link" href="terms_and_conditions">Terms & Conditions</a>
         </div>
         <div class="footer-meta-group">
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -164,18 +164,6 @@
         caption.appendChild(link);
       }
     });
-
-    const linkMap = {
-      "support-link": "/support",
-      "accessibility-link": "/accessibility",
-      "cookies-link": "/cookies",
-      "privacy-link": "/privacy",
-      "t-and-c-link": "/terms_and_conditions"
-    }
-
-    for (const [key, value] of Object.entries(linkMap)) {
-      document.getElementById(key).href = `${window.location.origin}/${value}`;
-    }
   </script>
 
   {% endblock %}

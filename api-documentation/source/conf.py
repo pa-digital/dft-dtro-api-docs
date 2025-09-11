@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
 
 project = "Digital Traffic Regulation Orders"
 subproject = "Technical API Documentation"
@@ -29,10 +30,17 @@ html_static_path = ["_static"]
 
 pygments_style = "sphinx"
 
-html_context = {
-    "subproject": subproject,
-}
-
 from dft_theme.utils.copy_shared_pages import copy_shared_pages
 
 copy_shared_pages()
+
+pr_number = os.environ.get("PR_NUMBER")
+if pr_number:
+    html_baseurl = f"docs/pr-{pr_number}"
+else:
+    html_baseurl = "https://d-tro.dft.gov.uk"
+
+html_context = {
+    "subproject": subproject,
+    "base_path": f"pr-{pr_number}/" if pr_number else "",
+}
