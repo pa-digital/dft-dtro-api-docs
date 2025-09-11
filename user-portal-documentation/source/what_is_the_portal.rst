@@ -1,11 +1,6 @@
 What is the D-TRO User Portal?
 ==============================
 
-.. notification::
-    :heading: Disclaimer
-    
-    This service is still in development, and is subject to change.
-
 Introduction
 ************
 
