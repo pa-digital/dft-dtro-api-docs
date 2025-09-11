@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
 
 project = "Digital Traffic Regulation Orders"
 subproject = "User Portal Documentation"
@@ -63,3 +64,9 @@ html_context = {
     "subproject": subproject,
     "breadcrumb_titles": build_page_title_map(os.path.abspath(".")),
 }
+
+pr_number = os.environ.get("PR_NUMBER")
+if pr_number:
+    html_baseurl = f"docs/pr-{pr_number}"
+else:
+    html_baseurl = "https://d-tro.dft.gov.uk"
