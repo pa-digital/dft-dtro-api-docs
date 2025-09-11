@@ -1,0 +1,85 @@
+name: Build and deploy docs to staging environment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  build-and-deploy:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Start Docker containers
+        run: |
+          docker compose up -d
+
+      - name: Run Docker build script
+        run: |
+          export PR_NUMBER=${{ github.event.pull_request.number }}
+          chmod +x ./scripts/build.sh
+          ./scripts/build.sh
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.STAGING_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone staging repo
+        run: |
+          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
+
+      - name: Copy docs into staging repo
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          TARGET_DIR="staging-repo/docs/pr-${PR_NUMBER}"
+          rm -rf "${TARGET_DIR}"
+          mkdir -p "${TARGET_DIR}"
+          rsync -av --delete docs/ "$TARGET_DIR/"
+
+      - name: Commit and push changes
+        run: |
+          cd staging-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update docs for PR #${{ github.event.pull_request.number }} from $GITHUB_SHA" || echo "No changes to commit"
+          git push
+
+  cleanup:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.STAGING_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Clone staging repo
+        run: |
+          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
+
+      - name: Remove PR docs folder
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          TARGET_DIR="staging-repo/docs/pr-${PR_NUMBER}"
+          if [ -d "$TARGET_DIR" ]; then
+            rm -rf "$TARGET_DIR"
+          fi
+
+      - name: Commit and push removal
+        run: |
+          cd staging-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove docs for closed PR #${{ github.event.pull_request.number }}" || echo "No changes to commit"
+          git push
