@@ -69,5 +69,5 @@ else:
 html_context = {
     "subproject": subproject,
     "breadcrumb_titles": build_page_title_map(os.path.abspath(".")),
-    "base_path": f"pr-{pr_number}/" if pr_number else "",
+    "base_path": f"dft-dtro-api-docs-staging/pr-{pr_number}" if pr_number else "",
 }
