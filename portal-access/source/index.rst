@@ -23,9 +23,9 @@ This involves a two-step onboarding process. Firstly, create an account in the i
 Technical Documentation and Guidance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :doc:`API Documentation <api-documentation/index>`
-* :doc:`Data Model User Guide <data-model-user-guide/index>`
-* :doc:`User Portal Guide <user-portal-documentation/index>`
+* `API Documentation <api-documentation>`
+* `Data Model User Guide <data-model-user-guide>`
+* `User Portal Guide <user-portal-documentation>`
 
 Support
 ^^^^^^^
