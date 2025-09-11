@@ -26,6 +26,7 @@ jobs:
       - name: Run Docker build script
         run: |
           chmod +x ./scripts/build.sh
+          PR_NUMBER=${{ github.event.pull_request.number }}
           ./scripts/build.sh
 
       - name: Setup SSH
