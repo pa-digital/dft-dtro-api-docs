@@ -137,7 +137,7 @@ c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs a
 d. Update the title as required and click the green `Create pull request` button:
 ![Create pull request](readme-images/create-pull-request-button.png)
 
-You'll see the pull request created at a particular URL. In the case below the URL is https://github.com/pa-digital/dft-dtro-api-docs/pull/7:
+You'll see the pull request created at a particular URL. In the case below the URL is `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`:
 ![PR link](readme-images/pr-link.png)
 
 e. Take a note of the number at the end of the URL. In the case above it's `7`.
