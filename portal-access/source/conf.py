@@ -26,10 +26,13 @@ exclude_patterns = []
 html_theme = "dft"
 html_static_path = ["_static"]
 
-html_context = {"is_landing_page": True}
-
 pr_number = os.environ.get("PR_NUMBER")
 if pr_number:
     html_baseurl = f"docs/pr-{pr_number}"
 else:
     html_baseurl = "https://d-tro.dft.gov.uk"
+
+html_context = {
+    "is_landing_page": True,
+    "base_path": f"pr-{pr_number}/" if pr_number else "",
+}

@@ -60,13 +60,14 @@ def build_page_title_map(src_dir):
     return title_map
 
 
-html_context = {
-    "subproject": subproject,
-    "breadcrumb_titles": build_page_title_map(os.path.abspath(".")),
-}
-
 pr_number = os.environ.get("PR_NUMBER")
 if pr_number:
     html_baseurl = f"docs/pr-{pr_number}"
 else:
     html_baseurl = "https://d-tro.dft.gov.uk"
+
+html_context = {
+    "subproject": subproject,
+    "breadcrumb_titles": build_page_title_map(os.path.abspath(".")),
+    "base_path": f"pr-{pr_number}/" if pr_number else "",
+}

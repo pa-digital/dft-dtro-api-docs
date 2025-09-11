@@ -143,11 +143,11 @@
         <div class="footer-links">
           <a>Feedback</a>
           <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
-          <a id="support-link">Support</a>
-          <a id="accessibility-link">Accessibility</a>
-          <a id="cookies-link">Cookies</a>
-          <a id="privacy-link">Privacy</a>
-          <a id="t-and-c-link">Terms & Conditions</a>
+          <a id="support-link" href="support">Support</a>
+          <a id="accessibility-link" href="accessibility">Accessibility</a>
+          <a id="cookies-link" href="cookies">Cookies</a>
+          <a id="privacy-link" href="privacy">Privacy</a>
+          <a id="t-and-c-link" href="terms_and_conditions">Terms & Conditions</a>
         </div>
         <div class="footer-meta-group">
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
@@ -214,18 +214,6 @@
         caption.appendChild(link);
       }
     });
-
-    const linkMap = {
-      "support-link": "./shared/support",
-      "accessibility-link": "./shared/accessibility",
-      "cookies-link": "./shared/cookies",
-      "privacy-link": "./shared/privacy",
-      "t-and-c-link": "./shared/terms_and_conditions"
-    }
-
-    for (const [key, value] of Object.entries(linkMap)) {
-      document.getElementById(key).href = `${window.location.origin}/${value}`;
-    }
   </script>
 
   
