@@ -137,10 +137,17 @@ c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs a
 d. Update the title as required and click the green `Create pull request` button:
 ![Create pull request](readme-images/create-pull-request-button.png)
 
-e. Share a link to the pull request with others so they can review it.
+You'll see the pull request created at a particular URL. In the case below the URL is https://github.com/pa-digital/dft-dtro-api-docs/pull/7:
+![PR link](readme-images/pr-link.png)
 
-f. Once the pull request has been approved by one or more reviewers, squash and merge it:
+e. Take a note of the number at the end of the URL. In the case above it's `7`.
+
+f. After 30 seconds or so, navigate to the staging environment at https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/, replacing `7` with the number you noted above. You'll be able to see your changes ready for external review.
+
+g. Share a link to the pull request (e.g. https://github.com/pa-digital/dft-dtro-api-docs/pull/7) and the staging environment (e.g. https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/) with the relevant reviewers.
+
+h. Once the pull request and the documentation on the staging environment have been approved by one or more reviewers, squash and merge the pull request:
 
 ![Squash and merge](readme-images/squash-and-merge-button.png)
 
-g. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
+i. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
