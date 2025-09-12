@@ -34,7 +34,7 @@ jobs:
 
       - name: Clean old files
         run: |
-          find . -mindepth 1 ! -regex '^./\.git\(/.*\)?' -exec rm -rf {} +
+          find . -mindepth 1 ! -regex '^./\.git\(/.*\)?' -exec rm -rf {} + ||
 
       - name: Restore build output
         run: |
