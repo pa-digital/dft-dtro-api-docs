@@ -28,7 +28,7 @@ jobs:
 
       - name: Clean branch
         run: |
-          find . -mindepth 1 -path ./docs -prune -o -exec rm -rf {} +
+          find . -mindepth 1 \( -path ./docs -o -path ./.git \) -prune -o -exec rm -rf {} +
           touch .nojekyll
 
       - name: Commit changes
