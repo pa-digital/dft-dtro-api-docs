@@ -22,15 +22,11 @@ jobs:
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
 
-      - name: List build output
-        run: |
-          echo "Listing contents of docs/"
-          ls -la docs/
-
       - name: Save build output
         run: |
           mkdir -p temp-docs
-          cp -r docs/* temp-docs/
+          cp -r docs/. temp-docs/
+          ls -la temp-docs/
 
       - name: Switch to github-pages branch
         run: |
@@ -43,7 +39,7 @@ jobs:
 
       - name: Restore build output
         run: |
-          cp -r temp-docs/* .
+          cp -r temp-docs/. .
 
       - name: Deploy to github-pages branch
         run: |
