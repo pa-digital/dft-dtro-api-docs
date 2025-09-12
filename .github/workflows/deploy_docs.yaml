@@ -28,7 +28,7 @@ jobs:
 
       - name: Clean branch
         run: |
-          sudo chown -R $USER:$USER 
+          sudo chown -R $USER:$USER .
           find . -mindepth 1 \( -path ./docs -o -path ./.git -o -name '.nojekyll' -o -name 'CNAME' -o -name 'robots.txt' \) -prune -o -exec rm -rf {} +
 
       - name: Commit changes
