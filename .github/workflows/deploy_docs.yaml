@@ -25,6 +25,7 @@ jobs:
         run: |
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
+          ls -al docs/
 
       - name: Clean branch
         run: |
