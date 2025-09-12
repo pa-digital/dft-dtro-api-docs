@@ -13,6 +13,10 @@ jobs:
       - name: Checkout source repo
         uses: actions/checkout@v4
 
+      - name: Switch to deployment branch
+        run: |
+          git checkout --orphan github-pages
+
       - name: Start Docker containers
         run: |
           docker compose up -d
@@ -22,28 +26,13 @@ jobs:
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
 
-      - name: Save build output
+      - name: Clean branch
         run: |
-          mkdir -p temp-docs
-          cp -r docs/. temp-docs/
-          ls -la temp-docs/
-
-      - name: Switch to github-pages branch
-        run: |
-          git fetch origin github-pages
-          git checkout github-pages
-
-      - name: Clean old files
-        run: |
-          find . -mindepth 1 ! -regex '^./\.git\(/.*\)?' -exec rm -rf {} + || true
-
-      - name: Restore build output
-        run: |
-          cp -r temp-docs/. .
-
-      - name: Deploy to github-pages branch
-        run: |
+          find . -mindepth 1 -not -name docs -exec rm -rf {} +
           touch .nojekyll
+
+      - name: Commit changes
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
