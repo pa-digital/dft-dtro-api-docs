@@ -37,4 +37,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Replace github-pages content with docs from $GITHUB_SHA" || echo "No changes to commit"
-          git push origin github-pages
+          git push origin github-pages --force
