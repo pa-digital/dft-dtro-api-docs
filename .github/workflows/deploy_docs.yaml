@@ -22,6 +22,11 @@ jobs:
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
 
+      - name: List build output
+        run: |
+          echo "Listing contents of docs/"
+          ls -la docs/
+
       - name: Save build output
         run: |
           mkdir -p temp-docs
