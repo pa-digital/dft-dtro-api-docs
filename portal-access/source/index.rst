@@ -18,7 +18,7 @@ Traffic Regulation Authorities (TRAs) and Digital Solution Providers (DSPs) can 
 This involves a two-step onboarding process. Firstly, create an account in the integration environment to access a sandbox environment, separate from the live service, to test publishing D-TRO data in a safe, non-production setting. After successfully publishing test D-TROs in the sandbox environment, you can set up a production account to publish live data to the D-TRO service.
 
 1. `Create an integration account <https://dtro-ui-integration.dft.gov.uk>`_
-2. `Create a production account <https://https://dtro-ui.dft.gov.uk>`_
+2. `Create a production account <https://dtro-ui.dft.gov.uk>`_
 
 Technical Documentation and Guidance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
