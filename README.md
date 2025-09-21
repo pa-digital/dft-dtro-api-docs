@@ -150,4 +150,7 @@ h. Once the pull request and the documentation on the staging environment have b
 
 ![Squash and merge](readme-images/squash-and-merge-button.png)
 
-i. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
+i. Once the pull request is merged, delete the associated branch:
+![Delete branch](readme-images/delete-branch-button.png)
+
+j. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
