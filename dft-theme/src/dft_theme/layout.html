@@ -5,12 +5,12 @@
   <meta charset="utf-8" />
   <title>{{ title | e }}</title>
   {% block extrahead %}
-  <link rel="shortcut icon" href="{{ pathto('_static/images/favicon.svg', 0) }}" type="image/x-icon">
-  <link rel="stylesheet" href="{{ pathto('_static/css/custom.css', 0) }}">
-  <script src="{{ pathto('_static/js/custom.js', 0) }}" defer></script>
-  <link rel="stylesheet" href="{{ pathto('_static/tabs.css', 0) }}">
-  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 0) }}">
-  <script src="{{ pathto('_static/tabs.js', 0) }}"></script>
+  <link rel="shortcut icon" href="{{ base_path }}_static/images/favicon.svg"S type="image/x-icon">
+  <link rel="stylesheet" href="{{ base_path }}_static/css/custom.css">
+  <script src="{{ base_path }}_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="{{ base_path }}_static/tabs.css">
+  <link rel="stylesheet" href="{{ base_path }}_static/pygments.css">
+  <script src="{{ base_path }}_static/tabs.js'"></script>
   {{ metatags }}
   {% endblock %}
 
@@ -91,13 +91,13 @@
     <div class="footer-content">
       <div class="footer-meta">
         <div class="footer-links">
-          <a>Feedback</a>
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cpq-ajTOTkO78oZ8lo_C161mR3aGdw5GgGos9xjukGJUMEExTFAyQ1AxOFdIR0UwRFdWRk9ZV1RGWC4u">Feedback</a>
           <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
-          <a id="support-link" href="support">Support</a>
-          <a id="accessibility-link" href="accessibility">Accessibility</a>
-          <a id="cookies-link" href="cookies">Cookies</a>
-          <a id="privacy-link" href="privacy">Privacy</a>
-          <a id="t-and-c-link" href="terms_and_conditions">Terms & Conditions</a>
+          <a id="support-link" href="{{base_path}}support">Support</a>
+          <a id="accessibility-link" href="{{base_path}}accessibility">Accessibility</a>
+          <a id="cookies-link" href="{{base_path}}cookies">Cookies</a>
+          <a id="privacy-link" href="{{base_path}}privacy">Privacy</a>
+          <a id="t-and-c-link" href="{{base_path}}terms_and_conditions">Terms & Conditions</a>
         </div>
         <div class="footer-meta-group">
           <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"

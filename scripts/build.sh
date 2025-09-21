@@ -2,10 +2,15 @@
 
 set -e
 
-docker exec $(docker ps --filter="name=api-documentation" -q) bash -c "redocly build-docs specs/openapi.yaml -o source/_static/redoc.html && make html"
-docker exec $(docker ps --filter="name=data-model-user-guide" -q) bash -c "make html"
-docker exec $(docker ps --filter="name=user-portal-documentation" -q) bash -c "make html"
-docker exec $(docker ps --filter="name=landing" -q) bash -c "make html"
+docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=api-documentation" -q) bash -c "redocly build-docs specs/openapi.yaml -o source/_static/redoc.html && make html"
+docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=data-model-user-guide" -q) bash -c "make html"
+docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=user-portal-documentation" -q) bash -c "make html"
+docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=landing" -q) bash -c "make html"
+
+mkdir -p docs/api-documentation
+mkdir -p docs/data-model-user-guide
+mkdir -p docs/user-portal-documentation
+mkdir -p docs/api-documentation
 
 cp -r api-documentation/build/html/* docs/api-documentation
 cp -r data-model-user-guide/build/html/* docs/data-model-user-guide

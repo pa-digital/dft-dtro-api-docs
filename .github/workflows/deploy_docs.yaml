@@ -1,18 +1,12 @@
 name: Build and deploy docs
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: "PR number to build docs for"
-        required: true
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-deploy:
-    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
 
     steps:
@@ -28,63 +22,20 @@ jobs:
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
 
-      - name: Setup SSH
+      - name: Switch to deployment branch
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.STAGING_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git checkout --orphan github-pages
 
-      - name: Clone staging repo
+      - name: Clean branch
         run: |
-          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
+          sudo chown -R $USER:$USER .
+          mv .nojekyll docs/.nojekyll
+          find . -mindepth 1 \( -path ./docs -o -path ./.git -o -name 'CNAME' -o -name 'robots.txt' \) -prune -o -exec rm -rf {} +
 
-      - name: Copy docs into staging repo
+      - name: Commit changes
         run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          TARGET_DIR="staging-repo/docs/pr-${PR_NUMBER}"
-          rm -rf "${TARGET_DIR}"
-          mkdir -p "${TARGET_DIR}"
-          rsync -av --delete docs/ "$TARGET_DIR/"
-
-      - name: Commit and push changes
-        run: |
-          cd staging-repo
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Update docs for PR #${{ github.event.pull_request.number }} from $GITHUB_SHA" || echo "No changes to commit"
-          git push
-
-  cleanup:
-    if: github.event.action == 'closed'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.STAGING_DEPLOY_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-      - name: Clone staging repo
-        run: |
-          git clone git@github.com:pa-digital/dft-dtro-api-docs-staging.git staging-repo
-
-      - name: Remove PR docs folder
-        run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          TARGET_DIR="staging-repo/docs/pr-${PR_NUMBER}"
-          if [ -d "$TARGET_DIR" ]; then
-            rm -rf "$TARGET_DIR"
-          fi
-
-      - name: Commit and push removal
-        run: |
-          cd staging-repo
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Remove docs for closed PR #${{ github.event.pull_request.number }}" || echo "No changes to commit"
-          git push
+          git commit -m "Replace github-pages content with docs from $GITHUB_SHA" || echo "No changes to commit"
+          git push origin github-pages --force
