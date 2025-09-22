@@ -1,6 +1,4 @@
 Support 
 =======
 
-If you need help accessing this service, please email dtro-cso@dft.gov.uk.
-
-For any other support related to this service please email dtro@dft.gov.uk.
+If you need help accessing this service, or for any other support related to this service, please email `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_.
