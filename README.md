@@ -127,31 +127,29 @@ e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you'
 
 **4. Push your changes for external review (once you're happy with the changes you've made):**
 
-a. In a new terminal window e.g. in VS Code, in the root of the project, run `./scripts/build.sh` (soon you won't have to do this).
+a. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, in the root of the project, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
 
-b. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, in the root of the project, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
-
-c. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs and click the green `Compare & pull request` button next to your branch name:
+b. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs and click the green `Compare & pull request` button next to your branch name:
 ![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
 
-d. Update the title as required and click the green `Create pull request` button:
+c. Update the title as required and click the green `Create pull request` button:
 ![Create pull request](readme-images/create-pull-request-button.png)
 
 You'll see the pull request created at a particular URL. In the case below the URL is `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`:
 ![PR link](readme-images/pr-link.png)
 
-e. Take a note of the number at the end of the URL. In the case above it's `7`.
+d. Take a note of the number at the end of the URL. In the case above it's `7`.
 
-f. After 30 seconds or so, navigate to the staging environment at https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide, replacing `7` with the number you noted above. You'll be able to see your changes ready for external review.
+e. After 30 seconds or so, navigate to the staging environment at https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide, replacing `7` with the number you noted above. You'll be able to see your changes ready for external review.
 
-g. Share a link to the pull request (e.g. `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`) and the staging environment (e.g. `https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide`) with the relevant reviewers.
+f. Share a link to the pull request (e.g. `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`) and the staging environment (e.g. `https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide`) with the relevant reviewers.
 
-h. Once the pull request and the documentation on the staging environment have been approved by one or more reviewers, squash and merge the pull request:
+g. Once the pull request and the documentation on the staging environment have been approved by one or more reviewers, squash and merge the pull request:
 
 ![Squash and merge](readme-images/squash-and-merge-button.png)
 
-i. Once the pull request is merged, delete the associated branch:
+h. Once the pull request is merged, delete the associated branch:
 
 ![Delete branch](readme-images/delete-branch-button.png)
 
-j. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
+i. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
