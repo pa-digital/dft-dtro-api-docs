@@ -32,4 +32,4 @@ Support
 
 For further information, including D-TRO example files and issue logs, please visit `GitHub <https://github.com/department-for-transport-public/D-TRO>`_.
 
-If you need help accessing this service, please email `dtro-cso@dft.gov.uk <mailto:dtro-cso@dft.gov.uk>`_.
+If you need help accessing this service, please email `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_.
