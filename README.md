@@ -87,17 +87,13 @@ f. In a terminal e.g. in VS Code, run the following commands one after the other
 docker compose build
 docker compose up
 ```
-g. In Docker Desktop click `Containers` on the left-hand side, expand `dft-dtro-api-docs` on the right-hand side and copy the value of `Container ID` next to `data-model-user-guide-1` (in the case below it's `44e28bd016df...`):
-![Docker Desktop container ID](readme-images/docker-desktop-container-id.png)
+g. In Docker Desktop click `Containers` on the left-hand side, expand `dft-dtro-api-docs` on the right-hand side and click `data-model-user-guide-1`. Click the `Exec` tab:
+![Exec tab](readme-images/exec-tab.png)
 
-h. In a new terminal window e.g. in VS Code, in the root of the project, run the following command, replacing `<container ID>` with the value copied in the previous step:
-```
-docker exec -it <container ID> bash
-```
-i. In the container command prompt run `make livehtml`:
-![Container prompt](readme-images/container-prompt.png)
+h. Enter `make livehtml` and press `Enter` on the keyboard:
+![make livehtml](readme-images/make-livehtml.png)
 
-j. Navigate to http://127.0.0.1:8002 to view the user guide locally.
+i. Navigate to http://127.0.0.1:8002 to view the user guide locally.
 
 
 **3. Make changes to the data model user guide:**
