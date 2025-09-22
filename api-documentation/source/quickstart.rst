@@ -24,8 +24,8 @@ The D-TRO service exposes two environments; **integration** and **production**.
 
 The integration and production environments are two isolated services, and as such have different URLs.
 
-* Integration: https://dtro-integration.dft.gov.uk/v1
-* Production: https://dtro.dft.gov.uk/v1
+* Integration: ``https://dtro-integration.dft.gov.uk/v1``
+* Production: ``https://dtro.dft.gov.uk/v1``
 
 Because of this, separate applications are required for communicating with each environment.
 

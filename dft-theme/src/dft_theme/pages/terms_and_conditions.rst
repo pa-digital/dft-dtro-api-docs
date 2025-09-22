@@ -61,4 +61,4 @@ These Terms shall be governed by and construed in accordance with the laws of De
 10.  Contact Information
 ************************
 
-For questions about these Terms, please contact us on d-tro@dft.gov.uk
+For questions about these Terms, please contact us on `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_.
