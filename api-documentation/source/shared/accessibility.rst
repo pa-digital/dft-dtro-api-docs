@@ -30,7 +30,7 @@ Feedback and contact information
 
 If you need information on this website in a different format like accessible PDF, large print, easy read, audio recording or braille:
 
-* email d-tro@dft.gov.uk
+* email `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_
 
 As part of providing this service, we may need to send you messages or documents. We'll ask you how you would like to receive them.
 
@@ -41,7 +41,7 @@ Reporting accessibility problems with this website
 
 We're always looking to improve the accessibility of this service. If you find any problems that are not listed on this page or think we're not meeting accessibility requirements, contact:
 
-* email d-tro@dft.gov.uk
+* email `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_
 
 Enforcement procedure
 *********************
@@ -55,7 +55,7 @@ We provide a text relay service for people who are deaf, hearing impaired or hav
 
 Our offices have audio induction loops, or if you contact us before your visit we can arrange a British Sign Language (BSL) interpreter to help you complete the service in person.
 
-For more information, contact: d-tro@dft.gov.uk.
+For more information, contact: `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_.
 
 Technical information about this service's accessibility
 ********************************************************

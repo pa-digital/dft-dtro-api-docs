@@ -11,4 +11,4 @@ If your account is not used for a period of greater than 12 months, it will be d
 
 DfT's privacy policy has more information about your rights in relation to your personal data, how to complain and how to contact the Data Protection Officer. You can view it at https://www.gov.uk/government/organisations/department-for-transport/about/personal-information-charter
 
-For any other support related to this the D-TRO service, email d-tro@dft.gov.uk.
+For any other support related to this the D-TRO service, email `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_.
