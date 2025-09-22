@@ -43,6 +43,8 @@ else:
 html_context = {
     "subproject": subproject,
     "base_path": (
-        f"/dft-dtro-api-docs-staging/pr-{pr_number}/" if pr_number else html_baseurl
+        f"/dft-dtro-api-docs-staging/pr-{pr_number}/"
+        if pr_number
+        else html_baseurl + "/"
     ),
 }

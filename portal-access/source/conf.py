@@ -35,6 +35,8 @@ else:
 html_context = {
     "is_landing_page": True,
     "base_path": (
-        f"/dft-dtro-api-docs-staging/pr-{pr_number}/" if pr_number else html_baseurl
+        f"/dft-dtro-api-docs-staging/pr-{pr_number}/"
+        if pr_number
+        else html_baseurl + "/"
     ),
 }
