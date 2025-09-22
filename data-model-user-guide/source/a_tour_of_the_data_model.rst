@@ -1911,7 +1911,7 @@ The extensionEnumeration object has numerous attributes:
       "vehicleCharacteristics": {
          "vehicleUsage": "other",
          "vehicleUsageTypeExtension": {
-            "definition": "srteet cleaning, example",
+            "definition": "street cleaning, example",
             "enumeratedList": "vehicleUsageType",
             "value": "cleaner"
          }
