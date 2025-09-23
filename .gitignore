@@ -1,2 +1,8 @@
 .venv/
 /.vs
+
+data-model-user-guide/build
+api-documentation/build
+docs
+portal-access/build
+user-portal-documentation/build

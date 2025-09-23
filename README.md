@@ -43,26 +43,9 @@ Steps for running the documentation locally using Docker:
 
 **7. Inside container run command `make livehtml`**
 
-**8. Open e.g. `http://127.0.0.1:8002/`**
+**8. Open e.g. http://127.0.0.1:8002**
 
 ¹ Make sure the port number matches the container id.
-
-## Making changes to the data model user guide
-
-1. Make changes to `.rst` and images files in folder `data-model-user-guide\source`.
-2. If you have to insert another figure, be aware that references to labels such as the following will auto-increment (so you don't need to increment any numbers in the labels themselves - the labels just need to be unique):
-```
-:numref:`fig8`
-.. _fig8:
-```
-3. Once you've finished making changes, run the following:
-```
-./scripts/build.sh
-```
-See more on this script below.
-
-4. View the changes locally at e.g. `http://127.0.0.1:8002/`.
-5. Commit and push your changes - they will automatically be published to https://d-tro.dft.gov.uk/ via the job at https://github.com/pa-digital/dft-dtro-api-docs/actions
 
 ## Documentation Building
 
@@ -75,3 +58,94 @@ The helper script `scripts/build.sh` is provided to automate the build process. 
 ## Documentation Serving
 
 The documentation is served through GitHub Pages, which serves the content of the `docs` folder. Currently this is served form the `main` branch, meaning source and build files exist together. At a future point the build files will be on a separate branch, and GitHub pages will serve the content of this branch, allowing the source and build files to be separated. Github Actions will then build the files from the `main` branch, and commit them to this other branch.
+
+## Steps for content editors making changes to the data model user guide
+
+**1. Initial set-up:**
+
+a. Download and install the appropriate Docker Desktop from https://www.docker.com/products/docker-desktop.
+
+b. Install a Git client, e.g. Git Bash or a Git UI client.
+
+c. Clone this repo.
+
+
+**2. Before making new changes to the data model user guide:**
+
+a. Make sure you haven't got any outstanding changes (if you're using a terminal e.g. in VS Code, you can run `git status` in the root of the project; to remove outstanding changes (in existing files), you can run `git stash`).
+
+b. Switch to the `main` branch (if you're using the command line, you can run `git checkout main` in the root of the project).
+
+c. Pull the latest on the `main` branch (if you're using the command line, you can run `git pull` in the root of the project).
+
+d. Create a feature branch off the `main` branch (if you're using the command line, you can run e.g. `git checkout -b update-data-model-user-guide-for-360` in the root of the project, where `update-data-model-user-guide-for-360` is the name of your feature branch).
+
+e. Open Docker Desktop.
+
+f. In a terminal e.g. in VS Code, run the following commands one after the other in the root of the project:
+```
+docker compose build
+docker compose up
+```
+g. In Docker Desktop click `Containers` on the left-hand side, expand `dft-dtro-api-docs` on the right-hand side and click `data-model-user-guide-1`. Click the `Exec` tab:
+![Exec tab](readme-images/exec-tab.png)
+
+h. Enter `make livehtml` and press `Enter` on the keyboard:
+![make livehtml](readme-images/make-livehtml.png)
+
+i. Navigate to http://127.0.0.1:8002 to view the user guide locally.
+
+
+**3. Make changes to the data model user guide:**
+
+a. In VS Code explorer, expand `data-model-user-guide`, right-click on `source` and select `Find in Folder...`:
+![Find in folder](readme-images/find-in-folder.png)
+
+NOTE: Only update `.rst` files and images within `data-model-user-guide/source` - other documentation files in other folders are automatically generated from this source folder.
+
+b. Search for text near where you want to make text changes:
+![Search for text](readme-images/search-for-text.png)
+
+NOTE: You can't always copy text from the browser and expect to find that text via `Find in Folder`. This is because formatting is applied. So, for example, you'll need to search on "provides the UML class representation of the &#96;&#96;source&#96;&#96;" rather than "provides the UML class representation of the source".
+
+c. If applicable, copy existing text with the desired formatting and use in your new text.
+
+NOTE: If you have to insert another figure, be aware that references to labels such as the following will auto-increment (so you don't need to increment any numbers in the labels themselves - the label references just need to be unique):
+```
+:numref:`fig8`
+.. _fig8:
+```
+
+d. Replace, or add to, images in `data-model-user-guide/source/_static/images`.
+
+e. Refresh your browser open at http://127.0.0.1:8002 to review the changes you've made.
+
+
+**4. Push your changes for external review (once you're happy with the changes you've made):**
+
+a. Stage, commit and push your changes (if you're using a terminal e.g. in VS Code, in the root of the project, you can run e.g. `git commit -am "Update data model user guide for schema version 3.6.0"`, followed by `git push --set-upstream origin update-data-model-user-guide-for-360`.)
+
+b. In your browser navigate to https://github.com/pa-digital/dft-dtro-api-docs and click the green `Compare & pull request` button next to your branch name:
+![Compare & pull request button](readme-images/compare-and-pull-request-button.png)
+
+c. Update the title as required and click the green `Create pull request` button:
+![Create pull request](readme-images/create-pull-request-button.png)
+
+You'll see the pull request created at a particular URL. In the case below the URL is `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`:
+![PR link](readme-images/pr-link.png)
+
+d. Take a note of the number at the end of the URL. In the case above it's `7`.
+
+e. After 30 seconds or so, navigate to the staging environment at https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide, replacing `7` with the number you noted above. You'll be able to see your changes ready for external review.
+
+f. Share a link to the pull request (e.g. `https://github.com/pa-digital/dft-dtro-api-docs/pull/7`) and the staging environment (e.g. `https://pa-digital.github.io/dft-dtro-api-docs-staging/pr-7/data-model-user-guide`) with the relevant reviewers.
+
+g. Once the pull request and the documentation on the staging environment have been approved by one or more reviewers, squash and merge the pull request:
+
+![Squash and merge](readme-images/squash-and-merge-button.png)
+
+h. Once the pull request is merged, delete the associated branch:
+
+![Delete branch](readme-images/delete-branch-button.png)
+
+i. After 30 seconds or so, view your changes published at https://d-tro.dft.gov.uk.
