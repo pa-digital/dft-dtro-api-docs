@@ -75,7 +75,7 @@ header a {
   text-wrap: nowrap;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 79rem) {
   .header > a {
     display: none;
   }
@@ -103,7 +103,7 @@ header a {
   gap: 24px;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 79rem) {
   #links-container {
     display: none;
   }
@@ -608,7 +608,7 @@ img.align-center {
   outline-offset: 0;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 79rem) {
   .app-site-search__wrapper {
     width: 100%;
   }
@@ -677,7 +677,7 @@ figure img {
   padding-bottom: 1rem;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 79rem) {
   .sidebar {
     display: none;
   }
