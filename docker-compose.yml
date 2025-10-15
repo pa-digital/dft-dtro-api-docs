@@ -2,7 +2,7 @@ services:
   landing:
     build:
       context: .
-    user: "${UID}:${GID}"
+    user: "${MY_UID}:${MY_GID}"
     ports:
       - "8000:8000"
     volumes:
@@ -11,7 +11,7 @@ services:
   api-documentation:
     build:
       context: .
-    user: "${UID}:${GID}"
+    user: "${MY_UID}:${MY_GID}"
     ports:
       - "8001:8001"
     volumes:
@@ -21,7 +21,7 @@ services:
   data-model-user-guide:
     build:
       context: .
-    user: "${UID}:${GID}"
+    user: "${MY_UID}:${MY_GID}"
     ports:
       - "8002:8002"
     volumes:
@@ -31,7 +31,7 @@ services:
   user-portal-documentation:
     build:
       context: .
-    user: "${UID}:${GID}"
+    user: "${MY_UID}:${MY_GID}"
     ports:
       - "8003:8003"
     volumes:
