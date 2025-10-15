@@ -17,7 +17,9 @@ jobs:
 
       - name: Start Docker containers
         run: |
-          docker compose up -d --build --user "$(id -u):$(id -g)"
+          export UID=$(id -u)
+          export GID=$(id -g)
+          docker compose up -d --build
 
       - name: Run Docker build script
         run: |
