@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Start Docker containers
         run: |
-          docker compose up -d
+          docker compose up -d --build --user "$(id -u):$(id -g)"
 
       - name: Run Docker build script
         run: |
