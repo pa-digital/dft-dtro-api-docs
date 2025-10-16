@@ -46,6 +46,10 @@ jobs:
           mkdir -p "${TARGET_DIR}"
           rsync -av --delete docs/ "$TARGET_DIR/"
 
+      - name: Copy static files
+        run: |
+          cp staging-repo/docs/pr-${PR_NUMBER}/api-documentation/_static/* staging-repo/docs/pr-${PR_NUMBER}/_static
+
       - name: Commit and push changes
         run: |
           cd staging-repo
