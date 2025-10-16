@@ -48,6 +48,7 @@ jobs:
 
       - name: Copy static files
         run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
           cp staging-repo/docs/pr-${PR_NUMBER}/api-documentation/_static/* staging-repo/docs/pr-${PR_NUMBER}/_static
 
       - name: Commit and push changes
