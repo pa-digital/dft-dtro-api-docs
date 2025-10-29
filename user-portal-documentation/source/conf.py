@@ -62,7 +62,9 @@ def build_page_title_map(src_dir):
 
 pr_number = os.environ.get("PR_NUMBER")
 if pr_number:
-    html_baseurl = f"docs/pr-{pr_number}"
+    html_baseurl = (
+        f"https://pa-digital.github.io/dft-dtro-api-docs-staging/docs/pr-{pr_number}"
+    )
 else:
     html_baseurl = "https://d-tro.dft.gov.uk"
 

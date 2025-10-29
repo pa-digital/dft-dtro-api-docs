@@ -28,7 +28,9 @@ html_static_path = ["_static"]
 
 pr_number = os.environ.get("PR_NUMBER")
 if pr_number:
-    html_baseurl = f"docs/pr-{pr_number}"
+    html_baseurl = (
+        f"https://pa-digital.github.io/dft-dtro-api-docs-staging/docs/pr-{pr_number}"
+    )
 else:
     html_baseurl = "https://d-tro.dft.gov.uk"
 

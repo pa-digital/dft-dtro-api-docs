@@ -12,10 +12,14 @@ jobs:
     steps:
       - name: Checkout source repo
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Start Docker containers
         run: |
-          docker compose up -d
+          export MY_UID=$(id -u)
+          export MY_GID=$(id -g)
+          docker compose up -d --build
 
       - name: Run Docker build script
         run: |
@@ -41,6 +45,11 @@ jobs:
           rm -rf "${TARGET_DIR}"
           mkdir -p "${TARGET_DIR}"
           rsync -av --delete docs/ "$TARGET_DIR/"
+
+      - name: Copy static files
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          cp staging-repo/docs/pr-${PR_NUMBER}/api-documentation/_static/* staging-repo/docs/pr-${PR_NUMBER}/_static
 
       - name: Commit and push changes
         run: |
