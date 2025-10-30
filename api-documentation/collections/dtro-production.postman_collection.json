@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "2587706c-6987-428c-9807-987f2098604b",
-    "name": "D-TRO - Integration",
+    "name": "D-TRO - Production",
     "description": "# **Department for Transport**\n\n### Digital Traffic Regulation Orders\n\nContact Support:  \nName: Department for Transport  \nEmail: d-tro@dft.gov.uk",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "40850858"
@@ -2585,7 +2585,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://dtro-integration.dft.gov.uk/v1"
+      "value": "https://dtro.dft.gov.uk/v1"
     },
     {
       "key": "accessToken",

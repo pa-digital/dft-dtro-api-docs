@@ -18,8 +18,13 @@ Postman Collection
 We also provide a Postman collection to download for easily setting up Postman and interfacing with the D-TRO API.
 
 .. button::
-    :text: Download Postman collection
-    :url: _static/dtro.postman_collection.json
+    :text: Integration Postman collection
+    :url: _static/dtro-integration.postman_collection.json
+    :download:
+
+.. button::
+    :text: Production Postman collection
+    :url: _static/dtro-production.postman_collection.json
     :download:
 
 .. button-nav::
