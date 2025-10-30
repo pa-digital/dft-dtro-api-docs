@@ -13,6 +13,7 @@ mkdir -p docs/user-portal-documentation
 mkdir -p docs/api-documentation
 
 cp -r api-documentation/build/html/* docs/api-documentation
+chown -R "${MY_UID}:${MY_GID}" api-documentation/build/html/_static
 cp -r api-documentation/collections/dtro-integration.postman_collection.json api-documentation/build/html/_static/dtro-integration.postman_collection.json
 cp -r api-documentation/collections/dtro-production.postman_collection.json api-documentation/build/html/_static/dtro-production.postman_collection.json
 cp -r data-model-user-guide/build/html/* docs/data-model-user-guide
