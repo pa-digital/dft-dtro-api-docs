@@ -20,3 +20,4 @@ cp -r data-model-user-guide/source/Data\ Model\ HTML\ Guide docs/data-model-user
 cp -r user-portal-documentation/build/html/* docs/user-portal-documentation
 cp -a portal-access/build/html/* docs
 cp -a docs/api-documentation/shared/*.html docs
+cp -r docs/api-documentation/_static/tabs.* docs/_static/

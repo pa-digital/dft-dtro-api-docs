@@ -1470,7 +1470,7 @@
             "url": {
               "raw": "{{baseUrl}}/dtros/all",
               "host": ["{{baseUrl}}"],
-              "path": ["dtros"]
+              "path": ["dtros/all"]
             }
           },
           "response": [
