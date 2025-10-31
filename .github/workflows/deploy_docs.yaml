@@ -34,6 +34,7 @@ jobs:
           sudo chown -R $USER:$USER .
           mv .nojekyll docs/.nojekyll
           find . -mindepth 1 \( -path ./docs -o -path ./.git -o -name './docs/CNAME' -o -name 'robots.txt' \) -prune -o -exec rm -rf {} +
+          echo "d-tro.dft.gov.uk" > docs/CNAME
 
       - name: Commit changes
         run: |
