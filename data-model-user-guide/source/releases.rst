@@ -6,7 +6,7 @@ This section provides details of releases that include changes to the data model
 10th November 2025
 ^^^^^^^^^^^^^^^^^^
 
-Release ``d0c834dfa6fcf64d29b8a84bcc6466c3``
+Release ``cb5ec0412d2a2b535469b0862a057712``
 
 On 10th November 2025, we released a minor bugfix to address the following issues with the v3.5.0 data model and schema.
 
