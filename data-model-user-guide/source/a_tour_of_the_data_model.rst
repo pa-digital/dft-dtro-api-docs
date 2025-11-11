@@ -241,7 +241,7 @@ The ``experimentalVariation`` defines two mandatory attributes.
 
 This object supports the structured representation of temporary modifications within a D-TRO and allows for clear communication of their intended scope and timeline.
 
-:numref:`fig12` provides the UML class representation of the ``experimentaCessation`` object.
+:numref:`fig12` provides the UML class representation of the ``experimentalCessation`` object.
 
 .. _fig12:
 
@@ -1190,8 +1190,11 @@ Summarizing the use of time concepts in D-TRO
 
 *Coming into force date* - The coming into force date shall be defined at the TRO level in the ``source`` object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the ``comingIntoForceDate`` attribute in the ``provision`` object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.
 
-*Activation times* - Dates and times within the ``timeValidity`` model represent the dates and times that the related regulation and provision are activated (operationally active time). The ``timeValidity`` sub-model supports a wide range of different time patterns for the applicability and activation of each provision.
-In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the ``timeValidity`` model shall mirror the coming into force date.
+*Time limited TROs* - For TROs that are time-limited such as TTROs, experimental TROs and Special Events, the overall legal duration shall be given by populating the ``start`` and ``end`` properties of the ``timeValidity`` object for every provision, unless the order specifies provisions legally starting and ending at different times - in which case the ``start`` and ``end`` properties should represent the dates and times laid out in the order.
+
+*Activation times* - Dates and times within the ``timeValidity`` model represent the dates and times that the related regulation and provision are activated (operationally active time). This is foreseen times as planned, and should be altered or added to as plans evolve - these are distinct from recording actual times of on road occupancy, which are recorded using the ``actualStartOrStop`` object. The ``timeValidity`` sub-model supports a wide range of different time patterns for the applicability and activation of each provision. In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the ``timeValidity`` model shall mirror the coming into force date.
+
+For example, a TTRO may be specified to be valid from 1-Jan-2024. Actual foreseen activation is much shorter, being 3 days between 1-Apr-2024 and 3-Apr-2024. The ``comingIntoForceDate`` would be given as 2024-01-01; any and all instances of provisions under the TTRO would give the ``timeValidity`` ``start`` as 2024-01-01T00:00:00 and ``end`` as 2025-06-30T23:59:59 (unless our times have been specified). The planned foreseen activition dates would be defined by a ``validPeriod`` with ``startOfPeriod`` 2024-04-01T00:00:00 and ``endOfPeriod`` 2024-04-03T23:59:59.
 
 For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
 
@@ -1237,16 +1240,20 @@ A ``conditionSet`` object may be specified using a sequence of conditions with l
 
 .. code-block:: xml
 
-    <conditionSet operator="OR">
-        <conditionSet operator="AND">
+   <conditionSet operator="OR">
+      <conditionSet operator="AND">
+         <conditions>
             <timeValidity />
-            <vehicleCharacteristics />
-        </conditionSet>
-        <conditionSet operator="AND">
-            <timeValidity />
-            <vehicleCharacteristics />
-        </conditionSet>
-    </conditionSet>
+               <vehicleCharacteristics />
+         </conditions>
+      </conditionSet>
+         <conditionSet operator="AND">
+            <conditions>
+               <timeValidity />
+               <vehicleCharacteristics />
+            </conditions>
+      </conditionSet>
+   </conditionSet>
 
 Or, the same example in an alternate notation:
 
@@ -1448,7 +1455,7 @@ The ``accessCondition`` object has two attributes:
 
 The permitCondition object has the following attributes:
 
-* The mandatory ``type`` attribute indicates the type of the referenced permit. Permissible values include ``doctor``, ``business``, ``resident`` and ``other``. Note that the permissible values list is under review and may modify in future releases of the Data Model
+* The mandatory ``type`` attribute indicates the type of the referenced permit. Permissible values include ``doctor``, ``business``, ``resident``, ``residentPlusBadgeHolders``, ``residentNotBlueBadgeHolders`` and ``other``. Note that the permissible values list is under review and may modify in future releases of the Data Model
 * The optional ``schemeIdentifier`` attribute supports a free text name for the permit scheme referenced
 * The optional ``permitIdentifier`` attribute supports multiple instances for an identifier for the permit scheme referenced (e.g., resident parking zone A)
 * The optional ``whereToApplyForPermit`` attribute provides a web address (URL) of the competent authority where an application for a permit can be requested
@@ -1598,7 +1605,7 @@ Attributes similar to ``typeOfWeight`` are not replicated in the other objects l
 
 .. _vehicleCharacteristics:
 
-.. figure:: /_static/images/vehicleCharacteristics.png
+.. figure:: /_static/images/vehicleCharacteristics-object.png
    :alt: UML model representation of the vehicleCharacteristics object
    :width: 45%
    :align: center
