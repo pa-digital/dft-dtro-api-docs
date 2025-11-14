@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>rates::rateLineCollection</title>
+<title>rates</title>
 <link href="../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> rates::rateLineCollection </h1>
+			<h1> rates </h1>
 			<!-- <img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../EA21.htm">Regulations</a> / <a href="EA106.htm">rates</a> / <a href="EA109.htm">rateLineCollection</a></p>
+			<p><a href="../EA23.htm">Regulations</a> / <a href="EA109.htm">rates</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,26 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA106.htm">rates</a></ul>
+<li><img src="../../images/4.png" alt="Package"/> <a href="./EA1/EA116.htm">ratesEnumerations</a></li>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA107.htm">rates</a></li>
+<li><img src="../../images/175.png" alt="Diagram"/> <a href="EA105.htm">ratesKeyConcepts</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA111.htm">rateLine</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA112.htm">rateLineCollection</a></li>
+<li><img src="../../images/5.png" alt="Class"/> <a href="EA113.htm">rateTable</a></li>
+</ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">rateLineCollection  : Public  &lt;&lt;JSON_Element&gt;&gt; Class</span>
+	<span class="ObjectTitle">rates  : Public   Package</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">16/11/2021 13:55:51</td>
+			<td width="85%" class="ObjectDetailsValue">16/11/2021 13:55:01</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:42:12</td>
+			<td class="ObjectDetailsValue">23/05/2025 03:59:51</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -144,7 +150,7 @@
 		</tr>
 		<tr id="proj03" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
-			<td class="ObjectDetailsValue">Proposed</td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 		<tr id="proj04" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
@@ -168,355 +174,15 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{B4CB9641-BD4E-4dc2-94E0-E03426744772}</td>
+			<td class="ObjectDetailsValue">{D79A876D-EDDA-4223-AAFC-53E501FE6DF4}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA104.htm">rates</a>, <a href="EA102.htm">ratesKeyConcepts</a></td>
+			<td class="ObjectDetailsValue"></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Group of rate line elements that logically group together within one rate table, e.g. such as the rate lines for the different tiers of a time based tier rate table&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Model package containing rates characteristics&lt;br/&gt;</div>
 
-	<div class="TableGroup" id="TableGroup">
-		<ul class="ItemTitle">
-			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
-			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
-			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
-		</ul>
-<div class="ItemBody" id="AttributesTable">
-	<table border="0" cellspacing="0" cellpadding="0" class="Table">
-		<tr>
-			<td width="50%" class="TableHeading">Attribute</td>
-			<td width="25%" class="TableHeading">Scope</td>
-			<td width="25%" class="TableHeading">Type</td>
-		</tr>
-						<tr>
-				<td width="50%" class="TableRow">
-					<a name="{80077969-3CFB-4a8b-B64C-2C88361F5F87}"></a>applicableCurrency
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					<a href="./EA1/EA114.htm">currencyType</a>
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					maxItems=1<br>minItems=1<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The monetary currency that rates are specified in this rate line collection. [Defined by APDS - ISO/TS 5206-1]&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{9DF72B81-CCF1-4c4a-A825-C4D7A347B761}"></a>endValidUsagePeriod
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					dateTime
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					format=date-time<br>maxItems=1<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The end time for the validity of this rate line collection. &lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{257AD895-FA09-4f25-8FC3-1BD5AD2E9644}"></a>maxTime
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					duration
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					format=regex<br>maxItems=1<br>pattern=^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A maximum session duration to be applied to this rate line collection, represented as an ISO 8601-compliant duration&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{40BAC7C6-972D-43d2-81B0-B2C841A3325E}"></a>maxValueCollection
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					decimal
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					maxItems=1<br>multipleOf=0.01<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The maximum monetary amount to be applied in conjunction with use of this rate line collection.&#160;&#160;Defined in applicable currency with 2 decimal places.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{0BE69B03-1D18-4cc1-AC11-AFFB22BF0E22}"></a>minTime
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					duration
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					format=regex<br>maxItems=1<br>pattern=^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+(\\.\\d+)?S)?)?$<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			A minimum session duration to be applied to this rate line collection, represented as an ISO 8601-compliant duration.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{D6BC5C81-4586-4557-9BE9-10D17290B918}"></a>minValueCollection
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					decimal
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					maxItems=1<br>multipleOf=0.01<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The minimum monetary amount to be applied in conjunction with use of this rate line collection. Defined in applicable currency with 2 decimal places.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{B1C65989-666E-48f0-9079-DBD9007287CF}"></a>resetTime
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					time
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					format=time<br>maxItems=1<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Time that rate resets.&#160;&#160;Example a rate table that charges &#163;2 per hour with a max value collection of &#163;10, resets at 2 am.&#160;&#160;At 2 am the &#163;2 per hour fee would start to charge until the &#163;10 is reached.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{964BAA73-8E92-4696-84BA-FCC1B17EFB65}"></a>sequence
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					integer
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					maxItems=1<br>minItems=1<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			An indicator giving the place in sequence of this rate line collection.&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{AE0E4D55-CE5B-49e9-AC40-164005AA33A3}"></a>startValidUsagePeriod
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					dateTime
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					format=date-time<br>maxItems=1<br>minItems=1<br>
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			The start time for the validity of this rate line collection. &lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>
-	</table>
-</div>
-		<div class="ItemBody" id="AssociationsToTable">
-			<table class="Table ea_table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA108.htm">«JSON_Element» rateLine</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink403" /></button>Details:
-							<div id="detailsDIVLink403" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="AssociationsFromTable">
-			<table class="Table ea_table">
-				<tr>
-					<td width="40%" class="TableHeading">Element</td>
-					<td width="30%" class="TableHeading">Source Role</td>
-					<td width="30%" class="TableHeading">Target Role</td>
-				</tr>
-				<tr>
-					<td width="40%" class="TableRow" valign="top">
-						<a href="EA110.htm">«JSON_Element» rateTable</a><br />
-						Class &nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;
-					</td>
-					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
-						&nbsp;	
-					</td>
-				</tr>
-				<tr>
-					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../../images/minus03.gif" align="absmiddle" id="DetailsImageLink404" /></button>Details:
-							<div id="detailsDIVLink404" class="DetailsDiv" >
-							&nbsp;
-							</div>
-						</div>
-					</td>
-				</tr>
-
-			</table>
-		</div>
-		<div class="ItemBody" id="CustomPropertiesTable">
-			<table class="Table ea_table">
-				<tr>
-					<td width="30%" class="TableHeading">Property</td>
-					<td width="70%" class="TableHeading">Value</td>
-				</tr>
-			<tr>
-				<td width="30%" class="TableRow">isFinalSpecialization:</td>
-				<td width="70%" class="TableRow">0</td>
-			</tr>
-
-
-			</table>
-		</div>	</div>
  </div>
  </td>
 				</tr>

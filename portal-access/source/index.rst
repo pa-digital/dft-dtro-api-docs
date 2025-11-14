@@ -27,6 +27,13 @@ Technical Documentation and Guidance
 * `Data Model User Guide <data-model-user-guide>`_
 * `User Portal Guide <user-portal-documentation>`_
 
+Get Involved
+^^^^^^^^^^^^
+
+There are several ways you can get involved with the D-TRO service. The following link provides an overview of the engagement channels.
+
+`Get involved with the D-TRO service <https://d-tro.dft.gov.uk/engagement>`_
+
 Support
 ^^^^^^^
 

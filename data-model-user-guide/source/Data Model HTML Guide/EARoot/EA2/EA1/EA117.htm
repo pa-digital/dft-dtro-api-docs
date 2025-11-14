@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>ratesEnumerations::rateLineType</title>
+<title>ratesEnumerations::currencyType</title>
 <link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../../../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> ratesEnumerations::rateLineType </h1>
+			<h1> ratesEnumerations::currencyType </h1>
 			<!-- <img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../../../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="../../EA21.htm">Regulations</a> / <a href="../EA106.htm">rates</a> / <a href="EA113.htm">ratesEnumerations</a> / <a href="EA117.htm">rateLineType</a></p>
+			<p><a href="../../EA23.htm">Regulations</a> / <a href="../EA109.htm">rates</a> / <a href="EA116.htm">ratesEnumerations</a> / <a href="EA117.htm">currencyType</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA113.htm">ratesEnumerations</a></ul>
+<a href="EA116.htm">ratesEnumerations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">rateLineType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">currencyType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">17/11/2021 20:30:14</td>
+			<td width="85%" class="ObjectDetailsValue">09/05/2023 13:33:09</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:43:26</td>
+			<td class="ObjectDetailsValue">23/05/2025 08:42:48</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +168,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{ABC42E1B-DAC6-4d7c-AD19-CD47E36A3CCC}</td>
+			<td class="ObjectDetailsValue">{A25D2E02-14C0-4c89-9D7F-FB3A0F86FB69}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA111.htm">ratesEnumerations</a></td>
+			<td class="ObjectDetailsValue"><a href="EA114.htm">ratesEnumerations</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">List of rate line types&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Standard specified three-letter (Alpha-3) codes for currencies worldwide in accordance with ISO 4217. Note this is a select subset based on UK usage but permits extension.&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -191,7 +191,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3CA053CF-331F-45e2-8D1C-B9B55E63E660}"></a>flatRate
+					<a name="{A6FFF74A-E3A4-4716-9961-0E6433EE66FC}"></a>EUR
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -209,7 +209,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			rate applied to the rate line which &lt;br/&gt;is not time/duration dependent. i.e. &lt;br/&gt;a single fixed payment&lt;br/&gt;
+			hourly charge rate&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -218,7 +218,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{63270AB0-F73D-4958-8DFB-B84E7CC49E29}"></a>incrementingRate
+					<a name="{9BDEF66E-CABB-4c3d-AC91-B0D3BED1DC19}"></a>GBP
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -236,61 +236,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			charge rate that increases by a &lt;br/&gt;defined amount in a defined time&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{FE576FC4-DBA1-43c5-B9C0-51FBD029A2F4}"></a>flatRateTier
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			flat rate charge rate associated &lt;br/&gt;with a specific time-based tier. This &lt;br/&gt;is a special case of an incrementing &lt;br/&gt;rate&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{BE4B64C9-74C1-4067-855F-693EEA41EDD8}"></a>perUnit
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			flat rate charge associated with a unit of delivered quantity&lt;br/&gt;
+			daily charge rate&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>

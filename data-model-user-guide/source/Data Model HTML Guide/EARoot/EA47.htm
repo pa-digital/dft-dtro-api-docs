@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::linearLateralPositionType</title>
+<title>Regulations::linearDirectionType</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::linearLateralPositionType </h1>
+			<h1> Regulations::linearDirectionType </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA47.htm">linearLateralPositionType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA47.htm">linearDirectionType</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">linearLateralPositionType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">linearDirectionType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">07/10/2021 11:11:34</td>
+			<td width="85%" class="ObjectDetailsValue">07/10/2021 11:14:19</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:54:12</td>
+			<td class="ObjectDetailsValue">23/05/2025 08:53:59</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,14 +168,14 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{3C047528-DEA6-443e-8D4C-4BD00CABFB8B}</td>
+			<td class="ObjectDetailsValue">{6058BF88-D637-41ad-B580-258D4123151F}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.htm">enumerations</a>, <a href="EA5.htm">locationReferencingKeyConcepts</a></td>
+			<td class="ObjectDetailsValue"><a href="EA15.htm">enumerations</a>, <a href="EA7.htm">locationReferencingKeyConcepts</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">List of enumeration lists that may be extended&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Indicates the applicable direction for a linear direction&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
@@ -191,7 +191,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{A8DC05AB-9025-4aa3-801C-1EAEF18EB821}"></a>centreline
+					<a name="{E9068254-FD73-4fa8-8B86-0437052D1995}"></a>bidirectional
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -209,7 +209,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Linear locaton representing road centreline (reference line)&lt;br/&gt;
+			applicable in both directions&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -218,7 +218,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{98C5F5E6-CB52-44bf-9BB5-B0EDB4BA7E23}"></a>near
+					<a name="{9BC16723-91D4-4d51-9905-3F7DE268784F}"></a>startToEnd
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -236,7 +236,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Linear locaton representing a location close to kerb line (offset undefined)&lt;br/&gt;
+			applicable in the direction from the start point to the end point&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -245,7 +245,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{D47E2DA0-66C4-42d9-A8C3-A7EE44E9D324}"></a>onKerb
+					<a name="{9D92F8E6-9418-4c93-9053-699556FB3527}"></a>endToStart
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -263,34 +263,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			Linear locaton representing a location on the kerb line&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{BBE3B609-B564-4a89-A144-E8E6D55973B1}"></a>far
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			Linear locaton representing a location close to kerb line (offset of approximately 2.4 metres)&lt;br/&gt;
+			applicable in the direction from the end point to the start point&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>

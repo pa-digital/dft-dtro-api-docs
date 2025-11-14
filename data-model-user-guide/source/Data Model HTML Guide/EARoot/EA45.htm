@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::linearDirectionType</title>
+<title>Regulations::generalRegulation</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::linearDirectionType </h1>
+			<h1> Regulations::generalRegulation </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA45.htm">linearDirectionType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA45.htm">generalRegulation</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">linearDirectionType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">generalRegulation  : Public  &lt;&lt;JSON_Element&gt;&gt; Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">07/10/2021 11:14:19</td>
+			<td width="85%" class="ObjectDetailsValue">28/01/2021 09:55:34</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:53:59</td>
+			<td class="ObjectDetailsValue">23/05/2025 08:50:55</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,18 +168,19 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{6058BF88-D637-41ad-B580-258D4123151F}</td>
+			<td class="ObjectDetailsValue">{376CA508-5107-4866-AF93-043B5F77219B}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.htm">enumerations</a>, <a href="EA5.htm">locationReferencingKeyConcepts</a></td>
+			<td class="ObjectDetailsValue"><a href="EA21.htm">regulations</a>, <a href="EA1.htm">full_model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Indicates the applicable direction for a linear direction&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Object indicating a specific regulation (other than speed limit or user-defined off-list regulation)&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -191,79 +192,25 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{E9068254-FD73-4fa8-8B86-0437052D1995}"></a>bidirectional
+					<a name="{418BC25B-DA99-4681-BCEC-501C14A10FD2}"></a>regulationType
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
 				</td>
 				<td width="25%" class="TableRow">
-					string
+					<a href="EA63.htm">regulationType</a>
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="3">
-					
+					maxItems=1<br>minItems=1<br>
 						<div class="ObjectDetailsNotes"><table>
 	<tr>
 		<td valign="top">
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			applicable in both directions&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{9BC16723-91D4-4d51-9905-3F7DE268784F}"></a>startToEnd
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			applicable in the direction from the start point to the end point&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{9D92F8E6-9418-4c93-9053-699556FB3527}"></a>endToStart
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			applicable in the direction from the end point to the start point&lt;br/&gt;
+			Indicates the status of this Regulation&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -273,6 +220,39 @@
 			</tr>
 	</table>
 </div>
+		<div class="ItemBody" id="AssociationsFromTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA62.htm">«JSON_Element» regulation</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../images/minus03.gif" align="absmiddle" id="DetailsImageLink73" /></button>Details:
+							<div id="detailsDIVLink73" class="DetailsDiv" >
+							&nbsp;
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
 		<div class="ItemBody" id="CustomPropertiesTable">
 			<table class="Table ea_table">
 				<tr>
