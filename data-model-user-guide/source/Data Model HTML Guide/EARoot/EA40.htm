@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::eventType</title>
+<title>Regulations::diversionRouteType</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::eventType </h1>
+			<h1> Regulations::diversionRouteType </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA40.htm">eventType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA40.htm">diversionRouteType</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">eventType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">diversionRouteType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">05/03/2025 16:33:44</td>
+			<td width="85%" class="ObjectDetailsValue">17/02/2025 10:22:16</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:53:44</td>
+			<td class="ObjectDetailsValue">23/05/2025 08:53:31</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,19 +168,18 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{48AFAFD4-4EDC-4965-BB62-AEB24E4136D4}</td>
+			<td class="ObjectDetailsValue">{314CE962-54D2-4233-958E-38826EBA0C91}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.htm">enumerations</a></td>
+			<td class="ObjectDetailsValue"><a href="EA15.htm">enumerations</a>, <a href="EA7.htm">locationReferencingKeyConcepts</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">Indicates whether the event is a start or stop&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Indicates the nature of diversion route&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent != null ? parent.toggleItem('TaggedVal') : toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -192,7 +191,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{0065F1CE-94DB-4e6a-AC23-1FE1FC795EF2}"></a>start
+					<a name="{6F3E0A5B-0E00-4d68-979C-F0E222AE5781}"></a>hgvRoute
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -210,7 +209,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			indicates that the event represents an actual start time&lt;br/&gt;
+			indicates that the given location represents the location of the effect of the Regulation &lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -219,7 +218,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{94CF810D-FCD4-4575-B444-092AA6508C9D}"></a>stop
+					<a name="{A18446E6-44DD-48d4-A782-E949E00D8578}"></a>allTraffic
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -237,116 +236,34 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			indicates that the event represents an actual stop time&lt;br/&gt;
+			indicates that the given location represents a Diversion Route related to the Provision and Regulation &lt;br/&gt;&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
 
 						
 				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					<a name="{D88411D6-D666-497c-9193-C6AFC4FD6E5E}"></a>non-HGVRoute
+				</td>
+				<td width="25%" class="TableRow">
+					Public 
+				</td>
+				<td width="25%" class="TableRow">
+					string
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">
+					
+						&nbsp;
+						
+				</td>
 			</tr>
 	</table>
 </div>
-<div class="ItemBody" id="TaggedValTable">
-	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-		<tr>
-			<td width="50%" class="TableHeading">Tag</td>
-			<td width="50%" class="TableHeading">Value</td>
-		</tr>
-					<tr>
-				<td width="50%" class="TableRow" valign="top">enum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">exclusivemaximum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">exclusiveminimum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">format</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						<div class="ObjectDetailsNotes">Values: date-time,time,date,email,idn-email,hostname,idn-hostname,ipv4,ipv6,uri,uri-reference,iri,iri-reference,uri-template,json-pointer,relative-json-pointer,regex<br /></div>
-
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">maximum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">maxlength</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">minimum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">minlength</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">multipleof</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">pattern</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>
-	</table>
-</div>		<div class="ItemBody" id="CustomPropertiesTable">
+		<div class="ItemBody" id="CustomPropertiesTable">
 			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>

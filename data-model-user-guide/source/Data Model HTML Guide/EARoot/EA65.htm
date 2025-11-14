@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::speedLimitProfileType</title>
+<title>Regulations::sourceActionType</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::speedLimitProfileType </h1>
+			<h1> Regulations::sourceActionType </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA65.htm">speedLimitProfileType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA65.htm">sourceActionType</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">speedLimitProfileType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">sourceActionType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">17/11/2021 18:50:23</td>
+			<td width="85%" class="ObjectDetailsValue">09/07/2025 10:17:47</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:55:44</td>
+			<td class="ObjectDetailsValue">09/07/2025 10:15:27</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,18 +168,19 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{CAE1B84C-16BD-4533-A3D6-EC9F9C23775B}</td>
+			<td class="ObjectDetailsValue">{10E9A7A3-C0D0-4a40-8867-80B6814E7D53}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.htm">enumerations</a></td>
+			<td class="ObjectDetailsValue"><a href="EA15.htm">enumerations</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">List of speed limit profiles&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">indicates the nature of update between D-TRO records or their constituent parts &lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent != null ? parent.toggleItem('TaggedVal') : toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -191,7 +192,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{41C68662-3E81-45bd-8989-6E35E312B348}"></a>nationalSpeedLimitDualCarriageway
+					<a name="{9D6605FC-C868-46d8-931D-90C5D057123D}"></a>new
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -209,7 +210,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			National speed limit for dual carriageway&lt;br/&gt;
+			action type indicating that the new supplied D-TRO version is new (not an amendment of an earlier related version)&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -218,7 +219,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{ABD5040A-E32E-4991-9097-E6BAAD86C69A}"></a>nationalSpeedLimitSingleCarriageway
+					<a name="{58DF711C-9A34-4933-A798-922AD525C211}"></a>informationUpdate
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -236,7 +237,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			National speed limit for single carriageway&lt;br/&gt;
+			action type indicating that the new supplied D-TRO version is new (not an amendment of an earlier related version)&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -245,7 +246,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{50A22EC9-34BF-4606-B8D9-365CF52A9F35}"></a>nationalSpeedLimitMotorway
+					<a name="{AB34EB96-91E3-43ae-9089-CD559F77E4A3}"></a>noChange
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -257,30 +258,176 @@
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="3">
 					
-						&nbsp;
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			action type indicating that there is no change from an earlier related version&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{093F5653-6561-43ad-97BF-12A3645A200F}"></a>nationalSpeedLimit
+					<a name="{653F9482-D03A-4312-9C0A-303912B35C31}"></a>errorFix
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
 				</td>
 				<td width="25%" class="TableRow">
-					
+					string
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="3">
 					
-						&nbsp;
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			action type indicating that the new supplied D-TRO version corrects errors in an earlier related version&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
+						
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow">
+					<a name="{BFAA662D-37F5-4fdd-9043-D4E22543663A}"></a>amendment
+				</td>
+				<td width="25%" class="TableRow">
+					Public 
+				</td>
+				<td width="25%" class="TableRow">
+					string
+				</td>
+			</tr>
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="3">
+					
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			action type indicating that the new supplied D-TRO version amends an earlier related version&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>
 	</table>
 </div>
-		<div class="ItemBody" id="CustomPropertiesTable">
+<div class="ItemBody" id="TaggedValTable">
+	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+		<tr>
+			<td width="50%" class="TableHeading">Tag</td>
+			<td width="50%" class="TableHeading">Value</td>
+		</tr>
+					<tr>
+				<td width="50%" class="TableRow" valign="top">enum</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">exclusivemaximum</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">exclusiveminimum</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">format</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						<div class="ObjectDetailsNotes">Values: date-time,time,date,email,idn-email,hostname,idn-hostname,ipv4,ipv6,uri,uri-reference,iri,iri-reference,uri-template,json-pointer,relative-json-pointer,regex<br /></div>
+
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">maximum</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">maxlength</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">minimum</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">minlength</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">multipleof</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>			<tr>
+				<td width="50%" class="TableRow" valign="top">pattern</td>
+				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
+			</tr>	
+			<tr>
+				<td class="TableRowBottomDashed"  colspan="2">
+					Details:
+						&nbsp;
+				</td>
+			</tr>
+	</table>
+</div>		<div class="ItemBody" id="CustomPropertiesTable">
 			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>

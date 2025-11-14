@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::diversionType</title>
+<title>Regulations::directedLinear</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::diversionType </h1>
+			<h1> Regulations::directedLinear </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA39.htm">diversionType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA39.htm">directedLinear</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">diversionType  : Public abstract &lt;&lt;JSON_Element&gt;&gt; Class</span>
+	<span class="ObjectTitle">directedLinear  : Public  &lt;&lt;JSON_Element&gt;&gt; Class</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">21/02/2025 14:46:10</td>
+			<td width="85%" class="ObjectDetailsValue">21/05/2024 13:31:05</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">23/05/2025 08:49:40</td>
+			<td class="ObjectDetailsValue">23/05/2025 07:51:08</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,20 +168,22 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{8EA1AB4E-E5FA-4dcb-B4A6-1BB990B36511}</td>
+			<td class="ObjectDetailsValue">{6C399F3E-DE2B-4765-9375-20651F8326C5}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA19.htm">regulations</a>, <a href="EA5.htm">locationReferencingKeyConcepts</a></td>
+			<td class="ObjectDetailsValue"><a href="EA21.htm">regulations</a>, <a href="EA5.htm">locationKeyConcepts</a>, <a href="EA7.htm">locationReferencingKeyConcepts</a>, <a href="EA1.htm">full_model</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">An object linking to different forms of diversion route.&lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">Object indicating characteristics relating to specified direction linear geometric location&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
+			<li onClick="parent != null ? parent.toggleItem('AssociationsTo') : toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
 			<li onClick="parent != null ? parent.toggleItem('AssociationsFrom') : toggleItem('AssociationsFrom');" id="AssociationsFromTitle">Associations From</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
+			<li onClick="parent != null ? parent.toggleItem('Links') : toggleItem('Links');" id="LinksTitle">Other Links</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
 	<table border="0" cellspacing="0" cellpadding="0" class="Table">
@@ -192,24 +194,68 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{29A256CB-968D-44d2-9312-AF552DF595CB}"></a>diversionType
+					<a name="{B2E39EE0-F8D5-4f98-9EC1-73A22E72A372}"></a>directedLineString
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
 				</td>
 				<td width="25%" class="TableRow">
-					<a href="EA38.htm">diversionRouteType</a>
+					string
 				</td>
 			</tr>
 			<tr>
 				<td class="TableRowBottomDashed"  colspan="3">
-					
-						&nbsp;
+					maxItems=1<br>minItems=1<br>
+						<div class="ObjectDetailsNotes"><table>
+	<tr>
+		<td valign="top">
+			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
+		</td>
+		<td>
+			String conforming to WKT encoding defining the specified linestring&lt;br/&gt;
+		</td>
+	</tr>
+</table></div>
+
 						
 				</td>
 			</tr>
 	</table>
 </div>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="40%" class="TableHeading">Element</td>
+					<td width="30%" class="TableHeading">Source Role</td>
+					<td width="30%" class="TableHeading">Target Role</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA44.htm">«JSON_Element» externalReference</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> destination<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../images/minus03.gif" align="absmiddle" id="DetailsImageLink37" /></button>Details:
+							<div id="detailsDIVLink37" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Link to an external reference which is the destination of a traversed linear motion&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
 		<div class="ItemBody" id="AssociationsFromTable">
 			<table class="Table ea_table">
 				<tr>
@@ -219,11 +265,11 @@
 				</tr>
 				<tr>
 					<td width="40%" class="TableRow" valign="top">
-						<a href="EA44.htm">«JSON_Element» geometry</a><br />
+						<a href="EA44.htm">«JSON_Element» externalReference</a><br />
 						Class &nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
-						<strong>Name:</strong> &nbsp;<br />
+						<strong>Name:</strong> intermediateLocation<br />
 						&nbsp;
 					</td>
 					<td width="30%" class="TableRow" valign="top">
@@ -233,9 +279,34 @@
 				</tr>
 				<tr>
 					<td class="TableRowBottomDashed"  colspan="3">
-						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../images/minus03.gif" align="absmiddle" id="DetailsImageLink44" /></button>Details:
-							<div id="detailsDIVLink44" class="DetailsDiv" >
-							&nbsp;
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../images/minus03.gif" align="absmiddle" id="DetailsImageLink38" /></button>Details:
+							<div id="detailsDIVLink38" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Link to an external reference which an intermediate location of a traversed linear motion&lt;br/&gt;</div>
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="40%" class="TableRow" valign="top">
+						<a href="EA44.htm">«JSON_Element» externalReference</a><br />
+						Class &nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> origin<br />
+						&nbsp;
+					</td>
+					<td width="30%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+				</tr>
+				<tr>
+					<td class="TableRowBottomDashed"  colspan="3">
+						<div class="DetailsDivParent"><button onclick="switchProjectProperties()"><img src="../images/minus03.gif" align="absmiddle" id="DetailsImageLink39" /></button>Details:
+							<div id="detailsDIVLink39" class="DetailsDiv" >
+							<div class="ObjectDetailsNotes">Link to an external reference which is the origin of a traversed linear motion&lt;br/&gt;</div>
+
 							</div>
 						</div>
 					</td>
@@ -256,7 +327,26 @@
 
 
 			</table>
-		</div>	</div>
+		</div>		<div class="ItemBody" id="LinksTable">
+			<table class="Table ea_table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="10%" class="TableHeading">Type</td>
+					<td width="10%" class="TableHeading">Connection</td>
+					<td width="10%" class="TableHeading">Direction</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA46.htm">«JSON_Element» geometry</a></td>
+					<td width="10%" class="TableRow" valign="top">Class</td>
+					<td width="10%" class="TableRow" valign="top">Generalization</td>
+					<td width="10%" class="TableRow" valign="top">To</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
  </div>
  </td>
 				</tr>

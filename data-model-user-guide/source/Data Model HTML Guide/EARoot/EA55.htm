@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Regulations::provisionActionType</title>
+<title>Regulations::pointType</title>
 <link href="../css/ea.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="../js/displayToc.js" type="text/javascript"></script>
 <script>
@@ -90,12 +90,12 @@
 <div class="section group" >
 
 		<div class="col span_2_of_2 header_frame">
-			<h1> Regulations::provisionActionType </h1>
+			<h1> Regulations::pointType </h1>
 			<!-- <img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />-->
 			<img class="header_image" src="../images/ea-banner.png" align="right" alt="Header Image" />
 		</div>
 		<div class="col span_2_of_2 breadcrumb_frame">
-			<p><a href="EA21.htm">Regulations</a> / <a href="EA55.htm">provisionActionType</a></p>
+			<p><a href="EA23.htm">Regulations</a> / <a href="EA55.htm">pointType</a></p>
 		</div>
 			
 		<table class="contentmaintable">
@@ -110,20 +110,20 @@
 					<td class="indexcell">
 						<div class="projectBrowserTitle">Project: </div>
 						<ul>
-<a href="EA21.htm">Regulations</a></ul>
+<a href="EA23.htm">Regulations</a></ul>
 
 					</td>
 					<td class="contentcell"><div class="pageHeader"></div>
 <div class="PageBody">
-	<span class="ObjectTitle">provisionActionType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
+	<span class="ObjectTitle">pointType  : Public  &lt;&lt;JSON_Datatype&gt;&gt; Enumeration</span>
 	<table border="0" class="ObjectDetails">
 		<tr>
 			<td width="15%" class="ObjectDetailsTopic">Created:</td>
-			<td width="85%" class="ObjectDetailsValue">20/05/2024 09:50:35</td>
+			<td width="85%" class="ObjectDetailsValue">07/10/2021 11:03:07</td>
 		</tr>
 		<tr>
 			<td class="ObjectDetailsTopic">Modified:</td>
-			<td class="ObjectDetailsValue">09/07/2025 10:15:27</td>
+			<td class="ObjectDetailsValue">23/05/2025 08:54:52</td>
 		</tr>
 		<tr style="height: 10px"><td colspan="2"></td></tr>
 		<tr>
@@ -168,19 +168,18 @@
 		</tr>
 		<tr id="adv00" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
-			<td class="ObjectDetailsValue">{D152BC34-BCBF-4cac-98AB-B6DA7E3873EB}</td>
+			<td class="ObjectDetailsValue">{1A38B44D-3925-4126-87E1-5298FD654D16}</td>
 		</tr>
 		<tr id="adv01" style="display: none;">
 			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
-			<td class="ObjectDetailsValue"><a href="EA13.htm">enumerations</a></td>
+			<td class="ObjectDetailsValue"><a href="EA15.htm">enumerations</a>, <a href="EA7.htm">locationReferencingKeyConcepts</a></td>
 		</tr>
 	</table>
-	<div class="ObjectDetailsNotes">indicates the nature of update between D-TRO records or their constituent parts &lt;br/&gt;</div>
+	<div class="ObjectDetailsNotes">List of representations derived from a point location&lt;br/&gt;</div>
 
 	<div class="TableGroup" id="TableGroup">
 		<ul class="ItemTitle">
 			<li onClick="parent != null ? parent.toggleItem('Attributes') : toggleItem('Attributes');" id="AttributesTitle">Attributes</li>
-			<li onClick="parent != null ? parent.toggleItem('TaggedVal') : toggleItem('TaggedVal');" id="TaggedValTitle">Tagged Values</li>
 			<li onClick="parent != null ? parent.toggleItem('CustomProperties') : toggleItem('CustomProperties');" id="CustomPropertiesTitle">Advanced</li>
 		</ul>
 <div class="ItemBody" id="AttributesTable">
@@ -192,7 +191,7 @@
 		</tr>
 						<tr>
 				<td width="50%" class="TableRow">
-					<a name="{DF737B0B-688D-461e-8F33-3B8215198846}"></a>new
+					<a name="{4CD8F94A-F831-4840-AC56-348676BCE5F9}"></a>centreLinePoint
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -210,7 +209,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			action type indicating that the new supplied D-TRO version is new (not an amendment of an earlier related version)&lt;br/&gt;
+			indicates the notional point location marking the centre of the road&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -219,7 +218,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{3C0574E4-7DB6-4231-80CF-D689B20F9642}"></a>fullAmendment
+					<a name="{B1FB10D0-1BCE-4d03-B055-3E89BB4FAE48}"></a>trafficSignLocation
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -237,7 +236,7 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			action type indicating that the new supplied D-TRO version fully amends an earlier related version&lt;br/&gt;
+			indicates the point location marking the position of a traffi sign&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
@@ -246,7 +245,7 @@
 				</td>
 			</tr>			<tr>
 				<td width="50%" class="TableRow">
-					<a name="{5E3845AA-49E0-4bf3-92B7-86A5C70D825A}"></a>partialRevoke
+					<a name="{CE00E44B-11AF-4420-89F8-8CEA5CEEC3D9}"></a>other
 				</td>
 				<td width="25%" class="TableRow">
 					Public 
@@ -264,268 +263,17 @@
 			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
 		</td>
 		<td>
-			action type indicating that the new supplied D-TRO version partially revokes an earlier related version&lt;br/&gt;
+			{none}&lt;br/&gt;
 		</td>
 	</tr>
 </table></div>
 
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{89C7B5CD-A982-4ed1-88C2-85B3D163A8C6}"></a>partialAmendment
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			action type indicating that the new supplied D-TRO version partially amends an earlier related version&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{FE248AA8-8BC1-4da5-BD38-0283BB29729B}"></a>fullRevoke
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			action type indicating that the new supplied D-TRO version fully revokes an earlier related version&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{5E2C1A07-033D-4fb4-8F30-1B6094D1B12E}"></a>noChange
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			action type indicating that there is no change from an earlier related version&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{DFCF6BA0-0471-4983-BAB4-78A533965823}"></a>errorFix
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			action type indicating that the new supplied D-TRO version corrects errors in an earlier related version&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{C231E87E-AAE1-43e7-8E5E-A503C38822D5}"></a>amendment
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						<div class="ObjectDetailsNotes"><table>
-	<tr>
-		<td valign="top">
-			<i>Notes: </i><span style="margin-left: .4cm;"> </span>
-		</td>
-		<td>
-			action type indicating that the new supplied D-TRO version amends an earlier related version&lt;br/&gt;
-		</td>
-	</tr>
-</table></div>
-
-						
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow">
-					<a name="{E952ADFE-7E5C-452e-B4A0-0D1388C6FE1D}"></a>informationUpdate
-				</td>
-				<td width="25%" class="TableRow">
-					Public 
-				</td>
-				<td width="25%" class="TableRow">
-					string
-				</td>
-			</tr>
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="3">
-					
-						&nbsp;
 						
 				</td>
 			</tr>
 	</table>
 </div>
-<div class="ItemBody" id="TaggedValTable">
-	<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
-		<tr>
-			<td width="50%" class="TableHeading">Tag</td>
-			<td width="50%" class="TableHeading">Value</td>
-		</tr>
-					<tr>
-				<td width="50%" class="TableRow" valign="top">enum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">exclusivemaximum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">exclusiveminimum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">format</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						<div class="ObjectDetailsNotes">Values: date-time,time,date,email,idn-email,hostname,idn-hostname,ipv4,ipv6,uri,uri-reference,iri,iri-reference,uri-template,json-pointer,relative-json-pointer,regex<br /></div>
-
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">maximum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">maxlength</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">minimum</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">minlength</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">multipleof</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>			<tr>
-				<td width="50%" class="TableRow" valign="top">pattern</td>
-				<td width="50%" class="TableRow" valign="top">&nbsp;</td>
-			</tr>	
-			<tr>
-				<td class="TableRowBottomDashed"  colspan="2">
-					Details:
-						&nbsp;
-				</td>
-			</tr>
-	</table>
-</div>		<div class="ItemBody" id="CustomPropertiesTable">
+		<div class="ItemBody" id="CustomPropertiesTable">
 			<table class="Table ea_table">
 				<tr>
 					<td width="30%" class="TableHeading">Property</td>

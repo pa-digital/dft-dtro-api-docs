@@ -1188,27 +1188,21 @@ Summarizing the use of time concepts in D-TRO
 
 *Made Date* - At the TRO level, in the ``source`` object, the Made Date for the TRO is defined in the ``madeDate`` attribute.
 
-*Coming into force date* - The coming into force date shall be defined at the TRO level in the ``source`` object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the ``comingIntoForceDate`` attribute in the ``provision`` object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.
-
+*Coming into force date* - The coming into force date shall be defined at the TRO level in the ``source`` object. If the coming into force date for any of the included provisions is different to that of the TRO as a whole, the coming into force date for the specific provision shall be supplied using the ``comingIntoForceDate`` attribute in the provision object. If omitted at the provision level the coming into force date is taken to be the same as the TRO source coming into force date.
+ 
 *Time limited TROs* - For TROs that are time-limited such as TTROs, experimental TROs and Special Events, the overall legal duration shall be given by populating the ``start`` and ``end`` properties of the ``timeValidity`` object for every provision, unless the order specifies provisions legally starting and ending at different times - in which case the ``start`` and ``end`` properties should represent the dates and times laid out in the order.
-
+ 
 *Activation times* - Dates and times within the ``timeValidity`` model represent the dates and times that the related regulation and provision are activated (operationally active time). This is foreseen times as planned, and should be altered or added to as plans evolve - these are distinct from recording actual times of on road occupancy, which are recorded using the ``actualStartOrStop`` object. The ``timeValidity`` sub-model supports a wide range of different time patterns for the applicability and activation of each provision. In cases where the coming into force date represents when the provision is activated, the details of the first date/time given in the ``timeValidity`` model shall mirror the coming into force date.
-
-For example, a TTRO may be specified to be valid from 1-Jan-2024. Actual foreseen activation is much shorter, being 3 days between 1-Apr-2024 and 3-Apr-2024. The ``comingIntoForceDate`` would be given as 2024-01-01; any and all instances of provisions under the TTRO would give the ``timeValidity`` ``start`` as 2024-01-01T00:00:00 and ``end`` as 2025-06-30T23:59:59 (unless our times have been specified). The planned foreseen activition dates would be defined by a ``validPeriod`` with ``startOfPeriod`` 2024-04-01T00:00:00 and ``endOfPeriod`` 2024-04-03T23:59:59.
-
-For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
-
-*Varied or ceased Experimental TROs* - the draft Secondary Legislation requires:
-
-where the operation of the order, or any provision of the order, is modified or suspended in accordance with section 10(2) of that Act,
-the planned duration of the modification or suspension shall be recorded in the experimentalVariation object;
-OR
-where any prohibition, regulation or restriction effected by the order, or by any provision of the order, ceases to have effect earlier than the date provided under regulation 4(21)(f) or 4(2)(c).
-the actual date on which the order or provision ceased to have effect shall be recorded in the experimentalCessation object;
-
-*Recording of actual start and end dates and times* - the draft Secondary Legislation requires:
-This regulation applies to an order made, or a notice issued, under section 14 (temporary prohibition or restriction on roads) of the 1984 Act( ) where the traffic regulation authority is making that order or issuing that notice for the purpose of undertaking works itself.
-
+ 
+For example, a TTRO may be specified to be valid from 1-Jan-2024 for 18 months. Actual foreseen activation is much shorter, being 3 days between 1-Apr-2024 and 3-Apr-2024. The ``comingIntoForceDate`` would be given as 2024-01-01; any and all instances of provisions under the TTRO would give the ``timeValidity`` ``start`` as 2024-01-01T00:00:00 and ``end`` as 2025-06-30T23:59:59 (unless other times have been specified). The planned foreseen activation dates would be defined by a ``validPeriod`` with ``startOfPeriod`` 2024-04-01T00:00:00 and ``endOfPeriod`` 2024-04-03T23:59:59. Any other foreseen activation dates would be defined as distinct instances of ``validPeriod``.
+ 
+For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period), the times and dates given in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated. At the time of being Made details of which road sections and what foreseen activation dates may not be defined. The overall legal duration shall be given by populating the ``start`` and ``end`` properties of the ``timeValidity`` object for at least one provision, even if no ``validPeriod`` details are given.
+ 
+As details for foreseen activation become available, the D-TRO record shall be updated using ``sourceActionType`` and ``provisionActionType`` set to ``informationUpdate``, and provisions defined to represent the affected ``regulatedLocation`` and ``validPeriod`` for the foreseen activation date planned.
+ 
+*Varied or ceased Experimental TROs* - the Secondary Legislation draft circulated at the time of the consultation requires: where the operation of the order, or any provision of the order, is modified or suspended in accordance with section 10(2) of that Act, the planned duration of the modification or suspension shall be recorded in the experimentalVariation object; OR where any prohibition, regulation or restriction effected by the order, or by any provision of the order, ceases to have effect earlier than the date provided under regulation 4(21)(f) or 4(2)(c). the actual date on which the order or provision ceased to have effect shall be recorded in the experimentalCessation object;
+ 
+*Recording of actual start and end dates and times* - the Secondary Legislation draft requires: This regulation applies to an order made, or a notice issued, under section 14 (temporary prohibition or restriction on roads) of the 1984 Act( ) where the traffic regulation authority is making that order or issuing that notice for the purpose of undertaking works itself.
 A traffic regulation authority must provide:
 
 1. the actual start time of each provision in the order or notice;
@@ -1242,16 +1236,12 @@ A ``conditionSet`` object may be specified using a sequence of conditions with l
 
    <conditionSet operator="OR">
       <conditionSet operator="AND">
-         <conditions>
-            <timeValidity />
-               <vehicleCharacteristics />
-         </conditions>
+         <timeValidity />
+         <vehicleCharacteristics />
       </conditionSet>
-         <conditionSet operator="AND">
-            <conditions>
-               <timeValidity />
-               <vehicleCharacteristics />
-            </conditions>
+      <conditionSet operator="AND">
+         <timeValidity />
+         <vehicleCharacteristics />
       </conditionSet>
    </conditionSet>
 
