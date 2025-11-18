@@ -36,6 +36,8 @@ html_sidebars = {
     ]
 }
 
+pygments_style = "sphinx"
+
 import os
 import re
 
