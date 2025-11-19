@@ -16,7 +16,7 @@ An overview of the D-TRO service can be found on the `GOV.UK website <https://ww
 D-TRO YouTube Playlist
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The `D-TRO YouTube playlist <https://www.youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ>`_ provides information on the D-TRO service and technical guidance on using the D-TRO API, as well as historic webinar recordings.
+The `D-TRO YouTube playlist <https://www.youtube.com/playlist?list=PLrrl9-rugNRqB3UtD-BtLoBgs4EPJJEqZ>`_ provides information on the D-TRO service and technical guidance on using the D-TRO API, as well as videos of webinar recordings.
 
 Transport Technology Forum Website
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
