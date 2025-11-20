@@ -1,26 +1,26 @@
 Terms and Conditions for Digital Traffic Regulation Orders (D-TRO)
 ==================================================================
 
-Last Updated: 16 July 2025
+Last Updated: 19 November 2025
 
 Welcome to Digital Traffic Regulation Orders (D-TRO) API service. By using our service, you agree to these Terms and Conditions. If you do not agree, please do not use our service.
 
 1. Acceptance of Terms
 **********************
 
-By accessing or using D-TRO service, you agree to comply with and be bound by these Terms. If you are using the service on behalf of an organization, you represent that you have the authority to bind that organization to these terms.
+By accessing or using D-TRO service, you agree to comply with and be bound by these Terms. If you are using the service on behalf of an organization, you represent that you have the authority to bind that organisation to these terms.
 
 2. Description of the service
 *****************************
 
-[Provide a brief description of what your service does, its features, and functionality.]
+The Digital Traffic Regulation Orders (D-TRO) Beta Service is an API-first system for the storage and distribution of digital TROs.
 
 3. User Responsibilities
 ************************
 
 Account Security: You are responsible for maintaining the confidentiality of your GitHub account credentials and for all activities that occur under your account. Notify us immediately if you suspect any unauthorized use of your account.
 
-Compliance with Laws: You agree to use the service in compliance with all servicelicable laws and regulations.
+Compliance with Laws: You agree to use the service in compliance with all applicable laws and regulations.
 
 4. Data Privacy and Security
 ****************************
@@ -32,9 +32,9 @@ Data Protection: We implement industry-standard security measures to protect you
 5. Cyber Assurance Principles
 *****************************
 
-Risk Management: We regularly assess and manage risks related to the use of our service, including vulnerability assessments and threat modeling.
+Risk Management: We regularly assess and manage risks related to the use of our service, including vulnerability assessments and threat modelling.
 
-Incident Response: In the event of a data breach or security incident, we will notify affected users in accordance with servicelicable laws and regulations.
+Incident Response: In the event of a data breach or security incident, we will notify affected users in accordance with applicable laws and regulations.
 
 Continuous Monitoring: We maintain ongoing monitoring of our systems to detect and respond to security threats promptly.
 
