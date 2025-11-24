@@ -286,7 +286,12 @@ paths:
       tags:
         - Events
       summary: Retrieve D-TRO event history
-      description: Retrieve a list of D-TRO events (e.g. creations, updates, deletes) that match a given search criteria.
+      description: >
+        Retrieve a list of D-TRO events (e.g., creations, updates, deletes) that match a given search criteria.
+
+        **Note:** Pagination is applied at the D-TRO level, not the event level. For example, `pageSize = 50` means
+        the service retrieves 50 D-TROs and expands them into events (each D-TRO may have multiple events).
+        The `totalCount` field in the response is hardcoded to `-1` to reflect that it no longer reflects events.
       operationId: get-dtro-events
       security:
         - oAuth:
