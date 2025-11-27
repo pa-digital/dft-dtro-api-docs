@@ -3,6 +3,28 @@ Releases
 
 This section provides details of releases that include changes to the data model.
 
+27th November 2025
+^^^^^^^^^^^^^^^^^^
+
+Release ``e22c38c8dcc0df8458dd5f0acb293a6e``
+
+On 27th November 2025, we released a hotfix to address the following issues with the v3.5.0 schema.
+
+* updated ``conditions.minItems`` from 2 to 1
+
+.. code-block:: diff
+  --- a/examples/Schemas/schemas-3.5.0.json
+  +++ b/examples/Schemas/schemas-3.5.0.json
+  @@ -427,7 +427,7 @@
+          },
+          "conditions": {
+              "type": "array",
+  -            "minItems": 2,
+  +            "minItems": 1,
+              "items": {
+                  "type": "object",
+                  "oneOf": [
+
 18th November 2025
 ^^^^^^^^^^^^^^^^^^
 
