@@ -15,7 +15,7 @@ info:
 servers:
   - url: http://localhost
 paths:
-  /oauth/token:
+  /oauth-generator:
     post:
       tags:
         - Auth
