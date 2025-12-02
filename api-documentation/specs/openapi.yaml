@@ -13,7 +13,7 @@ info:
     url: https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
   version: 3.4.1
 servers:
-  - url: https://dtro.dft.gov.uk
+  - url: https://dtro.dft.gov.uk/v1
 paths:
   /oauth-generator:
     post:
