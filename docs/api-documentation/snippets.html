@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-content_root="./">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Snippets</title>
+  
+  <link rel="shortcut icon" href="https://d-tro.dft.gov.uk/_static/images/favicon.svg"S type="image/x-icon">
+  <link rel="stylesheet" href="https://d-tro.dft.gov.uk/_static/css/custom.css">
+  <script src="https://d-tro.dft.gov.uk/_static/js/custom.js" defer></script>
+  <link rel="stylesheet" href="https://d-tro.dft.gov.uk/_static/tabs.css">
+  <link rel="stylesheet" href="https://d-tro.dft.gov.uk/_static/pygments.css">
+  <script src="https://d-tro.dft.gov.uk/_static/tabs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+
+  <script>
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT: './',
+      VERSION: '1.4.2',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      HAS_SOURCE: true,
+    SOURCELINK_SUFFIX: '.txt',
+      SHOW_SEARCH_SUMMARY: true,
+        SHOW_SEARCH_HIGHLIGHT: true,
+          LINK_SUFFIX: '.html'
+    };
+  </script>
+</head>
+
+<body class="snippets">
+
+  <header class="govuk-header" data-module="govuk-header" data-govuk-header-init="">
+    <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__logo">
+        <a href="https://www.gov.uk/" class="govuk-header__link govuk-header__link--homepage">
+          <svg focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 324 60" height="30" width="162" fill="currentcolor" class="govuk-header__logotype" aria-label="GOV.UK"><title>GOV.UK</title>    <g>
+                  <circle cx="20" cy="17.6" r="3.7"></circle>
+                  <circle cx="10.2" cy="23.5" r="3.7"></circle>
+                  <circle cx="3.7" cy="33.2" r="3.7"></circle>
+                  <circle cx="31.7" cy="30.6" r="3.7"></circle>
+                  <circle cx="43.3" cy="17.6" r="3.7"></circle>
+                  <circle cx="53.2" cy="23.5" r="3.7"></circle>
+                  <circle cx="59.7" cy="33.2" r="3.7"></circle>
+                  <circle cx="31.7" cy="30.6" r="3.7"></circle>
+                  <path d="M33.1,9.8c.2-.1.3-.3.5-.5l4.6,2.4v-6.8l-4.6,1.5c-.1-.2-.3-.3-.5-.5l1.9-5.9h-6.7l1.9,5.9c-.2.1-.3.3-.5.5l-4.6-1.5v6.8l4.6-2.4c.1.2.3.3.5.5l-2.6,8c-.9,2.8,1.2,5.7,4.1,5.7h0c3,0,5.1-2.9,4.1-5.7l-2.6-8ZM37,37.9s-3.4,3.8-4.1,6.1c2.2,0,4.2-.5,6.4-2.8l-.7,8.5c-2-2.8-4.4-4.1-5.7-3.8.1,3.1.5,6.7,5.8,7.2,3.7.3,6.7-1.5,7-3.8.4-2.6-2-4.3-3.7-1.6-1.4-4.5,2.4-6.1,4.9-3.2-1.9-4.5-1.8-7.7,2.4-10.9,3,4,2.6,7.3-1.2,11.1,2.4-1.3,6.2,0,4,4.6-1.2-2.8-3.7-2.2-4.2.2-.3,1.7.7,3.7,3,4.2,1.9.3,4.7-.9,7-5.9-1.3,0-2.4.7-3.9,1.7l2.4-8c.6,2.3,1.4,3.7,2.2,4.5.6-1.6.5-2.8,0-5.3l5,1.8c-2.6,3.6-5.2,8.7-7.3,17.5-7.4-1.1-15.7-1.7-24.5-1.7h0c-8.8,0-17.1.6-24.5,1.7-2.1-8.9-4.7-13.9-7.3-17.5l5-1.8c-.5,2.5-.6,3.7,0,5.3.8-.8,1.6-2.3,2.2-4.5l2.4,8c-1.5-1-2.6-1.7-3.9-1.7,2.3,5,5.2,6.2,7,5.9,2.3-.4,3.3-2.4,3-4.2-.5-2.4-3-3.1-4.2-.2-2.2-4.6,1.6-6,4-4.6-3.7-3.7-4.2-7.1-1.2-11.1,4.2,3.2,4.3,6.4,2.4,10.9,2.5-2.8,6.3-1.3,4.9,3.2-1.8-2.7-4.1-1-3.7,1.6.3,2.3,3.3,4.1,7,3.8,5.4-.5,5.7-4.2,5.8-7.2-1.3-.2-3.7,1-5.7,3.8l-.7-8.5c2.2,2.3,4.2,2.7,6.4,2.8-.7-2.3-4.1-6.1-4.1-6.1h10.6,0Z"></path>
+                </g>
+                <circle class="govuk-logo-dot" cx="226" cy="36" r="7.3"></circle>
+                <path d="M93.94 41.25c.4 1.81 1.2 3.21 2.21 4.62 1 1.4 2.21 2.41 3.61 3.21s3.21 1.2 5.22 1.2 3.61-.4 4.82-1c1.4-.6 2.41-1.4 3.21-2.41.8-1 1.4-2.01 1.61-3.01s.4-2.01.4-3.01v.14h-10.86v-7.02h20.07v24.08h-8.03v-5.56c-.6.8-1.38 1.61-2.19 2.41-.8.8-1.81 1.2-2.81 1.81-1 .4-2.21.8-3.41 1.2s-2.41.4-3.81.4a18.56 18.56 0 0 1-14.65-6.63c-1.6-2.01-3.01-4.41-3.81-7.02s-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83a20.45 20.45 0 0 1 19.46-13.65c3.21 0 4.01.2 5.82.8 1.81.4 3.61 1.2 5.02 2.01 1.61.8 2.81 2.01 4.01 3.21s2.21 2.61 2.81 4.21l-7.63 4.41c-.4-1-1-1.81-1.61-2.61-.6-.8-1.4-1.4-2.21-2.01-.8-.6-1.81-1-2.81-1.4-1-.4-2.21-.4-3.61-.4-2.01 0-3.81.4-5.22 1.2-1.4.8-2.61 1.81-3.61 3.21s-1.61 2.81-2.21 4.62c-.4 1.81-.6 3.71-.6 5.42s.8 5.22.8 5.22Zm57.8-27.9c3.21 0 6.22.6 8.63 1.81 2.41 1.2 4.82 2.81 6.62 4.82S170.2 24.39 171 27s1.4 5.62 1.4 8.83-.4 6.02-1.4 8.83-2.41 5.02-4.01 7.02-4.01 3.61-6.62 4.82-5.42 1.81-8.63 1.81-6.22-.6-8.63-1.81-4.82-2.81-6.42-4.82-3.21-4.41-4.01-7.02-1.4-5.62-1.4-8.83.4-6.02 1.4-8.83 2.41-5.02 4.01-7.02 4.01-3.61 6.42-4.82 5.42-1.81 8.63-1.81Zm0 36.73c1.81 0 3.61-.4 5.02-1s2.61-1.81 3.61-3.01 1.81-2.81 2.21-4.41c.4-1.81.8-3.61.8-5.62 0-2.21-.2-4.21-.8-6.02s-1.2-3.21-2.21-4.62c-1-1.2-2.21-2.21-3.61-3.01s-3.21-1-5.02-1-3.61.4-5.02 1c-1.4.8-2.61 1.81-3.61 3.01s-1.81 2.81-2.21 4.62c-.4 1.81-.8 3.61-.8 5.62 0 2.41.2 4.21.8 6.02.4 1.81 1.2 3.21 2.21 4.41s2.21 2.21 3.61 3.01c1.4.8 3.21 1 5.02 1Zm36.32 7.96-12.24-44.15h9.83l8.43 32.77h.4l8.23-32.77h9.83L200.3 58.04h-12.24Zm74.14-7.96c2.18 0 3.51-.6 3.51-.6 1.2-.6 2.01-1 2.81-1.81s1.4-1.81 1.81-2.81a13 13 0 0 0 .8-4.01V13.9h8.63v28.15c0 2.41-.4 4.62-1.4 6.62-.8 2.01-2.21 3.61-3.61 5.02s-3.41 2.41-5.62 3.21-4.62 1.2-7.02 1.2-5.02-.4-7.02-1.2c-2.21-.8-4.01-1.81-5.62-3.21s-2.81-3.01-3.61-5.02-1.4-4.21-1.4-6.62V13.9h8.63v26.95c0 1.61.2 3.01.8 4.01.4 1.2 1.2 2.21 2.01 2.81.8.8 1.81 1.4 2.81 1.81 0 0 1.34.6 3.51.6Zm34.22-36.18v18.92l15.65-18.92h10.82l-15.03 17.32 16.03 26.83h-10.21l-11.44-20.21-5.62 6.22v13.99h-8.83V13.9"></path>
+            </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="header">
+    
+      <p>D-TRO</p>
+      
+        <a href="../api-documentation">API Documentation</a>
+      
+        <a href="../data-model-user-guide">Data Model</a>
+      
+        <a href="../user-portal-documentation">User Portal Documentation</a>
+      
+      <div class="app-site-search__wrapper">
+        <form action="search.html">
+          <input aria-describedby="app-site-search__input__assistiveHint" aria-expanded="false"
+            aria-controls="app-site-search__input__listbox" aria-autocomplete="both" autocomplete="off"
+            class="app-site-search__input app-site-search__input--default" id="app-site-search__input" name="q"
+            placeholder="Search" type="text" role="combobox">
+        </form>
+      
+    </div>
+  </div>
+
+  <main class="snippets" role="main">
+    <div class="sidebar">
+      
+      
+<div class="global-toc"><p class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_documentation.html">API Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Snippets</a></li>
+</ul>
+</div>
+      
+
+  <div class="local-toc">
+    <ul>
+<li><a class="reference internal" href="#">Snippets</a><ul>
+<li><a class="reference internal" href="#group-1-specific-movement-with-condition">Group 1 - Specific movement with condition</a></li>
+<li><a class="reference internal" href="#group-2-restriction-with-measurement-condition">Group 2 - Restriction with measurement condition</a></li>
+<li><a class="reference internal" href="#group-3-kerbside-regulations-represented-using-a-linear-location-no-specific-direction-influence">Group 3 - Kerbside regulations represented using a linear location (no specific direction influence)</a></li>
+<li><a class="reference internal" href="#group-4-regulations-representing-roads-or-parts-of-roads-with-some-directional-influence-modelled-as-a-linear-location">Group 4 - Regulations representing roads or parts of roads with some directional influence - modelled as a linear location</a></li>
+<li><a class="reference internal" href="#group-5-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-polygon">Group 5 - Regulations representing roads or parts of roads or zones - modelled as a polygon</a></li>
+<li><a class="reference internal" href="#group-6-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-point">Group 6 - Regulations representing roads or parts of roads or zones - modelled as a point</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+      
+    </div>
+    <div id="main-content">
+      
+      <section id="snippets">
+<h1>Snippets<a class="headerlink" href="#snippets" title="Link to this heading">¶</a></h1>
+<p>This section contains various JSON data snippets which illustrate typical ways in which we would expect different forms of TRO provisions to be coded. In each case, we also provide a full D-TRO example file which mirrors the contwent of the related snippet.</p>
+<p>For brevity, the symbol <code class="docutils literal notranslate"><span class="pre">...</span></code> is used to indicate several lines in the JSON snippets.</p>
+<p>We also include some explanatory notes, which are not replicated in the example files.</p>
+<p>Generally, the patterns found in the JSON content of these snippets and examples varies by the form of location referencing mechanism that has been used (<code class="docutils literal notranslate"><span class="pre">pointLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">linearLocation</span></code>, <code class="docutils literal notranslate"><span class="pre">polygon</span></code>, <code class="docutils literal notranslate"><span class="pre">directedLinear</span></code>) and also with the forms of conditions that may be applicable.</p>
+<p>These snippets and examples are, by their nature, illustrative.</p>
+<p>The circumstances of specific D-TRO provisions may require adjustments to the approach used.</p>
+<p>The snippets and examples have been organised into the following groups:</p>
+<ul class="simple">
+<li><p>Group 1 - Specific movement with condition</p></li>
+<li><p>Group 2 - Restriction with measurement condition</p></li>
+<li><p>Group 3 - Kerbside regulations represented using a linear location (no specific direction influence)</p></li>
+<li><p>Group 4 - Regulations representing roads or parts of roads with some directional influence - modelled as a linear location</p></li>
+<li><p>Group 5 - Regulations representing roads or parts of roads or zones - modelled as a polygon</p></li>
+<li><p>Group 6 - Regulations representing roads or parts of roads or zones - modelled as a point</p></li>
+</ul>
+<section id="group-1-specific-movement-with-condition">
+<h2>Group 1 - Specific movement with condition<a class="headerlink" href="#group-1-specific-movement-with-condition" title="Link to this heading">¶</a></h2>
+<p>regulationTypes:</p>
+<ul class="simple">
+<li><p><cite>bannedMovementNoEntry</cite></p></li>
+<li><p><cite>bannedMovementNoLeftTurn</cite></p></li>
+<li><p><cite>bannedMovementNoRightTurn`</cite></p></li>
+<li><p><cite>bannedMovementNoUTurn</cite></p></li>
+<li><p><cite>mandatoryDirectionAheadOnly</cite></p></li>
+<li><p><cite>mandatoryDirectionLeftTurnOnly</cite></p></li>
+<li><p><cite>mandatoryDirectionOneWay</cite></p></li>
+<li><p><cite>mandatoryDirectionRightTurnOnly</cite></p></li>
+</ul>
+<p>Example snippet 1: <cite>bannedMovementNoUTurn</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Banned U turn - made up - Holland Park Avenue (W) to Holland Park Avenue (E)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b1618e6f-f65c-48c7-9cc7-45da9f45fbdc&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Holland Park Avenue (W) to Holland Park Avenue (E)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;directedLinear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;directedLineString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;LINESTRING(524811 180305, 524804 180305, 524797 180315)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Banned turns are spatially defined by a set of coordinates from origin to destination</span>
+<span class="w">        </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21701239</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;destination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21701239</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;intermediateLocation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">21700912</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-22T06:00:00&quot;</span>
+<span class="w">            </span><span class="c1">// ... end time or recurrence if applicable</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bannedMovementNoUTurn&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example snippet 2: <cite>mandatoryDirectionAheadOnly</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="w">  </span><span class="nt">&quot;provision&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mandatory Direction Ahead Only, Bagshot Road, Bracknell&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b1618e6f-f65c-48c7-9cc7-45da9f45fbdc&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bagshot Road, Bracknell, northbound&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;directedLinear&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Using directedLinear to define location with origin and destination USRNs</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;directedLineString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;LINESTRING(487226 168010, 487224 168054)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3800068</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;destination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3800068</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                  </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-22T06:00:00&quot;</span>
+<span class="w">                </span><span class="c1">// ... end time or recurrence if applicable</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mandatoryDirectionAheadOnly&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="group-2-restriction-with-measurement-condition">
+<h2>Group 2 - Restriction with measurement condition<a class="headerlink" href="#group-2-restriction-with-measurement-condition" title="Link to this heading">¶</a></h2>
+<p>The following regulation types follow a similar approach with specific vehicle characteristics:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Regulation Type</p></th>
+<th class="head"><p>Associated Condition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>dimensionMaximumHeightWithTRO</p></td>
+<td><p>vehicleCharacteristics - maximumHeightCharacteristic (vehicleHeight)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimensionMaximumLength</p></td>
+<td><p>vehicleCharacteristics - maximumLengthCharacteristic (vehicleLength)</p></td>
+</tr>
+<tr class="row-even"><td><p>dimensionMaximumWeightEnvironmental</p></td>
+<td><p>vehicleCharacteristics - maximumGrossWeightCharacteristic (grossVehicleWeight)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimensionMaximumWeightStructural</p></td>
+<td><p>vehicleCharacteristic - maximumGrossWeightCharacteristic (grossVehicleWeight)</p></td>
+</tr>
+<tr class="row-even"><td><p>dimensionMaximumWidth</p></td>
+<td><p>vehicleCharacteristic - maximumWidthCharacteristic (vehicleWidth)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Example snippet 1: <cite>dimensionMaximumHeightWithTRO</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ttroTtmoNoticeOfIntention&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Temporary height restriction (2.5m)&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c962b51f-e1aa-416e-8f0b-aefe39a4c099&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;East Reach - Taunton&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;pointGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39608173</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;point&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;POINT(323544 124622)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;representation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;centreLinePoint&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;and&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-22T08:00:00&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;end&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-08-22T20:00:00&quot;</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;maximumHeightCharacteristic&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;vehicleHeight&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span>
+<span class="w">                  </span><span class="c1">// ... additional characteristics if needed</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dimensionMaximumHeightWithTRO&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="group-3-kerbside-regulations-represented-using-a-linear-location-no-specific-direction-influence">
+<h2>Group 3 - Kerbside regulations represented using a linear location (no specific direction influence)<a class="headerlink" href="#group-3-kerbside-regulations-represented-using-a-linear-location-no-specific-direction-influence" title="Link to this heading">¶</a></h2>
+<p>regulationType:</p>
+<ul class="simple">
+<li><p><cite>kerbsideDisabledBadgeHoldersOnly</cite></p></li>
+<li><p><cite>kerbsideDoubleRedLines</cite></p></li>
+<li><p><cite>kerbsideFootwayParking</cite></p></li>
+<li><p><cite>kerbsideFootwayParkingProhibited</cite></p></li>
+<li><p><cite>kerbsideLimitedWaiting</cite></p></li>
+<li><p><cite>kerbsideLoadingBay</cite></p></li>
+<li><p><cite>kerbsideLoadingBayPassengerSetDownPermitted</cite></p></li>
+<li><p><cite>kerbsideLoadingBayPassengerSetDownProhibited</cite></p></li>
+<li><p><cite>kerbsideLoadingPlace</cite></p></li>
+<li><p><cite>kerbsideLoadingPlacePassengerSetDownPermitted</cite></p></li>
+<li><p><cite>kerbsideLoadingPlacePassengerSetDownProhibited</cite></p></li>
+<li><p><cite>kerbsideMotorcycleParkingPlace</cite></p></li>
+<li><p><cite>kerbsideNoLoading</cite></p></li>
+<li><p><cite>kerbsideNoLoadingPassengerSetDownPermitted</cite></p></li>
+<li><p><cite>kerbsideNoLoadingPassengerSetDownProhibited</cite></p></li>
+<li><p><cite>kerbsideNoStopping</cite></p></li>
+<li><p><cite>kerbsideNoWaiting</cite></p></li>
+<li><p><cite>kerbsideOtherYellowZigZagMandatory</cite></p></li>
+<li><p><cite>kerbsideParkingPlace</cite></p></li>
+<li><p><cite>kerbsidePermitParkingArea</cite></p></li>
+<li><p><cite>kerbsidePermitParkingPlace</cite></p></li>
+<li><p><cite>kerbsideRedRouteClearway</cite></p></li>
+<li><p><cite>kerbsideRestrictedParkingZone</cite></p></li>
+<li><p><cite>kerbsideRuralClearway</cite></p></li>
+<li><p><cite>kerbsideSchoolKeepClearYellowZigZagMandatory</cite></p></li>
+<li><p><cite>kerbsideSingleRedLines</cite></p></li>
+<li><p><cite>kerbsideTaxiRank</cite></p></li>
+<li><p><cite>kerbsideUrbanClearway</cite></p></li>
+<li><p><cite>miscBaySuspension</cite></p></li>
+<li><p><cite>miscSuspensionOfParkingRestriction</cite></p></li>
+<li><p><cite>miscSuspensionOfWeightRestriction</cite></p></li>
+<li><p><cite>miscTemporaryParkingRestriction</cite></p></li>
+</ul>
+<p>Example snippet: <cite>kerbsidePaymentParkingPlace</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parking restrictions, East Reach, Pay &amp; Display Parking Places - Monday to Sunday 9.00 am to 8.00 pm&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c962b51f-e1aa-416e-8f0b-aefe39a4c099&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;East Reach, Taunton, northside / eastbound, between 10 metres east from the junction with Tancred Street to 15 metres west of the junction with South Street {approximate - linear}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;concession&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;assignment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tramcar&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;busRoute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bywayType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;road&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;linearGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// This example uses a linestring to describe a linear location</span>
+<span class="w">        </span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bidirectional&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;representation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lateralPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onKerb&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;linestring&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;LINESTRING(323158 124529,323252 124546)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39608173</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10T09:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;validPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">// ValidPeriod defines days and times of applicability</span>
+<span class="w">                </span><span class="nt">&quot;recurringDayWeekMonthPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;applicableDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="s2">&quot;monday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tuesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wednesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;thursday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;friday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;saturday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sunday&quot;</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;recurringTimePeriodOfDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;startTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;09:00:00&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;endTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20:00:00&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kerbsidePaymentParkingPlace&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="group-4-regulations-representing-roads-or-parts-of-roads-with-some-directional-influence-modelled-as-a-linear-location">
+<h2>Group 4 - Regulations representing roads or parts of roads with some directional influence - modelled as a linear location<a class="headerlink" href="#group-4-regulations-representing-roads-or-parts-of-roads-with-some-directional-influence-modelled-as-a-linear-location" title="Link to this heading">¶</a></h2>
+<p>regulationType:</p>
+<ul class="simple">
+<li><p><cite>miscBusLaneWithTrafficFlow</cite></p></li>
+<li><p><cite>miscBusOnlyStreet</cite></p></li>
+<li><p><cite>miscContraflowBusLane</cite></p></li>
+<li><p><cite>miscSuspensionOfBusway</cite></p></li>
+<li><p><cite>miscSuspensionOfOneWay</cite></p></li>
+<li><p><cite>movementOrderPriorityOverOncomingTraffic</cite></p></li>
+<li><p><cite>movementOrderNoOvertaking</cite> (linear one way or bidirectional)</p></li>
+</ul>
+<p>Example snippet: <cite>miscBusLaneWithTrafficFlow</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bus lane, Corporation Street, Taunton&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c962b51f-e1aa-416e-8f0b-aefe39a4c099&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Corporation Street, Taunton {approximate - linear}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;concession&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;assignment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tramcar&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;busRoute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bywayType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;road&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;linearGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// This example uses a linestring to describe a linear location</span>
+<span class="w">        </span><span class="nt">&quot;direction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;startToEnd&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;representation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;representingZone&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lateralPosition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;centreline&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;linestring&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;LINESTRING(322494 124467,322645 124504,322666 124502)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39608010</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10T07:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;validPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;recurringDayWeekMonthPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;applicableDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="s2">&quot;monday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tuesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wednesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;thursday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;friday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;saturday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sunday&quot;</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;recurringTimePeriodOfDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;startTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;07:00:00&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;endTimeOfPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;16:00:00&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;miscBusLaneWithTrafficFlow&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Similarly, approaches can be used for regular patterns for other regulation types:</p>
+<p>linearLocation with bidirectional effect (i.e. both ways)</p>
+<p>regulationType:</p>
+<ul class="simple">
+<li><p><cite>miscContraflow</cite></p></li>
+<li><p><cite>miscCycleLane</cite></p></li>
+<li><p><cite>miscCycleLaneClosure</cite></p></li>
+<li><p><cite>miscFootwayClosure</cite></p></li>
+<li><p><cite>miscLaneClosure</cite></p></li>
+<li><p><cite>miscPROWClosure</cite></p></li>
+<li><p><cite>miscRoadClosure</cite></p></li>
+<li><p><cite>nonOrderKerbsideBusStop</cite></p></li>
+<li><p><cite>publicRightOfWayClosure</cite></p></li>
+</ul>
+</section>
+<section id="group-5-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-polygon">
+<h2>Group 5 - Regulations representing roads or parts of roads or zones - modelled as a polygon<a class="headerlink" href="#group-5-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-polygon" title="Link to this heading">¶</a></h2>
+<p>regulationType:</p>
+<ul class="simple">
+<li><p><cite>kerbsideControlledParkingZone</cite></p></li>
+<li><p><cite>miscCongestionLowEmissionZone</cite></p></li>
+<li><p><cite>miscPedestrianZone</cite></p></li>
+<li><p><cite>nonOrderMovementBoxJunction</cite></p></li>
+<li><p><cite>movementOrderProhibitedAccess   - when modelled as a polygon</cite></p></li>
+<li><p><cite>miscTemporaryParkingBay - when modelled as a polygon</cite></p></li>
+</ul>
+<p>Example snippet: <cite>movementOrderProhibitedAccess</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bus and taxi access only, Tower Street and Castle Way, Taunton&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c962b51f-e1aa-416e-8f0b-aefe39a4c099&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tower Street (from the junction with Castle Street to Castle Way) and Castle Way, Taunton {approximate - linear}&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;concession&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;assignment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tramcar&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;busRoute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;bywayType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;road&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;polygon&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// This example uses a polygon to define an area location</span>
+<span class="w">        </span><span class="nt">&quot;polygon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;POLYGON((322493 124517, 322511 124533, 322570 124558, 322587 124497, 322579 124494, 322565 124545, 322526 124531, 322496 124511, 322493 124517))&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39605980</span><span class="w"> </span><span class="p">},</span>
+<span class="w">              </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39605591</span><span class="w"> </span><span class="p">}</span>
+<span class="w">              </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;movementOrderProhibitedAccess&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="c1">// First-level condition set: AND logic</span>
+<span class="w">          </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;and&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// Second-level condition set: OR logic for vehicle types</span>
+<span class="w">              </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;or&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;vehicleType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;taxi&quot;</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;vehicleType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bus&quot;</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                  </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-12-10T08:00:00&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;validPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;recurringDayWeekMonthPeriod&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                      </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;applicableDay&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                          </span><span class="s2">&quot;monday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tuesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wednesday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;thursday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;friday&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;saturday&quot;</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                    </span><span class="c1">// ... time period of day if applicable</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="group-6-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-point">
+<h2>Group 6 - Regulations representing roads or parts of roads or zones - modelled as a point<a class="headerlink" href="#group-6-regulations-representing-roads-or-parts-of-roads-or-zones-modelled-as-a-point" title="Link to this heading">¶</a></h2>
+<p>regulationType:</p>
+<ul class="simple">
+<li><p><cite>miscRoadClosureCrossingPoint</cite></p></li>
+<li><p><cite>ovementOrderProhibitedAccess</cite></p></li>
+<li><p><cite>nonOrderKerbsidePedestrianCrossing</cite></p></li>
+<li><p><cite>miscTemporaryParkingBay</cite></p></li>
+<li><p><cite>miscBusGate</cite></p></li>
+</ul>
+<p>Example snippet: <cite>miscBusGate</cite></p>
+<p><a class="reference external" href="#">Full snippet</a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="err">...</span>
+<span class="w">  </span><span class="nt">&quot;provision&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;actionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;orderReportingPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;permanentNoticeOfMaking&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;comingIntoForceDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provisionDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bus Lane restriction, Collett Road, Norton Fitzwarren {approximate} with fictitious time restrictions&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c962b51f-e1aa-416e-8f0b-bcfd09a4d089&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;regulatedPlace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Collett Road, from 125 metres to 158 metres from the junction with Great Western Way Roundabout {approximate - notational point of effect}&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;concession&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;assignment&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;tramcar&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;busRoute&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;bywayType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;road&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;pointGeometry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;externalReference&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">              </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;lastUpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-01T00:00:00&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;uniqueStreetReferenceNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;usrn&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">39609234</span><span class="w"> </span><span class="p">}</span>
+<span class="w">                  </span><span class="c1">// ... more USRNs if applicable</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">              </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;point&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SRID=27700;POINT(320329 126155)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;representation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;centreLinePoint&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulationLocation&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;regulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">              </span><span class="c1">// First-level condition set: AND logic</span>
+<span class="w">              </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;and&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="nt">&quot;conditionSet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                  </span><span class="c1">// Second-level condition set: OR logic for vehicle types</span>
+<span class="w">                  </span><span class="nt">&quot;operator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;or&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;vehicleType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anyVehicle&quot;</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;vehicleType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bus&quot;</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                      </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                      </span><span class="nt">&quot;vehicleCharacteristics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;vehicleType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pedalCycle&quot;</span>
+<span class="w">                      </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                  </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">              </span><span class="p">],</span>
+<span class="w">              </span><span class="nt">&quot;condition&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;negate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;timeValidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01T08:00:00&quot;</span>
+<span class="w">                    </span><span class="c1">// ... end time or validPeriod if applicable</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">],</span>
+<span class="w">          </span><span class="nt">&quot;generalRegulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;regulationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;miscBusGate&quot;</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nt">&quot;isDynamic&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;timeZone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Europe/London&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+      
+    </div>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-meta">
+        <div class="footer-links">
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=cpq-ajTOTkO78oZ8lo_C161mR3aGdw5GgGos9xjukGJUMEExTFAyQ1AxOFdIR0UwRFdWRk9ZV1RGWC4u">Feedback</a>
+          <a href="https://github.com/department-for-transport-public/D-TRO">D-TRO GitHub</a>
+          <a id="support-link" href="https://d-tro.dft.gov.uk/support">Support</a>
+          <a id="accessibility-link" href="https://d-tro.dft.gov.uk/accessibility">Accessibility</a>
+          <a id="cookies-link" href="https://d-tro.dft.gov.uk/cookies">Cookies</a>
+          <a id="privacy-link" href="https://d-tro.dft.gov.uk/privacy">Privacy</a>
+          <a id="t-and-c-link" href="https://d-tro.dft.gov.uk/terms_and_conditions">Terms & Conditions</a>
+          <a id="engagement-link" href="https://d-tro.dft.gov.uk/engagement">Engagement</a>
+        </div>
+        <div class="footer-meta-group">
+          <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+            <path fill="currentColor"
+              d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145">
+            </path>
+          </svg>
+          <span class="licence-description">
+            All content is available under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open
+              Government Licence v3.0</a>, except where otherwise stated
+          </span>
+        </div>
+      </div>
+      <a class="footer-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+        © Crown copyright
+      </a>
+    </div>
+  </footer>
+
+  
+  <script src="_static/doctools.js"></script>
+  <script src="_static/language_data.js"></script>
+  <script src="_static/searchtools.js"></script>
+  <script src="searchindex.js"></script>
+  <script src="_static/sphinx_highlight.js"></script>
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentUrl = window.location.pathname.split('/').pop();
+      if (currentUrl === "") currentUrl = "index.html";
+      const globalTocLinks = document.querySelectorAll('.global-toc li.toctree-l1 > a');
+
+      let currentTocItem = null;
+
+      globalTocLinks.forEach(link => {
+        let href = link.href.split("#")[0];
+        if (href === currentUrl || href.endsWith(currentUrl)) {
+          currentTocItem = link.parentElement;
+        }
+      });
+
+      const localToc = document.querySelector('.local-toc');
+      if (currentTocItem && localToc) {
+        const nestedContainer = document.createElement('ul');
+        nestedContainer.classList.add('nested-localtoc');
+        const localTocItems = localToc.querySelectorAll('ul > li');
+        nestedContainer.append(...Array.from(localTocItems).slice(1));
+        currentTocItem.appendChild(nestedContainer);
+
+        localToc.style.display = 'none';
+      }
+
+      
+      const caption = document.querySelector('.caption .caption-text');
+      if (caption) {
+        const link = document.createElement('a');
+        link.href = 'index.html';
+        link.textContent = caption.textContent;
+        caption.textContent = '';
+        caption.appendChild(link);
+      }
+    });
+  </script>
+
+  
+
+</body>
+
+</html>
