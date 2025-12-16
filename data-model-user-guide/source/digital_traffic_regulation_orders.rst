@@ -77,7 +77,7 @@ As a result, several projects have followed, and in combination the development 
 
 **Discovery project** (2019) into TROs processes and how this data is made available and used across the country [undertaken by the British Parking Association, Ordnance Survey and Geoplace]. Three significant outputs resulted:
 
-* `User Research <https://www.geoplace.co.uk/documents/10181/110496/TRO_Discovery_Summary_Report_GeoPlace_August_2019/99c06daa-6444-4328-9970-f2cb02288674>`_
+* `User Research <https://static.geoplace.co.uk/downloads/TRO-Discovery-Summary-Report.pdf>`_
 * `User Guide <https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Best_Practice_Guide_2019.pdf>`_
 * `Draft Data Model <https://www.britishparking.co.uk/write/Documents/TIR%20Board/BPA_TRO_Data_Model_User_Guidance.pdf>`_
 
@@ -153,7 +153,9 @@ The Data Model is developmental and experimental in nature. It cannot be conside
 Licensing
 *********
 
-The material contained within this document is subject to copyright by the DfT and is published under the Open Government Licence v3.0. Further details of the licence can be found at http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/.
+The material contained within this document is subject to copyright by the DfT and is published under Crown Copyright. Further details on Crown Copyright can be found at Crown copyright - Re-using PSI (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
+
+The data from the D-TRO service is made available under an Open Government Licence version 3 licence (Open Government Licence). Further details of the licence can be found at http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/.
 
 The DfT are sharing this document and the Data Model it contains to support iteration and development by the DfT.
 

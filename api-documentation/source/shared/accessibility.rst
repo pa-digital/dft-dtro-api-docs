@@ -1,7 +1,7 @@
 Accessibility statement for the D-TRO service
 =============================================
 
-This statement only applies to the D-TRO service, available at https://dtro.dft.gov.uk.
+This statement only applies to the D-TRO service, available at https://d-tro.dft.gov.uk.
 
 Using this service
 ******************
