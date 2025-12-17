@@ -896,7 +896,7 @@ The ``uniqueStreetReferenceNumber`` object has three attributes:
 Multiple URSNs can be defined per geometry, as some streets have multiple USRNs (e.g. Blackstock Road near Finsbury Park in London, which sits on the border of Islington and Hackney).
 
 
-*Data outputs from the D-TRO Service - A note about licences
+*Data outputs from the D-TRO Service - A note about licences*
 
 The outputs from the D-TRO Service are foreseen as open data.  To ensure that the D-TRO service does not infringe copyright of Ordnance Survey's Licenced Data, DfT and Ordnance Survey have reached an agreement to randomly shift some of the spatial data associated with D-TRO records.
 With the exception of TTROs or a D-TRO where regulatedPlace is represented by a single point, all vertices are randomised. Each vertex is randomised between 0.5m and 0.75m.  The resultant data set is freely available as open data under an Open Government Licence v.3.0 (Open Government Licence). For further information see: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/.
