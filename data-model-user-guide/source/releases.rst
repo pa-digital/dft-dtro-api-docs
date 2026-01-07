@@ -3,6 +3,22 @@ Releases
 
 This section provides details of releases that include changes to the data model.
 
+7th January 2025
+^^^^^^^^^^^^^^^^
+
+Release ``b0d3378476931d6c9aeb360e93415a0f``
+
+On 7th January 2026 we released ``v3.5.1`` of the Data Model. This minor release includes the following changes.
+
+* added the following four ``vehicleType`` enumerations: ``heavyGoodsVehicle``, ``motorVehicle``, ``publicServiceVehicle`` and ``schoolBus``
+* added ``miscFootpathClosure`` as a new ``regulationType``
+* removed ``publicRightOfWayClosure`` from ``regulationType``, as it is considered a duplicate of ``miscPROWClosure``
+* corrected inconsistency between naming of ``coastGuardVehicle`` in the Data Model and ``coastguardVehicle`` in the schema. ``coastGuardVehicle`` in the Data Model has been updated to ``coastguardVehicle`` to match the schema
+* removed duplicate ``electric`` entry from ``fuelType`` enumeration
+* added tighter validation for datetime formats. Optional seconds may be omitted, fractional seconds are no longer permitted
+* added the following four ``vehicleCharacteristics`` extension mechanisms: ``payloadType``, ``fuelType``, ``vehicleEquipment`` and ``vehicleType``
+* corrected inconsistency between the multiplicity of ``vehicleType`` in the Data Model (zero-to-many) and the schema (zero-to-one). Multiplcity of the Data Model has been updated to zero-to-many to match the schema
+
 27th November 2025
 ^^^^^^^^^^^^^^^^^^
 
