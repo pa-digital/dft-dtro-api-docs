@@ -1,23 +1,23 @@
-# Minimal makefile for Sphinx documentation
-#
+# Minimal makefile for Sphinx documentation using sphinx-multiversion
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-multiversion
+SPHINXBUILD   = sphinx-multiversion
 SOURCEDIR     = source
 BUILDDIR      = build
 
-# Put it first so that "make" without argument is like "make help".
+.PHONY: help html clean livehtml
+
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+    @echo "make html     - build multi-version docs"
+    @echo "make clean    - remove build output"
+    @echo "make livehtml - live rebuild (single-version only)"
 
-.PHONY: help Makefile
+html:
+    $(SPHINXBUILD) "$(SOURCEDIR)" "$(BUILDDIR)"
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+clean:
+    rm -rf "$(BUILDDIR)"
 
+# livehtml uses sphinx-autobuild which only supports single-version
 livehtml:
-	sphinx-autobuild -E -a $(ALLSPHINXOPTS) $(SOURCEDIR) $(BUILDDIR)/html --host 0.0.0.0 --port 8002 --ignore "build/*"
+    sphinx-autobuild -E -a "$(SOURCEDIR)" "$(BUILDDIR)/html" \
+        --host 0.0.0.0 --port 8002 --ignore "build/*"
