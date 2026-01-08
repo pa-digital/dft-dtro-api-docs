@@ -15,7 +15,7 @@ mkdir -p docs/api-documentation
 cp -r api-documentation/build/html/* docs/api-documentation
 cp -r api-documentation/collections/dtro-integration.postman_collection.json docs/api-documentation/_static/dtro-integration.postman_collection.json
 cp -r api-documentation/collections/dtro-production.postman_collection.json docs/api-documentation/_static/dtro-production.postman_collection.json
-cp -r data-model-user-guide/build/html/* docs/data-model-user-guide
+cp -r data-model-user-guide/build/* docs/data-model-user-guide
 cp -r data-model-user-guide/source/Data\ Model\ HTML\ Guide docs/data-model-user-guide
 cp -r user-portal-documentation/build/html/* docs/user-portal-documentation
 cp -a portal-access/build/html/* docs
