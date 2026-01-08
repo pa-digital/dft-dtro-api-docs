@@ -98,3 +98,6 @@ smv_excluded_patterns = [
     "document_control.rst",
     "releases.rst",
 ]
+
+smv_branch_whitelist = r"^release\/v.*$"
+smv_tag_whitelist = r"^$"
