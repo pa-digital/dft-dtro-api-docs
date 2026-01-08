@@ -246,11 +246,14 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  url:
-                    type: string
-                    example: https://storage.googleapis.com/my-bucket-name/my-file.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=my-service-account%40my-project.iam.gserviceaccount.com%2F20250701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250701T142000Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+                type: string
+                format: uri
+                example: https://storage.googleapis.com/my-bucket-name/my-file.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=my-service-account%40my-project.iam.gserviceaccount.com%2F20250701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250701T142000Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+            text/plain:
+              schema:
+                type: string
+                format: uri
+                example: https://storage.googleapis.com/my-bucket-name/my-file.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=my-service-account%40my-project.iam.gserviceaccount.com%2F20250701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250701T142000Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
         "500":
           description: Internal Server Error
   /dtros/{dtroId}:

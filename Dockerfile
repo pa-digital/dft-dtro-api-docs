@@ -18,5 +18,5 @@ WORKDIR /docs
 
 COPY dft-theme /tmp/dft-theme
 
-RUN pip install --no-cache-dir sphinx==8.2.3 sphinx-autobuild sphinx-tabs
+RUN pip install --no-cache-dir sphinx==8.2.3 sphinx-autobuild sphinx-tabs sphinx-multiversion
 RUN pip install --no-cache-dir -e /tmp/dft-theme

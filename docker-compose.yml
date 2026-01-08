@@ -25,7 +25,8 @@ services:
     ports:
       - "8002:8002"
     volumes:
-      - ./data-model-user-guide:/docs
+      - ${GITHUB_WORKSPACE:-.}:/workspace
+    working_dir: /workspace/data-model-user-guide
     command: tail -f /dev/null
 
   user-portal-documentation:

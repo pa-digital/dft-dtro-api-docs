@@ -8,7 +8,7 @@ D-TRO Data Model Documentation
 
 .. tag::
    
-   v3.5.0
+   v3.5.1
 
 Welcome to the D-TRO Data Model Interactive User Guide. You can use the sidebar links and search controls to navigate through the guide.
 
