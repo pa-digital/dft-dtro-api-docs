@@ -647,6 +647,8 @@ If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometr
 
     It is good practice to provide start and end coordinates that relate to where the diversion route deviates from the primary route (start and end coordinates), and also provide sufficient intermediate points that the path of the diversion route through the road network is clear. Where USRNs are available, reference to all applicable USRNs forming the diversion route shall be supplied.
 
+    Similar considerations should be used when defining the geometry for directional regulations (such as no entry restrictions, one way streets, etc.). For directional regulations only ``linearGeometry`` object or ``directedLinear`` object shall be used. The ``polygon`` and ``pointLocation`` objects should not be used.
+
 The sub-model below the regulatedPlace object can also be used to define, optionally, diversion routes.
 
 :numref:`fig23` provides the UML class representation of the ``regulatedPlace`` object.
@@ -923,7 +925,7 @@ Use of each object and its attributes is given below. For all dates and times, t
 
 * All times are expressed in local time (i.e. without reference to UTC time-zone offset). The combination of the regulation.timezone attribute and local times enables data consumers to calculate the times of applicability in absolute times. The rationale for specifying times of applicability in local times aligns with common practice for TROs and reduces the complexity of the data to be delivered.
 
-* Dates and times - generally all date and time records shall be expressed using the ISO 8601-1:2019 extended format (e.g., ``YYYY-MM-DDTHH:MI:SS``) - note: no ``Z`` timezone offset. Some specific exceptions to this rule do exist - ``eventTime`` and ``publicationTime``, which are both metadata attributes (beyond the scope of this document) are specified using the ISO 8601-1:2019 extended format for UTC datetimes, indicated by the suffix ``Z`` (e.g., ``YYYY-MM-DDTHH:MI:SSZ``).
+* Dates and times - generally all date and time records shall be expressed using the ISO 8601-1:2019 extended format (e.g., ``YYYY-MM-DDTHH:MI:SS``) - note: no ``Z`` timezone offset. Fractional seconds are not permitted. Some specific exceptions to this rule do exist - ``eventTime`` and ``publicationTime``, which are both metadata attributes (beyond the scope of this document) are specified using the ISO 8601-1:2019 extended format for UTC datetimes, indicated by the suffix ``Z`` (e.g., ``YYYY-MM-DDTHH:MI:SSZ``).
 
 :numref:`fig36` provides the UML class representation of the ``timeValidity`` object.
 
