@@ -1,6 +1,6 @@
 [
-  { "name": "API Documentation", "href": "/api-documentation/v3.5.1" },
-  { "name": "Data Model", "href": "/data-model-user-guide" },
+  { "name": "API Documentation", "href": "/api-documentation" },
+  { "name": "Data Model", "href": "/data-model-user-guide/v3.5.1" },
   {
     "name": "User Portal Documentation",
     "href": "/user-portal-documentation"
