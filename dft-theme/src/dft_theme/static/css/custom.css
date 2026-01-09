@@ -727,3 +727,20 @@ main[class^="shared"] > .sidebar {
 .govuk-tag > p {
   margin: 0;
 }
+
+.version-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.version-switcher > label {
+  color: white;
+}
+
+.govuk-header__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
