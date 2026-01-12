@@ -142,19 +142,6 @@
 <p>Taking into account the needs arising from the UK Industrial Strategy and recognising the requirements that will emerge from the deployment of Connected and Automated Vehicles (CAVs) the Data Model provides an initial framework for how the data and information relating to TROs can be formed in the future. Availability of this Data Model, will support the move towards TROs being easily accessible to the public whether using apps or driving connected vehicles.</p>
 <p>The Automated Vehicles Act 2024 <a class="reference internal" href="#ref-ava"><span class="std std-ref">[1]</span></a> (section 93) provides the capability for the Secretary of State, through regulation, to require Traffic Regulation Authorities <a class="reference internal" href="#ref-tras"><span class="std std-ref">[2]</span></a> (TRAs) to provide information on a defined set of Traffic Regulation Measures <a class="reference internal" href="#ref-tr-measure"><span class="std std-ref">[3]</span></a>, in a specified manner and form, to be provided in accordance with a specified model, standard or set of specifications. These will be the D-TRO Data Specifications including the D-TRO Data Model and are expected to be specified under secondary legislation.</p>
 <p>The content of the Data Model has been developed by Harrod Booth Consulting Ltd with grateful support from numerous organisations.</p>
-<p>The documentation presents the Data Model, Release <code class="docutils literal notranslate"><span class="pre">v3.5.1</span></code>, with a series of larger updates including:</p>
-<ul class="simple">
-<li><p>Support to provide an information update to enable the submission of planned activation start and stop dates and times after the submission of a Made Order D-TRO submission. For periodic maintenance style TROs (which do not specify specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the <code class="docutils literal notranslate"><span class="pre">timeValidity</span></code> sub-model represent when the TRO and its provisions are foreseen to be activated.</p></li>
-<li><p>Modelling to support Emissions-related regulations (ability to define CO2 limits, engine capacity, battery capacity, etc).</p></li>
-<li><p>Modelling to support Electric Charging Conditions (e.g. when vehicle is connected to a charger; when charging).</p></li>
-<li><p>Addition of an “Other Condition” option with in Condition Sub-model to support definition of conditions and exemptions that are not covered by the range of conditions in the existing Data Specification.</p></li>
-<li><p>Extensions of supported WKT coding of spatial coordinates beyond Point, LineString and Polygon to also support MultiPoint, MultiLineString, MultiPolygon.</p></li>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">dialARide</span></code> to the vehicle usage type list.</p></li>
-<li><p>Change of the datatype of <code class="docutils literal notranslate"><span class="pre">expectedDuration</span></code> from <code class="docutils literal notranslate"><span class="pre">integer</span></code> to <code class="docutils literal notranslate"><span class="pre">duration</span></code>.</p></li>
-<li><p>Removal of support for the provision of Elementary Street Units (ESUs) from Data Specification.</p></li>
-<li><p>Addition of a National Speed Limit profile for speed limit regulations - that applies to all road types.</p></li>
-</ul>
-<p>For more details see the Change Log section.</p>
 </section>
 <section id="about-this-document">
 <h2>About This Document<a class="headerlink" href="#about-this-document" title="Link to this heading">¶</a></h2>
