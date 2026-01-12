@@ -6,7 +6,7 @@ Introduction
 
 The Department for Transport (DfT) is modernising the regulatory framework for Traffic Regulation Orders (TROs) (Traffic Management Orders in London) made under the Road Traffic Regulation Act 1984.
 
-The new regulatory framework will, subject to necessary legislation coming into force, mandate that traffic authorities in England publish TROs as open data in a standardised and digital format that anyone can access, use and share. The standardised digital format will be based on the Digital TRO (D-TRO) Data Model that is described in this document – called the Data Model throughout the remainder of this document. The Data Model is intended to be a free resource for all. The Data Model is candidate in nature and may be subject to change without notification.
+The new regulatory framework will, subject to necessary legislation coming into force, mandate that traffic authorities in England publish TROs as open data in a standardised and digital format that anyone can access, use and share. The standardised digital format will be based on the Digital TRO (D-TRO) Data Model that is described in this document - called the Data Model throughout the remainder of this document. The Data Model is intended to be a free resource for all. The Data Model is candidate in nature and may be subject to change without notification.
 
 Taking into account the needs arising from the UK Industrial Strategy and recognising the requirements that will emerge from the deployment of Connected and Automated Vehicles (CAVs) the Data Model provides an initial framework for how the data and information relating to TROs can be formed in the future. Availability of this Data Model, will support the move towards TROs being easily accessible to the public whether using apps or driving connected vehicles.
 
@@ -14,7 +14,7 @@ The Automated Vehicles Act 2024 :ref:`[1] <ref-ava>` (section 93) provides the c
 
 The content of the Data Model has been developed by Harrod Booth Consulting Ltd with grateful support from numerous organisations.
 
-The documentation presents the Data Model, Release ``3.5.0``, with a series of larger updates including:
+The documentation presents the Data Model, Release ``v3.5.1``, with a series of larger updates including:
 
 * Support to provide an information update to enable the submission of planned activation start and stop dates and times after the submission of a Made Order D-TRO submission. For periodic maintenance style TROs (which do not specify specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the ``timeValidity`` sub-model represent when the TRO and its provisions are foreseen to be activated.
 * Modelling to support Emissions-related regulations (ability to define CO2 limits, engine capacity, battery capacity, etc).
@@ -24,7 +24,7 @@ The documentation presents the Data Model, Release ``3.5.0``, with a series of l
 * Add ``dialARide`` to the vehicle usage type list.
 * Change of the datatype of ``expectedDuration`` from ``integer`` to ``duration``.
 * Removal of support for the provision of Elementary Street Units (ESUs) from Data Specification.
-* Addition of a National Speed Limit profile for speed limit regulations – that applies to all road types.
+* Addition of a National Speed Limit profile for speed limit regulations - that applies to all road types.
 
 For more details see the Change Log section.
 

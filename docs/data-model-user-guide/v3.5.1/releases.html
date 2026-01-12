@@ -105,8 +105,6 @@
 <li class="toctree-l1"><a class="reference internal" href="a_tour_of_the_data_model.html">A Tour of the Data Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="what_is_a_full_dtro_record.html">What is a ‘Full’ D-TRO Record?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="the_data_model_uml_class_diagrams.html">The Data Model UML Class Diagrams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="change_log.html">Change Log</a></li>
-<li class="toctree-l1"><a class="reference internal" href="document_control.html">Document Control</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Releases</a></li>
 </ul>
 </div>
@@ -115,9 +113,16 @@
   <div class="local-toc">
     <ul>
 <li><a class="reference internal" href="#">Releases</a><ul>
-<li><a class="reference internal" href="#th-january-2025">7th January 2025</a></li>
+<li><a class="reference internal" href="#th-january-2025">9th January 2025</a></li>
 <li><a class="reference internal" href="#th-november-2025">27th November 2025</a></li>
 <li><a class="reference internal" href="#id1">18th November 2025</a></li>
+<li><a class="reference internal" href="#th-october-2025">27th October 2025</a></li>
+<li><a class="reference internal" href="#th-august-2025">12th August 2025</a></li>
+<li><a class="reference internal" href="#th-june-2025">10th June 2025</a></li>
+<li><a class="reference internal" href="#th-november-2024">29th November 2024</a></li>
+<li><a class="reference internal" href="#th-october-2024">17th October 2024</a></li>
+<li><a class="reference internal" href="#th-september-2025">10th September 2025</a></li>
+<li><a class="reference internal" href="#earlier-releases">Earlier Releases</a></li>
 </ul>
 </li>
 </ul>
@@ -132,9 +137,9 @@
 <h1>Releases<a class="headerlink" href="#releases" title="Link to this heading">¶</a></h1>
 <p>This section provides details of releases that include changes to the data model.</p>
 <section id="th-january-2025">
-<h2>7th January 2025<a class="headerlink" href="#th-january-2025" title="Link to this heading">¶</a></h2>
-<p>Release <code class="docutils literal notranslate"><span class="pre">b0d3378476931d6c9aeb360e93415a0f</span></code></p>
-<p>On 7th January 2026 we released <code class="docutils literal notranslate"><span class="pre">v3.5.1</span></code> of the Data Model. This minor release includes the following changes.</p>
+<h2>9th January 2025<a class="headerlink" href="#th-january-2025" title="Link to this heading">¶</a></h2>
+<p>Release <code class="docutils literal notranslate"><span class="pre">35d03c05aeeb43d38d3fa0285af6c14c</span></code></p>
+<p>On 9th January 2026 we released <code class="docutils literal notranslate"><span class="pre">v3.5.1</span></code> of the Data Model. This minor release includes the following changes.</p>
 <ul class="simple">
 <li><p>added the following four <code class="docutils literal notranslate"><span class="pre">vehicleType</span></code> enumerations: <code class="docutils literal notranslate"><span class="pre">heavyGoodsVehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">motorVehicle</span></code>, <code class="docutils literal notranslate"><span class="pre">publicServiceVehicle</span></code> and <code class="docutils literal notranslate"><span class="pre">schoolBus</span></code></p></li>
 <li><p>added <code class="docutils literal notranslate"><span class="pre">miscFootpathClosure</span></code> as a new <code class="docutils literal notranslate"><span class="pre">regulationType</span></code></p></li>
@@ -259,6 +264,127 @@
 <span class="w"> </span>},
 </pre></div>
 </div>
+</section>
+<section id="th-october-2025">
+<h2>27th October 2025<a class="headerlink" href="#th-october-2025" title="Link to this heading">¶</a></h2>
+<p>On 27th October we released <code class="docutils literal notranslate"><span class="pre">v3.5.0</span></code> of the Data Model. This minor release includes the following changes:</p>
+<ul class="simple">
+<li><p>Support to provide an information update to enable the submission of planned activation start and stop dates and times, after the submission of a Made Order D-TRO. For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period, without specifying specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the timeValidity sub-model represent when the TRO and its provisions are foreseen to be activated.</p></li>
+<li><p>Modelling to support Emissions-related regulations (ability to define CO:sub:<cite>2</cite> limits, engine capacity, battery capacity, etc).</p></li>
+<li><p>Modelling to support Electric Charging Conditions (e.g. when vehicle is connected to a charger; when charging).</p></li>
+<li><p>Addition of an “Other Condition” option with in Condition Sub-model to support definition of conditions and exemptions that are not covered by the range of conditions in the existing Data Specification.</p></li>
+<li><p>Extensions of supported WKT coding of spatial coordinates beyond Point, LineString and Polygon to also support MultiPoint, MultiLineString, MultiPolygon.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">dialARide</span></code> to the vehicle usage type list.</p></li>
+<li><p>Change of the datatype of <code class="docutils literal notranslate"><span class="pre">expectedDuration</span></code> from integer to duration.</p></li>
+<li><p>Removal of support for the provision of Elementary Street Units (ESUs) from Data Specification.</p></li>
+<li><p>Addition of a National Speed Limit profile for speed limit regulations - that applies to all road types.</p></li>
+</ul>
+</section>
+<section id="th-august-2025">
+<h2>12th August 2025<a class="headerlink" href="#th-august-2025" title="Link to this heading">¶</a></h2>
+<p>On 12th August 2025 we released <code class="docutils literal notranslate"><span class="pre">v3.4.1</span></code> of the Data Model. This minor release includes the following changes:</p>
+<ul>
+<li><p>Addition of a <code class="docutils literal notranslate"><span class="pre">maxStayNoReturn</span></code> attribute for all regulations (previously limited to Permits only)</p></li>
+<li><p>Extending the “Extension Enumeration” works across all of the following enumerated list:
+* <code class="docutils literal notranslate"><span class="pre">permitType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">paylodType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">vehicleUsageType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">emissionsClassificationEuroType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">fuelType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">vehicleEquipmentType</span></code>
+* <code class="docutils literal notranslate"><span class="pre">vehicleType</span></code></p></li>
+<li><p>Bug fixes to the processing of Consultation records</p></li>
+<li><p>Additional enumerations. In response to stakeholder comments we continue to adjust various enumerated lists in the data specification:
+* Additional vehicle types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">poweredVehicleUsedByDisabledPeople</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">emergencyAndIncidentSupportVehicle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diplomaticVehicle</span></code></p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Additional fuel types:
+* <code class="docutils literal notranslate"><span class="pre">electric</span></code></p></li>
+<li><p>Additional regulation types:
+* <code class="docutils literal notranslate"><span class="pre">kerbsideRedRouteBusStopClearway</span></code>
+* <code class="docutils literal notranslate"><span class="pre">miscCycleHireParking</span></code>
+* <code class="docutils literal notranslate"><span class="pre">miscCycleParking</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="th-june-2025">
+<h2>10th June 2025<a class="headerlink" href="#th-june-2025" title="Link to this heading">¶</a></h2>
+<p>On 10th June 2025 we released <code class="docutils literal notranslate"><span class="pre">v3.4.0</span></code> of the Data Model. This minor release includes the following changes:</p>
+<ul class="simple">
+<li><p>In response to stakeholder comments, we have adopted a more widely adopted approach - the data model, data schema and service have been adapted to use camelCase for all object names and attribute names. Previously, object names were in PascalCase</p></li>
+<li><p>All /rules endpoints and the /schemas/{id} endpoint have been retired due to redundancy</p></li>
+<li><p>Additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation - see below for details</p></li>
+<li><p>In response to stakeholder comments, we have moved <code class="docutils literal notranslate"><span class="pre">maximumAccessDuration</span></code> and <code class="docutils literal notranslate"><span class="pre">minimumTimetoNextEntry</span></code> from <code class="docutils literal notranslate"><span class="pre">permitSubjectToFee</span></code> object to <code class="docutils literal notranslate"><span class="pre">permitCondition</span></code> object</p></li>
+<li><p>Use of the extension enumerations has been clarified/</p></li>
+<li><p>The ability to submit a consultation D-TRO record is now correctly supported</p></li>
+<li><p>In response to stakeholder comments, additional enumeration values to <code class="docutils literal notranslate"><span class="pre">regulationType</span></code>, <code class="docutils literal notranslate"><span class="pre">vehicleType</span></code> and <code class="docutils literal notranslate"><span class="pre">permitType</span></code></p></li>
+<li><p>A few attribute datatypes have been changed</p></li>
+<li><p>Use of headers <code class="docutils literal notranslate"><span class="pre">X-App-Id</span></code>, <code class="docutils literal notranslate"><span class="pre">X-App-Id-Override</span></code> and <code class="docutils literal notranslate"><span class="pre">X-Correlation-Id</span></code> has been clarified</p></li>
+</ul>
+</section>
+<section id="th-november-2024">
+<h2>29th November 2024<a class="headerlink" href="#th-november-2024" title="Link to this heading">¶</a></h2>
+<p>On 29th November 2024 we released <code class="docutils literal notranslate"><span class="pre">v3.3.0</span></code> of the Data Model. This minor release includes the following changes:</p>
+<ul class="simple">
+<li><p>Clarify circular referencing between <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> and <code class="docutils literal notranslate"><span class="pre">Validity</span></code> condition - the association between <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> and <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> has been removed. <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> is a child of <code class="docutils literal notranslate"><span class="pre">Condition</span></code></p></li>
+<li><p>Adding two more regulation types (<code class="docutils literal notranslate"><span class="pre">kerbsideSingleRedLines</span></code> and <code class="docutils literal notranslate"><span class="pre">kerbsideDoubleRedLines</span></code>)</p></li>
+<li><p>Allowing multiple geometries</p></li>
+<li><p>TemporaryR``egulation providing a reference to the previous <code class="docutils literal notranslate"><span class="pre">Provision</span></code> which it overrides (partially or fully)</p></li>
+<li><p>Adding the capability to model diversion routes</p></li>
+</ul>
+</section>
+<section id="th-october-2024">
+<h2>17th October 2024<a class="headerlink" href="#th-october-2024" title="Link to this heading">¶</a></h2>
+<p>On 17th October 2024 we released <code class="docutils literal notranslate"><span class="pre">v3.2.4</span></code> of the Data Model. This bugfix release includes the following changes:</p>
+<ul class="simple">
+<li><p>Addition of <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfBusway</span></code> to <code class="docutils literal notranslate"><span class="pre">RegulationType</span></code></p></li>
+<li><p>Notes to address future updates planned around <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code> and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriod</span></code></p></li>
+</ul>
+</section>
+<section id="th-september-2025">
+<h2>10th September 2025<a class="headerlink" href="#th-september-2025" title="Link to this heading">¶</a></h2>
+<p>On 10th September 2025 we released <code class="docutils literal notranslate"><span class="pre">v3.2.3</span></code> of the Data Model. This bugfix release includes the following changes:</p>
+<ul class="simple">
+<li><p>Clarification of various data types (removal of <code class="docutils literal notranslate"><span class="pre">duration</span></code> data type, replaced by integer minutes)</p></li>
+<li><p>Clarification of the use of WKT formatting for the specification of geometric spatial coordinates</p></li>
+</ul>
+</section>
+<section id="earlier-releases">
+<h2>Earlier Releases<a class="headerlink" href="#earlier-releases" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">v3.2.2</span></code> Data Model bugfix release includes the following changes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Source.traAffected</span></code> attribute data type changed to an array of int (integers)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> class made optional. Relationship from <code class="docutils literal notranslate"><span class="pre">PointGeometry</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..1]; Relationship from <code class="docutils literal notranslate"><span class="pre">LinearGeometry</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..*]; Relationship from <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> [0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> [0..*]; Three relationships from <code class="docutils literal notranslate"><span class="pre">DirectedLinear</span></code> [all 0..1] to <code class="docutils literal notranslate"><span class="pre">ExternalReference</span></code> all have lower bound multiplicity 0</p></li>
+<li><p>Classes <code class="docutils literal notranslate"><span class="pre">LicenseCharacteristics</span></code> and <code class="docutils literal notranslate"><span class="pre">AgeOfDriver</span></code> removed from <code class="docutils literal notranslate"><span class="pre">Conditions</span></code> package. Enum list <code class="docutils literal notranslate"><span class="pre">licenseCharacteristicsType</span></code> removed</p></li>
+<li><p>Two missing association added - association - <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEnd</span></code> [1] and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodSource</span></code> [0..1]; association - <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEnd</span></code> [1] and <code class="docutils literal notranslate"><span class="pre">ChangeableTimePeriodEntry</span></code> [0..*]</p></li>
+<li><p>Typo correction attribute name - <code class="docutils literal notranslate"><span class="pre">legislationCrossReference</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RegulationType</span></code> enumeration entries with prefixed ‘other’ have been replaced by ‘misc’. Enumeration entries to support TTRO regulations added <code class="docutils literal notranslate"><span class="pre">miscRoadClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscLaneClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscContraflow</span></code>, <code class="docutils literal notranslate"><span class="pre">miscFootwayClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscCycleLaneClosure</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporaryParkingRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfOneWay</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfParkingRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscSuspensionOfWeightRestriction</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporarySpeedLimit</span></code>, <code class="docutils literal notranslate"><span class="pre">miscRoadClosureCrossingPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">miscBaySuspension</span></code>, <code class="docutils literal notranslate"><span class="pre">miscTemporaryParkingBay</span></code>, <code class="docutils literal notranslate"><span class="pre">miscPROWClosure</span></code></p></li>
+<li><p>Adjust association to - <code class="docutils literal notranslate"><span class="pre">Provision</span></code> [1] to <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> [1]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Provision.provisionIndex</span></code> attribute has been removed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">regulationType</span></code> attribute only retained for <code class="docutils literal notranslate"><span class="pre">GeneralRegulation</span></code> class; removed from <code class="docutils literal notranslate"><span class="pre">Regulation</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schemeIdentifier</span></code> and <code class="docutils literal notranslate"><span class="pre">permitIdentifier</span></code> typos corrected in <code class="docutils literal notranslate"><span class="pre">PermitCondition</span></code> class</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Authority.name</span></code> attribute <code class="docutils literal notranslate"><span class="pre">ID</span></code> property removed and typed as a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Consultation.pointOfContactEmail</span></code> attribute renamed</p></li>
+<li><p>Add other enumeration entries to <code class="docutils literal notranslate"><span class="pre">PayloadType</span></code>, <code class="docutils literal notranslate"><span class="pre">VehicleEquipmentType</span></code> and <code class="docutils literal notranslate"><span class="pre">VehicleUsageType</span></code> and <code class="docutils literal notranslate"><span class="pre">VehicleType</span></code>, to support extension mechanism. <code class="docutils literal notranslate"><span class="pre">VehicleType</span></code> has been added to the <code class="docutils literal notranslate"><span class="pre">TargetEnumeratedList</span></code> Enum</p></li>
+<li><p>Add additional permissable Enum for <code class="docutils literal notranslate"><span class="pre">nationalSpeedLimitMotorway</span></code> in <code class="docutils literal notranslate"><span class="pre">SpeedLimitProfileType</span></code></p></li>
+<li><p>The Package name <code class="docutils literal notranslate"><span class="pre">Validity</span></code> and class name <code class="docutils literal notranslate"><span class="pre">OverallPeriod</span></code> have both been changed to <code class="docutils literal notranslate"><span class="pre">TimeValidity</span></code>. The package <code class="docutils literal notranslate"><span class="pre">ValidityEnumerations</span></code> has been renamed <code class="docutils literal notranslate"><span class="pre">TimeValidityEnumerations</span></code></p></li>
+<li><p>Class name for all Enum classes written in UpperCamelCase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RateLine.description</span></code> attribute data type changed to string</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">v3.2.0</span></code> Data Model minor release includes the following changes:</p>
+<ul class="simple">
+<li><p>Inclusion of a Records Management provision</p></li>
+<li><p>Ability to provide Reporting of the real-world status of on road occupancy of TROs (specifically included for TTROs/TTMOs)</p></li>
+<li><p>Development of Location Referencing</p></li>
+<li><p>Proposed approach for Standardised Terms and Definitions</p></li>
+</ul>
 </section>
 </section>
 
