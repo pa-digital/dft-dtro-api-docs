@@ -27,6 +27,4 @@ Contents
    a_tour_of_the_data_model
    what_is_a_full_dtro_record
    the_data_model_uml_class_diagrams
-   change_log
-   document_control
    releases
