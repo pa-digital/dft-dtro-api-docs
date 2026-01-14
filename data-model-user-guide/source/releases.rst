@@ -3,7 +3,7 @@ Releases
 
 This section provides details of releases that include changes to the data model.
 
-9th January 2025
+9th January 2026
 ^^^^^^^^^^^^^^^^
 
 Release ``35d03c05aeeb43d38d3fa0285af6c14c``
@@ -17,7 +17,7 @@ On 9th January 2026 we released ``v3.5.1`` of the Data Model. This minor release
 * removed duplicate ``electric`` entry from ``fuelType`` enumeration
 * added tighter validation for datetime formats, where hours, minutes and seconds are all mandatory
 * added the following four ``vehicleCharacteristics`` extension mechanisms: ``payloadType``, ``fuelType``, ``vehicleEquipment`` and ``vehicleType``
-* corrected inconsistency between the multiplicity of ``vehicleType`` in the Data Model (zero-to-many) and the schema (zero-to-one). Multiplcity of the Data Model has been updated to zero-to-many to match the schema
+* corrected inconsistency between the multiplicity of ``vehicleType`` in the Data Model (zero-to-many) and the schema (zero-to-one). Multiplicity of the Data Model has been updated to zero-to-many to match the schema
 
 27th November 2025
 ^^^^^^^^^^^^^^^^^^
