@@ -1,0 +1,15 @@
+Rule ID,Applicable Data Field,Secondary data field(s),Rule Definition,Introduced in Version,Error Message “name”,Error Message “message”,Error Message “rule” 
+1,source.currentTraOwner,,This must be an integer and numeric value of the integer must match an entry in the D-TRO user code list,3.2.2,Invalid 'Current Traffic regulation authority current owner',Current Traffic regulation authority maintaining this D-TRO (SWA-like code),Current TRA must be a valid SWA-like code and known to the D-TRO Service; the TRA code must correspond with the appropriate App-ID
+2,source.traAffected,,"This must be an array of integers, comma separated, and numeric value(s) must match an entry in the D-TRO user code list",3.2.3,Invalid 'traAffected',Traffic regulation authorities who roads are affected by this D-TRO,TRA affected must be a valid SWA-like code and known to the D-TRO Service; the TRA
+3,source.traCreator,"This must be an integer, and numeric value must match an entry in the D-TRO user code list",3.2.2,Invalid 'traCreator',Traffic regulation authority originally creating this D-TRO (SWA-like code),TRA creator must be a valid SWA-like code and known to the D-TRO Service; the TRA
+4,externalReference.lastUpdateDate,,This must be a date in the past,3.5.1,Invalid last update date,"Indicates the date the USRN reference was last updated,lastUpdateDate' must be of type 'System.DateTime', and shall not be in the future"
+5,uniqueStreetReferenceNumber.usrn,,This must be an integer representing the ID of the Unique Street Reference Number that appears in the National Street Gazetteer,3.5.1,Invalid USRN,One or more 'usrn' are invalid,usrn' value should be between 0 and 99999999 and specified as an integer (no leading zeros). This shall correspond to a value found in the National Street Gazetteer
+6,maximumWidthCharacteristic.vehicleWidth,,Where provided, it must be >0 <=6m,3.5.1,,,
+7,maximumHeightCharacteristic.vehicleHeight,,Where provided, it must be >0 <=6m,3.5.1,,,
+8,maximumLengthCharacteristic.vehicleLength,,Where provided, it must be >0 <=40m,3.5.1,,,
+9,maximumGrossWeightCharacteristic.grossVehicleWeight,,Where provided, it must be >0 <=50t,3.5.1,,,
+10,heaviestAxleWeightCharacteristic.heaviestAxleWeight,,Where provided, it must be >0 <=50t,3.5.1,,,
+11,vehicleCharacteristics.yearOfFirstRegistration,,shall be >1900 and less than or equal to current year value,3.5.1,,,
+12,timeValidity.start,timeValidity.end,end must be later than start, if present,3.5.1,,,
+13,timePeriodOfDay.startTimeOfPeriod,timePeriodOfDay.endTi meOfPeriod,End must be later than start,3.5.1,,,
+14,consultation.startOfConsultation,consultation.endOfConsultation,End date must be later than or equal to start date,3.5.1,Invalid 'startOfConsultation',Time and date of the end of the consultation period.,startOfConsultation' cannot be after 'endOfConsultation'
