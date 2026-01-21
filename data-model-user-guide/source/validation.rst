@@ -4,8 +4,8 @@ Validation
 Introduction
 ************
 Britain is on the verge of a transport revolution and the Department has recently delivered the Future of Mobility, Urban Strategy as part of the Future of Mobility Grand Challenge. The Strategy priorities providing a regulatory framework that evolves with transport technology and advocates data sharing to improve operation of the transport system.
-Traffic Regulation Orders (TROs) are the legal orders made under the Road Traffic Regulation Act 1984 which define the rules of the road network. They currently provide Traffic Regulation Authorities with powers to place permanent, temporary, or experimental restrictions on traffic for the purposes of safety or traffic management. Orders therefore provide a vital mechanism for enforcement on the road network. Digitisation of these orders and providing them as standardised data would provide many benefits, including : 
-    1. improving existing services (e.g., satnav routing);
+Traffic Regulation Orders (TROs) are the legal orders made under the Road Traffic Regulation Act 1984 which define the rules of the road network. They currently provide Traffic Regulation Authorities with powers to place permanent, temporary, or experimental restrictions on traffic for the purposes of safety or traffic management. Orders therefore provide a vital mechanism for enforcement on the road network. Digitization of these orders and providing them as standardized data would provide many benefits, including : 
+    1. improving existing services (e.g., satNav routing);
     2. providing new services; 
     3. reducing enforcement and processing costs to highway authorities;
     4. reducing congestion;
@@ -49,7 +49,6 @@ Schema validation is implemented with Newtonsoft (https://www.newtonsoft.com/jso
     :file: table_data/schema_validation.csv
     :header-rows: 1
 
-
 Semantic validation
 -------------------
 Semantic validation ensures that submitted D-TROs contain quality and representational data beyond alignment with the schema. Semantic validation is executed at the time of submission.
@@ -58,8 +57,6 @@ Semantic validation is defined through two approaches. The first is to use JSON 
 .. csv-table:: Code Side Validation
     :file: table_data/code_side_validation.csv
     :header-rows: 1
-
-
 
 Validation strategy for supporting multiple versions
 ----------------------------------------------------
