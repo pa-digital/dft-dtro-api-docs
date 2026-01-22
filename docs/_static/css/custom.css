@@ -10,7 +10,7 @@
 }
 
 :root {
-  --edge-padding: 20%;
+  --edge-padding: 5%;
 }
 
 html,
@@ -165,7 +165,6 @@ header a {
 main {
   display: flex;
   align-items: flex-start;
-  max-width: 980px;
   padding-left: var(--edge-padding);
   padding-right: var(--edge-padding);
 }
