@@ -744,3 +744,13 @@ main[class^="shared"] > .sidebar {
   align-items: center;
   width: 100%;
 }
+
+.table-sm thead,
+.table-sm tbody {
+  font-size: 1rem;
+}
+
+.table-sm tbody {
+  white-space: normal !important;
+  word-break: break-word;
+}
