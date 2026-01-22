@@ -52,7 +52,7 @@ Schema validation is implemented with Newtonsoft (https://www.newtonsoft.com/jso
 Semantic validation
 -------------------
 Semantic validation ensures that submitted D-TROs contain quality and representational data beyond alignment with the schema. Semantic validation is executed at the time of submission.
-Semantic validation is defined through two approaches. The first is to use JSON native validation where possible to validate ranges or types, through the use of schema validation (see above section). The second is to define more complex, dependent rules using code-side validation. These rules are defined using more complex rules are defined within the D-TRO service codebase.
+Semantic validation is defined through two approaches. The first is to use JSON native validation where possible to validate ranges or types, through the use of schema validation (see above section). The second is to define more complex, dependent rules using code-side validation.
 
 .. csv-table:: Code Side Validation
     :file: table_data/code_side_validation.csv
