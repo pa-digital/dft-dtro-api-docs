@@ -29,5 +29,4 @@ Contents
    validation
    the_data_model_uml_class_diagrams
    change_log
-   document_control
    releases

@@ -1,9 +1,0 @@
-Version,Author,Summary of changes,Date
-3.2.1,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,First draft produced for DfT review and comment.,04/06/2024
-3.2.2,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Initial refinements based on feedback from technical D-TRO working group,09/09/2024
-3.2.3,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Further refinements around WKT geospatial referencing and additional comments based on feedback,04/10/2024
-3.2.4,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Addition of ``miscSuspensionOfBusway`` to ``RegulationType`` and notes address futures updates planned,15/10/2024
-3.3.0,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Various changes,22/11/2024
-3.4.0,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Various changes,01/04/2025
-3.4.1,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Various changes,19/06/2025
-3.5.1,Jonathan Harrod Booth (Harrod Booth Consulting) and PA Consulting,Validation documentation, 22/06/2026
