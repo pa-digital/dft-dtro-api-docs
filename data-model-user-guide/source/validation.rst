@@ -28,14 +28,16 @@ Code side validation
 .. csv-table:: Code side Validation
     :file: table_data/code_side_validation.csv
     :header-rows: 1
+    :class: table-sm
 
 Validation strategy for supporting multiple versions
 ----------------------------------------------------
-When a D-TRO is submitted the request body must include a version of the data schema that the D-TRO is to be validated against. There is a relationship between the schema version number and a semantic rules version number document. As code-side validation rules are defined in table 8, they are assigned an `introduced in version` number showing which version they are applied to, therefore any D-TRO submitted with the corresponding schema version will be validated against that versions ruleset and any lower versions ruleset. If a D-TRO is submitted against one version of the schema and semantic rules, future updates can be made against the version of the schema it was originally submitted against. Updates can also be submitted against a higher version of the schema and rules and will be accepted against the higher version if validation is successful.
+When a D-TRO is submitted the request body must include a version of the data schema that the D-TRO is to be validated against. There is a relationship between the schema version number and a semantic rules version number document. As code-side validation rules are defined in table above, they are assigned an `introduced in version` number showing which version they are applied to, therefore any D-TRO submitted with the corresponding schema version will be validated against that versions ruleset and any lower versions ruleset. If a D-TRO is submitted against one version of the schema and semantic rules, future updates can be made against the version of the schema it was originally submitted against. Updates can also be submitted against a higher version of the schema and rules and will be accepted against the higher version if validation is successful.
 
 Assumptions, Constraints, Risks and Dependencies
 ************************************************
 .. csv-table:: Assumptions, Constraints, Risks and Dependencies
     :file: table_data/assumptions_constraints_risks_and_dependencies.csv
     :header-rows: 1
+    :class: table-sm
 
