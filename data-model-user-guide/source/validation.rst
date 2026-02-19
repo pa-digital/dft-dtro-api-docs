@@ -48,6 +48,7 @@ Schema validation is implemented with Newtonsoft (https://www.newtonsoft.com/jso
 .. csv-table:: Schema Validation
     :file: table_data/schema_validation.csv
     :header-rows: 1
+    :class: table-sm
 
 Semantic validation
 -------------------
@@ -57,6 +58,7 @@ Semantic validation is defined through two approaches. The first is to use JSON 
 .. csv-table:: Code Side Validation
     :file: table_data/code_side_validation.csv
     :header-rows: 1
+    :class: table-sm
 
 Validation strategy for supporting multiple versions
 ----------------------------------------------------

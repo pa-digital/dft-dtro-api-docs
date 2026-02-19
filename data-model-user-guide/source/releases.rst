@@ -3,6 +3,19 @@ Releases
 
 This section provides details of releases that include changes to the data model.
 
+31st March 2026
+^^^^^^^^^^^^^^^
+
+Release ``x``
+
+On 31st March 2026 we released ``v4.0.0`` of the Data Model. This major release includes the following changes.
+
+* restructured how ``condition``, ``conditions`` and ``conditionSet`` objects are represented in the Data Model. This is a breaking change and payloads will need to be updated to reflect these changes. For more information please see :ref:`condition-information`.
+* added validation logic to ``externalReference.lastUpdateDate`` to ensure date is not in the future
+* added validation logic to ``rateLine.durationStart`` and ``rateLine.durationEnd`` to ensure start date is before end date
+* added ``minimum``, ``maximum`` and ``multipleOf`` constraints to ``heaviestAxleWeight``, ``grossVehicleWeight``, ``vehicleHeight``, ``vehicleLength`` and ``vehicleWidth`` vehicle characteristics
+* enforced value of ``Europe/London`` for ``regulation.timeZone``
+
 9th January 2026
 ^^^^^^^^^^^^^^^^
 
