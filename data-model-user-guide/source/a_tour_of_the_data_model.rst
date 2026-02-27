@@ -384,6 +384,7 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
    * - ``miscCycleLane``
    * - ``miscCycleLaneClosure``
    * - ``miscCycleParking``
+   * - ``miscFootpathClosure``
    * - ``miscFootwayClosure``
    * - ``miscLaneClosure``
    * - ``miscPedestrianZone``
@@ -396,13 +397,14 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
    * - ``miscSuspensionOfWeightRestriction``
    * - ``miscTemporaryParkingBay``
    * - ``miscTemporaryParkingRestriction``
+   * - ``motorVehiclesProhibited``
    * - ``movementOrderNoOvertaking``
    * - ``movementOrderPriorityOverOncomingTraffic``
    * - ``movementOrderProhibitedAccess``
    * - ``nonOrderKerbsideBusStop``
    * - ``nonOrderKerbsidePedestrianCrossing``
    * - ``nonOrderMovementBoxJunction``
-   * - ``publicRightOfWayClosure``
+
 
 .. note::
     It is acknowledged that existing practice for defining TROs in different TRAs may use slightly different terms to describe what fundamentally are the same regulatory concept. To improve the interoperability of TRO data coming from different TRAs, mapping of locally adopted terms to the regulation types given in the list above is essential. Genuinely new, distinct regulation concepts can be provided using the ``offListRegulation`` mechanism described below - but this should be rarely used.
