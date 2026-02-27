@@ -1,0 +1,3 @@
+ID,Scenario,Impact
+01,D-TRO maintains the D-TRO user code list which is synchronised with the SWA code list where the user exists in the SWA code list. The SWA code list used is maintained externally by GeoPlace (link https://www.geoplace.co.uk/) so may change without notice,A change to the SWA code list may render previously accepted records or D-TRO user codes invalid if an update is attempted if the code changes.
+02,DfT may not be aware of the association between a TRA and a DSP,Records may be rejected if a system is not in place for TRAs to nominate DSPs to provide their data.

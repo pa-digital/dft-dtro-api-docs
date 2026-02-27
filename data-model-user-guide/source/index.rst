@@ -8,7 +8,7 @@ D-TRO Data Model Documentation
 
 .. tag::
    
-   v3.5.1
+   v4.0.0
 
 Welcome to the D-TRO Data Model Interactive User Guide. You can use the sidebar links and search controls to navigate through the guide.
 
@@ -26,7 +26,6 @@ Contents
    tro_modelling_key_concepts
    a_tour_of_the_data_model
    what_is_a_full_dtro_record
+   validation
    the_data_model_uml_class_diagrams
-   change_log
-   document_control
    releases

@@ -1219,6 +1219,8 @@ A traffic regulation authority must provide:
 
 Each relevant start and stop shall be recorded in the ``actualStartOrStop`` object.
 
+.. _condition-information:
+
 About Conditions and Exclusions
 *******************************
 
