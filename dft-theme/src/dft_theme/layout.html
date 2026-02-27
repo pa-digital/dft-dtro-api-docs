@@ -51,6 +51,19 @@
             </svg>
         </a>
       </div>
+      {% if versions %}
+        <div class="version-switcher">
+          <label for="version-select">Version:</label>
+          <select id="version-select" onchange="location = this.value;">
+            {% for ver in versions %}
+              <option value="{{ ver.url }}"
+                      {% if ver.name == current_version.name %}selected{% endif %}>
+                {{ ver.name }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+        {% endif %}
     </div>
   </header>
 
