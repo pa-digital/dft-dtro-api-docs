@@ -730,6 +730,19 @@ components:
         traName:
           type: string
           example: "Some TRA"
+        created:
+          type: string
+          format: datetime
+          example: 2025-01-01T09:00:00
+        lastUpdated:
+          type: string
+          format: datetime
+          example: 2025-01-01T09:00:00
+        lastUpversioned:
+          type: string
+          format: datetime
+          nullable: true
+          example: 2025-01-01T09:00:00
     ApplicationInactiveListDto:
       type: object
       properties:
