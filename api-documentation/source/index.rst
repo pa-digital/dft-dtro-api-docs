@@ -22,5 +22,6 @@ Contents
    quickstart
    api_documentation
    snippets
+   large_dtro_guidance
    changelog
 
