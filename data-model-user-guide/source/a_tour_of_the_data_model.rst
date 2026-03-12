@@ -1228,6 +1228,17 @@ Being able to specify conditions that apply to regulations is a key element of D
 
 The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.
 
+.. notification::
+   :heading: Changes in v4.0.0
+
+   Condition-modelling logic was changed substantially with the introduction of ``v4.0.0`` of the data model. 
+   
+   The schema for the conditions model has been updated to require that all nested ``conditions``, including nested ``conditionSet`` objects, appear inside the ``conditions`` array of their parent ``conditionSet``. This change does not remove the ability to nest ``conditionSets``; rather, it enforces a consistent, unambiguous structure for representing boolean logic. The previous model allowed ``conditionSet``, ``conditions`` and ``condition`` to appear as sibling properties, which led to ambiguity and inconsistencies in evaluation.
+
+   As part of this change, ``conditionSet`` is now represented as an object, rather than an array.
+   
+   This revised structure ensures that every logical operator has a clear list of operands, improves validation capability, and provides a clean recursive representation of logical expressions.
+
 :numref:`condition-related-objects` provides the UML class representation of the condition related objects.
 
 .. _condition-related-objects:
@@ -1285,56 +1296,57 @@ An illustrative example, in :numref:`condition-sets-and-conditions`, shows the u
     :caption: Example JSON condition set
 
     {
-        "conditionSet": [
+      "conditionSet": {
+         "operator": "and",
+         "conditions": [
             {
-                "operator": "and",
-                "conditionSet": [
-                    {
-                        "operator": "or",
-                        "condition": [
-                            {
-                                "negate": false,
-                                "vehicleCharacteristics": {
-                                    "maximumHeightCharacteristic": {
-                                        "vehicleHeight": 2.5
-                                    }
-                                }
-                            },
-                            {
-                            
-                                "negate": true,
-                                "vehicleCharacteristics": {
-                                    "vehicleType": "bus"
-                                }
-                            },
-                            {
-                                "operator": "and",
-                                "condition": [
-                                    {
-                                        "negate": false,
-                                        "vehicleCharacteristics": {
-                                            "vehicleType": "taxi"
-                                        }
-                                    },
-                                    {
-                                        "negate": false,
-                                        "vehicleCharacteristics": {
-                                            "vehicleUsage": "access"
-                                        }
-                                    }
-                                ]
-                            }
-                        ],
-                        "condition": {
-                            "timeValidity": {
-                                "start": "2024-08-22T08:00:00",
-                                "end": "2024-08-22T20:00:00",
-                            }
+               "conditionSet": {
+                  "operator": "or",
+                  "conditions": [
+                     {
+                        "negate": false,
+                        "vehicleCharacteristics": {
+                           "maximumHeightCharacteristic": {
+                              "vehicleHeight": 2.5
+                           }
                         }
-                    }
-                ]
+                     },
+                     {
+                        "negate": true,
+                        "vehicleCharacteristics": {
+                           "vehicleType": "bus"
+                        }
+                     },
+                     {
+                        "conditionSet": {
+                           "operator": "and",
+                           "conditions": [
+                              {
+                                 "negate": false,
+                                 "vehicleCharacteristics": {
+                                    "vehicleType": "taxi"
+                                 }
+                              },
+                              {
+                                 "negate": false,
+                                 "vehicleCharacteristics": {
+                                    "vehicleUsage": "access"
+                                 }
+                              }
+                           ]
+                        }
+                     },
+                     {
+                        "timeValidity": {
+                           "start": "2024-08-22T08:00:00",
+                           "end": "2024-08-22T20:00:00"
+                        }
+                     }
+                  ]
+               }
             }
-        ]
+         ]
+      }
     }
    
 .. _condition:
