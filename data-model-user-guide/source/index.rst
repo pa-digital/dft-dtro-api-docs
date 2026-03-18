@@ -29,3 +29,4 @@ Contents
    validation
    the_data_model_uml_class_diagrams
    releases
+   upversioning
