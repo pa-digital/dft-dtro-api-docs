@@ -103,7 +103,7 @@ Note the SWA-like codes follow the SWA codes published for Street Works, see Geo
 
 .. _fig6:
 
-.. figure:: /_static/images/fig6.png
+.. figure:: /_static/images/sourceActionType.png
    :alt: Enumeration values for sourceActionType
    :width: 45%
    :align: center
@@ -119,6 +119,7 @@ Permitted values include:
 * ``errorFix`` - Indicates that the current version corrects one or more errors present in an earlier version.
 * ``amendment`` - A general indicator that the current version introduces amendments to a prior version, where the specific nature of amendment (full or partial) is not further detailed.
 * ``informationUpdate`` - Indicates an update to planned start and end date/times, for a Made record – no other information changes should be made.
+* ``fullRevoke`` - Indicates that entire order is being revoked.
 
 This classification allows systems and users to track the evolution of legal traffic regulations and their current applicability in a structured and machine-readable way.
 
@@ -384,6 +385,7 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
    * - ``miscCycleLane``
    * - ``miscCycleLaneClosure``
    * - ``miscCycleParking``
+   * - ``miscFootpathClosure``
    * - ``miscFootwayClosure``
    * - ``miscLaneClosure``
    * - ``miscPedestrianZone``
@@ -396,13 +398,14 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
    * - ``miscSuspensionOfWeightRestriction``
    * - ``miscTemporaryParkingBay``
    * - ``miscTemporaryParkingRestriction``
+   * - ``motorVehiclesProhibited``
    * - ``movementOrderNoOvertaking``
    * - ``movementOrderPriorityOverOncomingTraffic``
    * - ``movementOrderProhibitedAccess``
    * - ``nonOrderKerbsideBusStop``
    * - ``nonOrderKerbsidePedestrianCrossing``
    * - ``nonOrderMovementBoxJunction``
-   * - ``publicRightOfWayClosure``
+
 
 .. note::
     It is acknowledged that existing practice for defining TROs in different TRAs may use slightly different terms to describe what fundamentally are the same regulatory concept. To improve the interoperability of TRO data coming from different TRAs, mapping of locally adopted terms to the regulation types given in the list above is essential. Genuinely new, distinct regulation concepts can be provided using the ``offListRegulation`` mechanism described below - but this should be rarely used.
@@ -950,32 +953,6 @@ For permanent TROs the end attribute may be omitted.
 
 The ``timeValidity`` model allows intermittent or variable patterns of time applicability for TRO regulations to be specified.
 
-:numref:`fig-max-stay-no-return` provides the UML class representaion of the ``maxStayNoReturn`` object.
-
-.. _fig-max-stay-no-return:
-
-.. figure:: /_static/images/max-stay-no-return.png
-   :alt: UML model representation of the maxStayNoReturn object
-   :width: 45%
-   :align: center
-
-   UML model representation of the ``maxStayNoReturn`` object
-
-The ``maxStayNoReturn`` object specifies conditions concerning the maximum duration for occupancy and the minimum time to be able to return to the same occupancy zone.
-
-* The ``maximumOccupancy`` attribute refers to the maximum occupancy duration permitted
-* The ``minimumPeriodForReturn`` attribute referes to the minimum time duration between previous occupancy and the next occupancy within a defined zone
-
-:numref:`fig37` shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).
-
-.. note::
-    It is a matter of data quality and integrity on behalf of the data supplier to ensure the dates and times and periods of applicability are complete, consistent and coherent – there is nothing in the Data Model, per se, that stops contradictory or conflicting information being specified. Data suppliers should take appropriate steps to ensure the quality of the data supplied.
-
-The overall ``timeValidity`` period defined by the ``start`` and ``end`` properties in the ``timeValidity`` object shall strictly bound (i.e. override) any periods defined in the period object.
-
-.. note::
-    Where an invalid (exception) period overlaps (intersects) a valid period the validity shall be regarded as invalid.
-
 .. _fig37:
 
 .. figure:: /_static/images/period.png
@@ -998,9 +975,36 @@ The optional attribute ``recurringPeriod``, if populated, indicates that the ``s
 
 To support use cases where the start and ends of recurring periods are defined by a changeable date (such as Good Friday, or Easter), the use of the ``changeableTimePeriod`` object and its children allow changeable dates to be defined, and these will overide the ``startOfPeriod`` and ``endOfPeriod`` attributes.
 
-:numref:`fig38` provides the UML class representation of the timePeriodOfDay object.
+:numref:`fig-max-stay-no-return` provides the UML class representaion of the ``maxStayNoReturn`` object.
 
-.. _fig38:
+.. _fig-max-stay-no-return:
+
+.. figure:: /_static/images/max-stay-no-return.png
+   :alt: UML model representation of the maxStayNoReturn object
+   :width: 45%
+   :align: center
+
+   UML model representation of the ``maxStayNoReturn`` object
+
+The ``maxStayNoReturn`` object specifies conditions concerning the maximum duration for occupancy and the minimum time to be able to return to the same occupancy zone.
+
+* The ``maximumOccupancy`` attribute refers to the maximum occupancy duration permitted
+* The ``minimumPeriodForReturn`` attribute referes to the minimum time duration between previous occupancy and the next occupancy within a defined zone
+
+:numref:`fig38` shows the UML class representation of the period object but also note the two links at the top of the figure, which allow instances of the period object to be specified either as a valid period (i.e., an included period) or an exception period (i.e., an excluded period where the regulation is not applicable).
+
+.. note::
+    It is a matter of data quality and integrity on behalf of the data supplier to ensure the dates and times and periods of applicability are complete, consistent and coherent – there is nothing in the Data Model, per se, that stops contradictory or conflicting information being specified. Data suppliers should take appropriate steps to ensure the quality of the data supplied.
+
+The overall ``timeValidity`` period defined by the ``start`` and ``end`` properties in the ``timeValidity`` object shall strictly bound (i.e. override) any periods defined in the period object.
+
+.. note::
+    Where an invalid (exception) period overlaps (intersects) a valid period the validity shall be regarded as invalid.
+
+
+:numref:`fig39` provides the UML class representation of the timePeriodOfDay object.
+
+.. _fig39:
 
 .. figure:: /_static/images/time-period-of-day.png
    :alt: UML model representation of the timePeriodOfDay object
@@ -1017,9 +1021,9 @@ This addresses the local challenge of daylight saving time changes, but should b
 
 The value of ``startTimeOfPeriod`` must fall before the value of ``endTimeOfPeriod`` within a one-day period.
 
-:numref:`fig39` provides the UML class representation of the ``dayWeekMonth`` Object. This object and its associated specialisation (``calendarWeekInMonth``, ``weekOfMonth``, and ``instanceOfDayWithinMonth``) enable identification of patterns of days, weeks and months.
+:numref:`fig40` provides the UML class representation of the ``dayWeekMonth`` Object. This object and its associated specialisation (``calendarWeekInMonth``, ``weekOfMonth``, and ``instanceOfDayWithinMonth``) enable identification of patterns of days, weeks and months.
 
-.. _fig39:
+.. _fig40:
 
 .. figure:: /_static/images/day-week-month.png
    :alt: UML model representation of the dayWeekMonth Object
@@ -1036,9 +1040,9 @@ In the example above applicableDay would be specified 5 times, with the values '
 
 * The ``applicableMonth`` attribute indicates months of the year to be included. The attribute may be used between zero and 12 times, with each attribute instance being a unique month of the year. Permitted values are 'january', 'february', etc.
 
-:numref:`fig40` provides the UML class representation of the ``calendarWeekInMonth`` Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.
+:numref:`fig41` provides the UML class representation of the ``calendarWeekInMonth`` Object. This object enables specification of calendar weeks within a month to be included. See ISO-8601 for further details. The first calendar week contains the first of the month, with the calendar week starting on a Monday. Several days of the first week of the month may occur in the previous calendar month. By construction, the last week of a preceding month can also be the first week of a subsequent month.
 
-.. _fig40:
+.. _fig41:
 
 .. figure:: /_static/images/calendar-week-in-month.png
    :alt: UML model representation of the calendarWeekInMonth object
@@ -1051,9 +1055,9 @@ The ``calendarWeekInMonth`` object has one mandatory attribute:
 
 * The ``weekInMonth`` attribute indicates the Calendar week of the month to be included. The attribute shall be used between one and 6 times, with each attribute instance being a unique Calendar week in month identifier. Permitted values are 'firstWeekofMonth', 'secondWeekOfMonth' … to 'sixthWeekOfMonth'.
 
-:numref:`fig41` provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.
+:numref:`fig42` provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.
 
-.. _fig41:
+.. _fig42:
 
 .. figure:: /_static/images/week-of-month.png
    :alt: UML model representation of the weekOfMonth object
@@ -1066,9 +1070,9 @@ The ``weekInMonth`` object has one mandatory attribute:
 
 * The ``applicableWeek`` attribute indicates the week of the month to be included. The attribute shall be used between one and 5 times, with each attribute instance being a unique week in month identifier. Permitted values are 'firstWeek', 'secondWeek' … to 'fifthWeek'.
 
-:numref:`fig42` provides the UML class representation of the ``instanceOfDayWithinMonth`` object. The ``instanceOfDayWithinMonth`` object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one ``applicableDay`` instance shall be specified in the related object ``dayWeekMonth``.
+:numref:`fig43` provides the UML class representation of the ``instanceOfDayWithinMonth`` object. The ``instanceOfDayWithinMonth`` object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one ``applicableDay`` instance shall be specified in the related object ``dayWeekMonth``.
 
-.. _fig42:
+.. _fig43:
 
 .. figure:: /_static/images/instance-of-day-within-month.png
    :alt: UML model representation of the instanceOfDayWithinMonth object
@@ -1081,9 +1085,9 @@ The ``instanceOfDayWithinMonth`` object has one mandatory attribute:
 
 * The ``applicableInstanceOfDayWithinMonth`` attribute indicates the identified day instance within the month to be included. The attribute shall be used between one and 5 times, with each attribute instance of an identified day in a month. Permitted values are 'firstInstance', 'secondInstance' … to 'fifthInstance'. This can be used to define patterns such as the second and fourth Tuesday and Friday in the month.
 
-:numref:`fig43` provides the UML class representation of the ``specialDay`` object. The ``specialDay`` object indicates the characteristics of an identified (special) day.
+:numref:`fig44` provides the UML class representation of the ``specialDay`` object. The ``specialDay`` object indicates the characteristics of an identified (special) day.
 
-.. _fig43:
+.. _fig44:
 
 .. figure:: /_static/images/special-day.png
    :alt: UML model representation of the specialDay object
@@ -1100,9 +1104,9 @@ The ``specialDay`` object has three attributes:
 
 * The optional ``publicEvent`` attribute which indicates what type of public event is associated with this ``specialDay``. Permitted values are defined in the extensive ``publicEventType`` enumeration list. Values include: 'agriculturalShow', 'airShow, 'artEvent', etc.
 
-:numref:`fig44` provides the UML class representation of the ``publicHoliday`` object. The object publicHoliday with its mandatory attribute ``publicHolidayName`` enables the public holiday to be named.
+:numref:`fig45` provides the UML class representation of the ``publicHoliday`` object. The object publicHoliday with its mandatory attribute ``publicHolidayName`` enables the public holiday to be named.
 
-.. _fig44:
+.. _fig45:
 
 .. figure:: /_static/images/public-holiday.png
    :alt: UML model representation of the publicHoliday object
@@ -1111,9 +1115,9 @@ The ``specialDay`` object has three attributes:
 
    UML model representation of the ``publicHoliday`` object
 
-:numref:`fig45` provides the UML class representation of the ``changeableTimePeriod`` object.
+:numref:`fig46` provides the UML class representation of the ``changeableTimePeriod`` object.
 
-.. _fig45:
+.. _fig46:
 
 .. figure:: /_static/images/changeable-time-period.png
    :alt: UML model representation of the changeableTimePeriod object
@@ -1122,11 +1126,11 @@ The ``specialDay`` object has three attributes:
 
    UML model representation of the ``changeableTimePeriod`` object
 
-:numref:`fig46` provides the UML class representation of the ``changeableTimePeriodStart`` object. There is a mirror image object called ``changeableTimePeriodEnd``. Both objects work in a similar manner. A 'fuzzy time' period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term 'Fuzzy Period', but rather ``changeableTimePeriod``.
+:numref:`fig47` provides the UML class representation of the ``changeableTimePeriodStart`` object. There is a mirror image object called ``changeableTimePeriodEnd``. Both objects work in a similar manner. A 'fuzzy time' period is defined in several European standards as the time period with non-precise characteristics. However, this is actually a poor definition for the concept. The actual concept is a time qualification that is not fixed and may be variable in nature. The variation may be highly predictable (such as dusk or dawn), or defined by external factors and authorities (such as school terms times in a specific locality). Hence in the D-TRO Data Specification we do not use the term 'Fuzzy Period', but rather ``changeableTimePeriod``.
 
 Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePeriodEnd`` object enable a period to be defined using a variable date time start or end or both.
 
-.. _fig46:
+.. _fig47:
 
 .. figure:: /_static/images/changeable-time-period-start.png
    :alt: UML model representation of the changeableTimePeriodStart object
@@ -1135,7 +1139,7 @@ Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePerio
 
    UML model representation of the ``changeableTimePeriodStart`` object
 
-.. _fig47:
+.. _fig48:
 
 .. figure:: /_static/images/changeable-time-period-end.png
    :alt: UML model representation of the changeableTimePeriodEnd object
@@ -1156,9 +1160,9 @@ The ``changeableTimePeriodStart`` and ``changeableTimePeriodEnd`` objects define
 
 * By use of the linkage between a ``changeableTimePeriodStart`` object and/or ``changeableTimePeriodEnd`` object with the ``specialDay`` object - i.e. indicating that the start and/or end is a special day (e.g. Easter).
 
-:numref:`fig48` provides the UML class representation of the ``changeableTimePeriodSource`` object.
+:numref:`fig49` provides the UML class representation of the ``changeableTimePeriodSource`` object.
 
-.. _fig48:
+.. _fig49:
 
 .. figure:: /_static/images/changeable-time-period-source.png
    :alt: UML model representation of the changeableTimePeriodSource object
@@ -1175,9 +1179,9 @@ The ``changeableTimePeriodSource`` object has two mandatory attributes:
 
 Each instance of ``changeableTimePeriodSource`` will have a definition to explain the nature of the source of data that provides the accurate timings. E.g. for a changeable time period of school term times, it could be a Government website which shares these dates. The ``sourceLocator`` will then provide the specific data elements from the hyperlink of the website through the URI.
 
-:numref:`fig49` provides the UML class representation of the ``changeableTimePeriodEntry`` object.
+:numref:`fig50` provides the UML class representation of the ``changeableTimePeriodEntry`` object.
 
-.. _fig49:
+.. _fig50:
 
 .. figure:: /_static/images/changeable-time-period-entry.png
    :alt: UML model representation of the changeableTimePeriodEntry object
