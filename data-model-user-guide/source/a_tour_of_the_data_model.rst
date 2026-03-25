@@ -108,7 +108,7 @@ Note the SWA-like codes follow the SWA codes published for Street Works, see Geo
    :width: 45%
    :align: center
 
-   Enumeration values for sourceActionType
+   Enumeration values for ``sourceActionType``
 
 The ``actionType`` attribute specifies the type of action being taken with respect to a specific version of a D-TRO. It is used to indicate how the current version relates to any earlier version(s) of the same Traffic Regulation Order. The data type is a string constrained to a defined set of controlled vocabulary values. This attribute is mandatory and must be provided exactly once.
 
@@ -1148,7 +1148,7 @@ Use of the ``changeableTimePeriodStart`` object and/or the ``changeableTimePerio
 
    UML model representation of the ``changeableTimePeriodEnd`` object
 
-The ``changeableTimePeriodStart`` object (and the ``changeableTimePeriodEnd`` object), shown in :numref:`fig46` and :numref:`fig47` respectively, each has one attribute:
+The ``changeableTimePeriodStart`` object (and the ``changeableTimePeriodEnd`` object), shown in :numref:`fig47` and :numref:`fig48` respectively, each has one attribute:
 
 * The mandatory ``startType`` attribute (``endType`` for the ``changeableTimePeriodEnd`` object), which indicates the type of characteristic time measure being used. Values include: ``dawn``, ``dusk``, ``holiday``, and ``external``.
 
