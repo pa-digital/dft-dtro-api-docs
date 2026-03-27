@@ -6,7 +6,7 @@ Introduction
 
 The Department for Transport (DfT) is modernising the regulatory framework for Traffic Regulation Orders (TROs) (Traffic Management Orders in London) made under the Road Traffic Regulation Act 1984.
 
-The new regulatory framework will, subject to necessary legislation coming into force, mandate that traffic authorities in England publish TROs as open data in a standardised and digital format that anyone can access, use and share. The standardised digital format will be based on the Digital TRO (D-TRO) Data Model that is described in this document - called the Data Model throughout the remainder of this document. The Data Model is intended to be a free resource for all. The Data Model is candidate in nature and may be subject to change without notification.
+The new regulatory framework will, subject to necessary legislation coming into force, mandate that traffic authorities in England publish TROs as open data in a standardised and digital format that anyone can access, use and share. The standardised digital format will be based on the Digital TRO (D-TRO) Data Model that is described in this document - called the Data Model throughout the remainder of this document. The Data Model is intended to be a free resource for all. The Data Model is subject to ongoing development and maintenance and may be subject to change without notification.
 
 Taking into account the needs arising from the UK Industrial Strategy and recognising the requirements that will emerge from the deployment of Connected and Automated Vehicles (CAVs) the Data Model provides an initial framework for how the data and information relating to TROs can be formed in the future. Availability of this Data Model, will support the move towards TROs being easily accessible to the public whether using apps or driving connected vehicles.
 
@@ -32,7 +32,7 @@ Any user feedback can be provided:
 
 The existing informational content of the existing legacy TROs in the UK is diverse, rich, and in some cases somewhat incompatible with a more limited, regularised approach defined in this specification for digitising traffic regulations.
 
-This Data Model has been the subject of ongoing development, validation and piloting. It is not expected to be error-free or covering the full spectrum of TROs - but it is expected to support the digital encoding of a significant majority of TROs.
+This Data Model is subject to ongoing development and maintenance. It is not guaranteed as error-free or covering the full spectrum of TROs - but it supports the digital encoding of a significant majority of TROs.
 
 This document is primarily intended to be read by technologists who are familiar with data modelling concepts, especially use of UML, as the contained diagrams are expressed in this notation format.
 
@@ -102,7 +102,7 @@ The Digital Traffic Regulation Order (D-TRO) service
 4. reduce congestion, and
 5. provision of the digital infrastructure for connected and automated vehicles.
 
-**THIS SERVICE WILL BE** an API-first digital platform to store and share digital TRO information, enabling the above stated benefits and modernise enforcement on the road network. It is not foreseen as a service to support the creation and initial publication of TROs.
+**THIS SERVICE IS** an API-first digital platform to store and share digital TRO information, enabling the above stated benefits and modernise enforcement on the road network. It is not foreseen as a service to support the creation and initial publication of TROs.
 
 Other Documents and Artefacts
 *****************************
@@ -117,7 +117,9 @@ This User Guidance is just part of the documents and artefacts that are availabl
 
    Documents and artefacts supporting the D-TRO Service
 
-All the latest versions of documents and other artefacts of this release are listed in GitHub at https://github.com/department-for-transport-public/D-TRO.
+User guidance documentation can be found on this portal.
+
+Other documents, examples and artefacts of this release are listed in GitHub at https://github.com/department-for-transport-public/D-TRO.
 
 Acknowledgements
 ****************
@@ -134,7 +136,7 @@ The Department for Transport do not endorse any particular companies and non-pro
 Disclaimer
 **********
 
-The Data Model is developmental and experimental in nature. It cannot be considered to be complete or error-free. It should not be viewed as stable and may be subject to alteration without notice.
+This Data Model is subject to ongoing development and maintenance. It cannot be considered to be complete or error-free. It should not be viewed as stable and may be subject to alteration without notice.
 
 Licensing
 *********

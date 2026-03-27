@@ -12,7 +12,7 @@ D-TRO Data Model Documentation
 
 Welcome to the D-TRO Data Model Interactive User Guide. You can use the sidebar links and search controls to navigate through the guide.
 
-This document is also connected to the Data Model UML diagram, which you can open from the :ref:`a-tour-of-the-data-model` section.
+This document is also connected to a navigable version of the D-TRO UML Data Model, whcih can be opened from the :ref:`a-tour-of-the-data-model` section.
 
 
 Contents

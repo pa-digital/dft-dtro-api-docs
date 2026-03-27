@@ -8,7 +8,7 @@ This section provides details of releases that include changes to the data model
 
 Release ``x``
 
-On 31st March 2026 we released ``v4.0.0`` of the Data Model. This major release includes the following changes.
+On 31st March 2026 we released ``v4.0.0`` of the Data Specification. This major release includes the following changes.
 
 * restructured how ``condition``, ``conditions`` and ``conditionSet`` objects are represented in the Data Model. This is a breaking change and payloads will need to be updated to reflect these changes. For more information please see :ref:`condition-information`.
 * added validation logic to ``externalReference.lastUpdateDate`` to ensure date is not in the future
@@ -21,7 +21,7 @@ On 31st March 2026 we released ``v4.0.0`` of the Data Model. This major release 
 
 Release ``35d03c05aeeb43d38d3fa0285af6c14c``
 
-On 9th January 2026 we released ``v3.5.1`` of the Data Model. This minor release includes the following changes.
+On 9th January 2026 we released ``v3.5.1`` of the Data Specification. This minor release includes the following changes.
 
 * added the following four ``vehicleType`` enumerations: ``heavyGoodsVehicle``, ``motorVehicle``, ``publicServiceVehicle`` and ``schoolBus``
 * added ``miscFootpathClosure`` as a new ``regulationType``
@@ -165,7 +165,7 @@ On 18th November 2025, we released a minor bugfix to address the following issue
 27th October 2025
 ^^^^^^^^^^^^^^^^^
 
-On 27th October we released ``v3.5.0`` of the Data Model. This minor release includes the following changes:
+On 27th October we released ``v3.5.0`` of the Data Specification. This minor release includes the following changes:
 
 * Support to provide an information update to enable the submission of planned activation start and stop dates and times, after the submission of a Made Order D-TRO. For periodic maintenance style TROs (which create windows of opportunity to activate the TRO on sections of the network within a defined overall period, without specifying specific activation times at the time of being Made), the “information update” D-TRO submission enables records to be updated and give times and dates in the timeValidity sub-model represent when the TRO and its provisions are foreseen to be activated.
 * Modelling to support Emissions-related regulations (ability to define CO:sub:`2` limits, engine capacity, battery capacity, etc).
@@ -180,7 +180,7 @@ On 27th October we released ``v3.5.0`` of the Data Model. This minor release inc
 12th August 2025
 ^^^^^^^^^^^^^^^^
 
-On 12th August 2025 we released ``v3.4.1`` of the Data Model. This minor release includes the following changes:
+On 12th August 2025 we released ``v3.4.1`` of the Data Specification. This minor release includes the following changes:
 
 * Addition of a ``maxStayNoReturn`` attribute for all regulations (previously limited to Permits only)
 * Extending the “Extension Enumeration” works across all of the following enumerated list:
@@ -207,7 +207,7 @@ On 12th August 2025 we released ``v3.4.1`` of the Data Model. This minor release
 10th June 2025
 ^^^^^^^^^^^^^^
 
-On 10th June 2025 we released ``v3.4.0`` of the Data Model. This minor release includes the following changes:
+On 10th June 2025 we released ``v3.4.0`` of the Data Specification. This minor release includes the following changes:
 
 * In response to stakeholder comments, we have adopted a more widely adopted approach - the data model, data schema and service have been adapted to use camelCase for all object names and attribute names. Previously, object names were in PascalCase
 * All /rules endpoints and the /schemas/{id} endpoint have been retired due to redundancy
@@ -222,7 +222,7 @@ On 10th June 2025 we released ``v3.4.0`` of the Data Model. This minor release i
 29th November 2024
 ^^^^^^^^^^^^^^^^^^
 
-On 29th November 2024 we released ``v3.3.0`` of the Data Model. This minor release includes the following changes:
+On 29th November 2024 we released ``v3.3.0`` of the Data Specification. This minor release includes the following changes:
 
 * Clarify circular referencing between ``TimeValidity`` and ``Validity`` condition - the association between ``Regulation`` and ``TimeValidity`` has been removed. ``TimeValidity`` is a child of ``Condition``
 * Adding two more regulation types (``kerbsideSingleRedLines`` and ``kerbsideDoubleRedLines``)
@@ -233,7 +233,7 @@ On 29th November 2024 we released ``v3.3.0`` of the Data Model. This minor relea
 17th October 2024
 ^^^^^^^^^^^^^^^^^
 
-On 17th October 2024 we released ``v3.2.4`` of the Data Model. This bugfix release includes the following changes:
+On 17th October 2024 we released ``v3.2.4`` of the Data Specification. This bugfix release includes the following changes:
 
 * Addition of ``miscSuspensionOfBusway`` to ``RegulationType``
 * Notes to address future updates planned around ``TimeValidity`` and ``ChangeableTimePeriod``
@@ -241,7 +241,7 @@ On 17th October 2024 we released ``v3.2.4`` of the Data Model. This bugfix relea
 10th September 2025
 ^^^^^^^^^^^^^^^^^^^
 
-On 10th September 2025 we released ``v3.2.3`` of the Data Model. This bugfix release includes the following changes:
+On 10th September 2025 we released ``v3.2.3`` of the Data Specification. This bugfix release includes the following changes:
 
 * Clarification of various data types (removal of ``duration`` data type, replaced by integer minutes)
 * Clarification of the use of WKT formatting for the specification of geometric spatial coordinates

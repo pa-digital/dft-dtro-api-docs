@@ -137,7 +137,7 @@ One of the technical aspects within the D-TRO Beta Data Specification which requ
 
 In order to make future digital TROs useable to the widest set of stakeholders and applications the provision of a coded location that is machine-interpretable and can be related to specific spatially coded locations on digital maps is considered essential.
 
-Following stakeholder comment, DfT has revised the proposed recommended approach. Given the need to reduce barriers to uptake during the D-TRO Beta project phase, no singular preferred approach is mandated. Therefore, for example, a speed limit TRO provision can be represented either by linear road centreline/reference line features (polyline) or by use of a polygon. Similarly, kerb line regulations can be represented as a polyline, a polygon or both. This approach will be reviewed during the D-TRO Beta project, taking on board feedback primarily from data consumers concerning the useability of mixed approach data.
+Following stakeholder comment, DfT has revised the proposed recommended approach. Given the need to reduce barriers to uptake during the D-TRO Beta project phase, no singular preferred approach is mandated. Therefore, for example, a speed limit TRO provision can be represented either by linear road centreline/reference line features (linestring) or by use of a polygon. Similarly, kerb line regulations can be represented as a linestring, a polygon or both. This approach will be reviewed during the D-TRO Beta project, taking on board feedback primarily from data consumers concerning the useability of mixed approach data.
 
 DfT prefers the use of polygons, but these are not mandatory.
 

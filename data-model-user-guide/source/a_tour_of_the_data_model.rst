@@ -289,7 +289,7 @@ Regulations fall into one of four categories:
 
 * ``generalRegulation`` - characterising a wider range of regulations - see later for further details.
 
-* ``offListRegulation`` - which characterises an extension mechanism for a TRA to declare a form of regulation that is not otherwise covered by the regulations specified in the first two categories.
+* ``offListRegulation`` - which characterises an extension mechanism for a TRA to declare a form of regulation that is not otherwise covered by the regulations specified in the first three categories.
 
 :numref:`fig14` provides the UML class representation of the ``regulation`` object.
 
@@ -581,7 +581,9 @@ To correctly update these records it is necessary to also submit an updated vers
 
    This means that there will two current versions of the provisions that have been cross referenced in the Consolidation D-TRO. Taking the example of Provision #1, with reference TRAxxxx-Pro-01, after the Consolidation update, current versions will be marked from D-TRO Source #1 (TRAxxxx-So-01) and D-TRO Source #4 (TRAxxxx-So-09) - the contents of these provisions will be identical. This will need to be appropriately managed by the data supplier if further updates occur.
 
-The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``. 
+The distinction between ``fullAmendment`` and ``partialAmendment`` does not change the action of the D-TRO service records management, but rather may be helpful metadata for data consumers to correctly interpret updates between records. The same records management approach applies to ``partialRevoke``. Where an entire TRO is being revoked the sourceActionType “fullRevoke” shall be used. Each child provision shall use the provisionActionType ``fullRevoke``.
+
+Where some but not all provisions of a TRO are being revoked the sourceActionType ``amendment`` shall be used.
 
 Specifying Locations for TROs
 *****************************
@@ -591,11 +593,11 @@ Specifying Locations for TROs
 
 In order to make future digital TROs useable to the widest set of stakeholders and applications the provision of a coded location that is machine-interpretable and can be related to specific spatially coded locations on digital maps is considered essential. Providing clear information on the geographic spatial location that are subject to regulations is a critical element of the D-TRO record.
 
-No single preferred approach is mandated at this current stage. Therefore, for example, a speed limit TRO provision can be represented either by linear road centreline/reference line features (polyline) or by use of a polygon. Similarly, kerb line regulations can be represented as a polyline, a polygon or both.
+No single preferred approach is mandated at this current stage. Therefore, for example, a speed limit TRO provision can be represented either by linear road centreline/reference line features (linestring) or by use of a polygon. Similarly, kerb line regulations can be represented as a linestring, a polygon or both.
 
 The following sections lay out a standardised approach for how the location data for TRO regulations should be handled. All TRO regulation measures shall be defined geospatially, using coordinates and coded in WKT (Well Known Text) format.
 
-The standardised approach covers general concepts, such as where to place spatial polygons or polyline in different circumstances, which is expected to be appropriate for most forms of TRO regulation.
+The standardised approach covers general concepts, such as where to place spatial polygons or linestring in different circumstances, which is expected to be appropriate for most forms of TRO regulation.
 
 The standardised approach addresses:
 
@@ -643,12 +645,14 @@ A ``regulatedPlace`` represents a real-world identifiable location which is wher
 
 Each ``regulatedPlace`` shall have one or, potentially more than one, specified ``geometry``.
 
-If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometry`` instance represents an alternative version (alternative representation) of the same location. They are not intended to define different real-world locations. Each instance of geometry for a ``regulatedPlace`` shall have a unique ``version`` attribute value (see :numref:`fig25` below). This enables a TRA to represent a ``regulatedPlace`` using, say, a polygon-based ``geometry`` in one version, and a polyline-based ``geometry`` in a second version.
+If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometry`` instance represents an alternative version (alternative representation) of the same location. They are not intended to define different real-world locations. Each instance of geometry for a ``regulatedPlace`` shall have a unique ``version`` attribute value (see :numref:`fig25` below). This enables a TRA to represent a ``regulatedPlace`` using, say, a polygon-based ``geometry`` in one version, and a linestring-based ``geometry`` in a second version.
 
 .. note::
     A word on coding of diversion routes; coding diversion routes uses the same sub-model structure below the ``regulatedPlace`` as is used for coding the location of the effect of a regulation. For diversion routes, meaningfully, this can be done by use of a ``linearGeometry`` object, and associated ``externalReference(s)`` (USRNs). A ``directedLinear`` object could also be used. The ``polygon`` and ``pointLocation`` objects should not be used.
 
-    It is good practice to provide start and end coordinates that relate to where the diversion route deviates from the primary route (start and end coordinates), and also provide sufficient intermediate points that the path of the diversion route through the road network is clear. Where USRNs are available, reference to all applicable USRNs forming the diversion route shall be supplied.
+    It is recommended to submit of a “full geometry” diversion route which broadly follows the centre line or reference line of road sections constituting the diversion route. 
+
+   As a minimum, submission of minimum diversion routes data should provide the start and end coordinates of the route, plus coordinates for each “road node” that represents the junction of two or more public roads. Where USRNs are available, reference to all applicable USRNs forming the diversion route shall be supplied.
 
     Similar considerations should be used when defining the geometry for directional regulations (such as no entry restrictions, one way streets, etc.). For directional regulations only ``linearGeometry`` object or ``directedLinear`` object shall be used. The ``polygon`` and ``pointLocation`` objects should not be used.
 
@@ -719,7 +723,7 @@ The four specialisations are:
 
 * ``pointGeometry`` - where the supplied geometry identifies a point location, the context of this point location is given in the ``pointGeometry`` object.
 
-* ``linearGeometry`` - where the supplied geometry identifies a polyline location, the context of this polyline (linear location) is given in the ``linearGeometry`` object.
+* ``linearGeometry`` - where the supplied geometry identifies a linestring location, the context of this linestring (linear location) is given in the ``linearGeometry`` object.
 
 * ``polygon`` - where the supplied geometry identifies polygon (zone or area) location, the context of this polygon location is given in the object.
 
@@ -804,7 +808,7 @@ The ``linearGeometry`` object has four attributes:
 
 * The mandatory ``representation`` attribute which identifies where the given linear geometry is represents a linear feature location (e.g., a stretch of kerbline) and is a representation of zonal object (e.g., the reference centreline of a length of road, where the location of applicability is the whole width of the road for the defined length).
 
-* The mandatory ``direction`` attribute indicates the direction of the applicability of the referenced regulation. Acceptable values are ``bidirectional``, ``startToEnd``, and ``endToStart``. Note this can be used to support the definition of the direction of a direction sensitive regulation on, say, a single road section (e.g. a northbound direction {from the start to the end of the sequence of vertices that exists within the polyline} on a one-way street).
+* The mandatory ``direction`` attribute indicates the direction of the applicability of the referenced regulation. Acceptable values are ``bidirectional``, ``startToEnd``, and ``endToStart``. Note this can be used to support the definition of the direction of a direction sensitive regulation on, say, a single road section (e.g. a northbound direction {from the start to the end of the sequence of vertices that exists within the linestring} on a one-way street).
 
 This is distinct from trying to define turning motions between two identifiable road sections. For a linearLocation, the mandatory link to the National Street Gazetteer shall be used to supply all relevant URSN, if they exist. For a directedLinear requires reference to a start and an end USRN (i.e. two).
 
@@ -840,7 +844,7 @@ The polygon object has one mandatory attribute:
 
 The ``directedLinear`` object has one mandatory attribute:
 
-* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a polyline. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``directedLineString`` attribute, only the use of WKT ``LINESTRING`` is permitted.
+* The ``directedLineString`` attribute specialisation is used for specifying regulations for turning movements or directional regulations. The mandatory ``directedLineString`` attribute is a free text field holding the WKT-coded representation of vertices forming a linestring. In this case, the sequence of vertices defined is considered to be significant, the first vertex being considered the start of the directedLineString; and the last vertex being considered the end of the ``directedLineString``. Intermediate additional vertices can be added if they are considered to clarify routing through the road network, between the start and the end. By default, two coordinate values per vertex are used, however and optional third attribute can be defined in instances where the vertical separation of roads and regulations need to be defined. For the ``directedLineString`` attribute, only the use of WKT ``LINESTRING`` is permitted.
 
 :numref:`fig30` provides the UML representation of ``diversionType`` object.
 
