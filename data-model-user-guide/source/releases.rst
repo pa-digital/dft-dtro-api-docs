@@ -6,7 +6,7 @@ This section provides details of releases that include changes to the data model
 31st March 2026
 ^^^^^^^^^^^^^^^
 
-Release ``x``
+Release ``a1a79faf24981bf1d346565844cc5b18``
 
 On 31st March 2026 we released ``v4.0.0`` of the Data Specification. This major release includes the following changes.
 
@@ -15,6 +15,20 @@ On 31st March 2026 we released ``v4.0.0`` of the Data Specification. This major 
 * added validation logic to ``rateLine.durationStart`` and ``rateLine.durationEnd`` to ensure start date is before end date
 * added ``minimum``, ``maximum`` and ``multipleOf`` constraints to ``heaviestAxleWeight``, ``grossVehicleWeight``, ``vehicleHeight``, ``vehicleLength`` and ``vehicleWidth`` vehicle characteristics
 * enforced value of ``Europe/London`` for ``regulation.timeZone``
+* migrated ``regulation`` from an array with a constraint of exactly one item to an ``object``
+* rationalising enumerations under ``vehicleType`` and ``vehicleUsage``. Over several release versions, in response to stakeholder requests, we have added additional ``vehicleType`` enumerations. On review, we propose that the following existing ``vehicleType`` enumerations be reclassified as ``vehicleUsage`` enumerations:
+
+  - ``emergencyServicesVehicle``
+  - ``policeVehicle``
+  - ``coastguardVehicle``
+  - ``fireServiceVehicle``
+  - ``emergencyAndIncidentSupportVehicle``
+  - ``diplomaticVehicle``
+  - ``publicServiceVehicle``
+  - ``schoolBus``
+
+* the ``maxStayNoReturn`` object was introduced as a child of ``timeValidity`` in the Data Model and schema since ``v3.4.1``. This has been moved to a child of ``period``
+* added the value ``fullRevoke`` to the ``sourceActionType`` enumeration. This is useful for representing full revocations of TROs
 
 9th January 2026
 ^^^^^^^^^^^^^^^^
