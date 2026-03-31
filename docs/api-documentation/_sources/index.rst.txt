@@ -22,4 +22,5 @@ Contents
    quickstart
    api_documentation
    snippets
+   changelog
 
