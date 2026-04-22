@@ -11,7 +11,7 @@ info:
   license:
     name: Crown copyright
     url: https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
-  version: 3.4.1
+  version: 4.0.0
 servers:
   - url: https://dtro.dft.gov.uk/v1
 paths:
@@ -282,7 +282,282 @@ paths:
         "404":
           description: Not found. Returned when a D-TRO with the given ID does not exist
         "500":
+          description: Internal server error  
+  /{dtroId}/provisions:
+    get:
+      tags:
+        - Provisions
+      summary: Retrieves all provisions for the specified D-TRO.
+      parameters:
+        - name: App-Id
+          in: header
+          description: The application unique identifier the provisions belongs to.
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: path
+          description: The source unique identifier the provisions belongs to.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Could not found any provision records.
+        '500':
+          description: Internal Server Error
+    post:
+      tags:
+        - Provisions
+      summary: Create provisions for the specified D-TRO.
+      parameters:
+        - name: App-Id
+          in: header
+          description: The unique identifier of the application.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: path
+          description: The unique identifier of the D-TRO.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: The D-TRO submission containing the provisions.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DfT.DTRO.Models.DtroDtos.DtroSubmit'
+      responses:
+        '201':
+          description: Records created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DfT.DTRO.Models.SharedResponse.GuidResponse'
+        '400':
+          description: Bad request when trying to create.
+        '404':
+          description: Could not find the source unique identifier.
+        '409':
+          description: Duplicate record when trying to create.
+        '500':
           description: Internal server error
+    put:
+      tags:
+        - Provisions
+      summary: Update provisions for the specified D-TRO.
+      parameters:
+        - name: App-Id
+          in: header
+          description: The unique identifier of the application.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: path
+          description: The unique identifier of the D-TRO.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: The D-TRO submission containing the provisions.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DfT.DTRO.Models.DtroDtos.DtroSubmit'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DfT.DTRO.Models.SharedResponse.GuidResponse'
+        '400':
+          description: Bad request when trying to update.
+        '404':
+          description: Could not find the source unique identifier.
+        '409':
+          description: Duplicate record when trying to update.
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+        - Provisions
+      summary: Delete provisions for the specific D-TRO
+      parameters:
+        - name: App-Id
+          in: header
+          description: The unique identifier of the application.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: path
+          description: The unique identifier of the D-TRO.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Successfully deleted the records.
+        '400':
+          description: Bad request when trying to delete.
+        '403':
+          description: You do not have permission to delete these records.
+        '404':
+          description: Could not find the source unique identifier.
+        '500':
+          description: Internal server error
+  /provisions/{provisionId}:
+    get:
+      tags:
+        - Provisions
+      summary: Retrieves a provision by its unique identifier for the specified D-TRO.
+      parameters:
+        - name: App-Id
+          in: header
+          description: The application unique identifier the provisions belongs to.
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: query
+          description: The source unique identifier the provisions belongs to.
+          schema:
+            type: string
+            format: uuid
+        - name: provisionId
+          in: path
+          description: The provision unique identifier.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Could not found this provision record.
+        '500':
+          description: Internal server error
+    put:
+      tags:
+        - Provisions
+      summary: Update specific provision for the specified D-TRO
+      parameters:
+        - name: App-Id
+          in: header
+          description: The unique identifier of the application.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: path
+          description: The unique identifier of the D-TRO.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: provisionId
+          in: path
+          description: The unique identifier of the provision.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: The D-TRO submission containing the provisions.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DfT.DTRO.Models.DtroDtos.DtroSubmit'
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DfT.DTRO.Models.SharedResponse.GuidResponse'
+        '400':
+          description: Bad request when trying to update.
+        '404':
+          description: Could not find the source unique identifier.
+        '409':
+          description: Duplicate record when trying to update.
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+        - Provisions
+      summary: Delete provision for the specific D-TRO
+      parameters:
+        - name: App-Id
+          in: header
+          description: The unique identifier of the application.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: query
+          description: The unique identifier of the D-TRO.
+          schema:
+            type: string
+            format: uuid
+        - name: provisionId
+          in: path
+          description: The unique identifier of the provision.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Successfully deleted the records.
+        '400':
+          description: Bad request when trying to delete.
+        '403':
+          description: You do not have permission to delete these records.
+        '404':
+          description: Could not find the source unique identifier.
+        '500':
+          description: Internal server error
+  /{dtroId}/provisions/provisionHistory:
+    get:
+      tags:
+        - Provisions
+      summary: Retrieve the provision history for existing D-TRO
+      parameters:
+        - name: dtroId
+          in: path
+          description: ID of the D-TRO to retrieve provision history for.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Could not find this provision history records.
+        '500':
+          description: Internal server error  
   /events:
     post:
       tags:
