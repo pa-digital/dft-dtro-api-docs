@@ -329,6 +329,109 @@ paths:
                     example: No events found matching the criteria
         "500":
           description: Internal server error
+  /provisions/createFromBody:
+    post:
+      tags:
+      - Provisions
+      summary: Create provisions for the specified D-TRO
+      parameters:
+      - name: App-Id
+        in: header
+        description: The application ID
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: dtroId
+        in: query
+        description: The D-TRO ID
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        description: The list of provisions to create
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.Provision'
+      responses:
+        '201':
+          description: Records created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DfT.DTRO.Models.Provisions.CreatedProvisionResponse'
+        '400':
+          description: Bad request when trying to create.
+        '403':
+          description: Forbidden exception.
+        '500':
+          description: Internal server error
+  /provisions/{provisionId}:
+    put:
+      tags:
+      - Provisions
+      summary: Update specific provision
+      parameters:
+      - name: App-Id
+        in: header
+        description: Application identifier
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: provisionId
+        in: path
+        description: Provision identifier
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        description: Provision to update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.Provision'
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: Bad request when trying to create.
+        '403':
+          description: Forbidden exception.
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+      - Provisions
+      summary: Delete specific provision
+      parameters:
+      - name: App-Id
+        in: header
+        description: Application identifier
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: provisionId
+        in: path
+        description: Provision identifier
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: No Content.
+        '400':
+          description: Bad request when trying to create.
+        '403':
+          description: Forbidden exception.
+        '500':
+          description: Internal server error
   /schemas/versions:
     get:
       tags:
