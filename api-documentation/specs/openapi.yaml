@@ -907,6 +907,16 @@ components:
           description: password
       additionalProperties: false
       description: Auth token input.
+    DfT.DTRO.Models.Dtro.ActualStartOrStop:
+      type: object
+      properties:
+        eventAt:
+          type: string
+          format: date-time
+        eventType:
+          type: string
+          nullable: true
+      additionalProperties: false
     DfT.DTRO.Models.DtroDtos.DtroResponse:
       type: object
       properties:
@@ -1147,6 +1157,26 @@ components:
           type: string
           nullable: true
       additionalProperties: false
+    DfT.DTRO.Models.Dtro.ExperimentalCessation:
+      type: object
+      properties:
+        actualDateOfCessation:
+          type: string
+          format: date-time
+        natureOfCessation:
+          type: string
+          nullable: true
+      additionalProperties: false
+    DfT.DTRO.Models.Dtro.ExperimentalVariation:
+      type: object
+      properties:
+        effectOfChange:
+          type: string
+          nullable: true
+        expectedDuration:
+          type: string
+          nullable: true
+      additionalProperties: false
     DfT.DTRO.Models.Filtering.ComparisonOperator:
       enum:
         - "="
@@ -1363,6 +1393,69 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    DfT.DTRO.Models.Dtro.Provision:
+      required:
+      - actionType
+      - orderReportingPoint
+      - provisionDescription
+      - reference
+      - regulatedPlace
+      - regulation
+      type: object
+      properties:
+        actualStartOrStop:
+          type: array
+          items:
+            $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ActualStartOrStop'
+          nullable: true
+        actionType:
+          type: string
+          nullable: true
+        comingIntoForceDate:
+          type: string
+          format: date
+          nullable: true
+        expectedOccupancyDuration:
+          type: string
+          nullable: true
+        experimentalCessation:
+          $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalCessation'
+        experimentalVariation:
+          $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalVariation'
+        orderReportingPoint:
+          type: string
+          nullable: true
+        provisionDescription:
+          type: string
+          nullable: true
+        regulatedPlace:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          nullable: true
+        regulation:
+          type: object
+          additionalProperties: {}
+          nullable: true
+        reference:
+          type: string
+          nullable: true
+      additionalProperties: false
+    DfT.DTRO.Models.Provisions.CreatedProvisionResponse:
+      type: object
+      properties:
+        dtroId:
+          type: string
+          format: uuid
+        provisionIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          nullable: true
+      additionalProperties: false
+      description: Represents a response containing a newly generated provision response
     DfT.DTRO.Models.SchemaTemplate.SchemaVersion:
       type: string
       example: 3.4.0
