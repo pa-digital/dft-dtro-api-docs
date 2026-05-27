@@ -1815,6 +1815,772 @@
       ]
     },
     {
+      "name": "provisions",
+      "item": [
+        {
+          "name": "createFromBody",
+          "item": [
+            {
+              "name": "Create provisions for the specified D-TRO",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "The application ID",
+                    "key": "App-Id",
+                    "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 8141.606318529977\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 5,\n        \"key_2\": 1806.3787440146118\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": \"string\"\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1971-07-26T16:39:08.236Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"1983-06-25T08:32:07.319Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"1973-07-02\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1973-06-25T08:33:12.289Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  },\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 5073.783628380915,\n        \"key_1\": true,\n        \"key_2\": false\n      },\n      {\n        \"key_0\": 6134.387757482064,\n        \"key_1\": \"string\",\n        \"key_2\": true\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": 9795\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1993-04-19T18:48:17.156Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"2007-11-19T09:05:04.784Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"2004-01-03\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1961-07-06T12:55:57.212Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/provisions/createFromBody?dtroId=265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "provisions",
+                    "createFromBody"
+                  ],
+                  "query": [
+                    {
+                      "description": "The D-TRO ID",
+                      "key": "dtroId",
+                      "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Records created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "The application ID",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 8141.606318529977\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 5,\n        \"key_2\": 1806.3787440146118\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": \"string\"\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1971-07-26T16:39:08.236Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"1983-06-25T08:32:07.319Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"1973-07-02\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1973-06-25T08:33:12.289Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  },\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 5073.783628380915,\n        \"key_1\": true,\n        \"key_2\": false\n      },\n      {\n        \"key_0\": 6134.387757482064,\n        \"key_1\": \"string\",\n        \"key_2\": true\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": 9795\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1993-04-19T18:48:17.156Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"2007-11-19T09:05:04.784Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"2004-01-03\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1961-07-06T12:55:57.212Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  }\n]",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/createFromBody?dtroId=265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        "createFromBody"
+                      ],
+                      "query": [
+                        {
+                          "description": "The D-TRO ID",
+                          "key": "dtroId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"dtroId\": \"c56392df-0015-49b7-0e3b-2a8552cb4af2\",\n  \"provisionIds\": [\n    \"0553fb4d-7c54-4396-e22e-5cd312269713\",\n    \"cb055327-884b-3a53-00cf-a9b90a3f6fcf\"\n  ]\n}"
+                },
+                {
+                  "name": "Bad request when trying to create.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "The application ID",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 8141.606318529977\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 5,\n        \"key_2\": 1806.3787440146118\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": \"string\"\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1971-07-26T16:39:08.236Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"1983-06-25T08:32:07.319Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"1973-07-02\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1973-06-25T08:33:12.289Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  },\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 5073.783628380915,\n        \"key_1\": true,\n        \"key_2\": false\n      },\n      {\n        \"key_0\": 6134.387757482064,\n        \"key_1\": \"string\",\n        \"key_2\": true\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": 9795\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1993-04-19T18:48:17.156Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"2007-11-19T09:05:04.784Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"2004-01-03\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1961-07-06T12:55:57.212Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  }\n]",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/createFromBody?dtroId=265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        "createFromBody"
+                      ],
+                      "query": [
+                        {
+                          "description": "The D-TRO ID",
+                          "key": "dtroId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Forbidden exception.",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "The application ID",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 8141.606318529977\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 5,\n        \"key_2\": 1806.3787440146118\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": \"string\"\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1971-07-26T16:39:08.236Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"1983-06-25T08:32:07.319Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"1973-07-02\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1973-06-25T08:33:12.289Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  },\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 5073.783628380915,\n        \"key_1\": true,\n        \"key_2\": false\n      },\n      {\n        \"key_0\": 6134.387757482064,\n        \"key_1\": \"string\",\n        \"key_2\": true\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": 9795\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1993-04-19T18:48:17.156Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"2007-11-19T09:05:04.784Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"2004-01-03\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1961-07-06T12:55:57.212Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  }\n]",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/createFromBody?dtroId=265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        "createFromBody"
+                      ],
+                      "query": [
+                        {
+                          "description": "The D-TRO ID",
+                          "key": "dtroId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "The application ID",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "[\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 8141.606318529977\n      },\n      {\n        \"key_0\": false,\n        \"key_1\": 5,\n        \"key_2\": 1806.3787440146118\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": \"string\"\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1971-07-26T16:39:08.236Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"1983-06-25T08:32:07.319Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"1973-07-02\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1973-06-25T08:33:12.289Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  },\n  {\n    \"actionType\": \"string\",\n    \"orderReportingPoint\": \"string\",\n    \"provisionDescription\": \"string\",\n    \"reference\": \"string\",\n    \"regulatedPlace\": [\n      {\n        \"key_0\": 5073.783628380915,\n        \"key_1\": true,\n        \"key_2\": false\n      },\n      {\n        \"key_0\": 6134.387757482064,\n        \"key_1\": \"string\",\n        \"key_2\": true\n      }\n    ],\n    \"regulation\": {\n      \"key_0\": 9795\n    },\n    \"actualStartOrStop\": [\n      {\n        \"eventAt\": \"1993-04-19T18:48:17.156Z\",\n        \"eventType\": \"string\"\n      },\n      {\n        \"eventAt\": \"2007-11-19T09:05:04.784Z\",\n        \"eventType\": \"string\"\n      }\n    ],\n    \"comingIntoForceDate\": \"2004-01-03\",\n    \"expectedOccupancyDuration\": \"string\",\n    \"experimentalCessation\": {\n      \"actualDateOfCessation\": \"1961-07-06T12:55:57.212Z\",\n      \"natureOfCessation\": \"string\"\n    },\n    \"experimentalVariation\": {\n      \"effectOfChange\": \"string\",\n      \"expectedDuration\": \"string\"\n    }\n  }\n]",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/createFromBody?dtroId=265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        "createFromBody"
+                      ],
+                      "query": [
+                        {
+                          "description": "The D-TRO ID",
+                          "key": "dtroId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "{provisionId}",
+          "item": [
+            {
+              "name": "Update specific provision",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "Application identifier",
+                    "key": "App-Id",
+                    "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"actionType\": \"string\",\n  \"orderReportingPoint\": \"string\",\n  \"provisionDescription\": \"string\",\n  \"reference\": \"string\",\n  \"regulatedPlace\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 1674,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 1224.4370626533052,\n      \"key_1\": true\n    }\n  ],\n  \"regulation\": {\n    \"key_0\": 5692.117618463059,\n    \"key_1\": 8682.187834914796,\n    \"key_2\": false\n  },\n  \"actualStartOrStop\": [\n    {\n      \"eventAt\": \"1980-06-22T18:53:17.785Z\",\n      \"eventType\": \"string\"\n    },\n    {\n      \"eventAt\": \"1963-02-16T08:54:12.612Z\",\n      \"eventType\": \"string\"\n    }\n  ],\n  \"comingIntoForceDate\": \"1982-09-25\",\n  \"expectedOccupancyDuration\": \"string\",\n  \"experimentalCessation\": {\n    \"actualDateOfCessation\": \"1976-08-31T00:13:23.041Z\",\n    \"natureOfCessation\": \"string\"\n  },\n  \"experimentalVariation\": {\n    \"effectOfChange\": \"string\",\n    \"expectedDuration\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/provisions/:provisionId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "provisions",
+                    ":provisionId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "provisionId",
+                      "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "description": "Provision identifier"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Ok",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"actionType\": \"string\",\n  \"orderReportingPoint\": \"string\",\n  \"provisionDescription\": \"string\",\n  \"reference\": \"string\",\n  \"regulatedPlace\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 1674,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 1224.4370626533052,\n      \"key_1\": true\n    }\n  ],\n  \"regulation\": {\n    \"key_0\": 5692.117618463059,\n    \"key_1\": 8682.187834914796,\n    \"key_2\": false\n  },\n  \"actualStartOrStop\": [\n    {\n      \"eventAt\": \"1980-06-22T18:53:17.785Z\",\n      \"eventType\": \"string\"\n    },\n    {\n      \"eventAt\": \"1963-02-16T08:54:12.612Z\",\n      \"eventType\": \"string\"\n    }\n  ],\n  \"comingIntoForceDate\": \"1982-09-25\",\n  \"expectedOccupancyDuration\": \"string\",\n  \"experimentalCessation\": {\n    \"actualDateOfCessation\": \"1976-08-31T00:13:23.041Z\",\n    \"natureOfCessation\": \"string\"\n  },\n  \"experimentalVariation\": {\n    \"effectOfChange\": \"string\",\n    \"expectedDuration\": \"string\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Bad request when trying to create.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"actionType\": \"string\",\n  \"orderReportingPoint\": \"string\",\n  \"provisionDescription\": \"string\",\n  \"reference\": \"string\",\n  \"regulatedPlace\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 1674,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 1224.4370626533052,\n      \"key_1\": true\n    }\n  ],\n  \"regulation\": {\n    \"key_0\": 5692.117618463059,\n    \"key_1\": 8682.187834914796,\n    \"key_2\": false\n  },\n  \"actualStartOrStop\": [\n    {\n      \"eventAt\": \"1980-06-22T18:53:17.785Z\",\n      \"eventType\": \"string\"\n    },\n    {\n      \"eventAt\": \"1963-02-16T08:54:12.612Z\",\n      \"eventType\": \"string\"\n    }\n  ],\n  \"comingIntoForceDate\": \"1982-09-25\",\n  \"expectedOccupancyDuration\": \"string\",\n  \"experimentalCessation\": {\n    \"actualDateOfCessation\": \"1976-08-31T00:13:23.041Z\",\n    \"natureOfCessation\": \"string\"\n  },\n  \"experimentalVariation\": {\n    \"effectOfChange\": \"string\",\n    \"expectedDuration\": \"string\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Forbidden exception.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"actionType\": \"string\",\n  \"orderReportingPoint\": \"string\",\n  \"provisionDescription\": \"string\",\n  \"reference\": \"string\",\n  \"regulatedPlace\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 1674,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 1224.4370626533052,\n      \"key_1\": true\n    }\n  ],\n  \"regulation\": {\n    \"key_0\": 5692.117618463059,\n    \"key_1\": 8682.187834914796,\n    \"key_2\": false\n  },\n  \"actualStartOrStop\": [\n    {\n      \"eventAt\": \"1980-06-22T18:53:17.785Z\",\n      \"eventType\": \"string\"\n    },\n    {\n      \"eventAt\": \"1963-02-16T08:54:12.612Z\",\n      \"eventType\": \"string\"\n    }\n  ],\n  \"comingIntoForceDate\": \"1982-09-25\",\n  \"expectedOccupancyDuration\": \"string\",\n  \"experimentalCessation\": {\n    \"actualDateOfCessation\": \"1976-08-31T00:13:23.041Z\",\n    \"natureOfCessation\": \"string\"\n  },\n  \"experimentalVariation\": {\n    \"effectOfChange\": \"string\",\n    \"expectedDuration\": \"string\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"actionType\": \"string\",\n  \"orderReportingPoint\": \"string\",\n  \"provisionDescription\": \"string\",\n  \"reference\": \"string\",\n  \"regulatedPlace\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 1674,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 1224.4370626533052,\n      \"key_1\": true\n    }\n  ],\n  \"regulation\": {\n    \"key_0\": 5692.117618463059,\n    \"key_1\": 8682.187834914796,\n    \"key_2\": false\n  },\n  \"actualStartOrStop\": [\n    {\n      \"eventAt\": \"1980-06-22T18:53:17.785Z\",\n      \"eventType\": \"string\"\n    },\n    {\n      \"eventAt\": \"1963-02-16T08:54:12.612Z\",\n      \"eventType\": \"string\"\n    }\n  ],\n  \"comingIntoForceDate\": \"1982-09-25\",\n  \"expectedOccupancyDuration\": \"string\",\n  \"experimentalCessation\": {\n    \"actualDateOfCessation\": \"1976-08-31T00:13:23.041Z\",\n    \"natureOfCessation\": \"string\"\n  },\n  \"experimentalVariation\": {\n    \"effectOfChange\": \"string\",\n    \"expectedDuration\": \"string\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            },
+            {
+              "name": "Delete specific provision",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Application identifier",
+                    "key": "App-Id",
+                    "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/provisions/:provisionId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "provisions",
+                    ":provisionId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "provisionId",
+                      "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                      "description": "Provision identifier"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "No Content.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Bad request when trying to create.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Forbidden exception.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Application identifier",
+                        "key": "App-Id",
+                        "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/provisions/:provisionId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "provisions",
+                        ":provisionId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "provisionId",
+                          "value": "265a7946-ba82-01e5-3c59-241c4e5e0b25",
+                          "description": "Provision identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "schemas",
       "item": [
         {
