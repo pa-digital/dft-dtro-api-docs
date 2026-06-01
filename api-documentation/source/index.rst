@@ -23,5 +23,6 @@ Contents
    api_documentation
    snippets
    large_dtro_guidance
+   analysing_dtro_data
    changelog
 
