@@ -14,6 +14,12 @@ Welcome to the D-TRO Data Model Interactive User Guide. You can use the sidebar 
 
 This document is also connected to the Data Model UML diagram, which you can open from the :ref:`a-tour-of-the-data-model` section.
 
+.. notification::
+   :heading: Upversioning
+
+   Starting 15th June 2026, DfT will begin the process of upversioning legacy D-TROs submitted to the D-TRO service. For more information please see the following GitHub thread.
+   
+   https://github.com/department-for-transport-public/D-TRO/issues/1#issuecomment-4668371825
 
 Contents
 ^^^^^^^^
