@@ -21,7 +21,6 @@ This document is also connected to a navigable version of the D-TRO UML Data Mod
    
    https://github.com/department-for-transport-public/D-TRO/issues/1#issuecomment-4668371825
 
-
 Contents
 ^^^^^^^^
 

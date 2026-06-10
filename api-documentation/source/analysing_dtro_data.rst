@@ -157,3 +157,4 @@ The following is the equivalent in SQL (PostgreSQL), using PostgreSQL's JSON par
         data @? '$.source.provision[*].regulation.speedLimitValueBased'
         OR data @? '$.source.provision[*].regulation.speedLimitProfileBased';
 
+In conclusion, there are many different tools and software packages you can use for analysing D-TRO data, and DfT are deliberately not presciptive about tools to use. The most appropriate tools are specific to individuals, workflows and use cases.
