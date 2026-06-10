@@ -8,7 +8,7 @@ Structure of D-TRO data
 
 The D-TRO service is an API-first service, and as such data published to and consumed from the service is in JSON format. Because of this, when working with D-TRO data, you will need to use an application that can parse and manipulate JSON data. Common examples are programming languages and databases with JSON format support.
 
-Additionally, the D-TRO service provides an endpoint for retrieving all live orders in the service. Data retrieved from this endpoint is in CSV format with the following fields:
+The D-TRO service provides an endpoint for retrieving all live orders in the service. Data retrieved from this endpoint is in CSV format. Although the data is provided as a CSV file, it is important to note that this export is **not** a normalised, flat view of D-TRO data; it still contains nested JSON which will need to be appropriately parsed, but alongside metadata like ID, schema version and created and last updated dates. The full structure of the file is as follows:
 
 * ``Id`` - unique identifier of the D-TRO
 * ``SchemaVersion`` - version of the data model the D-TRO was submitted for
@@ -18,12 +18,12 @@ Additionally, the D-TRO service provides an endpoint for retrieving all live ord
 
 This endpoint is designed as a quick way for users new to the service to download an initial export of all the data. Going forwards, you may prefer to use the API search functionality to retrieve new, updated or deleted D-TROs, rather than re-processing the whole file.
 
-Once you have the data downloaded, you are free to use any software or application to analyse the data to your needs. We suggest a couple of suitable approaches here, but there are many others you may prefer.
+Once you have the data downloaded, you are free to use any software or application to analyse the data to your needs. We suggest a couple of suitable approaches here, but there are many others you may prefer. The DfT are deliberatley not prescriptive when recommended tools and workflows, as you are free to build your own integrations and processing with whatever tools you like.
 
 Analysing D-TRO data with Python
 ================================
 
-This is the preferred in-house method for analysing D-TRO data, typically using the ``pandas`` library to read the D-TRO data export, and then parsing the data payloads to JSON for downstream analysis, as follows:
+Python contains many mature, well-supported libraries for data analysis. Here we provide an example using the ``pandas`` library to read the D-TRO data export and parse the data payloads to JSON for downstream analysis:
 
 .. code-block:: python
 
@@ -102,7 +102,7 @@ Note: you may want to consider adding indexes to columns in your tables for perf
 Analysis beyond search capabilities of the API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The D-TRO service aims to provide common functionality for the search and retrieval of D-TROs relevant to user needs. However, all user needs are different, and so it is likely that you may come across limitations in getting what you need through the API. This is the reason why the API provides the full D-TRO dataset - we provide the full dataset to allow users to build their own analytical tools and pipelines. While we endeavour to provide useful search and retrieval functionality, D-TRO is a transactional service and not an analytical one, and so there is an expectation on users to perform their own downstream processing of data if required.
+The D-TRO service aims to provide common functionality for the search and retrieval of D-TROs relevant to user needs. However, all user needs are different, and it is likely that you may come across limitations in getting what you need through the search capabilities of the API. As a result the D-TRO API provides raw D-TRO data, allowing users to build their own analytical tools and pipelines. While we endeavour to provide useful search and retrieval functionality, D-TRO is a transactional service and not an analytical one, and so there is an expectation on users to perform their own downstream processing of data if required.
 
 As an example, a common question that is asked is how to use the API to return D-TROs relating to speed limits. In its current form, speed limits are not exposed as a regulation type, and as such using the ``/search`` endpoint to filter D-TROs will not yield any results. Instead, speed limit D-TROs can be recognized by the presence of two objects linked to the D-TRO regulation object: ``speedLimitProfileBased`` and ``speedLimitValueBased``.
 
@@ -111,7 +111,7 @@ The folliowing examples show how downstream processing of D-TRO data can be used
 Python
 ******
 
-The following extract demonstrates the use of ``pandas`` to read the full D-TRO export, transformation of the data into JSON, and recursive searching of payloads to match records that contain these speed limit objects.
+Here we use ``pandas`` to read the full D-TRO export, transform the data to JSON, and recursively search the payloads to match records that contain these speed limit objects.
 
 .. code-block:: python
 
@@ -142,10 +142,12 @@ The following extract demonstrates the use of ``pandas`` to read the full D-TRO 
     # Apply function and set result to new column
     df["IsSpeedLimitDtro"] = df["Data"]/apply(is_speed_limit_dtro)
 
+Note that in this example we have written the code ourselves to recurse through the JSON and find the objects. There are many JSON-parsing libraries available in the Python ecosystem for doing operations like this, including - but not limited to - ``jsonpath-ng``, ``jmespath`` and ``glom``. 
+
 SQL
 ***
 
-The following is the equivalent in SQL (PostgreSQL).
+The following is the equivalent in SQL (PostgreSQL), using PostgreSQL's JSON parsing capabilities.
 
 .. code-block:: sql
 
