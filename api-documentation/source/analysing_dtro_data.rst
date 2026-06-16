@@ -1,7 +1,7 @@
 Preparing D-TRO data for analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Because of the nature of D-TROs, the current amount of data available in the D-TRO service is large. This means common analysis tools like spreadhseet software will typically be too memory-intensive to load the complete set of data into memory at once. This section of the documentation will suggest some alternative methods for loading and analysing the data.
+Because of the nature of D-TROs, the current amount of data available in the D-TRO service is large. Moreover, the hierarchical structure of D-TRO data and the API-first nature of the service means that JSON is the sensible data format to use to represent D-TRO data. Because of this, common software tools that are designed for analysis of flat file data, like Microsoft Excel, are not particularly suited for anaylsis of these data formats, and tend to be too memory-intensive to load the complete set of data into memory at once. This section of the documentation will suggest some alternative methods for loading and analysing the data.
 
 Structure of D-TRO data
 =======================
@@ -100,7 +100,7 @@ Many databases support JSON natively as a data type, such as PostgreSQL. The ins
 Note: you may want to consider adding indexes to columns in your tables for performance purposes.
 
 Analysis beyond search capabilities of the API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+==============================================
 
 The D-TRO service aims to provide common functionality for the search and retrieval of D-TROs relevant to user needs. However, all user needs are different, and it is likely that you may come across limitations in getting what you need through the search capabilities of the API. As a result the D-TRO API provides raw D-TRO data, allowing users to build their own analytical tools and pipelines. While we endeavour to provide useful search and retrieval functionality, D-TRO is a transactional service and not an analytical one, and so there is an expectation on users to perform their own downstream processing of data if required.
 
