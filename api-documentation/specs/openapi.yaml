@@ -332,22 +332,22 @@ paths:
   /provisions/createFromBody:
     post:
       tags:
-      - Provisions
+        - Provisions
       summary: Create provisions for the specified D-TRO
       parameters:
-      - name: App-Id
-        in: header
-        description: The application ID
-        required: true
-        schema:
-          type: string
-          format: uuid
-      - name: dtroId
-        in: query
-        description: The D-TRO ID
-        schema:
-          type: string
-          format: uuid
+        - name: App-Id
+          in: header
+          description: The application ID
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: dtroId
+          in: query
+          description: The D-TRO ID
+          schema:
+            type: string
+            format: uuid
       requestBody:
         description: The list of provisions to create
         content:
@@ -355,82 +355,82 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.Provision'
+                $ref: "#/components/schemas/DfT.DTRO.Models.Dtro.Provision"
       responses:
-        '201':
+        "201":
           description: Records created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DfT.DTRO.Models.Provisions.CreatedProvisionResponse'
-        '400':
+                $ref: "#/components/schemas/DfT.DTRO.Models.Provisions.CreatedProvisionResponse"
+        "400":
           description: Bad request when trying to create.
-        '403':
+        "403":
           description: Forbidden exception.
-        '500':
+        "500":
           description: Internal server error
   /provisions/{provisionId}:
     put:
       tags:
-      - Provisions
+        - Provisions
       summary: Update specific provision
       parameters:
-      - name: App-Id
-        in: header
-        description: Application identifier
-        required: true
-        schema:
-          type: string
-          format: uuid
-      - name: provisionId
-        in: path
-        description: Provision identifier
-        required: true
-        schema:
-          type: string
-          format: uuid
+        - name: App-Id
+          in: header
+          description: Application identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: provisionId
+          in: path
+          description: Provision identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
       requestBody:
         description: Provision to update
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.Provision'
+              $ref: "#/components/schemas/DfT.DTRO.Models.Dtro.Provision"
       responses:
-        '200':
+        "200":
           description: Ok
-        '400':
+        "400":
           description: Bad request when trying to create.
-        '403':
+        "403":
           description: Forbidden exception.
-        '500':
+        "500":
           description: Internal server error
     delete:
       tags:
-      - Provisions
+        - Provisions
       summary: Delete specific provision
       parameters:
-      - name: App-Id
-        in: header
-        description: Application identifier
-        required: true
-        schema:
-          type: string
-          format: uuid
-      - name: provisionId
-        in: path
-        description: Provision identifier
-        required: true
-        schema:
-          type: string
-          format: uuid
+        - name: App-Id
+          in: header
+          description: Application identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: provisionId
+          in: path
+          description: Provision identifier
+          required: true
+          schema:
+            type: string
+            format: uuid
       responses:
-        '204':
+        "204":
           description: No Content.
-        '400':
+        "400":
           description: Bad request when trying to create.
-        '403':
+        "403":
           description: Forbidden exception.
-        '500':
+        "500":
           description: Internal server error
   /schemas/versions:
     get:
@@ -1260,6 +1260,16 @@ components:
           $ref: "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
         regulationEnd:
           $ref: "#/components/schemas/DfT.DTRO.Models.Filtering.ValueCondition"
+        geometry:
+          type: string
+          example: "POLYGON((530000 181000, 531000 181000, 531000 182000, 530000 182000, 530000 181000))"
+          nullable: true
+          description: >
+            WKT-BNG representation of a geometry used to filter D-TROs.
+            Matches D-TROs that are contained within the provided geometry.
+
+            An optional SRID prefix (e.g. `SRID=27700;`) may be included, but it will be ignored.
+            The service always assumes SRID 27700 (BNG), regardless of any supplied CRS.
       additionalProperties: false
     DfT.DTRO.Models.Filtering.ValueCondition:
       required:
@@ -1395,18 +1405,18 @@ components:
       additionalProperties: false
     DfT.DTRO.Models.Dtro.Provision:
       required:
-      - actionType
-      - orderReportingPoint
-      - provisionDescription
-      - reference
-      - regulatedPlace
-      - regulation
+        - actionType
+        - orderReportingPoint
+        - provisionDescription
+        - reference
+        - regulatedPlace
+        - regulation
       type: object
       properties:
         actualStartOrStop:
           type: array
           items:
-            $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ActualStartOrStop'
+            $ref: "#/components/schemas/DfT.DTRO.Models.Dtro.ActualStartOrStop"
           nullable: true
         actionType:
           type: string
@@ -1419,9 +1429,9 @@ components:
           type: string
           nullable: true
         experimentalCessation:
-          $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalCessation'
+          $ref: "#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalCessation"
         experimentalVariation:
-          $ref: '#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalVariation'
+          $ref: "#/components/schemas/DfT.DTRO.Models.Dtro.ExperimentalVariation"
         orderReportingPoint:
           type: string
           nullable: true
