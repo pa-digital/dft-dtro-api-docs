@@ -2,3 +2,4 @@
 docs/source/generated/
 docs/source/index.rst
 *__pycache__/
+docs/output/

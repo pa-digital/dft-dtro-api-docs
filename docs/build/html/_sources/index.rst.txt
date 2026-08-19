@@ -1,10 +1,8 @@
-Digital Traffic Regulation Orders
-=================================
+D-TRO Documentation
+===================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Topics:
-   :glob:
-   :hidden:
 
-   generated/*
+
+   generated/api_quickstart

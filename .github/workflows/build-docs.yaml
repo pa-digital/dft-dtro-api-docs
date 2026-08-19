@@ -3,6 +3,14 @@ name: Build Documentation
 on:
   workflow_dispatch:
 
+  push:
+    paths:
+      - 'to-build/**'
+      - 'content/**'
+      - 'docs/**'
+      - 'scripts/**'
+      - 'requirements.txt'
+
 jobs:
   build:
     runs-on: ubuntu-latest
