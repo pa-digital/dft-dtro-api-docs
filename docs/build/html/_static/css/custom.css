@@ -1,0 +1,66 @@
+html, body {
+    font-family: "GDS Transport", Arial, sans-serif;
+    margin: 0;
+}
+
+div.body > section > h1.govuk-heading-xl {
+  display: none !important;
+}
+
+.sphinx-tabs-tab {
+  background: #f3f2f1;
+  border: none;
+  padding: 18px;
+  margin-bottom: 0;
+  font-family: "GDS Transport", Arial, sans-serif;
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+  border-bottom: 3px solid #1d70b8;
+  background: white;
+}
+
+.sphinx-tabs-panel {
+  border: 1px solid #b1b4b6;
+  padding: 15px;
+}
+
+aside .caption {
+  margin: 0;
+}
+
+.headerlink {
+  display: none !important;
+}
+
+aside ul {
+  padding-left: 0;
+  font-size: 16px;
+  list-style: none;
+  line-height: 2;
+}
+
+aside li {
+  list-style: none;
+  padding-left: 32px;
+}
+
+aside a {
+  color: black;
+  text-decoration: none
+}
+
+aside > ul > li {
+  padding-left: 0;
+}
+
+aside > ul > li li {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+figure.align-center figcaption {
+    text-align: center;
+    font-size: 1.1875rem;
+    margin-bottom: 48px;
+}

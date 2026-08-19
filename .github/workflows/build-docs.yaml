@@ -1,0 +1,38 @@
+name: Build Documentation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Make scripts executable
+        run: |
+          chmod +x scripts/build.sh
+          chmod +x scripts/inline_assets.sh
+
+      - name: Build documentation
+        run: |
+          ./scripts/build.sh
+
+      - name: Upload standalone HTML files
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-html-docs
+          path: docs/output/
+          if-no-files-found: error

@@ -2,22 +2,25 @@
 
 set -euo pipefail
 
-if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 <documentation-path>" >&2
-    exit 1
-fi
-
-DOCS_ROOT="$1"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 IGNORE_HEADER=false
 IGNORE_FOOTER=false
 
+DOCS_ROOT="$ROOT_DIR/docs"
+
 SRC="$DOCS_ROOT/build/html"
-INPUT_DIR_NAME="$(basename "$DOCS_ROOT")"
-OUT="output/$INPUT_DIR_NAME"
+OUT="$DOCS_ROOT/output"
+
 CSS_DIR="$DOCS_ROOT/source/_static/css"
 
-ASSET_SEARCH_ROOT="$DOCS_ROOT"
+ASSET_SEARCH_ROOT="$SRC"
+
+echo "Source HTML: $SRC"
+echo "Output directory: $OUT"
+echo "CSS directory: $CSS_DIR"
+echo "Asset search root: $ASSET_SEARCH_ROOT"
 
 mkdir -p "$OUT"
 
@@ -557,19 +560,23 @@ export ASSET_SEARCH_ROOT
 # Process all HTML files, preserving relative paths.
 ###############################################################################
 
-find "$SRC" -type f -name '*.html' \
+find "$SRC" \
+    -type f \
+    -name '*.html' \
     ! -name 'index.html' \
     ! -name 'genindex.html' \
     ! -name 'search.html' \
+    ! -path '*/_sources/*' \
+    ! -path '*/_static/*' \
     -print0 | while IFS= read -r -d '' html; do
-    rel="${html#$SRC/}"
-    out="$OUT/$rel"
 
-    mkdir -p "$(dirname "$out")"
+    filename="$(basename "$html")"
+    out="$OUT/$filename"
 
     perl "$PERL_SCRIPT" "$html" > "$out"
 
-    echo "Processed: $rel"
+    echo "Processed: $filename"
+
 done
 
 echo "Done. Output written to: $OUT"

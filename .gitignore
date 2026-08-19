@@ -1,1 +1,4 @@
 .venv/
+docs/source/generated/
+docs/source/index.rst
+*__pycache__/

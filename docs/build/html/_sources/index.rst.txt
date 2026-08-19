@@ -4,6 +4,7 @@ Digital Traffic Regulation Orders
 .. toctree::
    :maxdepth: 2
    :caption: Topics:
+   :glob:
    :hidden:
 
-{{ TOC }}
+   generated/*
