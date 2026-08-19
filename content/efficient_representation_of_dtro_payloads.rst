@@ -116,11 +116,11 @@ Consider the following geometries. The left-hand image represents the original g
     <div style="display:flex; gap:4px;">
         <div style="flex:1; text-align:center;">
             <p>Original geometry</p>
-            <img src="/_static/images/polygon1.png" style="width: 75%; margin: 0" />
+            <img src="images/polygon1.png" style="width: 75%; margin: 0" />
         </div>
         <div style="flex:1; text-align:center;">
             <p>Simplified geometry</p>
-            <img src="/_static/images/polygon2.png" style="width: 75%; margin: 0" />
+            <img src="images/polygon2.png" style="width: 75%; margin: 0" />
         </div>
     </div>
 
@@ -138,11 +138,11 @@ Consider the same example geometry as above, which closely follows the road netw
     <div style="display:flex; gap:4px;">
         <div style="flex:1; text-align:center;">
             <p>Original polygon representation</p>
-            <img src="/_static/images/polygon1.png" style="width: 75%; margin: 0" />
+            <img src="images/polygon1.png" style="width: 75%; margin: 0" />
         </div>
         <div style="flex:1; text-align:center;">
             <p>Linestring representation</p>
-            <img src="/_static/images/linestring.png" style="width: 75%; margin: 0" />
+            <img src="images/linestring.png" style="width: 75%; margin: 0" />
         </div>
     </div>
 

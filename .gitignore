@@ -1,5 +1,6 @@
 .venv/
 docs/source/generated/
 docs/source/index.rst
+docs/build/
 *__pycache__/
 docs/output/
