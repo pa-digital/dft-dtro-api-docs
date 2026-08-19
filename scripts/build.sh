@@ -22,7 +22,7 @@ shopt -u nullglob
 
 if (( ${#markers[@]} == 0 )); then
     echo "No marker files found in to-build/"
-    exit 1
+    exit 0
 fi
 
 for marker in "${markers[@]}"; do
