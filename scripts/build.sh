@@ -1,23 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -e
+rm -rf docs/source/_static/images
+mkdir -p docs/source/_static/images
 
-docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=api-documentation" -q) bash -c "redocly build-docs specs/openapi.yaml -o source/_static/redoc.html && make html"
-docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=data-model-user-guide" -q) bash -c "cd /workspace/data-model-user-guide && make html"
-docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=user-portal-documentation" -q) bash -c "make html"
-docker exec -e PR_NUMBER=$PR_NUMBER $(docker ps --filter="name=landing" -q) bash -c "make html"
+cp content/*.rst docs/source
+cp -r content/images docs/source/_static/images/
 
-mkdir -p docs/api-documentation
-mkdir -p docs/data-model-user-guide
-mkdir -p docs/user-portal-documentation
-mkdir -p docs/api-documentation
+python3 ./scripts/generate_index.py
+sphinx-build -b html docs/source docs/build/html
 
-cp -r api-documentation/build/html/* docs/api-documentation
-cp -r api-documentation/collections/dtro-integration.postman_collection.json docs/api-documentation/_static/dtro-integration.postman_collection.json
-cp -r api-documentation/collections/dtro-production.postman_collection.json docs/api-documentation/_static/dtro-production.postman_collection.json
-cp -r data-model-user-guide/build/* docs/data-model-user-guide
-cp -r data-model-user-guide/source/Data\ Model\ HTML\ Guide docs/data-model-user-guide
-cp -r user-portal-documentation/build/html/* docs/user-portal-documentation
-cp -a portal-access/build/html/* docs
-cp -a docs/api-documentation/shared/*.html docs
-cp -r docs/api-documentation/_static/tabs.* docs/_static/
+mkdir -p build/output
+
+
