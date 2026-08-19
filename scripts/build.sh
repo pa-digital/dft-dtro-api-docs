@@ -51,7 +51,6 @@ D-TRO Documentation
 
 .. toctree::
    :maxdepth: 2
-
 $TOC
 EOF
 
