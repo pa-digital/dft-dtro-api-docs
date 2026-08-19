@@ -43,4 +43,4 @@ jobs:
         with:
           name: standalone-html-docs
           path: docs/output/
-          if-no-files-found: error
+          if-no-files-found: ignore
