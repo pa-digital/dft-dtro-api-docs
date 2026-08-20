@@ -6,11 +6,11 @@ DfT have recently decided to bring all the D-TRO service documentation sources i
 
 All documentation is held under `content/`. Documentation should be written as ReStructured Text. Images should be placed under `content/images/`.
 
-Each ReStructured Text file is compiled and output into its own HTML file.
+Each ReStructured Text file is compiled and output as its own HTML file.
 
 ### Building
 
-In order to build docs, thew following must happen:
+In order to build the docs, the following must happen:
 
 1. A document must be added to the `content` directory
 2. A blank marker file with the same name as the document must be added to the `to-build` directory
@@ -24,11 +24,11 @@ For example, if adding a new 'Getting Started' document:
 
 Each push to the repository will check for any changes in the following directories:
 
-* 'to-build/**'
-* 'content/**'
-* 'docs/**'
-* 'scripts/**'
-* 'requirements.txt'
+* `to-build/**`
+* `content/**`
+* `docs/**`
+* `scripts/**`
+* `requirements.txt`
 
 If changes are detected, the pipeline will start a documentation build.
 
