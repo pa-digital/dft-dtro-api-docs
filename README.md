@@ -22,7 +22,7 @@ For example, if adding a new 'Getting Started' document:
 2. Add a blank file named `getting_started` in `to-build/`
 3. Push the changes to the remote repository
 
-Each push to the repository will check for any changes in the following directories:
+Each push to the repository will check for changes to the following files and directories:
 
 * `to-build/**`
 * `content/**`
