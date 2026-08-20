@@ -1,6 +1,6 @@
 # D-TRO Service API Documentation
 
-DfT have recently decided to bring all the D-TRO service documentation sources into Service Now, and migrate away from where they are currently hosted, on GitHub Pages. This repository contains the versioned public-facing documentation, as well as a pipeline for building the docs as static HTML for import into Service Now.
+The D-TRO service documentation is being migrated to Service Now. This repository contains the versioned public-facing documentation, as well as a pipeline for building the docs as static HTML for import into Service Now.
 
 ### Documentation Content
 
