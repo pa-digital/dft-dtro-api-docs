@@ -1,4 +1,4 @@
-# D-TRO Service API Documentation
+# D-TRO Service Documentation
 
 The D-TRO service documentation is being migrated to Service Now. This repository contains the versioned public-facing documentation, as well as a pipeline for building the docs as static HTML for import into Service Now.
 
