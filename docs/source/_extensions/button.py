@@ -13,7 +13,7 @@ class ButtonDirective(Directive):
 
     def run(self):
         text = self.options["text"]
-        url = self.options["url"]
+        url = self.options.get("url") or ""
 
         download_attr = " download" if "download" in self.options else ""
 
