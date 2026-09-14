@@ -1,0 +1,4 @@
+Why has it taken so long for this to come about? What were the barriers that needed to be overcome?
+===================================================================================================
+
+The story of D-TRO essentially begins in 2018 with the publication of the Local Transport Data Discovery (aka The North Highland Report) which set out the DfT’s digital vision for the modernisation of transport-related services. This was followed by TRO Discovery (2019), TRO Policy Alpha (2020), TRO Data Model Alpha (2021) and the D-TRO Alpha (2023). The DfT decided to adopt an Agile approach to developing what needed to be done to make digital TROs a reality and the D-TRO Beta is the logical conclusion of that process. We acknowledge that it has taken some time to get this far making real progress to bring the project to life.

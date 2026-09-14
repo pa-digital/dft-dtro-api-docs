@@ -1,0 +1,4 @@
+Does D-TRO support any process of allowing to update those 'invalid' geometries in the data? I'm talking as future data consumer and we would love to be able to inform TRO creators about any data issues
+==========================================================================================================================================================================================================
+
+DfT have taken a strategic decision to provide a permissive approach to support data providers to record the geometries relating to D-TRO records in a number of ways. At present, the data specification is permissive of a mix of different types of geometry. Best practice guidance is being developed. It is possibly that more restrictive validation, perhaps differentiated by regulation type, may be introduced in future. The responsibility for the provision of accurate data remains with the data provider.

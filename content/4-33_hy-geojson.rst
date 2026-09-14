@@ -1,0 +1,4 @@
+hy GeoJSON
+==========
+
+Following the HM Government guidance on various topics relating to choice of encoding standards and use of coordinate reference systems for UK-centred, road-oriented data sets, the options available become limited. There is government guidance that says if this is just spatial data set that is primarily  on Great Britain, then you should be using British National Grid as the baseline. Although it is possible to use British National Grid within GeoJSON, the 2016 standard edition recommends use of WGS84 as a coordinate reference system (alternate coordinate reference systems should only be used by “closed communities” – it would be difficult to argue D-TRO data suppliers and data consumers would meet this criteria). We have discussed this with the Geospatial Commission. We are keeping our options open and it may be possible that in the future the D-TRO Service will be configured to allow for the use of GeoJSON.

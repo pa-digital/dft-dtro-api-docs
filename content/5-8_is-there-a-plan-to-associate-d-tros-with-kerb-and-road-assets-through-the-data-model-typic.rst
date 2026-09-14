@@ -1,0 +1,4 @@
+Is there a plan to associate D-TROs with kerb and road assets through the data model? Typically, signage is managed in separate asset management systems, even though they are interdependent. Many authorities are keen on integrating their asset management systems with their new D-TRO management systems, so we are wondering if the data model with facilitate that.
+===========================================================================================================================================================================================================================================================================================================================================================================
+
+DfT have considered linking TRO records to road infrastructure. This does not form part of the MVP for Beta but may be considered in the future road map of developments.

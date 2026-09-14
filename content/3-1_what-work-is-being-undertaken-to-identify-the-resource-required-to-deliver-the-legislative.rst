@@ -1,0 +1,4 @@
+What work is being undertaken to identify the resource required to deliver the legislative requirements and is any funding available for publishing digital TROs?
+=================================================================================================================================================================
+
+Our stakeholder engagement approach in Beta continues to include assessing the level of maturity amongst TRAs via surveys and targeted user research involving all the different types of TRA (e.g. County Council, Unitary, Combined Authority, Metropolitan, London, Non-Metropolitan District). We have engaged with TRAs that are without a Digital Solution Provider to understand the blockers. We appreciate that funding is a problem for some TRAs but by employing the above approach we hope to make the onboarding to D-TRO as smooth and painless as possible.
