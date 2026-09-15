@@ -236,123 +236,6 @@ open my $css_fh, "<", $css_file or die "Cannot open CSS file: $css_file\n";
 my $css = do { local $/; <$css_fh> };
 close $css_fh;
 
-# Prefix ordinary CSS selectors with the ServiceNow import root. This raises
-# their specificity and prevents the imported rules from styling the rest of
-# ServiceNow. Nested conditional at-rules are handled recursively; keyframes,
-# font-face and similar declaration blocks are left unchanged.
-sub split_selector_list {
-    my ($text) = @_;
-    my @parts;
-    my $start = 0;
-    my ($paren, $bracket) = (0, 0);
-    my ($quote, $escaped) = ("", 0);
-    for (my $i = 0; $i < length($text); $i++) {
-        my $c = substr($text, $i, 1);
-        if ($quote ne "") {
-            if ($escaped) { $escaped = 0; next; }
-            if ($c eq "\\") { $escaped = 1; next; }
-            if ($c eq $quote) { $quote = ""; }
-            next;
-        }
-        if ($c eq '"' || $c eq "'") { $quote = $c; next; }
-        if ($c eq '(') { $paren++; next; }
-        if ($c eq ')') { $paren-- if $paren; next; }
-        if ($c eq '[') { $bracket++; next; }
-        if ($c eq ']') { $bracket-- if $bracket; next; }
-        if ($c eq ',' && !$paren && !$bracket) {
-            push @parts, substr($text, $start, $i - $start);
-            $start = $i + 1;
-        }
-    }
-    push @parts, substr($text, $start);
-    return @parts;
-}
-
-sub prefix_selector_prelude {
-    my ($prelude, $scope) = @_;
-    # Preserve whitespace and comments that occur between rules. They are not
-    # part of the selector and must remain before the prefixed selector.
-    my $leading = "";
-    my $core = $prelude;
-    while ($core =~ s{^(\s+|/\*.*?\*/)}{}s) { $leading .= $1; }
-    my $trailing = $core =~ /(\s*)$/s ? $1 : "";
-    $core =~ s/\s+$//;
-    my @selectors = split_selector_list($core);
-    for my $selector (@selectors) {
-        $selector =~ s/^\s+|\s+$//g;
-        if ($selector =~ /^(?:html|body|:root)(?=\b|[.:#\[])/i) {
-            $selector =~ s/^(?:html|body|:root)/$scope/i;
-        }
-        elsif ($selector eq '*') {
-            $selector = "$scope *";
-        }
-        elsif ($selector !~ /^\Q$scope\E(?:\b|\s|[.:#\[])/) {
-            $selector = "$scope $selector";
-        }
-    }
-    return $leading . join(", ", @selectors) . $trailing;
-}
-
-sub scope_css_block {
-    my ($text, $scope, $inside_keyframes) = @_;
-    my $out = "";
-    my $pos = 0;
-    while ($pos < length($text)) {
-        my $open = index($text, '{', $pos);
-        if ($open < 0) { $out .= substr($text, $pos); last; }
-
-        my $prelude = substr($text, $pos, $open - $pos);
-        my $depth = 1;
-        my ($quote, $escaped, $comment) = ("", 0, 0);
-        my $i = $open + 1;
-        for (; $i < length($text) && $depth; $i++) {
-            my $c = substr($text, $i, 1);
-            my $n = $i + 1 < length($text) ? substr($text, $i + 1, 1) : "";
-            if ($comment) {
-                if ($c eq '*' && $n eq '/') { $comment = 0; $i++; }
-                next;
-            }
-            if ($quote ne "") {
-                if ($escaped) { $escaped = 0; next; }
-                if ($c eq "\\") { $escaped = 1; next; }
-                if ($c eq $quote) { $quote = ""; }
-                next;
-            }
-            if ($c eq '/' && $n eq '*') { $comment = 1; $i++; next; }
-            if ($c eq '"' || $c eq "'") { $quote = $c; next; }
-            $depth++ if $c eq '{';
-            $depth-- if $c eq '}';
-        }
-        if ($depth) { $out .= substr($text, $pos); last; }
-
-        my $body = substr($text, $open + 1, $i - $open - 2);
-        my $trim = $prelude; $trim =~ s/^\s+//;
-        if ($trim =~ /^@(media|supports|layer|container|document)\b/i) {
-            $out .= $prelude . '{' . scope_css_block($body, $scope, 0) . '}';
-        }
-        elsif ($trim =~ /^@(?:-[\w]+-)?keyframes\b/i) {
-            $out .= $prelude . '{' . $body . '}';
-        }
-        elsif ($trim =~ /^@/ || $inside_keyframes) {
-            $out .= $prelude . '{' . $body . '}';
-        }
-        else {
-            $out .= prefix_selector_prelude($prelude, $scope) . '{' . $body . '}';
-        }
-        $pos = $i;
-    }
-    return $out;
-}
-
-# Strip the outer style element, scope the CSS, then put it back.
-$css =~ s/^\s*<style>\s*//i;
-$css =~ s/\s*<\/style>\s*$//i;
-$css = scope_css_block($css, ".dtro-doc", 0);
-$css .= qq{\n.dtro-doc { margin: 0; padding: 0; }\n};
-$css .= qq{.dtro-doc, .dtro-doc * { box-sizing: border-box; }\n};
-$css .= qq{.dtro-doc .container { margin-inline-start: 0; margin-inline-end: 0; }\n};
-$css = "<style>\n" . $css . "\n</style>";
-
 my $input_file = $ARGV[0];
 my $input_dir = dirname(abs_path($input_file));
 
@@ -660,6 +543,11 @@ if ($html =~ m{<html\b[^>]*\blang\s*=\s*["']([^"']+)["']}i) {
     $lang = $1;
 }
 
+my $title = "Document";
+if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
+    $title = $1;
+}
+
 my $main = $html;
 if ($html =~ m{
     <div\b
@@ -698,11 +586,10 @@ print qq{<!DOCTYPE html>\n};
 print qq{<html lang="$lang">\n<head>\n};
 print qq{  <meta charset="utf-8">\n};
 print qq{  <meta name="viewport" content="width=device-width, initial-scale=1">\n};
+print qq{  <title>$title</title>\n};
 print $css, "\n";
 print qq{</head>\n<body>\n};
-print qq{<div class="dtro-doc">\n};
 print $main, "\n";
-print qq{</div>\n};
 print $tabs_js, "\n" if $tabs_js ne "";
 print qq{</body>\n</html>\n};
 PERL
