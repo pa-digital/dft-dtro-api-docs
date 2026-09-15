@@ -550,15 +550,6 @@ if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
 
 my $main = $html;
 
-# Remove the first Sphinx page title.
-$main =~ s{
-    <h1\b
-    [^>]*class\s*=\s*["'][^"']*\bgovuk-heading-xl\b[^"']*["']
-    [^>]*>
-    .*?
-    </h1>
-}{}isx;
-
 if ($html =~ m{
     <div\b
     (?=[^>]*\bclass\s*=\s*["'][^"']*\bbody\b[^"']*["'])
@@ -575,6 +566,13 @@ else {
         $main = $1;
     }
 }
+
+# Remove the page title (first H1 in the extracted content)
+$main =~ s{
+    <h1\b[^>]*>
+    .*?
+    </h1>
+}{}is;
 
 # Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
 my @tabs_scripts;
