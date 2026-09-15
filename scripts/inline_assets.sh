@@ -407,21 +407,8 @@ sub remove_blocks_with_class {
     return $html;
 }
 
-# Remove existing stylesheet links.
-$html =~ s{
-    <link\b
-    (?=[^>]*\bstylesheet\b)
-    [^>]*>
-    \s*
-}{}gix;
-
-# Inject combined CSS before </head>. If </head> is missing, prepend it.
-if ($html =~ m{</head>}i) {
-    $html =~ s{</head>}{$css\n</head>}i;
-}
-else {
-    $html = $css . "\n" . $html;
-}
+# The final ServiceNow document is reconstructed below, so the original
+# Sphinx head is intentionally discarded.
 
 if (($ENV{"IGNORE_HEADER"} // "") eq "true") {
     $html = remove_blocks_with_class($html, "govuk-header");
@@ -547,7 +534,64 @@ $html =~ s{
     }
 }gexis;
 
-print $html;
+###############################################################################
+# Rebuild a minimal standalone document for ServiceNow.
+# Keep the content, combined inline CSS, inlined images, and sphinx-tabs JS.
+###############################################################################
+my $lang = "en";
+if ($html =~ m{<html\b[^>]*\blang\s*=\s*["']([^"']+)["']}i) {
+    $lang = $1;
+}
+
+my $title = "Document";
+if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
+    $title = $1;
+}
+
+my $main = $html;
+if ($html =~ m{
+    <div\b
+    (?=[^>]*\bclass\s*=\s*["'][^"']*\bbody\b[^"']*["'])
+    (?=[^>]*\brole\s*=\s*["']main["'])
+    [^>]*>
+    (.*?)
+    <div\b[^>]*\bclass\s*=\s*["'][^"']*\bclearer\b[^"']*["'][^>]*>\s*</div>
+}isx) {
+    $main = $1;
+}
+else {
+    warn "Could not isolate the Sphinx main-content div in $input_file; using body contents\n";
+    if ($html =~ m{<body\b[^>]*>(.*?)</body>}is) {
+        $main = $1;
+    }
+}
+
+# Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
+my @tabs_scripts;
+while ($html =~ m{(<script\b[^>]*>.*?</script>)}gis) {
+    my $script = $1;
+    if ($script =~ /sphinx-tabs-tab/i && $script =~ /changeTabs/i) {
+        push @tabs_scripts, $script;
+    }
+}
+my $tabs_js = join("\n", @tabs_scripts);
+if ($main =~ /sphinx-tabs-tab/i && $tabs_js eq "") {
+    warn "Page contains sphinx-tabs markup but no sphinx-tabs JavaScript was found: $input_file\n";
+}
+
+# Remove scripts from the extracted content. The required tabs script is appended once.
+$main =~ s{<script\b[^>]*>.*?</script>}{}gis;
+
+print qq{<!DOCTYPE html>\n};
+print qq{<html lang="$lang">\n<head>\n};
+print qq{  <meta charset="utf-8">\n};
+print qq{  <meta name="viewport" content="width=device-width, initial-scale=1">\n};
+print qq{  <title>$title</title>\n};
+print $css, "\n";
+print qq{</head>\n<body>\n};
+print $main, "\n";
+print $tabs_js, "\n" if $tabs_js ne "";
+print qq{</body>\n</html>\n};
 PERL
 
 export CSS_FILE
