@@ -549,6 +549,16 @@ if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
 }
 
 my $main = $html;
+
+# Remove the first Sphinx page title.
+$main =~ s{
+    <h1\b
+    [^>]*class\s*=\s*["'][^"']*\bgovuk-heading-xl\b[^"']*["']
+    [^>]*>
+    .*?
+    </h1>
+}{}isx;
+
 if ($html =~ m{
     <div\b
     (?=[^>]*\bclass\s*=\s*["'][^"']*\bbody\b[^"']*["'])
