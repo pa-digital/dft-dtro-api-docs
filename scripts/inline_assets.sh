@@ -548,12 +548,8 @@ if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
     $title = $1;
 }
 
-# Remove the visible Sphinx page heading from the complete HTML first.
-$html =~ s{
-    <h1\b[^>]*>
-    .*?
-    </h1>
-}{}is;
+# Remove the visible Sphinx page heading.
+$main =~ s|<h1 class="govuk-heading-xl">.*?</h1>||is;
 
 my $main = $html;
 
