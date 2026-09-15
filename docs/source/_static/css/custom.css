@@ -65,3 +65,7 @@ figure.align-center figcaption {
     font-size: 1.1875rem;
     margin-bottom: 48px;
 }
+
+.container {
+  margin-inline-start: unset !important;
+}
