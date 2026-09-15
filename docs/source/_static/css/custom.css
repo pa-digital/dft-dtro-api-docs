@@ -23,7 +23,8 @@ div.body > section > h1.govuk-heading-xl {
 
 .sphinx-tabs-panel {
   border: 1px solid #b1b4b6;
-  padding: 15px;
+  padding: 16px;
+  margin-bottom: 1.1875rem;
 }
 
 aside .caption {
