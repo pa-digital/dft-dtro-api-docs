@@ -550,9 +550,6 @@ if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
 
 my $main = $html;
 
-# Remove the visible Sphinx page heading.
-$main =~ s|<h1 class="govuk-heading-xl">.*?</h1>||is;
-
 if ($html =~ m{
     <div\b
     (?=[^>]*\bclass\s*=\s*["'][^"']*\bbody\b[^"']*["'])
@@ -578,6 +575,9 @@ else {
         $main = $1;
     }
 }
+
+# Remove the visible Sphinx page heading.
+$main =~ s|<h1 class="govuk-heading-xl">.*?</h1>||is;
 
 # Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
 my @tabs_scripts;
