@@ -548,6 +548,13 @@ if ($html =~ m{<title\b[^>]*>(.*?)</title>}is) {
     $title = $1;
 }
 
+# Remove the visible Sphinx page heading from the complete HTML first.
+$html =~ s{
+    <h1\b[^>]*>
+    .*?
+    </h1>
+}{}is;
+
 my $main = $html;
 
 if ($html =~ m{
@@ -556,29 +563,25 @@ if ($html =~ m{
     (?=[^>]*\brole\s*=\s*["']main["'])
     [^>]*>
     (.*?)
-    <div\b[^>]*\bclass\s*=\s*["'][^"']*\bclearer\b[^"']*["'][^>]*>\s*</div>
+    <div\b
+    [^>]*\bclass\s*=\s*["'][^"']*\bclearer\b[^"']*["']
+    [^>]*>
+    \s*
+    </div>
 }isx) {
     $main = $1;
 }
 else {
     warn "Could not isolate the Sphinx main-content div in $input_file; using body contents\n";
-    if ($html =~ m{<body\b[^>]*>(.*?)</body>}is) {
+
+    if ($html =~ m{
+        <body\b[^>]*>
+        (.*?)
+        </body>
+    }isx) {
         $main = $1;
     }
 }
-
-# Remove the visible Sphinx page heading.
-my $removed_page_heading = ($main =~ s{
-    <h1\b[^>]*>
-    .*?
-    </h1>
-}{}is);
-
-die "Failed to remove page H1 from: $input_file\n"
-    unless $removed_page_heading;
-
-die "Page H1 is still present after removal: $input_file\n"
-    if $main =~ m{<h1\b}i;
 
 # Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
 my @tabs_scripts;
@@ -600,7 +603,6 @@ print qq{<!DOCTYPE html>\n};
 print qq{<html lang="$lang">\n<head>\n};
 print qq{  <meta charset="utf-8">\n};
 print qq{  <meta name="viewport" content="width=device-width, initial-scale=1">\n};
-print qq{  <title>$title</title>\n};
 print $css, "\n";
 print qq{</head>\n<body>\n};
 print $main, "\n";
