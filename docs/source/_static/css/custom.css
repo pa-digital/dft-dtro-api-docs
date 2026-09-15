@@ -1,6 +1,7 @@
-.dtro-doc {
-  font-family: "GDS Transport", Arial, sans-serif;
-  font-size: 16px;
+html, body {
+    font-family: "GDS Transport", Arial, sans-serif;
+    margin: 0;
+    font-size: 16px;
 }
 
 div.body > section > h1.govuk-heading-xl {
@@ -25,8 +26,38 @@ div.body > section > h1.govuk-heading-xl {
   padding: 15px;
 }
 
+aside .caption {
+  margin: 0;
+}
+
 .headerlink {
   display: none !important;
+}
+
+aside ul {
+  padding-left: 0;
+  font-size: 16px;
+  list-style: none;
+  line-height: 2;
+}
+
+aside li {
+  list-style: none;
+  padding-left: 32px;
+}
+
+aside a {
+  color: black;
+  text-decoration: none
+}
+
+aside > ul > li {
+  padding-left: 0;
+}
+
+aside > ul > li li {
+  font-weight: normal;
+  font-size: 14px;
 }
 
 figure.align-center figcaption {
