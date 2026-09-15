@@ -567,12 +567,18 @@ else {
     }
 }
 
-# Remove the page title (first H1 in the extracted content)
-$main =~ s{
+# Remove the visible Sphinx page heading.
+my $removed_page_heading = ($main =~ s{
     <h1\b[^>]*>
     .*?
     </h1>
-}{}is;
+}{}is);
+
+die "Failed to remove page H1 from: $input_file\n"
+    unless $removed_page_heading;
+
+die "Page H1 is still present after removal: $input_file\n"
+    if $main =~ m{<h1\b}i;
 
 # Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
 my @tabs_scripts;
