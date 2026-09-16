@@ -33,14 +33,14 @@ Each request to the D-TRO service must contain an **access token** supplied as a
 
 To exchange your credentials for an access token, make a ``POST`` request to the ``/oauth-generator`` endpoint, supplying your client ID and secret as HTTP basic authentication credentials, and the client credentials grant type in the request body.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+    .. dtro-tab:: curl
         .. code-block:: bash
             
             curl -X POST https://dtro-integration.dft.gov.uk/v1/oauth-generator
                 -u <client_id>:<client_secret>
                 -d "grant_type=client_credentials"
-    .. tab:: Python 
+    .. dtro-tab:: Python 
         .. code-block:: python
             
             response = requests.post(
@@ -49,7 +49,7 @@ To exchange your credentials for an access token, make a ``POST`` request to the
                 data={"grant_type": "client_credentials"}
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
         .. code-block:: json
 
             {
@@ -94,8 +94,8 @@ Submitting JSON in the payload body
 
 A D-TRO can be published to the service by making a ``POST`` request to the ``/dtros/createFromBody`` endpoint, passing the access token as a header and the payload in the body.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+    .. dtro-tab:: curl
         .. code-block:: bash
 
             curl -X POST https://dtro-integration.dft.gov.uk/v1/dtros/createFromBody
@@ -103,7 +103,7 @@ A D-TRO can be published to the service by making a ``POST`` request to the ``/d
                 -H "Content-Type: application/json"
                 -d "$JSON"
 
-    .. tab:: Python
+    .. dtro-tab:: Python
         .. code-block:: python
             
             response = requests.post(
@@ -115,7 +115,7 @@ A D-TRO can be published to the service by making a ``POST`` request to the ``/d
                 json=json.load(open('file.json'))
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
         .. code-block:: json
 
             {
@@ -174,15 +174,15 @@ gzip is an excellent compression algorithm for JSON data, as it excels at compre
 
 The process for submitting a gzip-compressed JSON file is identical to that of submitting a JSON file.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+    .. dtro-tab:: curl
         .. code-block:: bash
             
             curl -X POST https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile
                 -H "Authorization: Bearer <access_token>"
                 -F "file=@file.json.gz"
 
-    .. tab:: Python
+    .. dtro-tab:: Python
         .. code-block:: python
             
             response = requests.post(
@@ -191,7 +191,7 @@ The process for submitting a gzip-compressed JSON file is identical to that of s
                 files={'file': open('file.json.gz', 'rb')}
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
         .. code-block:: json
 
             {
@@ -211,14 +211,14 @@ Retrieving a D-TRO by ID
 
 A single D-TRO can be retrieved by making a ``GET`` request to the ``/dtros/<id>`` endpoint, passing the D-TRO ID as a path parameter, and a valid access token as a header.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+    .. dtro-tab:: curl
         .. code-block:: bash
 
             curl https://dtro-integration.dft.gov.uk/v1/dtros/146375a5-7cc6-4092-b515-0c5c105820ff
                 -H "Authorization: Bearer <access_token>"
 
-    .. tab:: Python
+    .. dtro-tab:: Python
         .. code-block:: python
             
             response = requests.get(
@@ -226,7 +226,7 @@ A single D-TRO can be retrieved by making a ``GET`` request to the ``/dtros/<id>
                 headers={'Authorization': 'Bearer <access_token>'}
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
         .. code-block:: json
 
             {
@@ -324,14 +324,14 @@ The D-TRO service provides the capability to retrieve all published D-TROs. Due 
 
 This URL can be requested by making a ``GET`` request to the ``/dtros/all`` endpoint, passing a valid access token as a header.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+    .. dtro-tab:: curl
         .. code-block:: bash
 
             curl https://dtro-integration.dft.gov.uk/v1/dtros/all
                 -H "Authorization: Bearer <access_token>"
 
-    .. tab:: Python
+    .. dtro-tab:: Python
         .. code-block:: python
             
             response = requests.get(
@@ -339,7 +339,7 @@ This URL can be requested by making a ``GET`` request to the ``/dtros/all`` endp
                 headers={'Authorization': 'Bearer <access_token>'}
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
         .. code-block:: json
 
             "https://storage.googleapis.com/dtro-records/dtros_20250805_104621.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=sa-execution%40dft-dtro-dev-01.iam.gserviceaccount.com%2F20250805%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250805T104710Z&X-Goog-Expires=3600&X-Goog-SignedHeaders=host&X-Goog-Signature=ac6f85fe1df2f36ffdc969e96147e0bd2c542c4088fe3c5f228d233986d536286afdd0e6983950cade741eae12eaabb85cb362cd813059fa1d5be84c236576db9fe1b01acdb2810774374e379113ad9e47be200de89c9ec3df79e6283f1ecd029fd48fe8e18cf785aa6ad84dd88e299563207547efe49b820a701d0eec3bfc4d5b5726c68393dae7acb122eefee928b8bdf6caebd3c94c39db8c597a29474c5be81f04ea4b9a4a6eb901be5043772fa3cd29992c9759755faeb375d0034605f6b5a38bd88e103c8b19b8911f28d68c225f4b9d3e5f2369c7d226d7ed59d44576ca8777bdcaf181d5390b8e70d8b343535fbb1a955ddc1e167f6680676a088075"

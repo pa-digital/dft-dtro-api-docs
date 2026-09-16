@@ -21,7 +21,8 @@
                 selectedTab.getAttribute("aria-controls");
 
             tabs.forEach(function (tab) {
-                const selected = tab === selectedTab;
+                const selected =
+                    tab === selectedTab;
 
                 tab.classList.toggle(
                     "dtro-tab--active",
@@ -40,7 +41,8 @@
             });
 
             panels.forEach(function (panel) {
-                const selected = panel.id === selectedPanelId;
+                const selected =
+                    panel.id === selectedPanelId;
 
                 panel.classList.toggle(
                     "dtro-tab-panel--active",
@@ -54,27 +56,42 @@
                 selectTab(tab);
             });
 
-            tab.addEventListener("keydown", function (event) {
-                let nextIndex = index;
+            tab.addEventListener(
+                "keydown",
+                function (event) {
+                    let nextIndex = index;
 
-                if (event.key === "ArrowRight") {
-                    nextIndex = (index + 1) % tabs.length;
-                } else if (event.key === "ArrowLeft") {
-                    nextIndex =
-                        (index - 1 + tabs.length) % tabs.length;
-                } else if (event.key === "Home") {
-                    nextIndex = 0;
-                } else if (event.key === "End") {
-                    nextIndex = tabs.length - 1;
-                } else {
-                    return;
+                    if (event.key === "ArrowRight") {
+                        nextIndex =
+                            (index + 1) % tabs.length;
+                    } else if (
+                        event.key === "ArrowLeft"
+                    ) {
+                        nextIndex =
+                            (
+                                index -
+                                1 +
+                                tabs.length
+                            ) % tabs.length;
+                    } else if (
+                        event.key === "Home"
+                    ) {
+                        nextIndex = 0;
+                    } else if (
+                        event.key === "End"
+                    ) {
+                        nextIndex =
+                            tabs.length - 1;
+                    } else {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    tabs[nextIndex].focus();
+                    selectTab(tabs[nextIndex]);
                 }
-
-                event.preventDefault();
-
-                tabs[nextIndex].focus();
-                selectTab(tabs[nextIndex]);
-            });
+            );
         });
 
         const initiallySelected =
@@ -90,21 +107,38 @@
     }
 
     function initialiseTabs(root) {
-        root.querySelectorAll(".dtro-tabset").forEach(
-            initialiseTabset
-        );
+
+        root
+            .querySelectorAll(".dtro-tabset")
+            .forEach(initialiseTabset);
     }
 
     function start() {
+
+        console.log(
+            "DTRO tabs script loaded"
+        );
+
         initialiseTabs(document);
+
+        const observer =
+            new MutationObserver(function () {
+
+                initialiseTabs(document);
+            });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     }
 
-    if (document.readyState === "loading") {
+    if (document.body) {
+        start();
+    } else {
         document.addEventListener(
             "DOMContentLoaded",
             start
         );
-    } else {
-        start();
     }
 })();
