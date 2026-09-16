@@ -614,7 +614,12 @@ print qq{  <meta charset="utf-8">\n};
 print qq{  <meta name="viewport" content="width=device-width, initial-scale=1">\n};
 print $css, "\n";
 print qq{</head>\n<body>\n};
+print qq{<div class="dtro-doc">\n};
+
 print $main, "\n";
+
+print qq{</div>\n};
+
 print $tabs_js, "\n" if $tabs_js ne "";
 print qq{</body>\n</html>\n};
 PERL
