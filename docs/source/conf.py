@@ -29,7 +29,7 @@ html_css_files = [
 ]
 
 html_js_files = [
-    'dtro-tabs.js'
+    'js/dtro-tabs.js'
 ]
 
 html_theme = 'basic'
