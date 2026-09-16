@@ -132,30 +132,34 @@ Submitting a JSON file
 
 This endpoint is similar to the endpoint that handles publishing D-TROs using a JSON body, but instead allows a file to be uploaded. This is achieved by making a ``POST`` request to the ``/dtros/createFromFile`` endpoint, passing the access token as a header and attaching a JSON file.
 
-.. tabs::
-    .. tab:: curl
+.. dtro-tabs::
+
+    .. dtro-tab:: curl
+
         .. code-block:: bash
-            
-            curl -X POST https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile
-                -H "Authorization: Bearer <access_token>"
+
+            curl -X POST https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile \
+                -H "Authorization: Bearer <access_token>" \
                 -F "file=@file.json"
+    
+    .. dtro-tab:: Python
 
-
-    .. tab:: Python
         .. code-block:: python
-            
+
             response = requests.post(
                 'https://dtro-integration.dft.gov.uk/v1/dtros/createFromFile',
                 headers={'Authorization': 'Bearer <access_token>'},
                 files={'file': open('file.json', 'rb')}
             )
 
-    .. tab:: Response
+    .. dtro-tab:: Response
+
         .. code-block:: json
 
             {
                 "id": "00000000-0000-0000-0000-000000000000"
             }
+
 
 The response payload again contains a single field, ``id``, which is the ID of the created D-TRO record. The same file size limits are imposed here as when submitting JSON in the request body.
 

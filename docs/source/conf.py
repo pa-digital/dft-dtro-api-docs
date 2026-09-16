@@ -13,7 +13,8 @@ extensions = [
     "_extensions.govuk_table_translator",
     "inset_text",
     "warning_text",
-    "button"
+    "button",
+    "tabs"
 ]
 
 templates_path = ['_templates']

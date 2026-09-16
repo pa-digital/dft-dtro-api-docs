@@ -579,17 +579,8 @@ else {
 # Remove the visible Sphinx page heading.
 $main =~ s|<h1 class="govuk-heading-xl">.*?</h1>||is;
 
-# Keep only the sphinx-tabs runtime. All other Sphinx/theme scripts are dropped.
-my @tabs_scripts;
-while ($html =~ m{(<script\b[^>]*>.*?</script>)}gis) {
-    my $script = $1;
-    if ($script =~ /sphinx-tabs-tab/i && $script =~ /changeTabs/i) {
-        push @tabs_scripts, $script;
-    }
-}
-my $tabs_js = join("\n", @tabs_scripts);
-if ($main =~ /sphinx-tabs-tab/i && $tabs_js eq "") {
-    warn "Page contains sphinx-tabs markup but no sphinx-tabs JavaScript was found: $input_file\n";
+if ($script =~ /dtro-tabset/i && $script =~ /initialiseTabset/i) {
+    push @tabs_scripts, $script;
 }
 
 # Remove scripts from the extracted content. The required tabs script is appended once.
