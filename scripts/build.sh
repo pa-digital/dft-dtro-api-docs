@@ -67,6 +67,9 @@ sphinx-build \
     docs/source \
     docs/build/html
 
+echo "Patching CSS ..."
+python ./scripts/patch_css.py
+
 echo "Inlining assets..."
 
 ./scripts/inline_assets.sh

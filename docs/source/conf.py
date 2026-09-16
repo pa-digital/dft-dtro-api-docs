@@ -24,7 +24,7 @@ html_static_path = ['_static']
 
 
 html_css_files = [
-    'css/govuk-frontend-6.3.0.min.css',
+    'css/govuk-scoped.css',
     'css/custom.css'
 ]
 
