@@ -1,19 +1,14 @@
-html, body {
+.dtro-doc {
     font-family: "GDS Transport", Arial, sans-serif;
-    margin: 0;
     font-size: 16px;
 }
 
-div.body > section > h1.govuk-heading-xl {
-  display: none !important;
-}
-
 .dtro-tabset {
-  margin-bottom: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 .dtro-tabset pre {
-  font-size: unset;
+    font-size: unset;
 }
 
 .dtro-tab-list {
@@ -67,16 +62,12 @@ div.body > section > h1.govuk-heading-xl {
     display: block;
 }
 
-.headerlink {
-  display: none !important;
+.dtro-doc .headerlink {
+    display: none !important;
 }
 
-figure.align-center figcaption {
+.dtro-doc figure.align-center figcaption {
     text-align: center;
     font-size: 1.1875rem;
     margin-bottom: 48px;
-}
-
-.container {
-  margin-inline-start: unset !important;
 }
