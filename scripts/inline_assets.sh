@@ -525,7 +525,13 @@ $html =~ s{
             my $js = do { local $/; <$fh> };
             close $fh;
 
-            qq{<script>\n$js\n</script>};
+            # Mark our custom tabs script so we can find it later.
+            if ($src =~ m{dtro-tabs\.js$}i) {
+                qq{<script data-dtro-tabs="true">\n$js\n</script>};
+            }
+            else {
+                qq{<script>\n$js\n</script>};
+            }
         }
         else {
             warn "Could not resolve JS: $src\n";
