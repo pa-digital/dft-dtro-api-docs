@@ -35,7 +35,10 @@ if [[ ! -d "$CSS_DIR" ]]; then
 fi
 
 shopt -s nullglob
-CSS_FILES=("$CSS_DIR"/*.css)
+CSS_FILES=(
+    "$CSS_DIR/govuk-scoped.css"
+    "$CSS_DIR/custom.css"
+)
 shopt -u nullglob
 
 if (( ${#CSS_FILES[@]} == 0 )); then
