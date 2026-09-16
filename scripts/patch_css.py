@@ -24,6 +24,16 @@ REMOVE_PREFIXES = (
     ".govuk-phase-banner",
 )
 
+# GOV.UK assumes a 16px root font size.
+# ServiceNow is using 10px.
+ROOT_FONT_SIZE = 10
+GOVUK_ROOT_SIZE = 16
+
+SCALE_FACTOR = (
+    GOVUK_ROOT_SIZE /
+    ROOT_FONT_SIZE
+)
+
 REM_PATTERN = re.compile(
     r"(-?\d*\.?\d+)rem\b"
 )
@@ -54,10 +64,30 @@ def prefix_selector(selector):
     return f"{PREFIX} {selector}"
 
 
-def convert_rem_to_em(css_text):
+def scale_rem_units(css_text):
+
+    def repl(match):
+
+        original = float(
+            match.group(1)
+        )
+
+        scaled = (
+            original *
+            SCALE_FACTOR
+        )
+
+        text = (
+            f"{scaled:.4f}"
+            .rstrip("0")
+            .rstrip(".")
+        )
+
+        return f"{text}rem"
+
     return REM_PATTERN.sub(
-        lambda m: f"{m.group(1)}em",
-        css_text,
+        repl,
+        css_text
     )
 
 
@@ -148,12 +178,13 @@ def main():
 
     processed = process_rules(rules)
 
-    css_out = tinycss2.serialize(processed)
+    css_out = tinycss2.serialize(
+        processed
+    )
 
-    # Critical:
-    # Convert rem -> em so sizes become relative
-    # to .dtro-doc instead of ServiceNow's html.
-    css_out = convert_rem_to_em(css_out)
+    css_out = scale_rem_units(
+        css_out
+    )
 
     OUTPUT_FILE.write_text(
         css_out,
