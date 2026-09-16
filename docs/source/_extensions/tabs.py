@@ -113,15 +113,11 @@ def visit_dtro_tabs_html(self, node):
     tabset_id = escape(node["tabset_id"], quote=True)
 
     self.body.append(
-        f'<div class="govuk-tabs dtro-tabset" id="{tabset_id}">'
+        f'<div class="dtro-tabset" id="{tabset_id}">'
     )
 
     self.body.append(
-        '<h2 class="govuk-tabs__title">Contents</h2>'
-    )
-
-    self.body.append(
-        '<ul class="govuk-tabs__list">'
+        '<div class="dtro-tab-list" role="tablist">'
     )
 
     for child in node.children:
@@ -131,24 +127,15 @@ def visit_dtro_tabs_html(self, node):
         title = escape(child["title"])
         tab_id = escape(child["tab_id"], quote=True)
         panel_id = escape(child["panel_id"], quote=True)
-
         selected = child["selected"]
-
-        li_classes = ["govuk-tabs__list-item"]
-
-        if selected:
-            li_classes.append(
-                "govuk-tabs__list-item--selected"
-            )
 
         selected_value = "true" if selected else "false"
         tab_index = "0" if selected else "-1"
+        active_class = " dtro-tab--active" if selected else ""
 
         self.body.append(
-            f'<li class="{" ".join(li_classes)}">'
-            f'<button'
-            f' type="button"'
-            f' class="govuk-tabs__tab dtro-tab"'
+            f'<button type="button"'
+            f' class="dtro-tab{active_class}"'
             f' id="{tab_id}"'
             f' role="tab"'
             f' aria-selected="{selected_value}"'
@@ -156,10 +143,9 @@ def visit_dtro_tabs_html(self, node):
             f' tabindex="{tab_index}">'
             f'{title}'
             f'</button>'
-            f'</li>'
         )
 
-    self.body.append("</ul>")
+    self.body.append("</div>")
 
 
 def depart_dtro_tabs_html(self, node):
@@ -169,25 +155,17 @@ def depart_dtro_tabs_html(self, node):
 def visit_dtro_tab_html(self, node):
     tab_id = escape(node["tab_id"], quote=True)
     panel_id = escape(node["panel_id"], quote=True)
-
     selected = node["selected"]
 
-    classes = [
-        "govuk-tabs__panel",
-        "dtro-tab-panel"
-    ]
-
-    if not selected:
-        classes.append(
-            "govuk-tabs__panel--hidden"
-        )
+    active_class = " dtro-tab-panel--active" if selected else ""
 
     self.body.append(
         f'<div'
-        f' class="{" ".join(classes)}"'
+        f' class="dtro-tab-panel{active_class}"'
         f' id="{panel_id}"'
         f' role="tabpanel"'
-        f' aria-labelledby="{tab_id}">'
+        f' aria-labelledby="{tab_id}"'
+        f' tabindex="0">'
     )
 
 

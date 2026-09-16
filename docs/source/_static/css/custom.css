@@ -16,12 +16,55 @@ div.body > section > h1.govuk-heading-xl {
   font-size: unset;
 }
 
-.govuk-tabs__tab {
-    background: transparent;
-    border: none;
-    font: inherit;
-    cursor: pointer;
+.dtro-tab-list {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    margin: 0;
     padding: 0;
+}
+
+.dtro-tab {
+    appearance: none;
+    background: #f3f2f1;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    color: #0b0c0c;
+    cursor: pointer;
+    font-family: "GDS Transport", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0;
+    padding: 18px;
+}
+
+.dtro-tab:hover {
+    background: #e8e8e8;
+}
+
+.dtro-tab:focus {
+    background: #ffdd00;
+    color: #0b0c0c;
+    outline: 3px solid transparent;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    position: relative;
+    z-index: 1;
+}
+
+.dtro-tab--active {
+    background: #ffffff;
+    border-bottom-color: #1d70b8;
+}
+
+.dtro-tab-panel {
+    display: none;
+    border: 1px solid #b1b4b6;
+    padding: 15px;
+}
+
+.dtro-tab-panel--active {
+    display: block;
 }
 
 .headerlink {
@@ -32,4 +75,8 @@ figure.align-center figcaption {
     text-align: center;
     font-size: 1.1875rem;
     margin-bottom: 48px;
+}
+
+.container {
+  margin-inline-start: unset !important;
 }

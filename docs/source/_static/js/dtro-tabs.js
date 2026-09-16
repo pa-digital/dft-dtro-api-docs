@@ -24,8 +24,8 @@
                 const selected =
                     tab === selectedTab;
 
-                tab.parentElement.classList.toggle(
-                    "govuk-tabs__list-item--selected",
+                tab.classList.toggle(
+                    "dtro-tab--active",
                     selected
                 );
 
@@ -44,15 +44,10 @@
                 const selected =
                     panel.id === selectedPanelId;
 
-                if (selected) {
-                    panel.classList.remove(
-                        "govuk-tabs__panel--hidden"
-                    );
-                } else {
-                    panel.classList.add(
-                        "govuk-tabs__panel--hidden"
-                    );
-                }
+                panel.classList.toggle(
+                    "dtro-tab-panel--active",
+                    selected
+                );
             });
         }
 
