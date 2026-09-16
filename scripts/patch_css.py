@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from pathlib import Path
+import re
 import tinycss2
 
 INPUT_FILE = Path(
@@ -23,8 +24,12 @@ REMOVE_PREFIXES = (
     ".govuk-phase-banner",
 )
 
+REM_PATTERN = re.compile(
+    r"(-?\d*\.?\d+)rem\b"
+)
 
-def should_remove(selector: str) -> bool:
+
+def should_remove(selector):
     selector = selector.strip()
 
     return any(
@@ -33,7 +38,7 @@ def should_remove(selector: str) -> bool:
     )
 
 
-def prefix_selector(selector: str) -> str:
+def prefix_selector(selector):
     selector = selector.strip()
 
     if selector in (
@@ -47,6 +52,13 @@ def prefix_selector(selector: str) -> str:
         return selector
 
     return f"{PREFIX} {selector}"
+
+
+def convert_rem_to_em(css_text):
+    return REM_PATTERN.sub(
+        lambda m: f"{m.group(1)}em",
+        css_text,
+    )
 
 
 def scope_rule(rule):
@@ -136,8 +148,15 @@ def main():
 
     processed = process_rules(rules)
 
+    css_out = tinycss2.serialize(processed)
+
+    # Critical:
+    # Convert rem -> em so sizes become relative
+    # to .dtro-doc instead of ServiceNow's html.
+    css_out = convert_rem_to_em(css_out)
+
     OUTPUT_FILE.write_text(
-        tinycss2.serialize(processed),
+        css_out,
         encoding="utf-8"
     )
 
