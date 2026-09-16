@@ -39,7 +39,8 @@ class DtroTabsDirective(Directive):
     def run(self):
         self.assert_has_content()
 
-        serial = self.env.new_serialno("dtro-tabset")
+        env = self.state.document.settings.env
+        serial = env.new_serialno("dtro-tabset")
         tabset_id = f"dtro-tabset-{serial}"
 
         node = DtroTabsNode()
