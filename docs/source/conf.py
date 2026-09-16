@@ -28,6 +28,10 @@ html_css_files = [
     'css/custom.css'
 ]
 
+html_js_files = [
+    'dtro-tabs.js'
+]
+
 html_theme = 'basic'
 
 html_sidebars = {
