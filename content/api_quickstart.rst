@@ -194,6 +194,7 @@ The process for submitting a gzip-compressed JSON file is identical to that of s
                 -F "file=@file.json.gz"
 
     .. dtro-tab:: Python
+
         .. code-block:: python
             
             response = requests.post(
@@ -203,6 +204,7 @@ The process for submitting a gzip-compressed JSON file is identical to that of s
             )
 
     .. dtro-tab:: Response
+
         .. code-block:: json
 
             {
