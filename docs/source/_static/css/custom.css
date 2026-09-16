@@ -27,6 +27,14 @@ div.body > section > h1.govuk-heading-xl {
   margin-bottom: 1.1875rem;
 }
 
+.sphinx-tabs-panel[hidden] {
+    display: none !important;
+}
+
+.sphinx-tabs-panel:not([hidden]) {
+    display: block;
+}
+
 aside .caption {
   margin: 0;
 }
