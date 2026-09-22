@@ -85,7 +85,7 @@ It is not foreseen that the D-TRO Service will in the future retain a full, grow
 
 Version 3.4 onwards introduced additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation.
 
-.. note::
+.. inset::
    Many of these changes apply to Made orders (whether on initial making, amendment or revocation). The following ``orderReportPoint`` types, as reflected in :numref:`order-reporting-points`, are included in the list of Made orders
 
 * ``experimentalAmendment``
@@ -164,7 +164,7 @@ The D-TRO Beta Data Specification uses of The OSGB36 / British National Grid Coo
 
 There is no support in the D-TRO Beta Data Specification to enable the upload of scan or electronic versions of TROs, schedules, or associated maps.
 
-.. note::
+.. inset::
     DfT is reviewing the approach used for the use of standardised encoding and file formats for geospatial information. This may result in changes or additions to future releases of the data specification.
 
 Standardised Terms and Definitions

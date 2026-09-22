@@ -27,7 +27,7 @@ Any user feedback can be provided:
 
 * By contacting the Department for Transport:
 
-.. note::
+.. inset::
     Email address: `d-tro@dft.gov.uk <mailto:d-tro@dft.gov.uk>`_
 
 The existing informational content of the existing legacy TROs in the UK is diverse, rich, and in some cases somewhat incompatible with a more limited, regularised approach defined in this specification for digitising traffic regulations.
@@ -111,7 +111,7 @@ This User Guidance is just part of the documents and artefacts that are availabl
 
 .. _fig1:
 
-.. figure:: /_static/images/fig1.png
+.. figure:: /images/fig1.png
    :alt: Documents and artefacts supporting the D-TRO Service
    :align: center
 
