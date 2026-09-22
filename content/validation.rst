@@ -16,6 +16,7 @@ This document specifies the semantic validation rules that submitted D-TRO recor
 
 Terms and abbreviations
 ***********************
+
 .. csv-table:: Terms and Abbreviations
     :file: table_data/terms_and_abbreviations.csv
     :header-rows: 1
@@ -66,6 +67,7 @@ When a D-TRO is submitted the request body must include a version of the data sc
 
 Assumptions, Constraints, Risks and Dependencies
 ************************************************
+
 .. csv-table:: Assumptions, Constraints, Risks and Dependencies
     :file: table_data/assumptions_constraints_risks_and_dependencies.csv
     :header-rows: 1

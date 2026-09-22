@@ -1234,8 +1234,7 @@ Being able to specify conditions that apply to regulations is a key element of D
 
 The D-TRO model for conditions is used to specify conditions or constraints that apply to a regulation. These include time period, vehicle type, weather conditions, etc.
 
-.. notification::
-   :heading: Changes in v4.0.0
+.. inset::
 
    Condition-modelling logic was changed substantially with the introduction of ``v4.0.0`` of the data model. 
    

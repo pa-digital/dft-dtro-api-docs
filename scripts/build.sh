@@ -11,6 +11,7 @@ rm -rf docs/build/html
 rm -rf docs/output
 
 mkdir -p docs/source/generated/images
+mkdir -p docs/source/generated/table_data
 
 TOC=""
 
@@ -58,6 +59,12 @@ echo "Copying images..."
 
 if [[ -d content/images ]]; then
     cp -R content/images/. docs/source/generated/images/
+fi
+
+echo "Copying table data..."
+
+if [[ -d content/table_data ]]; then
+    cp -R content/table_data/. docs/source/generated/table_data/
 fi
 
 echo "Building Sphinx..."
