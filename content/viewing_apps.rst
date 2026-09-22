@@ -1,0 +1,9 @@
+Viewing Applications
+====================
+
+Clicking 'View apps' from the navigation screen will provide a view of all your applications. The table displays application name, current status, application type, the Traffic Regulation Authority linked to the application (applicable to publisher applications only), and provides a link to navigate to the application details screen.
+
+.. image:: images/view-applications.png
+    :alt: View applications
+    :width: 60%
+    :align: center
