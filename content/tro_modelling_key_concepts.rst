@@ -68,7 +68,7 @@ DfT, through the previous Service Alpha and current Beta Project, are reviewing 
 
 The DfT's preferred option is to establish a centralised service which receives digital TROs (D-TROs) from TRAs, stores these records, and exposes data services for consumers to request distribution of D-TRO records. The Data Model forms the technical baseline for D-TRO records.
 
-Due to the variety of different forms of TRO and notices permitted under the legislation, there is a need to define in future legislation and statutory guidance when in the lifecycle of orders and notices the TRA will be required to provide a D-TRO record to the D-TRO Service. The current expectation is that the following Reporting Points are needed - see :numref:`fig2`.
+Due to the variety of different forms of TRO and notices permitted under the legislation, there is a need to define in future legislation and statutory guidance when in the lifecycle of orders and notices the TRA will be required to provide a D-TRO record to the D-TRO Service. The current expectation is that the following Reporting Points are needed - see :numref:`order-reporting-points`.
 
 .. _order-reporting-points:
 
@@ -86,7 +86,7 @@ It is not foreseen that the D-TRO Service will in the future retain a full, grow
 Version 3.4 onwards introduced additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation.
 
 .. note::
-   Many of these changes apply to Made orders (whether on initial making, amendment or revocation). The following ``orderReportPoint`` types, as reflected in :numref:`fig2`, are included in the list of Made orders
+   Many of these changes apply to Made orders (whether on initial making, amendment or revocation). The following ``orderReportPoint`` types, as reflected in :numref:`order-reporting-points`, are included in the list of Made orders
 
 * ``experimentalAmendment``
 * ``experimentalMakingPermanent``
