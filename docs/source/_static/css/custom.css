@@ -71,3 +71,13 @@
     font-size: 1.1875rem;
     margin-bottom: 48px;
 }
+
+.table-sm thead,
+.table-sm tbody {
+  font-size: 1rem;
+}
+
+.table-sm tbody {
+  white-space: normal !important;
+  word-break: break-word;
+}
