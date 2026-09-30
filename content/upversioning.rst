@@ -17,7 +17,7 @@ High-level Approach
 
 The first upversioning exercise is scheduled to be implemented with the data specification ``v4.0.0`` production release. At this time, all **active** records in the service submitted against schemas pre-``v3.5.1`` will be upversioned to ``v3.5.1`` records. Going forwards, upversioning will occur in combination with each new data specification release, and will upversion records to the latest-but-one schema version. This is a deliberate design decision that prevents the need for users to be forced to quickly adopt the latest data specification version for consumer applications.
 
-.. note::
+.. inset::
 
     Prior to the introduction of schema ``v3.4.0``, the D-TRO service did not implement the full suite of schema validation that exists today. Therefore, D-TROs submitted in earlier schema versions exhibit large amounts of variation, and a stepwise upversioning approach is difficult to develop. Therefore, pre-``v3.4.0`` D-TROs will be upversioned directly to ``v3.4.0``, and then stepwise from this point forward.
 

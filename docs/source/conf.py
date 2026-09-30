@@ -14,7 +14,8 @@ extensions = [
     "inset_text",
     "warning_text",
     "button",
-    "tabs"
+    "tabs",
+    "notification"
 ]
 
 templates_path = ['_templates']

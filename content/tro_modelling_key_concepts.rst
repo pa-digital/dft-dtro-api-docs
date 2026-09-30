@@ -1,6 +1,11 @@
 TRO-Modelling Key Concepts
 ==========================
 
+.. notification::
+   :heading: Note
+
+   This content is based on the Data Model User Guide for verion 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
 Background
 **********
 
@@ -81,6 +86,18 @@ Due to the variety of different forms of TRO and notices permitted under the leg
 
 These Reporting Points are reflected in the Data Model in an enumerated list named ``orderReportingPointType`` :ref:`[5] <ref-order_reporting_type>` .
 
+.. notification::
+   :heading: New in v5.0.0
+
+   The figure above will be replaced with the following figure:
+
+   .. figure:: images/v500-orp.png
+      :alt: D-TRO Reporting Points
+      :width: 80%
+      :align: center
+
+      D-TRO Reporting Points
+
 It is not foreseen that the D-TRO Service will in the future retain a full, growing library of all D-TROs submitted over time, but retain recently submitted D-TRO records and those that remain current. The D-TRO Service is also expected to hold future D-TRO records, and those that have recently expired, or replaced by a newer amended version, or revoked. The precise definition of this D-TRO Service is currently being defined through this Beta project, with initial version for a records management capability being implemented.
 
 Version 3.4 onwards introduced additional objects and attributes added in response to expected functional needs resulting from the Secondary Legislation.
@@ -102,6 +119,14 @@ Version 3.4 onwards introduced additional objects and attributes added in respon
 * ``ttroTtmoNoticeOfIntention``
 * ``ttroTtmoRevocation``
 * ``variationByNotice``
+
+.. notification::
+   :heading: New in v5.0.0
+
+   v5.0.0 introduces the following order reporting point:
+
+   * ``ttroTtmoByNoticeExtension``
+
 
 These are referred to as “Made Orders” in this document.
 
@@ -185,7 +210,7 @@ About Data Types in the Data Model and JSON Schema
 
 As you work through this user guide you will see attributes that are specified in the different objects are assigned specific data types. These help a developer know the whether the attribute gains its potential values from the entries in an enumerated list (such as vehicleType), or is a date, a date-time, a web address (URI – a Universal Resource Identifier), string (for free text), etc.
 
-The Data Model is specified using a convention Unified Modelling Language (UML). From this model we generate a JSON (JavaScript Object Notation) schema which provide the template for exchangeable structured data.
+The Data Model is specified using Unified Modelling Language (UML) :ref:`[6] <ref-omg_uml>`. From this model we generate a JSON (JavaScript Object Notation) schema which provides the template for exchangeable structured data.
 
 In a limited number of cases the data type shown in the Data Model is translated into a data type that conforms to the JSON specification. These translations are as follows:
 
@@ -234,3 +259,7 @@ References
 .. _ref-order_reporting_type:
 
 [5] The on-road reporting of TTRO/TTMO occupancy (on-road – off-road) is managed by a separate mechanism.
+
+.. _ref-omg_uml:
+
+[6] UML - ISO/IEC 19505-1:2012, Information technology — Object Management Group Unified Modeling Language (OMG UML) — Part 1: Infrastructure

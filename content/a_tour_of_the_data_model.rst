@@ -1,6 +1,11 @@
 A Tour of the Data Model
 ========================
 
+.. notification::
+   :heading: Note
+
+   This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
 This section provides a tour of the main features of the Data Model. The Data Model can be viewed at the Department for Transport's public GitHub repository.
 
 .. button::
@@ -275,6 +280,18 @@ Defining Regulations
 
    Object view for regulation
 
+.. notification::
+   :heading: New in v5.0.0
+
+   The 'Object view for regulation; diagram will be replaced by the following diagram:
+
+   .. figure:: images/v500-object-view-for-regulation.png
+      :alt: Object view for regulation
+      :width: 80%
+      :align: center
+
+      Object view for regulation
+
 Each instance of ``provision`` shall be related to one instance of regulation.
 
 Each ``regulation`` object defines one and only one form of regulation.
@@ -288,6 +305,21 @@ Regulations fall into one of four categories:
 * ``generalRegulation`` - characterising a wider range of regulations - see later for further details.
 
 * ``offListRegulation`` - which characterises an extension mechanism for a TRA to declare a form of regulation that is not otherwise covered by the regulations specified in the first three categories.
+
+.. notification::
+   :heading: New in v5.0.0
+
+   The modelling of speed limit regulations has been restructured in v5.0.0. Denoting speed limit regulations is now done using the regulationType property which uses the ``regulationType`` enumerated list, using as appropriate either ``speedLimitValueBased`` or ``speedLimitProfileBased``.
+
+   When specifying a ``speedLimitValueBased`` ``regulationType`` the use of the ``speedLimitValueBased`` object is mandatory.
+
+   When specifying a ``speedLimitProfileBased`` ``regulationType`` the use of the ``speedLimitProfileBased`` object is mandatory.
+
+   In addition, the value ``other`` has been added to the ``regulationType`` enumerated list. The value ``other`` shall only be used when specifying a regulation type that is not defined in the ``regulationType`` enumeration list. When specifying  an ``other`` ``regulationType`` the use of the ``offListRegulation`` object is mandatory.
+
+   These changes result in other changes to the model and schema:
+   * The regulationType property moves from the ``generalRegulation`` object to the ``regulation`` object.
+   * The now-redundant ``generalRegulation`` object is removed.
 
 :numref:`fig14` provides the UML class representation of the ``regulation`` object.
 
@@ -316,6 +348,11 @@ The ``regulation`` object defines two mandatory attributes.
    :align: center
 
    UML model representation of the ``generalRegulation`` object
+
+.. notification::
+   :heading: New in v5.0.0
+
+   In v5.0.0. the regulationType property moves from the ``generalRegulation`` object to the ``regulation`` object. The now-redundant ``generalRegulation`` object is removed.
 
 The ``generalRegulation`` object has one mandatory attribute.
 
@@ -407,6 +444,15 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
 
 .. inset::
     It is acknowledged that existing practice for defining TROs in different TRAs may use slightly different terms to describe what fundamentally are the same regulatory concept. To improve the interoperability of TRO data coming from different TRAs, mapping of locally adopted terms to the regulation types given in the list above is essential. Genuinely new, distinct regulation concepts can be provided using the ``offListRegulation`` mechanism described below - but this should be rarely used.
+   
+.. notification::
+   :heading: New in v5.0.0
+
+   The following literals are added to the regulationType enumeration list: 
+   * ``speedLimitValueBased``
+   * ``speedLimitProfileBased``
+   * ``other``
+   * ``ttroTtmoByNoticeExtension``
 
 .. inset::
     The regulationType list is expected to continue and evolve, both as the full spectrum of regulations covered by TROs is established and as regulatory need in the use of TRO changes over time.
@@ -423,6 +469,11 @@ The list of ``regulationType`` given in this release of the Data Model is as fol
    :align: center
 
    UML model representation of the ``speedLimitValueBased`` object
+
+.. notification::
+   :heading: New in v5.0.0
+
+   When specifying a ``speedLimitValueBased`` ``regulationType`` the use of the ``speedLimitValueBased`` object is mandatory.
 
 The ``speedLimitValueBased`` object defines a speed limit value using structured attributes. It includes three mandatory attributes, as described below
 
@@ -446,6 +497,11 @@ The data type is ``SpeedLimitValueType`` (enumeration). This attribute is mandat
    :align: center
 
    UML model representation of the ``speedLimitProfileBased`` object
+
+.. notification::
+   :heading: New in v5.0.0
+
+   When specifying a ``speedLimitProfileBased`` ``regulationType`` the use of the ``speedLimitProfileBased`` object is mandatory.
 
 The ``speedLimitProfileBased`` object has one mandatory attribute.
 
@@ -472,6 +528,11 @@ If a new form of regulation is required, beyond those already specified in the D
    :align: center
 
    UML model representation of the ``offListRegulation`` object
+
+.. notification::
+   :heading: New in v5.0.0
+
+   When specifying an ``other`` ``regulationType`` the use of the ``offListRegulation`` object is mandatory. 
 
 The ``offListRegulation`` object has three attributes:
 
@@ -645,14 +706,43 @@ Each ``regulatedPlace`` shall have one or, potentially more than one, specified 
 
 If multiple ``geometry`` instances exist for a ``regulatedPlace`` each ``geometry`` instance represents an alternative version (alternative representation) of the same location. They are not intended to define different real-world locations. Each instance of geometry for a ``regulatedPlace`` shall have a unique ``version`` attribute value (see :numref:`fig25` below). This enables a TRA to represent a ``regulatedPlace`` using, say, a polygon-based ``geometry`` in one version, and a linestring-based ``geometry`` in a second version.
 
-.. inset::
-    A word on coding of diversion routes; coding diversion routes uses the same sub-model structure below the ``regulatedPlace`` as is used for coding the location of the effect of a regulation. For diversion routes, meaningfully, this can be done by use of a ``linearGeometry`` object, and associated ``externalReference(s)`` (USRNs). A ``directedLinear`` object could also be used. The ``polygon`` and ``pointLocation`` objects should not be used.
+A word on coding of diversion routes; coding diversion routes uses the same sub-model structure below the ``regulatedPlace`` as is used for coding the location of the effect of a regulation. For diversion routes, meaningfully, this can be done by use of a ``linearGeometry`` object, and associated ``externalReference(s)`` (USRNs). A ``directedLinear`` object could also be used. The ``polygon`` and ``pointLocation`` objects should not be used.
 
-    It is recommended to submit of a “full geometry” diversion route which broadly follows the centre line or reference line of road sections constituting the diversion route. 
+It is recommended to submit of a “full geometry” diversion route which broadly follows the centre line or reference line of road sections constituting the diversion route. 
 
-   As a minimum, submission of minimum diversion routes data should provide the start and end coordinates of the route, plus coordinates for each “road node” that represents the junction of two or more public roads. Where USRNs are available, reference to all applicable USRNs forming the diversion route shall be supplied.
+As a minimum, submission of minimum diversion routes data should provide the start and end coordinates of the route, plus coordinates for each “road node” that represents the junction of two or more public roads. Where USRNs are available, reference to all applicable USRNs forming the diversion route shall be supplied.
 
-    Similar considerations should be used when defining the geometry for directional regulations (such as no entry restrictions, one way streets, etc.). For directional regulations only ``linearGeometry`` object or ``directedLinear`` object shall be used. The ``polygon`` and ``pointLocation`` objects should not be used.
+.. notification::
+   :heading: New in v5.0.0
+
+   Further details on the modelling of alternate diversion routes is given below.
+
+Similar considerations should be used when defining the geometry for directional regulations (such as no entry restrictions, one way streets, etc.). For directional regulations only ``linearGeometry`` object or ``directedLinear`` object shall be used. The ``polygon`` and ``pointLocation`` objects should not be used.
+
+
+.. notification::
+   :heading: New in v5.0.0
+
+   v5.0.0 tightens the requirements concerning how some forms of regulationTypes are to be spatially represented. 
+
+   Due to data quality and data interpretation concerns there is now restricted geometry type usage for speed limit restrictions; ``pointGeometry`` can no longer be used when representing speed limit orders.  
+
+   Similarly, schema validation now enforces the use of ``directedLinear`` geometry for regulation types that require a direction be given to fully represent the intent. This includes regulation types that represent directional movement permissions, directional movement prohibitions, and highway regulations dependent upon the direction of travel. The list of regulationTypes to which this applies is as follows: 
+
+   * ``bannedMovementNoEntry``
+   * ``bannedMovementNoLeftTurn``
+   * ``bannedMovementNoRightTurn``
+   * ``bannedMovementNoUTurn``
+   * ``mandatoryDirectionAheadOnly``
+   * ``mandatoryDirectionLeftTurnOnly``
+   * ``mandatoryDirectionOneWay``
+   * ``mandatoryDirectionRightTurnOnly``
+   * ``miscBusGate``
+   * ``miscBusLaneWithTrafficFlow``
+   * ``miscBusOnlyStreet``
+   * ``miscSuspensionOfBusway``
+   * ``miscSuspensionOfOneWay``
+   * ``movementOrderPriorityOverOncomingTraffic``
 
 The sub-model below the regulatedPlace object can also be used to define, optionally, diversion routes.
 
@@ -866,6 +956,24 @@ The ``diversionType`` object links to different forms of diversion route as show
 
    UML model representation of the ``diversionRouteType`` object
 
+.. notification::
+   :heading: New in v5.0.0
+
+   The 'UML model representation of the ``diversionType`` object' diagram will be replaced by the following diagram: 
+
+   .. figure:: images/v500-diversion-type.png
+      :alt: UML model representation of the diversionRouteType object
+      :width: 45%
+      :align: center
+
+   The following text replaces the text above, that follows :numref:`fig30`.
+
+   The ``diversionType`` object has two attributes: 
+   * The optional ``diversionType`` identifies different forms of diversion route as shown in :numref:`fig31`.
+   * The mandatory ``geometryType`` attribute takes one of two values: 
+      - ``full``, which indicates that the supplied geometry of the ``diversionRoute`` is a full geometric reference line representation 
+      - ``waypoint``, which indicates that the supplied geometry of the ``diversionRoute`` is a waypoint geometry which contains as a minimum the start and end coordinates of the route, plus coordinates for each “road node” that represents the junction of two or more public roads.
+
 :numref:`fig32` provides the UML representation of ``externalReference`` object.
 
 .. _fig32:
@@ -1057,6 +1165,11 @@ The ``calendarWeekInMonth`` object has one mandatory attribute:
 
 * The ``weekInMonth`` attribute indicates the Calendar week of the month to be included. The attribute shall be used between one and 6 times, with each attribute instance being a unique Calendar week in month identifier. Permitted values are 'firstWeekofMonth', 'secondWeekOfMonth' … to 'sixthWeekOfMonth'.
 
+.. notification::
+   :heading: New in v5.0.0
+
+   Additional value ``lastWeekOfMonth`` added.
+
 :numref:`fig42` provides the UML class representation of the weekOfMonth object. The weekOfMonth object provides information concerning an identifiable week in a calendar month – where the week starts on the same day of the week as the month. E.g., if the first of the month is a Wednesday, each week in a month identified here also starts on a Wednesday.
 
 .. _fig42:
@@ -1072,6 +1185,11 @@ The ``weekInMonth`` object has one mandatory attribute:
 
 * The ``applicableWeek`` attribute indicates the week of the month to be included. The attribute shall be used between one and 5 times, with each attribute instance being a unique week in month identifier. Permitted values are 'firstWeek', 'secondWeek' … to 'fifthWeek'.
 
+.. notification::
+   :heading: New in v5.0.0
+
+   Additional value ``lastWeek`` added.
+
 :numref:`fig43` provides the UML class representation of the ``instanceOfDayWithinMonth`` object. The ``instanceOfDayWithinMonth`` object enables identification of instances of a day of the week in a month; for example, the second Tuesday in the month. When using this object, at least one ``applicableDay`` instance shall be specified in the related object ``dayWeekMonth``.
 
 .. _fig43:
@@ -1086,6 +1204,11 @@ The ``weekInMonth`` object has one mandatory attribute:
 The ``instanceOfDayWithinMonth`` object has one mandatory attribute:
 
 * The ``applicableInstanceOfDayWithinMonth`` attribute indicates the identified day instance within the month to be included. The attribute shall be used between one and 5 times, with each attribute instance of an identified day in a month. Permitted values are 'firstInstance', 'secondInstance' … to 'fifthInstance'. This can be used to define patterns such as the second and fourth Tuesday and Friday in the month.
+
+.. notification::
+   :heading: New in v5.0.0
+
+   Additional value ``lastInstance`` added.
 
 :numref:`fig44` provides the UML class representation of the ``specialDay`` object. The ``specialDay`` object indicates the characteristics of an identified (special) day.
 
@@ -1586,9 +1709,6 @@ In practice, upper bounds are specified in TROs, so the maximum characteristic i
    :align: center
 
    Example of boundary conditions (upper and lower bounds)
-
-.. error::
-   Here we have some text around the ``numberOfAxlesCharacteristic`` object but the figure immediately below is for the ``maximumGrossWeightCharacteristic`` object.
    
    The published version mentions [-1..2] whereas the PDF version says [0..2].
 
@@ -1643,6 +1763,11 @@ The ``vehicleCharacteristics`` object has six optional attributes:
 * The ``vehicleUsage`` attribute specifies optionally one usage type (i.e. for what purpose is the vehicle being used). Permissible vehicle usage types include, for example, ``accessToOffStreetPremises``, ``localBuses``, ``privateHireVehicle``, ``guidedBus``, etc.
 
 * The ``yearOfFirstRegistration`` attribute specifies optionally one registration year. Year is specified as an integer in the format ``YYYY`` (e.g. 2008).
+
+.. notification::
+   :heading: New in v5.0.0
+
+   Additional value ``eScooter`` added to ``vehicleType``.
 
 :numref:`electricChargingCharacteristic` provides the UML class representation of ``electricChargingCharacteristic`` object.
 

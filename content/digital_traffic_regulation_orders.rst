@@ -1,6 +1,13 @@
 Digital Traffic Regulation Orders
 =================================
 
+.. notification::
+    :heading: Note
+
+    This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
+    There are no v5.0.0 changes in this chapter.
+
 Introduction
 ************
 

@@ -1,6 +1,11 @@
 The Data Model UML Class Diagrams
 =================================
 
+.. notification::
+    :heading: Note
+
+    This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
 This section presents UML class diagrams for the full content of the Data Model.
 
 High-Level Full D-TRO Model
@@ -14,6 +19,18 @@ High-Level Full D-TRO Model
    :align: center
 
    UML class diagram - high-level full D-TRO model
+
+.. notification::
+   :heading: New in v5.0.0
+
+   The 'UML class diagram - high-level full D-TRO model' diagram will be replaced by the following diagram:
+
+   .. figure:: images/v500-high-level-dtro-objects.png
+      :alt: UML class diagram - high-level full D-TRO model
+      :width: 100%
+      :align: center
+
+      UML class diagram - high-level full D-TRO model
 
 ``condition`` Sub-Model
 ***********************
@@ -103,6 +120,18 @@ Enumeration Classes
 
    UML class diagram - Enumeration Class in the high-level ``regulation`` sub-model
 
+.. notification::
+   :heading: New in v5.0.0
+
+   The 'UML class diagram - Enumeration Class in the high-level regulation sub-model' diagram will be replaced by the following diagram:
+
+   .. figure:: images/v500-enumerations-enum.png
+      :alt: UML class diagram - Enumeration Class in the high-level regulation sub-model
+      :width: 100%
+      :align: center
+
+      UML class diagram - Enumeration Class in the high-level ``regulation`` sub-model
+
 ``condition`` Enumerations
 **************************
 
@@ -127,6 +156,18 @@ Enumeration Classes
 
    UML class diagram - Enumeration Classes in the ``vehicleCharacteristics`` sub-model
 
+.. notification::
+   :heading: New in v5.0.0
+
+   The 'UML class diagram - Enumeration Classes in the vehicleCharacteristics sub-model' diagram will be replaced by the following diagram:
+
+   .. figure:: images/v500-vehicle-characteristics-enumerations-uml.png
+      :alt: UML class diagram - Enumeration Classes in the vehicleCharacteristics sub-model
+      :width: 100%
+      :align: center
+
+      UML class diagram - Enumeration Classes in the ``vehicleCharacteristics`` sub-model
+
 ``validity`` Enumerations
 *************************
 
@@ -138,6 +179,18 @@ Enumeration Classes
    :align: center
 
    UML class diagram - Enumeration Classes in the ``validity`` sub-model
+
+.. notification::
+   :heading:
+
+   The 'UML class diagram - Enumeration Classes in the validity sub-model' diagram will be replaced by the following diagram:
+
+   .. figure:: images/v500-validity-enumerations-uml.png
+      :alt: UML class diagram - Enumeration Classes in the validity sub-model
+      :width: 100%
+      :align: center
+
+      UML class diagram - Enumeration Classes in the ``validity`` sub-model
 
 ``rate`` Enumerations
 *********************

@@ -1,9 +1,16 @@
 What is a 'Full' D-TRO Record?
 ==============================
 
+.. notification::
+   :heading: Note
+
+   This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
+   There are no v5.0.0 changes in this chapter.
+
 When a TRA submits a new D-TRO record care is required to ensure that the record contains all necessary information - this is the responsibility of the TRA. The D-TRO Service will undertake various forms of validation to ensure that requirements have been met and the D-TRO record can be accepted.
 
-.. note::
+.. inset::
     The test of what constitutes a D-TRO record that contains all essential elements and therefore can be considered to be a 'full' record is subject to review and learning from prototyping. This section is therefore likely to change with new releases.
 
 Validation Rules

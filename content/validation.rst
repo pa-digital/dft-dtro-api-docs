@@ -1,6 +1,13 @@
 Validation
 ==========
 
+.. notification::
+    :heading: Note
+
+    This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
+
+    There are no v5.0.0 changes in this chapter.
+
 Introduction
 ************
 Britain is on the verge of a transport revolution and the Department has recently delivered the Future of Mobility, Urban Strategy as part of the Future of Mobility Grand Challenge. The Strategy priorities providing a regulatory framework that evolves with transport technology and advocates data sharing to improve operation of the transport system.

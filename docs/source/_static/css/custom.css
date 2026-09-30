@@ -81,3 +81,7 @@
   white-space: normal !important;
   word-break: break-word;
 }
+
+.govuk-notification-banner__content p {
+    min-width: 100%;
+}
