@@ -124,7 +124,7 @@ Other documents, examples and artefacts of this release are listed in GitHub at 
 Acknowledgements
 ****************
 
-This document, and the Data Model it describes, draw upon the outputs of earlier projects and has been prepared with the kind support of notably the DfT, Bedford Borough Council, City of York Council, Essex County Council, Transport for the West Midlands, Buchanan Computing, Valtech, Informed Solutions, PA Consulting plus other organisations. The report has been authored by Harrod Booth Consulting Ltd and PA Consulting, under contract to the DfT.
+This document, and the Data Model it describes, draw upon the outputs of earlier projects and have been prepared with the kind support of notably the DfT, Bedford Borough Council, City of York Council, Essex County Council, Transport for the West Midlands, Buchanan Computing, Valtech, Informed Solutions, PA Consulting plus other organisations. The report has been authored by Harrod Booth Consulting Ltd and PA Consulting, under contract to the DfT.
 
 Non-Proprietary Terms
 *********************
@@ -137,15 +137,6 @@ Disclaimer
 **********
 
 This Data Model is subject to ongoing development and maintenance. It cannot be considered to be complete or error-free. It should not be viewed as stable and may be subject to alteration without notice.
-
-Licensing
-*********
-
-The material contained within this document is subject to copyright by the DfT and is published under Crown Copyright. Further details on Crown Copyright can be found at Crown copyright - Re-using PSI (https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/).
-
-The data from the D-TRO service is made available under an Open Government Licence version 3 licence (Open Government Licence). Further details of the licence can be found at http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/.
-
-The DfT are sharing this document and the Data Model it contains to support iteration and development by the DfT.
 
 References
 **********
