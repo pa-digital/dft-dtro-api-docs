@@ -82,6 +82,6 @@
   word-break: break-word;
 }
 
-.govuk-notification-banner__content p {
+.govuk-notification-banner__content > .docutils {
     min-width: 100%;
 }
