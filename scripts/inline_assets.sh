@@ -244,6 +244,17 @@ my $input_dir = dirname(abs_path($input_file));
 
 my $html = do { local $/; <> };
 
+$html =~ s{
+    <a\b
+    [^>]*\bimage-reference\b[^>]*>
+    \s*
+    (<img\b.*?>)
+    \s*
+    </a>
+}{
+    $1
+}gexis;
+
 sub mime_for_image {
     my ($path) = @_;
 
