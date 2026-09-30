@@ -111,7 +111,7 @@ This User Guidance is just part of the documents and artefacts that are availabl
 
 .. _fig1:
 
-.. figure:: /images/fig1.png
+.. figure:: images/fig1.png
    :alt: Documents and artefacts supporting the D-TRO Service
    :align: center
 
