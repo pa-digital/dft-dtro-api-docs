@@ -10,6 +10,8 @@ OpenAPI documentation for the D-TRO service can be found by clicking the button 
 
 .. button::
     :text: OpenAPI documentation
+    :url: https://github.com/department-for-transport-public/D-TRO/blob/main/resources/redoc.html
+    :download:
 
 Postman Collections
 ^^^^^^^^^^^^^^^^^^^
@@ -18,11 +20,11 @@ We also provide Postman collections for both the integration and production envi
 
 .. button::
     :text: Integration Postman collection
-    :url: _static/dtro-integration.postman_collection.json
+    :url: https://github.com/department-for-transport-public/D-TRO/blob/main/resources/dtro-integration.postman_collection.json
     :download:
 
 .. button::
     :text: Production Postman collection
-    :url: _static/dtro-production.postman_collection.json
+    :url: https://github.com/department-for-transport-public/D-TRO/blob/main/resources/dtro-production.postman_collection.json
     :download:
 
