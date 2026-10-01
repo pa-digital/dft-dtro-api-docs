@@ -4,9 +4,7 @@ Validation
 .. notification::
     :heading: Note
 
-    This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
-
-    There are no v5.0.0 changes in this chapter.
+    Validation for v5.0.0 is undergoing finalisation. This document will be updated when this process is complete.
 
 Introduction
 ************
