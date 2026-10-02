@@ -6,11 +6,7 @@ A Tour of the Data Model
 
    This content is based on the Data Model User Guide for version 4.0.0, but has highlighted inserts for changes that have been made in respect of version 5.0.0.
 
-This section provides a tour of the main features of the Data Model. The Data Model can be viewed at the Department for Transport's public GitHub repository.
-
-.. button::
-   :text: View the data model
-   :url: https://d-tro.dft.gov.uk/data-model-user-guide/Data%20Model%20HTML%20Guide/index.htm
+This section provides a tour of the main features of the Data Model
 
 :numref:`fig3` shows a summarised simplified view of the main structures of the Data Model. These structures often contain more detailed sub-models, which are detailed later in this section.
 

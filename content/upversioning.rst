@@ -98,3 +98,24 @@ v3.5.0 Strategy
 ***************
 
 All published ``v3.5.0`` D-TROs were compliant with ``v3.5.1`` of the schema, and so no transformations were applied.
+
+v3.5.1 Strategy
+***************
+
+The following transformations have been applied to upversion from ``v3.5.1`` to ``v4.0.0``.
+
+* various transformations to the representation of condition/conditions/conditionSet representations. This includes:
+
+    - for ``conditions`` arrays with only a single child condition, unnesting to a ``condition`` object
+    - wrapping ``conditions`` arrays with no parent ``conditionSet`` object with this required object 
+* moved ``maxStayNoReturn`` object from ``timeValidity`` object to ``period`` object
+* moved the following values from the ``vehicleType`` enum into the ``vehicleUsageType`` enum:
+
+    - coastguardVehicle
+    - diplomaticVehicle
+    - emergencyAndIncidentSupportVehicle
+    - emergencyServicesVehicle
+    - fireServiceVehicle,
+    - policeVehicle
+    - publicServicesVehicle
+    - schoolBus
