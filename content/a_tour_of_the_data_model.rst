@@ -964,6 +964,8 @@ The ``diversionType`` object links to different forms of diversion route as show
 
    The following text replaces the text above, that follows :numref:`fig30`.
 
+   When providing information concerning details of a diversion route, the object "diversionType" shall be used (i.e. "diversionType" is conditionally mandatory for diversion routes)
+
    The ``diversionType`` object has two attributes: 
    * The optional ``diversionType`` identifies different forms of diversion route as shown in :numref:`fig31`.
    * The mandatory ``geometryType`` attribute takes one of two values: 
@@ -1412,65 +1414,69 @@ An illustrative example, in :numref:`condition-sets-and-conditions`, shows the u
 
    Illustrative example of use of ``conditionSets`` and ``conditions``
 
-:numref:`conditionSet-json` shows an extract of the JSON coding of the same conditions as shown in :numref:`condition-sets-and-conditions`.
-
-.. _conditionSet-json:
+   The provision is a single ``bannedMovementNoEntry`` with an ``or`` condition set. The set matches vehicles over 2.5 m (``anyVehicle`` with ``vehicleHeight``: 2.5), buses, and taxis that are not being used for access.
 
 .. code-block:: json
     :caption: Example JSON condition set
 
     {
-      "conditionSet": {
-         "operator": "and",
-         "conditions": [
-            {
-               "conditionSet": {
-                  "operator": "or",
-                  "conditions": [
-                     {
-                        "negate": false,
-                        "vehicleCharacteristics": {
-                           "maximumHeightCharacteristic": {
-                              "vehicleHeight": 2.5
-                           }
-                        }
-                     },
-                     {
-                        "negate": true,
-                        "vehicleCharacteristics": {
-                           "vehicleType": "bus"
-                        }
-                     },
-                     {
-                        "conditionSet": {
-                           "operator": "and",
-                           "conditions": [
-                              {
-                                 "negate": false,
-                                 "vehicleCharacteristics": {
-                                    "vehicleType": "taxi"
-                                 }
-                              },
-                              {
-                                 "negate": false,
-                                 "vehicleCharacteristics": {
-                                    "vehicleUsage": "access"
-                                 }
-                              }
-                           ]
-                        }
-                     },
-                     {
-                        "timeValidity": {
-                           "start": "2024-08-22T08:00:00",
-                           "end": "2024-08-22T20:00:00"
-                        }
-                     }
-                  ]
+      "regulation": {
+         "regulationType": "bannedMovementNoEntry",
+         "isDynamic": false,
+         "timeZone": "Europe/London",
+         "conditionSet": {
+           "operator": "and",
+           "conditions": [
+             {
+               "timeValidity": {
+                 "start": "2024-08-22T08:00:00+01:00",
+                 "end": "2024-08-22T20:00:00+01:00",
+                 "isPlaceholderTro": false
                }
-            }
-         ]
-      }
+             },
+             {
+               "conditionSet": {
+                 "operator": "or",
+                 "conditions": [
+                   {
+                    "vehicleCharacteristics": {
+                      "vehicleType": "anyVehicle",
+                      "maximumHeightCharacteristic": {
+                        "vehicleHeight": 2.5
+                       }
+                     }
+                   },
+                   {
+                    "vehicleCharacteristics": {
+                      "vehicleType": "bus"
+                     }
+                   },
+                   {
+                     "conditionSet": {
+                       "operator": "and",
+                       "conditions": [
+                         {
+                          "vehicleCharacteristics": {
+                            "vehicleType": "taxi"
+                           }
+                         },
+                         {
+                           "negate": true,
+                          "accessCondition": {
+                            "accessConditionType": [
+                              "accessOnly"
+                             ]
+                           }
+                         }
+                       ]
+                     }
+                   }
+                 ]
+               }
+             }
+           ]
+         }
+       }
     }
    
 .. _condition:
