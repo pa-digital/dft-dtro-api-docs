@@ -964,13 +964,17 @@ The ``diversionType`` object links to different forms of diversion route as show
 
    The following text replaces the text above, that follows :numref:`fig30`.
 
-   When providing information concerning details of a diversion route, the object "diversionType" shall be used (i.e. "diversionType" is conditionally mandatory for diversion routes)
+   When providing information concerning details of a diversion route, the object ``diversionType`` shall be used (i.e. ``diversionType`` is conditionally mandatory for diversion routes)
 
    The ``diversionType`` object has two attributes: 
    * The optional ``diversionType`` identifies different forms of diversion route as shown in :numref:`fig31`.
    * The mandatory ``geometryType`` attribute takes one of two values: 
       - ``full``, which indicates that the supplied geometry of the ``diversionRoute`` is a full geometric reference line representation 
       - ``waypoint``, which indicates that the supplied geometry of the ``diversionRoute`` is a waypoint geometry which contains as a minimum the start and end coordinates of the route, plus coordinates for each “road node” that represents the junction of two or more public roads.
+   
+   In edge cases where a diversion route can correctly be represented by a single straight line (by just defining a start and end location), or traces a route where no "road node" are present (a diversion route that does not insect with any other public roads), as a minimum at least one interim location between the start and end location shall be defined - in a manner to clearly distinguish and differentiate the diversion route from any other potential routes.
+ 
+   In the case where a diversion route starts and ends on the same street (with the same USRN), and no other streets and USRNs are required to fully describe the diversion route, the origin USRN and destination USRN will be the same. 
 
 :numref:`fig32` provides the UML representation of ``externalReference`` object.
 
