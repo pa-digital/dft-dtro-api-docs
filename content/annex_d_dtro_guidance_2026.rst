@@ -25,6 +25,7 @@ Authorities already follow procedures for making TROs that are set out in three 
 The D-TRO Regulations do not change these procedures. 
 
 Section 93 of the Automated Vehicles Act 2024 (the 2024 Act) gives the Secretary of State a power to make regulations requiring a traffic regulation authority to provide:
+
 * prescribed information about a relevant traffic regulation measure
 * in a digital format
 * to a central publication platform
@@ -38,12 +39,14 @@ The D-TRO Regulations, made under section 93 of the 2024 Act, make provision abo
 
 Nothing in this guidance replaces the legal requirements contained within the Regulations. Where there is any discrepancy between this guidance and the D-TRO Regulations, the D-TRO Regulations take precedence.
 
-This guidance should be read alongside: 
+This guidance should be read alongside:
+
 * The D-TRO Regulations themselves, which can be found at https://www.example.com
 * The Explanatory Memorandum, which can be found at https://www.example.com
 * The D-TRO Data Specification - which are described further below.
 
-The D-TRO Data Specification can be found at the official D-TRO portal, at the following link: https://d-tro.dft.gov.uk This comprises:
+The D-TRO Data Specification can be found at the official D-TRO portal, at the following link: https://d-tro.dft.gov.uk. This comprises:
+
 * the D-TRO Data Model,
 * the JSON schema, which a document that defines the structure, data types, and validation rules for JSON data; JSON (JavaScript Object Notation) is a simple, text-based format for storing and exchanging data,
 * validation rules, and
@@ -93,8 +96,9 @@ The Regulations require reporting at three levels:
 **Measure-Level Information**
 
 Authorities must provide information as specified in regulation 4(1) relating to:
+
 * title - Full legal title of the Order, Notice or Instrument as made by the TRA.
-    date made - Date on which the Order was legally made by the TRA.
+* date made - Date on which the Order was legally made by the TRA.
 * commencement date - Date on which the measure comes into force and acquires legal effect.
 * duration - Overall legal duration of the measure including permanent, temporary, experimental or special-event applicability.
 * general description - Free text description of the prohibition, restriction, regulation or permission established by the measure.
@@ -104,6 +108,7 @@ Authorities must provide information as specified in regulation 4(1) relating to
 **Provision-Level Information**
 
 Authorities must provide information as specified in regulation 4(2), 4(3),4(4) so far as that information is relevant for the provision is question. For precise description of the information to be supplied refer to the regulations themselves. This information relates to:
+
 * affected roads - Roads, streets, highways or byways to which the provision applies, supported where possible by machine-readable location references and geometry.
 * affected locations - The regulated place or places subject to the provision.
 * alternative routes - Diversionary routes associated with closures or restrictions, described in sufficient detail for digital navigation and routing services.
@@ -115,6 +120,7 @@ Authorities must provide information as specified in regulation 4(2), 4(3),4(4) 
 **Restriction-Level Information**
 
 Authorities must provide information as specified in regulation 5. For a precise description of the information to be supplied refer to the regulation itself. This information relates to:
+
 * vehicle classes - Vehicle categories to which the measure applies, permits or exempts, using standardised vehicle characterisation concepts.
 * dimensions - Maximum or minimum vehicle dimensions including height, width, length, axle weight or gross weight where relevant.
 * fuel types - Vehicle propulsion or fuel characteristics used within access, environmental or charging-based restrictions.
@@ -170,6 +176,7 @@ Access to the D-TRO Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Digital TRO data is sent to the D-TRO Service. Access to this data is managed as follows:
+
 * Data Publishers: TRAs and Digital Service Providers must complete a two-step onboarding process, starting with an account in the integration/sandbox environment for testing before gaining production environment access to publish live data.
 * Data Consumers: Any individual or organisation may register for a free consumer account to access D-TRO data via the API, subject to verification by the DfT Central Service Operator (CSO).
 * To register for the service and access the D-TRO Data Specification and other technical artefacts see the official D-TRO portal.
@@ -192,13 +199,15 @@ Submission to the D-TRO Service does not transfer ownership of the source inform
 Many TRAs will use software providers to manage D-TRO submissions to the D-TRO Service. These are referred to as Digital Solution Providers (DSPs).
 
 Where a DSP submits information on behalf of a TRA: 
+
 * responsibility for the accuracy and completeness of information submitted to the D-TRO Service remains with the TRA;
 * the TRA should maintain quality assurance processes. 
 
 **Department for Transport (DfT)**
 
 The Department for Transport:
-* operates the D‑TRO Service;
+
+* operates the D-TRO Service;
 * maintains the D-TRO data specification;
 * manages onboarding processes;
 * re-publishes D-TRO data; and
@@ -209,10 +218,12 @@ DfT is the data custodian in the context of the D-TRO service, and is responsibl
 **Data Consumers**
 
 A data consumer to encouraged to:
+
 * Consume D-TROs in accordance with the service terms and licence. Further information on licensing can be found at the following link: https://d-tro.dft.gov.uk/dtro?id=kb_article_view&sysparm_article=KB0010666
 * Note that the authoritative legal instrument remains the underlying TRO.
 
 A data consumer should endeavour to:
+
 * Monitor updates, amendments, revocations and expiry dates.
 * Refresh local systems regularly.
 * Not misrepresent restrictions.
@@ -224,6 +235,7 @@ Voluntary Information
 This guidance supports the implementation of the requirements, including voluntary information that, if it is available, authorities can send to D-TRO service.
 
 Traffic regulation authorities may optionally provide additional information to enhance the dataset, including:
+
 * Data regarding proposed TRMs.
 * Parking charges orders made under sections 32 or 45 of the Road Traffic Regulation Act 1984, which may not otherwise meet the definition of a TRM under the Automated Vehicles Act 2024.
 * Bridge height warning and restriction data.
