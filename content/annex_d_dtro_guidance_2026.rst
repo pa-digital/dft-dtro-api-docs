@@ -69,6 +69,7 @@ Which TRMs are covered and commencement dates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A specified in the 2024 Act, a Traffic Regulation Measure (TRM) means an order or notice made under any of the following provisions of the Road Traffic Regulation Act 1984. This guidance will refer to TRMs as this is the term used in the 2024 Act and the D-TRO Regulations:
+
 * Section 1 (traffic regulation orders)
 * Section 6 (orders regulating traffic in Greater London)
 * Section 9 (experimental traffic orders)
@@ -77,6 +78,7 @@ A specified in the 2024 Act, a Traffic Regulation Measure (TRM) means an order o
 * Section 84 (speed limits)
 
 The requirements apply in relation to:
+
 * new TRM made after commencement;
 * circumstances where a post-commencement measure amends a pre-commencement measure. If a post-commencement TRM only revokes a pre-commencement TRM, then the requirements under the D-TRO Regulations do not apply. If a post-commencement TRM changes a pre-commencement TRM, the requirements apply only with respect to the provisions amended.
 

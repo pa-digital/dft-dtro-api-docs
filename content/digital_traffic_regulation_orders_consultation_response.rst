@@ -196,13 +196,11 @@ However, several key themes emerged:
 
 * **Expiration dates:** Many authorities felt that expiration dates should be explicitly included, especially for temporary orders.
 
-* **Applicability and relevance:** Concerns were raised about the relevance of certain 
-fields for permanent orders, such as diversion routes and traffic management details.
+* **Applicability and relevance:** Concerns were raised about the relevance of certain fields for permanent orders, such as diversion routes and traffic management details.
 
 * **Burden of data provision:** Some authorities highlighted the administrative burden of providing detailed data manually, especially where systems are not yet integrated.
 
-* **Digital readiness:** Authorities using paper-based systems expressed concern about 
-their ability to comply without significant investment in digital tools.
+* **Digital readiness:** Authorities using paper-based systems expressed concern about their ability to comply without significant investment in digital tools.
 
 Government Response
 ~~~~~~~~~~~~~~~~~~~
@@ -217,8 +215,7 @@ The Government has amended Regulation 4(2) to address these concerns:
 
 * **Guidance to support implementation:** Non-statutory guidance will clarify expectations and authorities will be able to view examples on GitHub to help them interpret and apply the data requirements consistently.
 
-These changes aim to balance the need for comprehensive digital records with the 
-practical realities faced by traffic regulation authorities.
+These changes aim to balance the need for comprehensive digital records with the practical realities faced by traffic regulation authorities.
 
 Section 3: Required Data for Each provision
 -------------------------------------------
@@ -226,11 +223,9 @@ Section 3: Required Data for Each provision
 Relevant Questions
 ~~~~~~~~~~~~~~~~~~
 
-Q13: Do you agree or disagree that the list of information required in respect of each 
-provision of a TRM is the correct data to include?
+Q13: Do you agree or disagree that the list of information required in respect of each provision of a TRM is the correct data to include?
 
-Q14: Do you think certain information required in respect of each provision of a TRM 
-should be: changed in the list; added to the list or removed from the list?
+Q14: Do you think certain information required in respect of each provision of a TRM should be: changed in the list; added to the list or removed from the list?
 
 Q15-Q17: What do you think should be changed, added, or removed? Why?
 
@@ -239,8 +234,7 @@ Q18: Why do you agree or disagree?
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To assess whether the proposed provision-level data fields — such as location, timing, 
-and diversion routes — are appropriate and practical for authorities to provide digitally.
+To assess whether the proposed provision-level data fields — such as location, timing, and diversion routes — are appropriate and practical for authorities to provide digitally.
 
 Summary of Responses
 ~~~~~~~~~~~~~~~~~~~~
@@ -284,22 +278,15 @@ Q14
 Consultation Feedback
 ~~~~~~~~~~~~~~~~~~~~~
 
-There was strong support for the inclusion of provision-level data, with respondents 
-recognising its importance for clarity and enforcement. However, several concerns were 
-raised:
+There was strong support for the inclusion of provision-level data, with respondents recognising its importance for clarity and enforcement. However, several concerns were raised:
 
-* **Relevance for permanent orders:** Some fields, such as diversion routes, were seen 
-as unnecessary for permanent TRMs.
+* **Relevance for permanent orders:** Some fields, such as diversion routes, were seen as unnecessary for permanent TRMs.
 
 * **Complexity of data**: Authorities noted that some provisions (e.g. multiple USRNs or geospatial references) may be difficult to provide, especially for complex or multi-site orders.
 
-* **Digital capability:** Respondents using paper-based systems expressed concern 
-about the feasibility of providing detailed provision-level data without significant 
-investment.
+* **Digital capability:** Respondents using paper-based systems expressed concern about the feasibility of providing detailed provision-level data without significant investment.
 
-* **Need for guidance:** Authorities requested examples and clarification on how to 
-interpret and apply provision-level requirements, particularly for less common 
-scenarios.
+* **Need for guidance:** Authorities requested examples and clarification on how to interpret and apply provision-level requirements, particularly for less common scenarios.
 
 Government Response
 ~~~~~~~~~~~~~~~~~~~
@@ -310,13 +297,9 @@ The Government has retained the full list of provision-level data in Regulation 
 
 * **Guidance and worked examples to support interpretation:** To support implementation, the DfT will issue non-statutory guidance that will provide clarification on when fields are "relevant". Authorities will also be able to view examples on GitHub that will help them understand how to apply provision-level requirements, especially for permanent orders.
 
-* **Support for digital transition:** Authorities are encouraged to adopt digital systems if they have not done so already and move away from paper-based systems. The
-Government will continue working with digital solution providers to ensure 
-compatibility and ease of use, ensuring that provision-level data can be entered and 
-updated easily and systems support phased data entry and validation.
+* **Support for digital transition:** Authorities are encouraged to adopt digital systems if they have not done so already and move away from paper-based systems. The Government will continue working with digital solution providers to ensure compatibility and ease of use, ensuring that provision-level data can be entered and updated easily and systems support phased data entry and validation.
 
-These changes aim to ensure that provision-level data enhances transparency and 
-usability without imposing undue burden on authorities, ensuring a smooth transition.
+These changes aim to ensure that provision-level data enhances transparency and usability without imposing undue burden on authorities, ensuring a smooth transition.
 
 Section 4: Conditions and Exceptions
 ------------------------------------
@@ -333,8 +316,7 @@ Q24: Why do you agree or disagree?
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To evaluate whether the proposed list of conditions and exceptions — such as vehicle 
-types, environmental factors, and user characteristics — is appropriate and sufficient for digital submission.
+To evaluate whether the proposed list of conditions and exceptions — such as vehicle types, environmental factors, and user characteristics — is appropriate and sufficient for digital submission.
 
 Summary of Responses
 ~~~~~~~~~~~~~~~~~~~~
@@ -399,8 +381,7 @@ The Government has confirmed that Regulation 5 will allow authorities to specify
 
 * **Digital support:** The D-TRO service has been designed to accommodate a wide range of condition types, including those used by authorities with advanced schemes such as clean air zones or low-emission vehicle restrictions. The service is being built to be system agnostic and the Government will continue working with digital solution providers to ensure compatibility and ease of use.
 
-These measures aim to ensure that TRMs remain adaptable to local needs while 
-maintaining consistency and clarity across the national network
+These measures aim to ensure that TRMs remain adaptable to local needs while maintaining consistency and clarity across the national network
 
 Section 5: Missing Information in Draft Regulations
 ---------------------------------------------------
@@ -426,8 +407,8 @@ Respondents provided a range of suggestions and concerns regarding missing or un
   * Section 21 of the Town Police Clauses Act 1847 (used for event-related
     closures)
   * Section 45 of the Road Traffic Regulation Act 1984 (parking places)
-  * Sections 32–35 (free and paid parking bays)
-  * Section 22 (ATTROs – anti-terrorism traffic regulation orders)
+  * Sections 32-35 (free and paid parking bays)
+  * Section 22 (ATTROs - anti-terrorism traffic regulation orders)
 
 * **Clarification of scope:** Authorities requested clearer guidance on:
 
@@ -500,16 +481,14 @@ Section 6: Use of Unique Street Reference Numbers (USRNs)
 Relevant Question
 ~~~~~~~~~~~~~~~~~
 
-Q26: Should we be asking for the Unique Street Reference Number (USRN) to be 
-supplied where it exists?
+Q26: Should we be asking for the Unique Street Reference Number (USRN) to be supplied where it exists?
 
 Q27: Why?
 
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To assess whether the inclusion of USRNs — a nationally standardised identifier for 
-streets — should be mandatory in digital traffic regulation submissions, and to understand the implications for authorities and data users.
+To assess whether the inclusion of USRNs — a nationally standardised identifier for streets — should be mandatory in digital traffic regulation submissions, and to understand the implications for authorities and data users.
 
 Summary of Responses
 ~~~~~~~~~~~~~~~~~~~~
@@ -527,14 +506,13 @@ Q26:
      - 60
    * - No
      - 18
-   * - Don’t know
+   * - Don't know
      - 15
 
 Consultation Feedback
 ~~~~~~~~~~~~~~~~~~~~~
 
-The majority of respondents supported the inclusion of USRNs, citing benefits for 
-accuracy, interoperability, and integration with existing systems. Key themes included:
+The majority of respondents supported the inclusion of USRNs, citing benefits for accuracy, interoperability, and integration with existing systems. Key themes included:
 
 * **Benefits of USRNs:**
 
@@ -570,8 +548,7 @@ The Government has confirmed that Regulation 4(3)(n) will retain the requirement
 
 * **Interoperability focus:** The inclusion of USRNs supports the broader goal of creating a consistent, digital dataset for use by automated vehicles, mapping services, and transport digital solution providers.
 
-These measures aim to ensure that USRNs enhance data quality and usability without 
-creating unnecessary administrative burden
+These measures aim to ensure that USRNs enhance data quality and usability without creating unnecessary administrative burden
 
 Section 7: Actual Start and Stop Times
 --------------------------------------
@@ -579,8 +556,7 @@ Section 7: Actual Start and Stop Times
 Relevant Questions
 ~~~~~~~~~~~~~~~~~~
 
-Q28: In your view, should we be asking for actual starts and stops to be supplied by
-authorities so that road users know when restrictions are in place?
+Q28: In your view, should we be asking for actual starts and stops to be supplied by authorities so that road users know when restrictions are in place?
 
 Q29: Why?
 
@@ -611,8 +587,7 @@ Q28:
 Consultation Feedback
 ~~~~~~~~~~~~~~~~~~~~~
 
-Responses were mixed, with a slight majority opposing the requirement. Key themes 
-included:
+Responses were mixed, with a slight majority opposing the requirement. Key themes included:
 
 * **Support for transparency:**
 
@@ -642,8 +617,7 @@ Government Response
 
 The Government recognises the importance of accurate timing data but acknowledges the concerns raised. As a result:
 
-* Regulation 7 introduces the requirement for actual start/stop times but delays
-  its commencement until 1 October 2028.
+* Regulation 7 introduces the requirement for actual start/stop times but delays its commencement until 1 October 2028.
 
 * This delay allows time for:
 
@@ -653,8 +627,7 @@ The Government recognises the importance of accurate timing data but acknowledge
 
 * Guidance will clarify:
 
-  * That the requirement applies only to TRAs (not contractors or utility
-    companies).
+  * That the requirement applies only to TRAs (not contractors or utility companies).
   * How to handle phased or multi-stage works.
   * Acceptable formats and update procedures.
 
@@ -664,16 +637,14 @@ Section 8: Timing of Submissions to D-TRO
 Relevant Questions
 ~~~~~~~~~~~~~~~~~~
 
-Q30: Do you agree or disagree that the proposed timings for sending the
-information to D-TRO are clear and appropriate?
+Q30: Do you agree or disagree that the proposed timings for sending the information to D-TRO are clear and appropriate?
 
 Q31: Why?
 
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To evaluate whether the proposed submission deadlines — including for proposed and 
-made orders, and real-time updates — are realistic and achievable for authorities.
+To evaluate whether the proposed submission deadlines — including for proposed and made orders, and real-time updates — are realistic and achievable for authorities.
 
 Summary of Responses
 ~~~~~~~~~~~~~~~~~~~~
@@ -729,8 +700,7 @@ The Government has retained the proposed timings in Regulation 9, but introduced
 
 * **Guidance will clarify:** The guidance references out to detailed technical guidance, which may be altered from time to time, to the D-TRO web portal and the documentation and artifacts it contains.
 
-These changes aim to ensure timely data submission while recognising operational 
-constraints.
+These changes aim to ensure timely data submission while recognising operational constraints.
 
 Section 9: Submission at Proposed vs. Made Stage
 ------------------------------------------------
@@ -742,8 +712,7 @@ Q32: Your view is that the required information should be sent when TRMs underse
 
 Q33: Your view is that the required information should be sent when TRMs undersection 6 of the 1984 Act are: proposed, made or proposed and made. Why?
 
-Q34: Your view is that the required information should be sent when TRMs under
-section 84 of the 1984 Act are proposed, made or proposed and made. Why?
+Q34: Your view is that the required information should be sent when TRMs under section 84 of the 1984 Act are proposed, made or proposed and made. Why?
 
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -827,10 +796,7 @@ Opinions were divided, with a majority preferring submission only at the “made
 Government Response
 ~~~~~~~~~~~~~~~~~~~
 
-The Government has decided that while the submission of measures at the made stage 
-will be mandatory, the submission of measures at the proposed stage will be on a 
-voluntary basis only. **Voluntary submission of proposed measures will still be 
-supported.**
+The Government has decided that while the submission of measures at the made stage will be mandatory, the submission of measures at the proposed stage will be on a voluntary basis only. **Voluntary submission of proposed measures will still be supported.**
 
 * Authorities may still submit proposed TRMs to the D-TRO platform voluntarily and this will be clarified in the accompanying guidance.
 
@@ -847,8 +813,7 @@ Q35: Any other comments?
 Purpose of the Section
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To capture additional feedback, concerns, and suggestions not covered by specific 
-questions.
+To capture additional feedback, concerns, and suggestions not covered by specific questions.
 
 Summary of Feedback
 ~~~~~~~~~~~~~~~~~~~
@@ -857,8 +822,7 @@ Respondents raised a wide range of issues, including:
 
 * **Guidance:**
 
-  * Strong support for detailed guidance to support implementation, clarify
-    responsibilities, and ensure consistency.
+  * Strong support for detailed guidance to support implementation, clarify responsibilities, and ensure consistency.
 
 * **Funding and resources:**
 
@@ -869,8 +833,7 @@ Respondents raised a wide range of issues, including:
 
 * **System integration:**
 
-  * Calls for integration with Street Manager and other platforms to reduce
-    duplication and improve accuracy.
+  * Calls for integration with Street Manager and other platforms to reduce duplication and improve accuracy.
 
 * **Enforcement and responsibilities:**
 
@@ -903,8 +866,7 @@ Summary of Next Steps
 
 The Government is grateful to all stakeholders who responded to the consultation and engaged with the development of the Digital Traffic Regulation Orders (D-TRO) service. The feedback received has been key in shaping the final regulations and ensuring they are practical, proportionate, and aligned with the needs of traffic regulation authorities and road users.
 
-Based on the consultation responses, the Government intends to proceed with the 
-following:
+Based on the consultation responses, the Government intends to proceed with the following:
 
 * **Next Steps / Commencement Date**
 
