@@ -138,6 +138,7 @@ Relevant Questions
 Q7: Do you agree or disagree that the list of information required in respect of a traffic regulation measure is the correct data to include?
 
 Q8: Do you think certain information required in respect of a traffic regulation measure should be: Changed in the list; added to the list or removed from the list?
+
 Q9-Q11: What do you think should be changed, added, or removed? Why?
 
 Q12: Why do you agree or disagree?
