@@ -41,7 +41,7 @@ Nothing in this guidance replaces the legal requirements contained within the Re
 
 This guidance should be read alongside:
 
-* The D-TRO regulations themselves, which can be found at https://www.example.com
+* The D-TRO regulations themselves, which can be found at https://www.legislation.gov.uk/uksi/2026/1202/contents/made
 * The Explanatory Memorandum, which can be found at https://www.example.com
 * The D-TRO data specification - which are described further below
 
